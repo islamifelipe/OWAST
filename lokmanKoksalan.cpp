@@ -1,13 +1,12 @@
 /*
 #=======================================================================
-# Islame Felipe DA COSTA FERNANDES --- Copyright 2016
+# Islame Felipe DA COSTA FERNANDES --- Copyright 2017
 #-----------------------------------------------------------------------
-# This code implements the Lokman and Koksalan's (2013) algorithm 
-# based on the Multiobjective Integer Program for p = 2
-# This code implements uses Gurobi for resolve the Pmn model
+# This code implements the model of Fernández (2016) 
+# applied to OWA-ST problem 
+# and uses the model of Magnanti e Wong (1984) for spanning tree
 #=======================================================================
 
-m = 1 
 */
 
 
@@ -70,10 +69,6 @@ void *tempo(void *nnnn){
 }
 
 int main(){
-
-	
-	
-	
 	float peso1, peso2;
 	int origem, destino; // vértices para cada aresta;
 	int id = 0; // id das arestas que leremos do arquivo para criar o grafo
@@ -96,22 +91,14 @@ int main(){
 
 	GRBVar **y, **x;
 
-	float epslon = 0.001;
-	//cin>>epslon;
-
-
-
   	y = new GRBVar*[n]; 
    	x = new GRBVar*[n];
-
-
    	for (int i=0; i<n;i++){
         y[i] = new GRBVar[n];
         x[i] = new GRBVar[n];
    	}
 
 	int constrCont=0;
-    // Create variables
 
 	for (int i=0; i<n; i++){
        for (int j=0; j<n; j++){
@@ -123,7 +110,7 @@ int main(){
 		cin>>destino;
 		cin>>peso1;
 		cin>>peso2;
-		coeficienteObjetv[origem][destino] = (peso1 + epslon*peso2)*(-1); // o problema é de maximizacao
+		coeficienteObjetv[origem][destino] = peso2; //(peso1 + epslon*peso2)*(-1); // o problema é de maximizacao
 		x[origem][destino] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino));
         x[destino][origem] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem));
       	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));
@@ -134,9 +121,6 @@ int main(){
 		id++;
 	}
 	int nA = id; // quantidade de arestas do grafo	
-
-	int m = 1;// por default, o m falado por Lokman and Koksalan sera igual a 1
-
 
     model.update();
 
@@ -149,7 +133,7 @@ int main(){
       }
     }
     cout<<endl;
-    model.setObjective(exprObjet,GRB_MAXIMIZE); 
+    model.setObjective(exprObjet,GRB_MINIMIZE); 
 
 
 
@@ -184,7 +168,7 @@ int main(){
 	        GRBLinExpr constr9;
 	        constr8.addTerms(&coef,&y[i][j],1);
 	        constr9.addTerms(&co  ,&x[i][j],1);
-	        constr9.addTerms(&co  ,&x[j][i],1);
+	        constr9.addTerms(&co  ,&x[j][i],1); //??
 	      	model.addConstr(constr8, GRB_GREATER_EQUAL, constr9,std::to_string(constrCont++));
     	}
       }
@@ -198,7 +182,7 @@ int main(){
 	        GRBLinExpr constr33;
 	        constr22.addTerms(&co  ,&y[i][j],1);
 	        constr33.addTerms(&co  ,&x[i][j],1);
-	        constr33.addTerms(&co  ,&x[j][i],1);
+	        constr33.addTerms(&co  ,&x[j][i],1); //???
 	       // cout<<constr22<<GRB_LESS_EQUAL<<constr33<<endl;     
 	        model.addConstr(constr22, GRB_LESS_EQUAL, constr33,std::to_string(constrCont++));
     	}
@@ -207,7 +191,7 @@ int main(){
 
     int nn = 0; // n do algoritmo de Lokman and Koksalan 	
     /* 
-	* Algoritmo 1 de Lokman and Koksalan 	
+	* Executa modelo de Fernández (2016) 	
 	*/
 	try {
 		times(&tempsInit);
@@ -223,62 +207,76 @@ int main(){
 	    }
 	    //
 
-
-		int optimstatus;
-		//std::vector<short**> S;
-		 do{
-			//cout<<"Inicio"<<endl;
-			short **result = new short*[n];
-			for (int ii=0; ii<n; ii++){
-				result[ii] = new short[n];
-			}
-			model.optimize();
-			optimstatus = model.get(GRB_IntAttr_Status);
-			if (optimstatus != GRB_INFEASIBLE){
-				double sum = 1; // z_tj + 1
-				 for (int i=0; i<n; i++){
-				    for (int j=i+1; j<n; j++){
-				     	if (arestas[i][j] == 1){
-				         	result[i][j] = y[i][j].get(GRB_DoubleAttr_X);
-				     		sum+=(matrix_peso2[i][j])*result[i][j];
-				     	}
+	    short **result = new short*[n];
+		for (int ii=0; ii<n; ii++){
+			result[ii] = new short[n];
+		}
+	    model.optimize();
+	    int optimstatus = model.get(GRB_IntAttr_Status);
+		if (optimstatus != GRB_INFEASIBLE){
+			for (int i=0; i<n; i++){
+			    for (int j=i+1; j<n; j++){
+			     	if (arestas[i][j] == 1){
+			     		result[i][j] = y[i][j].get(GRB_DoubleAttr_X);
 				    }
-				 }
+			    }
+			}
+		}
+		S.push_back(result);
+		cout<<"Resultado:"<<endl;
+		printResultado();
+		//int optimstatus;
+		//std::vector<short**> S;
+		 // do{
+			// //cout<<"Inicio"<<endl;
+			
+			// model.optimize();
+			// optimstatus = model.get(GRB_IntAttr_Status);
+			// if (optimstatus != GRB_INFEASIBLE){
+			// 	double sum = 1; // z_tj + 1
+			// 	 for (int i=0; i<n; i++){
+			// 	    for (int j=i+1; j<n; j++){
+			// 	     	if (arestas[i][j] == 1){
+			// 	         	result[i][j] = y[i][j].get(GRB_DoubleAttr_X);
+			// 	     		sum+=(matrix_peso2[i][j])*result[i][j];
+			// 	     	}
+			// 	    }
+			// 	 }
 
-				 GRBLinExpr constr77;
-				 for (int i=0; i<n; i++){
-				 	for (int j=i+1; j<n; j++){
-				 		if (arestas[i][j] == 1){
-				 			constr77.addTerms(&matrix_peso2[i][j], &y[i][j],1);
-				 		}
-				 	}
-				 }
-				// cout<<constr77<<"<="<<sum<<endl;
-				 model.addConstr(constr77, GRB_GREATER_EQUAL, sum,std::to_string(constrCont++));
+			// 	 GRBLinExpr constr77;
+			// 	 for (int i=0; i<n; i++){
+			// 	 	for (int j=i+1; j<n; j++){
+			// 	 		if (arestas[i][j] == 1){
+			// 	 			constr77.addTerms(&matrix_peso2[i][j], &y[i][j],1);
+			// 	 		}
+			// 	 	}
+			// 	 }
+			// 	// cout<<constr77<<"<="<<sum<<endl;
+			// 	 model.addConstr(constr77, GRB_GREATER_EQUAL, sum,std::to_string(constrCont++));
 		    	
-				S.push_back(result);
-				nn++;
+			// 	S.push_back(result);
+			// 	nn++;
 
-			 }
-			 //cout<<"fim"<<endl;
-	  	 	} while (optimstatus != GRB_INFEASIBLE)	;
+			//  }
+			//  //cout<<"fim"<<endl;
+	  // 	 	} while (optimstatus != GRB_INFEASIBLE)	;
 
-	  	 	times(&tempsFinal1);   /* current time */ // clock final
-			clock_t user_time1 = (tempsFinal1.tms_utime - tempsInit.tms_utime);
-			cout<<user_time1<<endl;
-			cout<<(float) user_time1 / (float) sysconf(_SC_CLK_TCK)<<endl;//"Tempo do usuario por segundo : "
+	  // 	 	times(&tempsFinal1);   /* current time */ // clock final
+			// clock_t user_time1 = (tempsFinal1.tms_utime - tempsInit.tms_utime);
+			// cout<<user_time1<<endl;
+			// cout<<(float) user_time1 / (float) sysconf(_SC_CLK_TCK)<<endl;//"Tempo do usuario por segundo : "
    	
 
 
 
-		   	printResultado();
+		 //   	printResultado();
 
-  	 	} catch(GRBException e) {
+  	 } catch(GRBException e) {
 	    cout << "Error code = " << e.getErrorCode() << endl;
 	    cout << e.getMessage() << endl;
-	  } catch(...) {
+	 } catch(...) {
 	    cout << "Exception during optimization" << endl;
-	  }
+	 }
    	
 	return 0;
 }
