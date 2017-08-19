@@ -3,7 +3,7 @@
 # Islame Felipe DA COSTA FERNANDES --- Copyright 2017
 #-----------------------------------------------------------------------
 # This code implements the model of Fernández (2016) 
-# applied to OWA-ST problem 
+# applied to OWA-ST problem with p-objectives (where p is inputted in the instance)
 # and uses the model of Magnanti e Wong (1984) for spanning tree
 #=======================================================================
 
@@ -11,7 +11,7 @@
 
 
 #include <iostream>
-#include <map> 
+#include <vector> 
 #include <string>
 #include <climits>
 #include <stack>   
@@ -23,33 +23,36 @@
 #include <unistd.h>
 using namespace std;
 
-int n;
+#define M 10000
+
+int n, p;
 struct tms tempsInit, tempsFinal1,tempsFinal2, tempsFinal; // para medir o tempo
 //double coeficienteObjetv[n][n],matrix_peso1[n][n],matrix_peso2[n][n];;
-double **coeficienteObjetv,**matrix_peso1,**matrix_peso2;
+double *coeficienteObjetv;//valores de w_i (com i de 1 até p)
+vector<double **> custos;  // para guardar os custos. O vector terá 'p' elementos. Cada elemento é uma matriz que guardam o peso 'p' da aresta (i,j)
 short **arestas;
-std::vector<short**> S;
+//std::vector<short**> S; // TODO: nao precisa mais de um vetor
 
-void printResultado(){
-	for (int pp=0; pp<S.size(); pp++){
-		double cont11=0, cont22 = 0;
-		short **result = S[pp];
-		cout<<"Arvore "<<pp+1<<endl;
-		for (int i=0; i<n; i++){
-			for (int j=i+1; j<n; j++){
-				if (arestas[i][j] == 1){
-					if (result[i][j] == 1){
-						cout <<i<<" "<<j<<" "<<matrix_peso1[i][j]*(-1)<<" "<<matrix_peso2[i][j]*(-1)<<endl;
-						cont11+=matrix_peso1[i][j]*(-1);
-						cont22+=matrix_peso2[i][j]*(-1);
-					}
-				}
-			}
-		}
-		cout<<"("<<cont11<<", "<<cont22<<")"<<endl;
-		cout<<endl;
-	}	
-}
+// void printResultado(){
+// 	for (int pp=0; pp<S.size(); pp++){
+// 		double cont11=0, cont22 = 0;
+// 		short **result = S[pp];
+// 		cout<<"Arvore "<<pp+1<<endl;
+// 		for (int i=0; i<n; i++){
+// 			for (int j=i+1; j<n; j++){
+// 				if (arestas[i][j] == 1){
+// 					if (result[i][j] == 1){
+// 						cout <<i<<" "<<j<<" "<<matrix_peso1[i][j]*(-1)<<" "<<matrix_peso2[i][j]*(-1)<<endl;
+// 						cont11+=matrix_peso1[i][j]*(-1);
+// 						cont22+=matrix_peso2[i][j]*(-1);
+// 					}
+// 				}
+// 			}
+// 		}
+// 		cout<<"("<<cont11<<", "<<cont22<<")"<<endl;
+// 		cout<<endl;
+// 	}	
+// }
 
 void *tempo(void *nnnn){
 	while (true){
@@ -61,27 +64,36 @@ void *tempo(void *nnnn){
 			cout<<sec<<endl;
 			cout<<"TEMPO LIMITE ATINGIDO...   " <<endl;
 
-			printResultado();
+			//printResultado();
 			//cout<<"saindo... valor de ppp="<<ppp<<endl;
 			exit(-1);
 		}
 	}
 }
 
+/* A instância deve ter
+n p 
+w_1 ... w_p // coeficientes
+i j v_1 .... v_p
+
+p é a quantidade de objetivos
+*/
 int main(){
-	float peso1, peso2;
+	float peso_p;
 	int origem, destino; // vértices para cada aresta;
 	int id = 0; // id das arestas que leremos do arquivo para criar o grafo
 	cin>>n; // quantidade de vértices do grafo;
+	cin>>p; // quantidade de objetivos
 	arestas = new short*[n];
-	coeficienteObjetv = new double*[n];
-	matrix_peso1 = new double*[n];
-	matrix_peso2 = new double*[n];
+	coeficienteObjetv = new double[p];
 	for (int i=0; i<n; i++){
 		arestas[i] = new short[n];
-		coeficienteObjetv[i] = new double[n];
-		matrix_peso1[i] = new double[n];
-		matrix_peso2[i] = new double[n];
+	}
+	for (int o=0; o<p; o++){ // para cada objetivo
+		custos.push_back(new double*[n]);
+		for (int i=0; i<n; i++){
+			custos[o][i] = new double[n];
+		}
 	}
 
 
@@ -89,13 +101,17 @@ int main(){
 	env.set("OutputFlag","0");
 	GRBModel model = GRBModel(env);;
 
-	GRBVar **y, **x;
+	GRBVar **y, **x, **z, *theta;
 
-  	y = new GRBVar*[n]; 
-   	x = new GRBVar*[n];
+  	y = new GRBVar*[n];  // 0's ou 1's
+   	x = new GRBVar*[n]; // fluxo
+   	z = new GRBVar*[p]; // variavel de Fernández et al (2016)
+   	theta = new GRBVar[p]; //  variavel de Fernández et al (2016)
+
    	for (int i=0; i<n;i++){
         y[i] = new GRBVar[n];
         x[i] = new GRBVar[n];
+        z[i] = new GRBVar[p];
    	}
 
 	int constrCont=0;
@@ -104,20 +120,27 @@ int main(){
        for (int j=0; j<n; j++){
        	arestas[i][j] = 0;
        }
-   }
+  	}
+   	for (int i=0; i<p; i++){
+   		cin>>coeficienteObjetv[i]; 
+   		theta[i] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "th"+std::to_string(i));
+   		//aproveitar esse laço para iniciar a variavel zij =)
+   		for (int j=0; j<p; j++){
+   			z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+std::to_string(i)+std::to_string(j));
+   		}
+   	}
 
 	while (cin>>origem){
 		cin>>destino;
-		cin>>peso1;
-		cin>>peso2;
-		coeficienteObjetv[origem][destino] = peso2; //(peso1 + epslon*peso2)*(-1); // o problema é de maximizacao
-		x[origem][destino] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino));
-        x[destino][origem] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem));
-      	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));
+		for (int o=0; o<p; o++){
+			cin>>custos[o][origem][destino];
+		}
+		x[origem][destino] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
+        x[destino][origem] = model.addVar(0.0, 1000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
+      	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
+      
       	arestas[origem][destino] = 1;
       	arestas[destino][origem] = 1;
-      	matrix_peso1[origem][destino] = peso1*(-1);
-      	matrix_peso2[origem][destino] = peso2*(-1);
 		id++;
 	}
 	int nA = id; // quantidade de arestas do grafo	
@@ -126,15 +149,49 @@ int main(){
 
     // Set objective: 
     GRBLinExpr exprObjet;
-    for (int i=0; i<n; i++){
-      for (int j=i+1; j<n; j++){
-      	if (arestas[i][j] == 1)
-       		exprObjet.addTerms(&coeficienteObjetv[i][j], &y[i][j],1);
-      }
+    for (int j=0; j<p; j++){
+       	exprObjet = exprObjet + coeficienteObjetv[j]*theta[j];
     }
     cout<<endl;
     model.setObjective(exprObjet,GRB_MINIMIZE); 
 
+
+    for (int j=0; j<p; j++){
+    	GRBLinExpr summ;
+    	GRBLinExpr summ2;
+    	for (int i=0; i<p; i++){
+    		summ   = summ  + z[i][j];
+    		summ2  = summ2 + z[j][i];
+    	}
+    	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
+    	model.addConstr(summ2, GRB_EQUAL, 1,std::to_string(constrCont++));
+    }
+
+
+    for (int i=0; i<p; i++){
+    	GRBLinExpr pesoGeral = 0; 
+    	for (int origem=0; origem<n; origem++){
+    		for (int destino=0; destino<n; destino++){
+    			if (arestas[origem][destino]==1){
+    				pesoGeral = pesoGeral + custos[i][origem][destino]*y[origem][destino];
+    			}
+    		}
+    	}
+    	for (int j=0; j<p; j++){
+    		GRBLinExpr dire = 0;
+    		GRBLinExpr summ2 = 0;  
+    		for (int k=j; k<p; k++){
+    			summ2 = summ2 + z[i][k];
+    		}
+    		dire = dire + theta[j] + M*(1 - summ2);
+    		model.addConstr(pesoGeral, GRB_LESS_EQUAL,summ2,std::to_string(constrCont++));
+  
+    	}
+    }
+
+    for (int j=0; j<p-1; j++){
+    	model.addConstr(theta[j], GRB_GREATER_EQUAL,theta[j+1],std::to_string(constrCont++));
+    }
 
 
     GRBLinExpr constr5 ;
@@ -142,7 +199,7 @@ int main(){
     double com = -1;
     for (int j=0+1; j<n; j++){
     	if (arestas[0][j] == 1)
-        	constr5.addTerms(&co,&x[0][j],1);
+        	constr5 = constr5 + x[0][j];
     }
     model.addConstr(constr5, GRB_EQUAL, n-1,std::to_string(constrCont++));
   
@@ -189,7 +246,9 @@ int main(){
       }
     }
 
-    int nn = 0; // n do algoritmo de Lokman and Koksalan 	
+
+
+    //int nn = 0; // n do algoritmo de Lokman and Koksalan 	
     /* 
 	* Executa modelo de Fernández (2016) 	
 	*/
@@ -222,54 +281,9 @@ int main(){
 			    }
 			}
 		}
-		S.push_back(result);
-		cout<<"Resultado:"<<endl;
-		printResultado();
-		//int optimstatus;
-		//std::vector<short**> S;
-		 // do{
-			// //cout<<"Inicio"<<endl;
-			
-			// model.optimize();
-			// optimstatus = model.get(GRB_IntAttr_Status);
-			// if (optimstatus != GRB_INFEASIBLE){
-			// 	double sum = 1; // z_tj + 1
-			// 	 for (int i=0; i<n; i++){
-			// 	    for (int j=i+1; j<n; j++){
-			// 	     	if (arestas[i][j] == 1){
-			// 	         	result[i][j] = y[i][j].get(GRB_DoubleAttr_X);
-			// 	     		sum+=(matrix_peso2[i][j])*result[i][j];
-			// 	     	}
-			// 	    }
-			// 	 }
-
-			// 	 GRBLinExpr constr77;
-			// 	 for (int i=0; i<n; i++){
-			// 	 	for (int j=i+1; j<n; j++){
-			// 	 		if (arestas[i][j] == 1){
-			// 	 			constr77.addTerms(&matrix_peso2[i][j], &y[i][j],1);
-			// 	 		}
-			// 	 	}
-			// 	 }
-			// 	// cout<<constr77<<"<="<<sum<<endl;
-			// 	 model.addConstr(constr77, GRB_GREATER_EQUAL, sum,std::to_string(constrCont++));
-		    	
-			// 	S.push_back(result);
-			// 	nn++;
-
-			//  }
-			//  //cout<<"fim"<<endl;
-	  // 	 	} while (optimstatus != GRB_INFEASIBLE)	;
-
-	  // 	 	times(&tempsFinal1);   /* current time */ // clock final
-			// clock_t user_time1 = (tempsFinal1.tms_utime - tempsInit.tms_utime);
-			// cout<<user_time1<<endl;
-			// cout<<(float) user_time1 / (float) sysconf(_SC_CLK_TCK)<<endl;//"Tempo do usuario por segundo : "
-   	
-
-
-
-		 //   	printResultado();
+		//S.push_back(result);
+		// cout<<"Resultado:"<<endl;
+		// printResultado();
 
   	 } catch(GRBException e) {
 	    cout << "Error code = " << e.getErrorCode() << endl;
