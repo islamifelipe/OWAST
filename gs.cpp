@@ -2,7 +2,7 @@
 #=======================================================================
 # Islame Felipe DA COSTA FERNANDES --- Copyright 2017
 #-----------------------------------------------------------------------
-# This code implements the model of Fernández (2016) 
+# This code implements the model of Galand and Spanjaard (2012) 
 # applied to OWA-ST problem with p-objectives (where p is inputted in the instance)
 # and uses the model of Magnanti e Wong (1984) for spanning tree
 #=======================================================================
@@ -23,7 +23,7 @@
 #include <unistd.h>
 using namespace std;
 
-#define M 10000
+#define M 1000000
 
 int n, p;
 struct tms tempsInit, tempsFinal1,tempsFinal2, tempsFinal; // para medir o tempo
@@ -107,12 +107,12 @@ int main(){
 	env.set("OutputFlag","0");
 	GRBModel model = GRBModel(env);;
 
-	GRBVar **y, **x, **z, *theta;
+	GRBVar **y, **x, **z, **r;
 
-  	y = new GRBVar*[n];  // 0's ou 1's
+  	y = new GRBVar*[n];  // 0's ou 1's (y aqui nao é a variavel de galand)
    	x = new GRBVar*[n]; // fluxo
    	z = new GRBVar*[p]; // variavel de Fernández et al (2016)
-   	theta = new GRBVar[p]; //  variavel de Fernández et al (2016)
+   	r = new GRBVar*[p]; //  variavel y de Galand e Spanjaard (2012)
 
    	for (int i=0; i<n;i++){
         y[i] = new GRBVar[n];
@@ -120,97 +120,114 @@ int main(){
    	}
    	for (int o=0; o<p; o++){
    		z[o] = new GRBVar[p];
+      r[o] = new GRBVar[p];
    	}
 
 	int constrCont=0;
 
 	for (int i=0; i<n; i++){
-       for (int j=0; j<n; j++){
-       	arestas[i][j] = 0;
-       }
-  	}
-   	for (int i=0; i<p; i++){
-   		cin>>coeficienteObjetv[i]; 
-   		theta[i] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "th"+std::to_string(i));
-   		//aproveitar esse laço para iniciar a variavel zij =)
-   		for (int j=0; j<p; j++){
-   			z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+std::to_string(i)+std::to_string(j));
-   		}
-   	}
+    for (int j=0; j<n; j++){
+      arestas[i][j] = 0;
+    }
+  }
+ 	for (int i=0; i<p; i++){
+ 		cin>>coeficienteObjetv[i]; 
+ 		//aproveitar esse laço para iniciar a variavel zij =)
+ 		for (int j=0; j<p; j++){
+      z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+std::to_string(i)+std::to_string(j));
+ 		  r[i][j] = model.addVar(0.0, 1000000, 0.0, GRB_CONTINUOUS, "r"+std::to_string(i)+std::to_string(j));
+    
+    }
+ 	}
 
 	while (cin>>origem){
 		cin>>destino;
 		for (int o=0; o<p; o++){
 			cin>>custos[o][origem][destino];
 		}
-		x[origem][destino] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
-        x[destino][origem] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
-      	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
+		x[origem][destino] = model.addVar(0.0, 1000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
+    x[destino][origem] = model.addVar(0.0, 1000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
+    y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
       
-      	arestas[origem][destino] = 1;
-      	arestas[destino][origem] = 1;
+    arestas[origem][destino] = 1;
+    arestas[destino][origem] = 1;
 		id++;
 	}
 	int nA = id; // quantidade de arestas do grafo	
 
-    model.update();
+  model.update();
 
-    // Set objective: 
-    GRBLinExpr exprObjet = 0;
+  // Set objective: 
+  GRBLinExpr omeva = 0;
+  for (int i=0; i<p; i++){
+    GRBLinExpr valrv = 0;
     for (int j=0; j<p; j++){
-       	exprObjet = exprObjet + coeficienteObjetv[j]*theta[j];
+      valrv = valrv + r[i][j];
     }
-    cout<<endl;
-    model.setObjective(exprObjet,GRB_MINIMIZE); 
+    omeva = omeva + coeficienteObjetv[i]*valrv;
+  }
+  model.setObjective(omeva,GRB_MINIMIZE); 
 
 
-    for (int j=0; j<p; j++){
-    	GRBLinExpr summ = 0;
-    	for (int i=0; i<p; i++){
-    		summ   = summ  + z[i][j];
-    	}
-    	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
-    //	cout<<summ<<" = 1"<<endl;
+  for (int j=0; j<p; j++){
+  	GRBLinExpr summ = 0;
+  	for (int i=0; i<p; i++){
+  		summ   = summ  + z[i][j];
+  	}
+  	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
+  //	cout<<summ<<" = 1"<<endl;
 	}
 
 	//cout<<endl;
+  for (int i=0; i<p; i++){
+  	GRBLinExpr summ;
+  	for (int j=0; j<p; j++){
+  		summ   = summ  + z[i][j];
+  	}
+  	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
+  	//cout<<summ<<" = 1"<<endl;
+  }
+
+  for (int i=0; i<p-1; i++){
+    GRBLinExpr summ1 = 0;
+    GRBLinExpr summ2 = 0;
+    for (int j=0; j<p; j++){
+      summ1 = summ1 + r[i][j];
+    }
+    for (int j=0; j<p; j++){
+      summ2 = summ2 + r[i+1][j];
+    }
+    model.addConstr(summ1, GRB_GREATER_EQUAL, summ2,std::to_string(constrCont++));
+  }
+
+  for (int i=0; i<p; i++){
+    for (int j=0; j<p; j++){
+      GRBLinExpr esq = r[i][j];
+      GRBLinExpr dir = M*z[i][j];
+      model.addConstr(esq, GRB_LESS_EQUAL, dir,std::to_string(constrCont++));
+    }
+  }
+
+  for (int j=0; j<p; j++){
+    GRBLinExpr esq = 0;
     for (int i=0; i<p; i++){
-    	GRBLinExpr summ = 0;
-    	for (int j=0; j<p; j++){
-    		summ   = summ  + z[i][j];
-    	}
-    	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
-    	//cout<<summ<<" = 1"<<endl;
+      esq = esq + r[i][j];
     }
-
-    for (int i=0; i<p; i++){
-    	GRBLinExpr pesoGeral = 0; 
-    	for (int origem=0; origem<n; origem++){
-    		for (int destino=origem+1; destino<n; destino++){
-    			if (arestas[origem][destino]==1){
-    				pesoGeral = pesoGeral + custos[i][origem][destino]*y[origem][destino];
-    			}
-    		}
-    	}
-    	for (int j=0; j<p; j++){
-    		GRBLinExpr dire = 0;
-    		GRBLinExpr summ2 = 0;  
-    		for (int k=j; k<p; k++){
-    			summ2 = summ2 + z[i][k];
-    		}
-    		dire = theta[j] + M*(1 - summ2);
-    		model.addConstr(pesoGeral, GRB_LESS_EQUAL,dire,std::to_string(constrCont++));
-    	}
+    GRBLinExpr dir = 0;
+    for(int origem=0; origem<n; origem++){
+      for(int destino=origem+1; destino<n; destino++){
+        if (arestas[origem][destino]==1){
+          dir = dir+ custos[j][origem][destino]*y[origem][destino];
+        }
+      }
     }
+    model.addConstr(esq, GRB_EQUAL, dir,std::to_string(constrCont++));
+  
+  }
 
 
-    for (int j=0; j<p-1; j++){
-    	GRBLinExpr te = theta[j];
-    	GRBLinExpr td = theta[j+1];
-    	model.addConstr(te, GRB_GREATER_EQUAL,td,std::to_string(constrCont++));
-   		//cout<<te<<">="<<td<<endl;
-    }
 
+  // TREE
 
     GRBLinExpr constr5 ;
     double co = 1;
