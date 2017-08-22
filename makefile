@@ -1,16 +1,16 @@
 
-all: lokmanKoksalan.o  gs.o algoritm1 gs
+all: fernandes.o  gs.o fernandes gs
 
 	
-lokmanKoksalan.o : lokmanKoksalan.cpp
-	g++ -lpthread -g -c  lokmanKoksalan.cpp
+fernandes.o : fernandes.cpp
+	g++ -lpthread -g -c  fernandes.cpp
 
 gs.o : gs.cpp
 	g++ -lpthread -g -c  gs.cpp
 
 		
-algoritm1 : lokmanKoksalan.o  
-	g++ -lpthread -m64 -g  -lm -o algoritm1 lokmanKoksalan.o -Llib/ -lgurobi_c++ -lgurobi65 -lm
+fernandes : fernandes.o  
+	g++ -lpthread -m64 -g  -lm -o fernandes fernandes.o -Llib/ -lgurobi_c++ -lgurobi65 -lm
 
 gs : gs.o  
 	g++ -lpthread -m64 -g  -lm -o gs gs.o -Llib/ -lgurobi_c++ -lgurobi65 -lm
