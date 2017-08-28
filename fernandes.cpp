@@ -26,7 +26,6 @@ using namespace std;
 #define M 10000
 
 int n, p;
-struct tms tempsInit, tempsFinal1,tempsFinal2, tempsFinal; // para medir o tempo
 //double coeficienteObjetv[n][n],matrix_peso1[n][n],matrix_peso2[n][n];;
 double *coeficienteObjetv;//valores de w_i (com i de 1 até p)
 vector<double **> custos;  // para guardar os custos. O vector terá 'p' elementos. Cada elemento é uma matriz que guardam o peso 'p' da aresta (i,j)
@@ -39,6 +38,10 @@ void printResultado(){
 	//	double cont11=0, cont22 = 0;
 		//short **result = S[pp];
 		//cout<<"Arvore "<<pp+1<<endl;
+    std::vector<int> vet;
+    for (int i=0; i<p; i++){
+      vet.push_back(0);
+    }
 		for (int i=0; i<n; i++){
 			for (int j=i+1; j<n; j++){
 				if (arestas[i][j] == 1){
@@ -46,32 +49,38 @@ void printResultado(){
 						cout <<i<<" "<<j<<" ";
 						for(int o=0; o<p; o++){
 							cout<<custos[o][i][j]<<" " ;
+              vet[o] += custos[o][i][j];
 						}
 						cout<<endl;
 					}
 				}
 			}
 		}
+    cout<<"(";
+    for (int i=0; i<p; i++){
+      cout<<vet[i]<<" ";
+    }
+    cout<<")"<<endl;
 		cout<<endl;
 	//}	
 }
 
-void *tempo(void *nnnn){
-	while (true){
-		times(&tempsFinal);   /* current time */ // clock final
-		clock_t user_time = (tempsFinal.tms_utime - tempsInit.tms_utime);
-		float sec = (float) user_time / (float) sysconf(_SC_CLK_TCK);
+// void *tempo(void *nnnn){
+// 	while (true){
+// 		times(&tempsFinal);   /* current time */ // clock final
+// 		clock_t user_time = (tempsFinal.tms_utime - tempsInit.tms_utime);
+// 		float sec = (float) user_time / (float) sysconf(_SC_CLK_TCK);
 		
-		if (sec>10800){ // se o tempo limite for atingido, esse if é ativado, o resultado (na ultima iteraçao, se for o caso) é escrito e o programa para 
-			cout<<sec<<endl;
-			cout<<"TEMPO LIMITE ATINGIDO...   " <<endl;
+// 		if (sec>10800){ // se o tempo limite for atingido, esse if é ativado, o resultado (na ultima iteraçao, se for o caso) é escrito e o programa para 
+// 			cout<<sec<<endl;
+// 			cout<<"TEMPO LIMITE ATINGIDO...   " <<endl;
 
-			//printResultado();
-			//cout<<"saindo... valor de ppp="<<ppp<<endl;
-			exit(-1);
-		}
-	}
-}
+// 			//printResultado();
+// 			//cout<<"saindo... valor de ppp="<<ppp<<endl;
+// 			exit(-1);
+// 		}
+// 	}
+// }
 
 /* A instância deve ter
 n p 
@@ -81,6 +90,8 @@ i j v_1 .... v_p
 p é a quantidade de objetivos
 */
 int main(){
+  struct tms tempsInit, initArvores, tempsFinal,tempsFinal2 ; // para medir o tempo
+
 	int origem, destino; // vértices para cada aresta;
 	int id = 0; // id das arestas que leremos do arquivo para criar o grafo
 	cin>>n; // quantidade de vértices do grafo;
@@ -104,7 +115,9 @@ int main(){
 	}
 
 	GRBEnv env = GRBEnv();;
-	env.set("OutputFlag","0");
+	//env.set("OutputFlag","0");
+  env.set(GRB_DoubleParam_TimeLimit, 10800); 
+  env.set(GRB_IntParam_Threads, 1);
 	GRBModel model = GRBModel(env);;
 
 	GRBVar **y, **x, **z, *theta;
@@ -281,18 +294,23 @@ int main(){
 		times(&tempsInit);
 
 
-		// para medir o tempo em caso limite
-		pthread_t thread_time; 
-		pthread_attr_t attr;
-		int nnnnnnnn=0;
-		if(pthread_create(&thread_time, NULL, &tempo, (void*)nnnnnnnn)){ // on criee efectivement la thread de rechaufage
-	        printf("Error to create the thread");
-	        exit(-1);
-	    }
-	    //
+		// // para medir o tempo em caso limite
+		// pthread_t thread_time; 
+		// pthread_attr_t attr;
+		// int nnnnnnnn=0;
+		// if(pthread_create(&thread_time, NULL, &tempo, (void*)nnnnnnnn)){ // on criee efectivement la thread de rechaufage
+	 //        printf("Error to create the thread");
+	 //        exit(-1);
+	 //    }
+	 //    //
 
 	    
 	    model.optimize();
+      times(&tempsFinal); 
+      clock_t user_time = (tempsFinal.tms_utime - tempsInit.tms_utime);
+      float sec = (float) user_time / (float) sysconf(_SC_CLK_TCK);
+      cout<<"Tempo: "<<sec<<" segundos"<<endl;
+      cout<<endl;
 	    int optimstatus = model.get(GRB_IntAttr_Status);
 		if (optimstatus != GRB_INFEASIBLE){
 			for (int i=0; i<n; i++){

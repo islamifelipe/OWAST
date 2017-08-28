@@ -38,13 +38,14 @@ int main(){
 		cout<<"0.0 ";
 	}
 	cout<<endl;
-	int i,j,p1,p2,p3;
+	int i,j,p1,p2,p3,p4;
 	while (cin>>i){
 		cin>>j;
 		cin>>p1;
 		cin>>p2;
 		cin>>p3;
-		cout<<i<<" "<<j<<" "<<p1<<" "<<p2<<" "<<p3<<endl;
+		cin>>p4;
+		cout<<i<<" "<<j<<" "<<p1<<" "<<p2<<" "<<p3<<" "<<p4<<endl;
 	}
 	return 0;
 }
