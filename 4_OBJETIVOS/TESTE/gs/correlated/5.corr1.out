@@ -1,0 +1,49 @@
+Optimize a model with 56 rows, 62 columns and 240 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 168.25
+Presolve removed 8 rows and 7 columns
+Presolve time: 0.00s
+Presolved: 48 rows, 55 columns, 228 nonzeros
+Variable types: 36 continuous, 19 integer (19 binary)
+
+Root relaxation: objective 4.787500e+01, 29 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   47.87500    0    6  168.25000   47.87500  71.5%     -    0s
+H    0     0                     144.0000000   47.87500  66.8%     -    0s
+     0     0   84.25000    0    6  144.00000   84.25000  41.5%     -    0s
+     0     0   85.68750    0    9  144.00000   85.68750  40.5%     -    0s
+     0     0   86.93750    0   10  144.00000   86.93750  39.6%     -    0s
+     0     0   91.09274    0    9  144.00000   91.09274  36.7%     -    0s
+     0     0   94.62500    0   11  144.00000   94.62500  34.3%     -    0s
+     0     0   94.62500    0   11  144.00000   94.62500  34.3%     -    0s
+     0     0   94.95833    0   11  144.00000   94.95833  34.1%     -    0s
+     0     0   94.95833    0   10  144.00000   94.95833  34.1%     -    0s
+     0     2   95.44318    0    9  144.00000   95.44318  33.7%     -    0s
+*   40     9              12     143.2500000  111.12500  22.4%   4.4    0s
+*   70     1              10     117.0000000  117.00000  0.00%   4.6    0s
+
+Cutting planes:
+  MIR: 7
+  Flow cover: 8
+  Network: 1
+
+Explored 71 nodes (488 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.170000000000e+02, best bound 1.170000000000e+02, gap 0.0%
+Tempo: 0.02 segundos
+
+0 1 9 15 14 39 
+1 4 28 69 46 41 
+2 3 31 30 39 29 
+3 4 20 8 9 41 
+(88 122 108 150 )
+

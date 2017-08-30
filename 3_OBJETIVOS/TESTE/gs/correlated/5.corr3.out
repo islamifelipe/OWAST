@@ -1,0 +1,49 @@
+Optimize a model with 45 rows, 48 columns and 183 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve removed 6 rows and 5 columns
+Presolve time: 0.00s
+Presolved: 39 rows, 43 columns, 172 nonzeros
+Variable types: 29 continuous, 14 integer (14 binary)
+Found heuristic solution: objective 196.5000000
+Found heuristic solution: objective 113.5000000
+
+Root relaxation: objective 3.216667e+01, 23 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   32.16667    0    7  113.50000   32.16667  71.7%     -    0s
+     0     0  102.50000    0    6  113.50000  102.50000  9.69%     -    0s
+     0     0  102.50000    0    6  113.50000  102.50000  9.69%     -    0s
+     0     0  106.33333    0    3  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    4  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    3  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    3  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    2  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    3  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    3  113.50000  106.33333  6.31%     -    0s
+     0     0  106.33333    0    4  113.50000  106.33333  6.31%     -    0s
+     0     0  106.34774    0    3  113.50000  106.34774  6.30%     -    0s
+     0     2  107.20833    0    3  113.50000  107.20833  5.54%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+
+Explored 6 nodes (163 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.135000000000e+02, best bound 1.135000000000e+02, gap 0.0%
+Tempo: 0.01 segundos
+
+0 2 2 14 14 
+1 2 42 36 46 
+2 3 19 29 18 
+2 4 29 33 37 
+(92 112 115 )
+

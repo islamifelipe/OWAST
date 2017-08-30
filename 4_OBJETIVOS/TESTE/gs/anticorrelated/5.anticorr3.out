@@ -1,0 +1,51 @@
+Optimize a model with 56 rows, 62 columns and 240 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [3e-01, 3e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve removed 8 rows and 7 columns
+Presolve time: 0.00s
+Presolved: 48 rows, 55 columns, 228 nonzeros
+Variable types: 36 continuous, 19 integer (19 binary)
+Found heuristic solution: objective 209.9997900
+
+Root relaxation: objective 5.112495e+01, 30 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   51.12495    0    7  209.99979   51.12495  75.7%     -    0s
+     0     0  110.06239    0    9  209.99979  110.06239  47.6%     -    0s
+H    0     0                     187.3331460  110.06239  41.2%     -    0s
+     0     0  116.42176    0   14  187.33315  116.42176  37.9%     -    0s
+     0     0  130.82679    0   11  187.33315  130.82679  30.2%     -    0s
+     0     0  130.99987    0   12  187.33315  130.99987  30.1%     -    0s
+     0     0  131.15177    0   14  187.33315  131.15177  30.0%     -    0s
+     0     0  131.41857    0   13  187.33315  131.41857  29.8%     -    0s
+     0     0  131.41857    0   10  187.33315  131.41857  29.8%     -    0s
+     0     2  131.46213    0   10  187.33315  131.46213  29.8%     -    0s
+*   40    14              12     185.3331480  132.83320  28.3%   5.0    0s
+*  106    15               9     180.9998190  148.44985  18.0%   4.8    0s
+
+Cutting planes:
+  Gomory: 3
+  MIR: 16
+  Flow cover: 17
+  Flow path: 2
+  Zero half: 1
+  Network: 2
+
+Explored 159 nodes (855 simplex iterations) in 0.04 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.809998190000e+02, best bound 1.809998190000e+02, gap 0.0%
+Tempo: 0.03 segundos
+
+0 3 92 19 15 18 
+0 4 49 45 53 53 
+1 4 77 27 23 20 
+2 3 62 35 46 32 
+(280 126 137 123 )
+
