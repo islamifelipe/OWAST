@@ -23,7 +23,7 @@
 #include <unistd.h>
 using namespace std;
 
-#define M 10000
+#define M 10000000
 
 int n, p;
 //double coeficienteObjetv[n][n],matrix_peso1[n][n],matrix_peso2[n][n];;
@@ -45,7 +45,7 @@ void printResultado(){
 		for (int i=0; i<n; i++){
 			for (int j=i+1; j<n; j++){
 				if (arestas[i][j] == 1){
-					if (result[i][j] == 1){
+					if (result[i][j] > 0){
 						cout <<i<<" "<<j<<" ";
 						for(int o=0; o<p; o++){
 							cout<<custos[o][i][j]<<" " ;
@@ -115,8 +115,9 @@ int main(){
 	}
 
 	GRBEnv env = GRBEnv();;
-	env.set("OutputFlag","0");
+	//env.set("OutputFlag","0");
   env.set(GRB_DoubleParam_TimeLimit, 10800); 
+  env.set(GRB_IntParam_Threads, 1);
 	GRBModel model = GRBModel(env);;
 
 	GRBVar **y, **x, **z, *theta;
@@ -143,11 +144,12 @@ int main(){
   	}
    	for (int i=0; i<p; i++){
    		cin>>coeficienteObjetv[i]; 
-   		theta[i] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "th"+std::to_string(i));
+   		theta[i] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "th"+std::to_string(i));
    		//aproveitar esse laço para iniciar a variavel zij =)
    		for (int j=0; j<p; j++){
    			z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+std::to_string(i)+std::to_string(j));
-   		}
+   		  
+      }
    	}
 
 	while (cin>>origem){
@@ -155,8 +157,8 @@ int main(){
 		for (int o=0; o<p; o++){
 			cin>>custos[o][origem][destino];
 		}
-		x[origem][destino] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
-        x[destino][origem] = model.addVar(0.0, 10000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
+		x[origem][destino] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
+        x[destino][origem] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
       	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
       
       	arestas[origem][destino] = 1;
@@ -172,29 +174,28 @@ int main(){
     for (int j=0; j<p; j++){
        	exprObjet = exprObjet + coeficienteObjetv[j]*theta[j];
     }
-    cout<<endl;
     model.setObjective(exprObjet,GRB_MINIMIZE); 
 
-
+    // 8b
     for (int j=0; j<p; j++){
     	GRBLinExpr summ = 0;
     	for (int i=0; i<p; i++){
-    		summ   = summ  + z[i][j];
+        summ   = summ  + z[i][j];
     	}
-    	model.addConstr(summ, GRB_EQUAL, 1,std::to_string(constrCont++));
-    //	cout<<summ<<" = 1"<<endl;
-	}
-
-	//cout<<endl;
-    for (int i=0; i<p; i++){
-    	GRBLinExpr summ = 0;
-    	for (int j=0; j<p; j++){
-    		summ   = summ  + z[i][j];
-    	}
-    	model.addConstr(summ == 1,std::to_string(constrCont++));
-    	//cout<<summ<<" = 1"<<endl;
+    	model.addConstr(summ<=1,std::to_string(constrCont++));
     }
 
+	// //8c  // deleted
+ //    for (int i=0; i<p; i++){
+ //    	GRBLinExpr summ = 0;
+ //    	for (int j=0; j<p; j++){
+ //    		summ   = summ  + z[i][j];
+ //    	}
+ //    	model.addConstr(summ == 1,std::to_string(constrCont++));
+ //    	//cout<<summ<<" = 1"<<endl;
+ //    }
+
+  // 8d modified
     for (int i=0; i<p; i++){
     	GRBLinExpr pesoGeral = 0; 
     	for (int origem=0; origem<n; origem++){
@@ -205,23 +206,22 @@ int main(){
     		}
     	}
     	for (int j=0; j<p; j++){
-    		GRBLinExpr dire = 0;
-    		GRBLinExpr summ2 = 0;  
-    		for (int k=j; k<p; k++){
-    			summ2 = summ2 + z[i][k];
-    		}
-    		dire = theta[j] + M*(1 - summ2);
-    		model.addConstr(pesoGeral, GRB_LESS_EQUAL,dire,std::to_string(constrCont++));
+      		GRBLinExpr summ2 = 0;  
+      		for (int k=0; k<j; k++){
+      			summ2 = summ2 + z[i][k];
+      		}
+      		GRBLinExpr dire = theta[j] + M*(summ2);
+      		model.addConstr(pesoGeral <= dire,std::to_string(constrCont++));
     	}
     }
 
-
-    for (int j=0; j<p-1; j++){
-    	GRBLinExpr te = theta[j];
-    	GRBLinExpr td = theta[j+1];
-    	model.addConstr(te, GRB_GREATER_EQUAL,td,std::to_string(constrCont++));
-   		//cout<<te<<">="<<td<<endl;
-    }
+    // 8e deleted
+    // for (int j=0; j<p-1; j++){
+    // 	GRBLinExpr te = theta[j];
+    // 	GRBLinExpr td = theta[j+1];
+    // 	model.addConstr(te, GRB_GREATER_EQUAL,td,std::to_string(constrCont++));
+   	// 	//cout<<te<<">="<<td<<endl;
+    // }
 
 
     GRBLinExpr constr5 ;
@@ -312,6 +312,16 @@ int main(){
       cout<<endl;
 	    int optimstatus = model.get(GRB_IntAttr_Status);
 		if (optimstatus != GRB_INFEASIBLE){
+      // for (int i=0; i<p; i++){
+      //   cout<<"Th"<<i<<" = "<<theta[i].get(GRB_DoubleAttr_X)<<endl;
+      // }
+
+      // for (int i=0; i<p; i++){
+      //   for (int j=0; j<p; j++){
+      //     cout <<"z"<<i<<"_"<<j<<" = "<<z[i][j].get(GRB_DoubleAttr_X)<<endl; 
+          
+      //   }
+      // }
 			for (int i=0; i<n; i++){
 			    for (int j=i+1; j<n; j++){
 			     	if (arestas[i][j] == 1){

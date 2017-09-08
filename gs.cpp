@@ -115,7 +115,7 @@ int main(){
 	}
 
 	GRBEnv env = GRBEnv();;
-	env.set("OutputFlag","0");
+	//env.set("OutputFlag","0");
   env.set(GRB_DoubleParam_TimeLimit, 10800);
 	GRBModel model = GRBModel(env);;
 
