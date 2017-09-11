@@ -21,9 +21,25 @@
 #include "gurobi_c++.h"
 #include <sys/times.h>
 #include <unistd.h>
+#include <sstream>
 using namespace std;
 
 #define M 10000000
+
+template <typename T>
+    std::string to_string(T value)
+    {
+      //create an output string stream
+      std::ostringstream os ;
+
+      //throw the value into the string stream
+      os << value ;
+
+      //convert the string stream into a string and return
+      return os.str() ;
+    }
+
+
 
 int n, p;
 //double coeficienteObjetv[n][n],matrix_peso1[n][n],matrix_peso2[n][n];;
@@ -31,7 +47,6 @@ double *coeficienteObjetv;//valores de w_i (com i de 1 até p)
 vector<double **> custos;  // para guardar os custos. O vector terá 'p' elementos. Cada elemento é uma matriz que guardam o peso 'p' da aresta (i,j)
 short **arestas;
 short **result;
-//std::vector<short**> S; // TODO: nao precisa mais de um vetor
 
 void printResultado(){
 	//for (int pp=0; pp<S.size(); pp++){
@@ -144,10 +159,10 @@ int main(){
   	}
    	for (int i=0; i<p; i++){
    		cin>>coeficienteObjetv[i]; 
-   		theta[i] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "th"+std::to_string(i));
+   		theta[i] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "th"+to_string(i));
    		//aproveitar esse laço para iniciar a variavel zij =)
    		for (int j=0; j<p; j++){
-   			z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+std::to_string(i)+std::to_string(j));
+   			z[i][j] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "z"+to_string(i)+to_string(j));
    		  
       }
    	}
@@ -157,9 +172,9 @@ int main(){
 		for (int o=0; o<p; o++){
 			cin>>custos[o][origem][destino];
 		}
-		x[origem][destino] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(origem)+std::to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
-        x[destino][origem] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+std::to_string(destino)+std::to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
-      	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+std::to_string(origem)+std::to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
+		x[origem][destino] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+to_string(origem)+to_string(destino)); // variavel do modelo de Magnanti e Wong (1984)
+        x[destino][origem] = model.addVar(0.0, 10000000, 0.0, GRB_CONTINUOUS, "x"+to_string(destino)+to_string(origem)); // variavel do modelo de Magnanti e Wong (1984)
+      	y[origem][destino] = model.addVar(0.0, 1.0, 0.0, GRB_BINARY, "y"+to_string(origem)+to_string(destino));  // variavel do modelo de Magnanti e Wong (1984)
       
       	arestas[origem][destino] = 1;
       	arestas[destino][origem] = 1;
@@ -182,7 +197,7 @@ int main(){
     	for (int i=0; i<p; i++){
         summ   = summ  + z[i][j];
     	}
-    	model.addConstr(summ<=1,std::to_string(constrCont++));
+    	model.addConstr(summ<=1,to_string(constrCont++));
     }
 
 	// //8c  // deleted
@@ -191,7 +206,7 @@ int main(){
  //    	for (int j=0; j<p; j++){
  //    		summ   = summ  + z[i][j];
  //    	}
- //    	model.addConstr(summ == 1,std::to_string(constrCont++));
+ //    	model.addConstr(summ == 1,to_string(constrCont++));
  //    	//cout<<summ<<" = 1"<<endl;
  //    }
 
@@ -211,7 +226,7 @@ int main(){
       			summ2 = summ2 + z[i][k];
       		}
       		GRBLinExpr dire = theta[j] + M*(summ2);
-      		model.addConstr(pesoGeral <= dire,std::to_string(constrCont++));
+      		model.addConstr(pesoGeral <= dire,to_string(constrCont++));
     	}
     }
 
@@ -219,7 +234,7 @@ int main(){
     // for (int j=0; j<p-1; j++){
     // 	GRBLinExpr te = theta[j];
     // 	GRBLinExpr td = theta[j+1];
-    // 	model.addConstr(te, GRB_GREATER_EQUAL,td,std::to_string(constrCont++));
+    // 	model.addConstr(te, GRB_GREATER_EQUAL,td,to_string(constrCont++));
    	// 	//cout<<te<<">="<<td<<endl;
     // }
 
@@ -231,7 +246,7 @@ int main(){
     	if (arestas[0][j] == 1)
         	constr5 = constr5 + x[0][j];
     }
-    model.addConstr(constr5, GRB_EQUAL, n-1,std::to_string(constrCont++));
+    model.addConstr(constr5, GRB_EQUAL, n-1,to_string(constrCont++));
   
 
 
@@ -251,7 +266,7 @@ int main(){
       }
       GRBLinExpr constr4 = constr2 - constr3;
       //cout<<constr4<<endl;
-      model.addConstr(constr4, GRB_EQUAL, 1,std::to_string(constrCont++));
+      model.addConstr(constr4, GRB_EQUAL, 1,to_string(constrCont++));
     }
 
     double coef = (double) n - 1;
@@ -263,7 +278,7 @@ int main(){
 	        constr8.addTerms(&coef,&y[i][j],1);
 	        constr9.addTerms(&co  ,&x[i][j],1);
 	        constr9.addTerms(&co  ,&x[j][i],1); //??
-	      	model.addConstr(constr8, GRB_GREATER_EQUAL, constr9,std::to_string(constrCont++));
+	      	model.addConstr(constr8, GRB_GREATER_EQUAL, constr9,to_string(constrCont++));
     	}
       }
     }
@@ -278,30 +293,17 @@ int main(){
 	        constr33.addTerms(&co  ,&x[i][j],1);
 	        constr33.addTerms(&co  ,&x[j][i],1); //???
 	       // cout<<constr22<<GRB_LESS_EQUAL<<constr33<<endl;     
-	        model.addConstr(constr22, GRB_LESS_EQUAL, constr33,std::to_string(constrCont++));
+	        model.addConstr(constr22, GRB_LESS_EQUAL, constr33,to_string(constrCont++));
     	}
       }
     }
 
 
-
-    //int nn = 0; // n do algoritmo de Lokman and Koksalan 	
-    /* 
-	* Executa modelo de Fernández (2016) 	
+  /* 
+	* Executa modelo de Fernández (2016) melhorado 	
 	*/
 	try {
 		times(&tempsInit);
-
-
-		// // para medir o tempo em caso limite
-		// pthread_t thread_time; 
-		// pthread_attr_t attr;
-		// int nnnnnnnn=0;
-		// if(pthread_create(&thread_time, NULL, &tempo, (void*)nnnnnnnn)){ // on criee efectivement la thread de rechaufage
-	 //        printf("Error to create the thread");
-	 //        exit(-1);
-	 //    }
-	 //    //
 
 	    
 	    model.optimize();
