@@ -1,0 +1,51 @@
+Executando Fernandes MODIFICADO
+Optimize a model with 37 rows, 42 columns and 213 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 198
+Presolve removed 5 rows and 7 columns
+Presolve time: 0.00s
+Presolved: 32 rows, 35 columns, 168 nonzeros
+Variable types: 20 continuous, 15 integer (13 binary)
+
+Root relaxation: objective 1.993182e+01, 27 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.93182    0    9  198.00000   19.93182  89.9%     -    0s
+H    0     0                     149.5000000   19.93182  86.7%     -    0s
+     0     0   48.89286    0   10  149.50000   48.89286  67.3%     -    0s
+H    0     0                     146.0000000   48.89286  66.5%     -    0s
+H    0     0                     140.0000000   48.89286  65.1%     -    0s
+     0     0   48.98421    0   10  140.00000   48.98421  65.0%     -    0s
+     0     0   68.07332    0   13  140.00000   68.07332  51.4%     -    0s
+     0     0   70.54201    0   14  140.00000   70.54201  49.6%     -    0s
+     0     0   73.34427    0   10  140.00000   73.34427  47.6%     -    0s
+H    0     0                     124.5000000   73.34427  41.1%     -    0s
+     0     0   73.35009    0   11  124.50000   73.35009  41.1%     -    0s
+     0     0   73.79411    0   13  124.50000   73.79411  40.7%     -    0s
+     0     2   74.38696    0   13  124.50000   74.38696  40.3%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  MIR: 2
+  Flow cover: 9
+  Network: 1
+
+Explored 16 nodes (257 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.245000000000e+02, best bound 1.245000000000e+02, gap 0.0%
+Tempo: 0.01 segundos
+
+0 1 44 28 24 
+0 2 65 14 22 
+0 3 4 30 14 
+1 4 53 11 22 
+(166 83 82 )
+

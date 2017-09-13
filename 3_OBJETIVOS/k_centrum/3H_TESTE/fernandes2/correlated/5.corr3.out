@@ -1,0 +1,54 @@
+Executando Fernandes MODIFICADO
+Optimize a model with 37 rows, 42 columns and 213 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 286
+Presolve removed 5 rows and 7 columns
+Presolve time: 0.00s
+Presolved: 32 rows, 35 columns, 168 nonzeros
+Variable types: 20 continuous, 15 integer (13 binary)
+
+Root relaxation: objective 1.800000e+01, 21 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   18.00000    0    7  286.00000   18.00000  93.7%     -    0s
+H    0     0                     217.0000000   18.00000  91.7%     -    0s
+H    0     0                     189.0000000   18.00000  90.5%     -    0s
+     0     0   55.43176    0    9  189.00000   55.43176  70.7%     -    0s
+H    0     0                     113.5000000   55.43176  51.2%     -    0s
+     0     0   58.19002    0   11  113.50000   58.19002  48.7%     -    0s
+     0     0   62.30443    0   15  113.50000   62.30443  45.1%     -    0s
+     0     0   62.49948    0   14  113.50000   62.49948  44.9%     -    0s
+     0     0   64.78855    0   13  113.50000   64.78855  42.9%     -    0s
+     0     0   65.06108    0   13  113.50000   65.06108  42.7%     -    0s
+     0     0   67.55567    0   13  113.50000   67.55567  40.5%     -    0s
+     0     0   67.97894    0   13  113.50000   67.97894  40.1%     -    0s
+     0     0   71.06809    0   13  113.50000   71.06809  37.4%     -    0s
+     0     0   71.09444    0   13  113.50000   71.09444  37.4%     -    0s
+     0     0   71.34942    0   13  113.50000   71.34942  37.1%     -    0s
+     0     2   71.36751    0   13  113.50000   71.36751  37.1%     -    0s
+
+Cutting planes:
+  MIR: 17
+  Flow cover: 9
+  Zero half: 1
+  Network: 1
+
+Explored 36 nodes (392 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.135000000000e+02, best bound 1.135000000000e+02, gap 0.0%
+Tempo: 0.02 segundos
+
+0 2 2 14 14 
+0 4 36 37 33 
+1 2 42 36 46 
+2 3 19 29 18 
+(99 116 111 )
+

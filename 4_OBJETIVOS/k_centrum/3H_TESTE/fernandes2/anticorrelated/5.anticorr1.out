@@ -1,0 +1,54 @@
+Executando Fernandes MODIFICADO
+Optimize a model with 45 rows, 50 columns and 312 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 344
+Presolve removed 1 rows and 4 columns
+Presolve time: 0.00s
+Presolved: 44 rows, 46 columns, 308 nonzeros
+Variable types: 20 continuous, 26 integer (22 binary)
+
+Root relaxation: objective 1.693750e+01, 27 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   16.93750    0    9  344.00000   16.93750  95.1%     -    0s
+H    0     0                     261.5000000   16.93750  93.5%     -    0s
+H    0     0                     208.7500000   16.93750  91.9%     -    0s
+     0     0   42.37500    0   10  208.75000   42.37500  79.7%     -    0s
+     0     0   52.46411    0   18  208.75000   52.46411  74.9%     -    0s
+H    0     0                     169.2500000   52.46411  69.0%     -    0s
+     0     0   52.97568    0   16  169.25000   52.97568  68.7%     -    0s
+     0     0   57.34111    0   14  169.25000   57.34111  66.1%     -    0s
+     0     0   57.91101    0   19  169.25000   57.91101  65.8%     -    0s
+     0     0   58.73294    0   21  169.25000   58.73294  65.3%     -    0s
+     0     0   59.07610    0   22  169.25000   59.07610  65.1%     -    0s
+     0     0   59.20665    0   21  169.25000   59.20665  65.0%     -    0s
+     0     2   59.28429    0   21  169.25000   59.28429  65.0%     -    0s
+*   27    20              10     156.5000000   61.39573  60.8%   9.0    0s
+
+Cutting planes:
+  Gomory: 5
+  MIR: 54
+  Flow cover: 19
+  Flow path: 5
+  Zero half: 4
+  Network: 8
+
+Explored 593 nodes (2848 simplex iterations) in 0.09 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.565000000000e+02, best bound 1.565000000000e+02, gap 0.0%
+Tempo: 0.09 segundos
+
+0 2 49 66 46 56 
+0 3 47 27 30 15 
+1 4 92 36 47 1 
+3 4 81 8 15 10 
+(269 137 138 82 )
+
