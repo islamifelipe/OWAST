@@ -10,12 +10,13 @@
 #include "rmcPrim.cpp"
 #include "SolucaoEdgeSet.cpp"
 #include "popInicial.cpp"
+#include "vetoresDirecao.cpp"
 using namespace std;
 
 double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
 double w[NUMOBJETIVOS];  // pesos OWA
 SolucaoEdgeSet *populacao[TAMANHOPOPULACAO];
-
+double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -40,11 +41,12 @@ void input(){
 
 int main(){
 
-	input(); // ler instância
+	//input(); // ler instância
 	TRandomMersenne rg( 4549589 );
-	alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	gerarPopulacao(populacao, rg); // gera populaçao inicial
+	Reference_Generation(vetoresDirecoes);
+	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	// gerarPopulacao(populacao, rg); // gera populaçao inicial
 
-	
+
 
 }
