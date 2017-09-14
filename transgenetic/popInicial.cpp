@@ -15,7 +15,8 @@ void alocaPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne
 	}
 }
 
-void gerarPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg){
+// TODO: descartar?
+void gerarPopulacao1(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg){
 	cout<<"================== Populaçao gerada com doRandomWalk ================== "<<endl;
 	int i, cont;
 	for (i=0, cont = 0; cont<(int)PORCENT_RANDOM*TAMANHOPOPULACAO/100 && i<TAMANHOPOPULACAO; i++, cont++){
@@ -56,6 +57,23 @@ void gerarPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne
 		rmcPrim(*populacao[i], lambda, rg);
 		populacao[i]->calculaOwa(w);
 	}
+}
+void gerarPopulacao2(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg, double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS]){
+	cout<<"================== Populaçao gerada pelos vetores direcionais do SPEA/R ================== "<<endl;
+	for (int cont = 0; cont<TAMANHOPOPULACAO; cont++){
+		double lambda[NUMOBJETIVOS];
+		for (int ll=0; ll<NUMOBJETIVOS; ll++){
+			lambda[ll] =  vetoresDirecoes[cont][ll];
+			cout<<lambda[ll]<<" ";
+		} 
+		cout<<endl;
+		rmcPrim(*populacao[cont], lambda, rg);
+		populacao[cont]->calculaOwa(w);
+		populacao[cont]->printSolucao();
+		cout<<endl;
+		cout<<endl;
+	}
+
 }
 
 

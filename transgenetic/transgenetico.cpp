@@ -41,12 +41,14 @@ void input(){
 
 int main(){
 
-	//input(); // ler instância
+	input(); // ler instância
 	TRandomMersenne rg( 4549589 );
 	Reference_Generation(vetoresDirecoes);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao(populacao, rg); // gera populaçao inicial
-
+	alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
+	for (int i=0; i<TAMANHOPOPULACAO; i++){
+		cout<<populacao[i]->getOWA()<<endl;
+	}
 
 
 }
