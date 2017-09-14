@@ -27,9 +27,11 @@ class SolucaoEdgeSet : public Solucao {
 	int nEdges;
 	UnionFind uf;
 	grafo *g;
+	double owa_value;
 	double antigof[NUMOBJETIVOS];
 
 	SolucaoEdgeSet(int n,TRandomMersenne &r) {
+		
 		nEdges = n;
 		for (int i=0; i<NUMOBJETIVOS; i++){
 			f[i]=0;
@@ -50,15 +52,17 @@ class SolucaoEdgeSet : public Solucao {
     }
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
-    double getOwa(double w[NUMOBJETIVOS]){
+    void calculaOwa(double w[NUMOBJETIVOS]){
     	std::vector<int> myvector(f, f+NUMOBJETIVOS); 
 		std::sort (myvector.begin(), myvector.end(), myfunction); 
 		double ret = 0;
 		for (int i=0; i<NUMOBJETIVOS; i++){
 			ret += w[i]*myvector[i];
 		}
-		return ret;
-		
+		owa_value = ret;
+    }
+    double getOWA(){
+    	return owa_value;
     }
 
 	/* Calcula o fitness atual da solucao

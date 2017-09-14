@@ -25,10 +25,16 @@
 #define f(k,i,j) custos[k][i][j] // objetivo k, vertice i j 
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
-#define NUMOBJETIVOS 4 // Varia
+#define NUMOBJETIVOS 10 // Varia
 #define NUMEROVERTICES 15 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
+/*Parâmetros da populçao*/
+#define TAMANHOPOPULACAO 100
+#define PORCENT_RANDOM 25
+#define PORCENT_KCENTRUM 25
+#define PORCENT_KTRIMENT 25
+#define PORCENT_HURWICZ 25
 
 // Parametros do transgenético
 
@@ -39,7 +45,6 @@
 
 #define NUMSOLTRANSPOSON 3
 
-#define TAMANHOPOPULACAO 150 /* FIXME 200 */
 #define NUMEROITERACOES 30 /* FIXME 500 */
 #define NUMEROMCPRIM 142   /* NUMERO DE SOLUCOES INICIAIS GERADAS PELO MCPRIM */
 #define ALGORITMOCONVERGIU 10 /* NUMERO DE GERACOES SEM MUDANCA NO PARETO SET PARA DIVERSIFICAR */

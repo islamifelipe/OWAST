@@ -2,6 +2,8 @@
 #ifndef AUXEDGESTRUCT_H
 #define AUXEDGESTRUCT_H
 
+/*This code file was kindly provided by Monteiro */
+
 struct auxEdgeStruct {
 
 	int a;
