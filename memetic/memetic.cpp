@@ -34,6 +34,7 @@ void input(){
 			if (dest!=j) cout<<"ERRO Leitura 2"<<endl;
 			for (int ob = 0; ob<NUMOBJETIVOS; ob++){
 				cin>>custos[ob][i][j];
+				custos[ob][j][i] = custos[ob][i][j];
 			}
 		}
 	}
@@ -42,7 +43,7 @@ void input(){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 4549589 );
+	TRandomMersenne rg( 45458992 );
 	Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
@@ -58,4 +59,13 @@ int main(){
 	nova->printSolucao();
 	nova->calculaOwa(w);
 	cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
+	SolucaoEdgeSet *viz = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	cout<<endl;
+	int a1 = rg.IRandom(0,NUMEROVERTICES-1-1), a2;
+	while ((a2 = rg.IRandom(0,NUMEROVERTICES-1-1)) == a1);
+	viz->trocaArestas(a1,a2,viz->calcularTrocaArestas(a1,a2,*nova),*nova);
+	cout<<"Troca as arestas "<<a1<<" "<<a2<<endl;
+	viz->printSolucao();
+	viz->calculaOwa(w);
+	cout<<"OWA NOVA = "<<viz->getOWA()<<endl;
 }
