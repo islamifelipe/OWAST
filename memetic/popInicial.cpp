@@ -64,14 +64,14 @@ void gerarPopulacao2(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 		double lambda[NUMOBJETIVOS];
 		for (int ll=0; ll<NUMOBJETIVOS; ll++){
 			lambda[ll] =  vetoresDirecoes[cont][ll];
-			cout<<lambda[ll]<<" ";
+			//cout<<lambda[ll]<<" ";
 		} 
-		cout<<endl;
+		//cout<<endl;
 		rmcPrim(*populacao[cont], lambda, rg);
 		populacao[cont]->calculaOwa(w);
-		populacao[cont]->printSolucao();
-		cout<<endl;
-		cout<<endl;
+		// populacao[cont]->printSolucao();
+		// cout<<endl;
+		//cout<<endl;
 	}
 
 }

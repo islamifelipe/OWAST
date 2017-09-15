@@ -46,9 +46,16 @@ int main(){
 	Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
-	for (int i=0; i<TAMANHOPOPULACAO; i++){
-		cout<<populacao[i]->getOWA()<<endl;
-	}
-
-
+	
+	SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	populacao[0]->printSolucao();
+	cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;
+	cout<<endl;
+	populacao[1]->printSolucao();
+	cout<<"OWA pai = "<<populacao[1]->getOWA()<<endl;
+	cout<<endl;
+	nova->crossover(*populacao[0], *populacao[1]);
+	nova->printSolucao();
+	nova->calculaOwa(w);
+	cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
 }

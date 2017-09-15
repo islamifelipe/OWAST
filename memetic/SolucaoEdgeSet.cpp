@@ -1,6 +1,6 @@
 #ifndef SOLUCAOZG_CPP
 #define SOLUCAOZG_CPP
-/*This code file was kindly provided by Monteiro */
+/*This code file was kindly and partially provided by Monteiro */
 
 #include <cstdio>
 #include <queue>
@@ -76,8 +76,7 @@ class SolucaoEdgeSet : public Solucao {
 				f[j] += f(j,edges[i][0],edges[i][1]);
 	}
 
-	/* gera uma arvore aleatoria
-	 * Complexidade n */
+	// para grafos completos
     void doRandomWalk() {
 
         int vertlist [NUMEROVERTICES];
@@ -94,8 +93,8 @@ class SolucaoEdgeSet : public Solucao {
         int cont = 0;
         while (cont < NUMEROVERTICES-1) {
 
-            viz1 = vertlist [rg->IRandom(vertctr+1, NUMEROVERTICES-1)];
-            viz2_ind = rg->IRandom(0,vertctr);
+            viz1 = vertlist [rg->IRandom(vertctr+1, NUMEROVERTICES-1)]; // sorteia algum vértice ja na arvore
+            viz2_ind = rg->IRandom(0,vertctr);// sorteia um fora
             viz2 = vertlist[viz2_ind];
 
             vertlist [viz2_ind] = vertlist[vertctr];
@@ -115,45 +114,62 @@ class SolucaoEdgeSet : public Solucao {
     }
 
 
+    // para grafos completos e incompletos
+   	void RandomWalk(bool unionGraph[NUMEROVERTICES][NUMEROVERTICES]){
+		int v = rg->IRandom(0, NUMEROVERTICES-1); // vertice inicial
+		int cont = 0;
+		bool isVisitado[NUMEROVERTICES];
+		for (int i=0; i<NUMEROVERTICES; i++)isVisitado[i] = false;
+		isVisitado[v] = true;
+		while (cont<NUMEROVERTICES-1){
+			vector<int> verticesAdjacentes;
+			//olha os vizinhos de v
+			for (int i=0; i<NUMEROVERTICES; i++){
+				if (i!=v && unionGraph[i][v]==true){ // grafo possivelmente nao completo
+					verticesAdjacentes.push_back(i);
+				}
+			}
 
-	// /* Gera um individuo aleatorio
-	//  * Complexidade O(n lg n) */
-	// void geraIndividuoAleatorio() {
-	//     g = new grafo;
-	// 	g->completo = true;
+			if (verticesAdjacentes.size()>0){
+				int viz = verticesAdjacentes[rg->IRandom(0, verticesAdjacentes.size()-1)];
+				if (isVisitado[viz] == false){//agora verificamos se o vertice vizinho nao foi vizitado
+					if (v<viz) {
+			            edges[cont][0] = v;
+			            edges[cont][1] = viz;
+			        } else {
+			        	edges[cont][0] = viz;
+			            edges[cont][1] = v;
+			        }
+					isVisitado[viz] = true;
+					cont++;		
+				} 
+				v = viz;
+			} else {
+				cout<<"ERRO"<<endl;
+			}
+		}
+	} 
 
-	// 	for (int i=0;i<NUMEROVERTICES;i++)
-	// 			g->graus[i] = NUMEROVERTICES;
-	// 	doRandomWalk();
-	// 	delete g;
-	// }
+    /* Faz o crossover entre dois individuos.
+    BAseado no crossover sugerido por Raidl and Julstrom (2003)*/
+	void crossover(const SolucaoEdgeSet &pai, const SolucaoEdgeSet &mae) {
+		bool unionGraph[NUMEROVERTICES][NUMEROVERTICES];
+		memset(unionGraph,false,sizeof(unionGraph));
 
-	// /* Faz o crossover entre dois individuos
-	//  * Complexidade O(n lg n) */
-	// void crossover(const SolucaoEdgeSet &pai, const SolucaoEdgeSet &mae) {
-	// 	bool adicionado[NUMEROVERTICES][NUMEROVERTICES];
-	// 	memset(adicionado,0,sizeof(adicionado));
-	// 	g = new grafo;
-	// 	g->completo = false;
-	// 	memset(g->graus,0,sizeof(g->graus));
+		for (int i=0;i<NUMEROVERTICES-1;i++) {
+			if (!unionGraph[pai.edges[i][0]][pai.edges[i][1]]) {
+				unionGraph[pai.edges[i][0]][pai.edges[i][1]] = unionGraph[pai.edges[i][1]][pai.edges[i][0]] = true;
+			}
+		}
+		for (int i=0;i<NUMEROVERTICES-1;i++) {
+			if (!unionGraph[mae.edges[i][0]][mae.edges[i][1]]) {
+				unionGraph[mae.edges[i][0]][mae.edges[i][1]] = unionGraph[mae.edges[i][1]][mae.edges[i][0]] = true;
+			}
+		}
+		RandomWalk(unionGraph);
+		calcularObjetivos();
+	}
 
-	// 	for (int i=0;i<NUMEROVERTICES-1;i++) {
-	// 		if (!adicionado[pai.edges[i][0]][pai.edges[i][1]]) {
-	// 			adicionado[pai.edges[i][0]][pai.edges[i][1]] = adicionado[pai.edges[i][1]][pai.edges[i][0]] = true;
-	// 			g->listaadj[pai.edges[i][0]][g->graus[pai.edges[i][0]]++] = pai.edges[i][1];
-	// 			g->listaadj[pai.edges[i][1]][g->graus[pai.edges[i][1]]++] = pai.edges[i][0];
-	// 		}
-	// 	}
-	// 	for (int i=0;i<NUMEROVERTICES-1;i++) {
-	// 		if (!adicionado[mae.edges[i][0]][mae.edges[i][1]]) {
-	// 			adicionado[mae.edges[i][0]][mae.edges[i][1]] = adicionado[mae.edges[i][1]][mae.edges[i][0]] = true;
-	// 			g->listaadj[mae.edges[i][0]][g->graus[mae.edges[i][0]]++] = mae.edges[i][1];
-	// 			g->listaadj[mae.edges[i][1]][g->graus[mae.edges[i][1]]++] = mae.edges[i][0];
-	// 		}
-	// 	}
-	// 	doRandomWalk();
-	// 	delete g;
-	// }
 
 	// /* Faz a troca das arestas ai e aj, religando no formato 2-OPT
 	//  * Complexidade O(1) */

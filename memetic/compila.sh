@@ -4,7 +4,7 @@
 	#mkdir instancias/executaveis/$k
 #	echo "#define NUMEROVERTICES $k" >> param.h
 	
-	g++ transgenetico.cpp rand/mersenne.o -Wall -O3 -o transv5_15 #$15
+	g++ memetic.cpp rand/mersenne.o -Wall -O3 -o meme5_15 #$15
 	#mkdir instancias/executaveis/$k/correlated
 	#mkdir instancias/executaveis/$k/anticorrelated
 	#mkdir instancias/executaveis/$k/concave
