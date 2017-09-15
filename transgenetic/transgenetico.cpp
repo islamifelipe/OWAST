@@ -34,6 +34,7 @@ void input(){
 			if (dest!=j) cout<<"ERRO Leitura 2"<<endl;
 			for (int ob = 0; ob<NUMOBJETIVOS; ob++){
 				cin>>custos[ob][i][j];
+				custos[ob][j][i] = custos[ob][i][j];
 			}
 		}
 	}

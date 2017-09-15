@@ -48,6 +48,7 @@ int main(){
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
 	
+
 	SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	populacao[0]->printSolucao();
 	cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;

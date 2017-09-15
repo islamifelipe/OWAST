@@ -9,7 +9,7 @@
 #define f(k,i,j) custos[k][i][j] // objetivo k, vertice i j 
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
-#define NUMOBJETIVOS 8 // Varia
+#define NUMOBJETIVOS 4 // Varia
 #define NUMEROVERTICES 15 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
