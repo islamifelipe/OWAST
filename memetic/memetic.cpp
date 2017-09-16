@@ -11,6 +11,8 @@
 #include "SolucaoEdgeSet.cpp"
 #include "popInicial.cpp"
 #include "vetoresDirecao.cpp"
+#include "tabuSearch.cpp"
+#include "simulatedannealing.cpp"
 using namespace std;
 
 double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
@@ -47,26 +49,33 @@ int main(){
 	Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
-	
+
 
 	SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	populacao[0]->printSolucao();
 	cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;
 	cout<<endl;
-	populacao[1]->printSolucao();
-	cout<<"OWA pai = "<<populacao[1]->getOWA()<<endl;
+	populacao[5]->printSolucao();
+	cout<<"OWA pai = "<<populacao[5]->getOWA()<<endl;
 	cout<<endl;
-	nova->crossover(*populacao[0], *populacao[1]);
+	nova->crossover(*populacao[0], *populacao[5]);
 	nova->printSolucao();
 	nova->calculaOwa(w);
 	cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
-	SolucaoEdgeSet *viz = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	cout<<endl;
-	int a1 = rg.IRandom(0,NUMEROVERTICES-1-1), a2;
-	while ((a2 = rg.IRandom(0,NUMEROVERTICES-1-1)) == a1);
-	viz->trocaArestas(a1,a2,viz->calcularTrocaArestas(a1,a2,*nova),*nova);
-	cout<<"Troca as arestas "<<a1<<" "<<a2<<endl;
-	viz->printSolucao();
-	viz->calculaOwa(w);
-	cout<<"OWA NOVA = "<<viz->getOWA()<<endl;
+	SA(*populacao[5], rg);
+	populacao[5]->printSolucao();
+	cout<<"OWA populacao[5] = "<<populacao[5]->getOWA()<<endl;
+	populacao[5]->calculaOwa(w);
+	cout<<"OWA populacao[5] RECALCULADO = "<<populacao[5]->getOWA()<<endl;
+	
+	// cout<<endl;
+	// int a1 = rg.IRandom(0,NUMEROVERTICES-1-1), a2;
+	// while ((a2 = rg.IRandom(0,NUMEROVERTICES-1-1)) == a1);
+	// viz->trocaArestas(a1,a2,viz->calcularTrocaArestas(a1,a2,*nova),*nova);
+	// cout<<"Troca as arestas "<<a1<<" "<<a2<<endl;
+	// viz->printSolucao();
+	// viz->calculaOwa(w);
+	// cout<<"OWA NOVA = "<<viz->getOWA()<<endl;
+
 }

@@ -25,6 +25,19 @@
 #define PORCENT_KTRIMENT 25
 #define PORCENT_HURWICZ 25
 
+/*Parâmetros da busca tabu*/
+#define MAX_ITERATIONS 20
+#define MAX_VIZINHOS 20
+#define TABUTENURE 3 
+
+/*Parâmetros para o Simulated Annealing*/
+#define TEMPERATURA 40 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 2.5
+#define ITERACAO_K 20 // vai sendo multiplicado por FATORDECAIMENTO
+// O algoritmo para quando a temperatura for menor que 1
+// quanto menor a temperatura, maior a quantidade de iteraçoes
+
+
 #endif
 
 

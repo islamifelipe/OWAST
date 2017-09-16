@@ -28,7 +28,7 @@ class SolucaoEdgeSet : public Solucao {
 	UnionFind uf;
 	//grafo *g;
 	double owa_value;
-	double antigof[NUMOBJETIVOS];
+	//double antigof[NUMOBJETIVOS];
 
 	SolucaoEdgeSet(int n,TRandomMersenne &r) {
 		
@@ -50,6 +50,15 @@ class SolucaoEdgeSet : public Solucao {
 			s.f[i] = f[i];
 		}
     }
+
+    void operator=(SolucaoEdgeSet &s) {
+		nEdges = s.nEdges;
+		for (int i=0; i<NUMOBJETIVOS; i++){
+			f[i] = s.f[i];
+		}
+		memcpy(edges,s.edges,sizeof(edges));
+		owa_value = s.owa_value;
+	}
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
     void calculaOwa(double w[NUMOBJETIVOS]){
@@ -268,7 +277,11 @@ class SolucaoEdgeSet : public Solucao {
 		return tipoTroca;
 	}
 
-
+	void mutacao(SolucaoEdgeSet &sol){
+		int a1 = rg->IRandom(0,NUMEROVERTICES-1-1), a2;
+		while ((a2 = rg->IRandom(0,NUMEROVERTICES-1-1)) == a1);
+		trocaArestas(a1,a2,calcularTrocaArestas(a1,a2,sol),sol);
+	}
 
 };
 
