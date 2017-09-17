@@ -7,6 +7,7 @@
 #include <iostream>
 using namespace std;
 
+/*Nao utilizado no momento !!!!!*/
 
 // Baseado no trabalho de Rocha et al (2006)
 /*a busca tabu edita a solucao 'sol' que foi passada como argumento*/

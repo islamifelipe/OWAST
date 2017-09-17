@@ -20,12 +20,17 @@
 
 /*Parâmetros da populçao*/
 #define TAMANHOPOPULACAO (NUMDIRECOES) //#define TAMANHOPOPULACAO 100
-#define PORCENT_RANDOM 25
-#define PORCENT_KCENTRUM 25
-#define PORCENT_KTRIMENT 25
-#define PORCENT_HURWICZ 25
+#define PORCENT_RANDOM 25 //--- NAO UTILIZADO NO MOMENTO
+#define PORCENT_KCENTRUM 25 //--- NAO UTILIZADO NO MOMENTO
+#define PORCENT_KTRIMENT 25 //--- NAO UTILIZADO NO MOMENTO
+#define PORCENT_HURWICZ 25 //--- NAO UTILIZADO NO MOMENTO
 
-/*Parâmetros da busca tabu*/
+/*Parâmetros do GA*/
+#define TAXADECRUZAMENTO 0.9  // 90% por geraçao
+#define TAXADEMUTACAO 0.1 // 10% por geraçao
+#define QUANTGERACOES 40 // quantidade de iteracoes do M-GA
+
+/*Parâmetros da busca tabu -- NAO UTILIZADO NO MOMENTO*/
 #define MAX_ITERATIONS 20
 #define MAX_VIZINHOS 20
 #define TABUTENURE 3 

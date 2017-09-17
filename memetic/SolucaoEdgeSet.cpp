@@ -243,7 +243,7 @@ class SolucaoEdgeSet : public Solucao {
 		// Complexidade O(n)
 		// uniao busca
 		uf.clear();
-		for (int k=0;k<NUMOBJETIVOS;k++) f[k] = 0.0;
+		for (int k=0;k<NUMOBJETIVOS;k++) f[k] = 0.0; // (re)inicializa os objetivos
 		
 		for (int i=0;i<NUMEROVERTICES-1;i++)
 			if (i != ai && i != aj) {
