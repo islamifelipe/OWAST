@@ -6,6 +6,7 @@
 #include "rand/randomc.h"
 
 
+#define PI 3.14159265
 #define f(k,i,j) custos[k][i][j] // objetivo k, vertice i j 
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 

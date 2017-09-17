@@ -6,6 +6,7 @@
 #include <sys/times.h>
 #include <sys/types.h>
 #include <iostream>
+#include <math.h>       /* acos, cos */
 
 #include "rmcPrim.cpp"
 #include "SolucaoEdgeSet.cpp"
@@ -13,6 +14,7 @@
 #include "vetoresDirecao.cpp"
 #include "tabuSearch.cpp"
 #include "simulatedannealing.cpp"
+
 using namespace std;
 
 double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
@@ -81,16 +83,10 @@ void Objective_Normalization(){
 			populacao[p]->f_normalized[i] = (populacao[p]->getObj(i) - ideal[i])/(pior[i]- ideal[i]+1); /// TUDO : +1 ? 
 		}
 	}
+}
 
-	cout<<"Ideal poit : ";
-	for (int i=0; i<NUMOBJETIVOS; i++){
-		cout<<ideal[i]<<" ";
-	}
-	cout<<"\nWrost poit : ";
-	for (int i=0; i<NUMOBJETIVOS; i++){
-		cout<<pior[i]<<" ";;
-	}
-	cout<<endl;
+void Associate() {
+	
 }
 
 SolucaoEdgeSet * memetic(TRandomMersenne &rg){
