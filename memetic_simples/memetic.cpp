@@ -44,7 +44,7 @@ void input(){
 
 void setOtimo(SolucaoEdgeSet * otimo){
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
-		if (populacao[i]->getOWA()<otimo->getOWA()) otimo = populacao[i];
+		if (populacao[i]->getOWA()<otimo->getOWA()) *otimo = *populacao[i];
 	}
 }
 
@@ -60,7 +60,7 @@ void getlite(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 		uniao.push_back(novaPop[i]);
 	}
 	std::sort (uniao.begin(), uniao.end(), comparae);
-	for (int i=0; i<TAMANHOPOPULACAO; i++) populacao[i]  = uniao[i];
+	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
 
 }
 
@@ -74,7 +74,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	//Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao1(populacao, rg); // gera populaçao inicial
-	otimo = populacao[0];
+	*otimo = *populacao[0];
 	int p1,p2,p3,p4;
 
 	SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]; // cria-se uma populaçao de descentes
@@ -82,7 +82,11 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		setOtimo(otimo);
-		cout<<"Geraçao "<<i+1<<endl;
+		cout<<"Geraçao "<<i+1<<"  Otimo = "<<otimo->getOWA()<<endl;
+		// for (int ppp=0; ppp<TAMANHOPOPULACAO; ppp++){
+		// 	cout<<"\t"<<populacao[ppp]->getOWA()<<endl;
+		// }
+		// cout<<"\n"<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -134,7 +138,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 45458992 );
+	TRandomMersenne rg( 309405904950 );
 
 	// Reference_Generation(vetoresDirecoes);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial

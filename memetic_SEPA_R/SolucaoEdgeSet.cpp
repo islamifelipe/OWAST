@@ -11,6 +11,7 @@
 #include <algorithm> // std::sort
 #include <iostream>
 #include <utility>      // std::pair
+#include <climits>      // std::pair
 
 using namespace std;
 
@@ -33,6 +34,7 @@ class SolucaoEdgeSet : public Solucao {
 	int index_subregiao; /// index da subregiao a qual pertence a seluçao SPEA/R
 	double theta_angulo; /// ângulo agudo que a solucao faz com o vetor de definidor da regiao a qual ele pertence (SPEA/R)
 	//double antigof[NUMOBJETIVOS];
+	double fitness;
 
 	SolucaoEdgeSet(int n,TRandomMersenne &r) {
 		
@@ -43,13 +45,15 @@ class SolucaoEdgeSet : public Solucao {
 		}
 		rg = &r;
 		index_subregiao = -1; // nao foi associado ainda
+		fitness = INT_MAX;
+		theta_angulo = 0;
 		//g = NULL;
 	}
 	~SolucaoEdgeSet() {
 
 	}
 
-    // copia somente os valores de fitness
+    
     // util para guardar copias de solucoes somente para comparacao
     void shallowCopy(SolucaoEdgeSet &s) {
         for (int i=0; i<NUMOBJETIVOS; i++){
@@ -67,6 +71,8 @@ class SolucaoEdgeSet : public Solucao {
 		memcpy(edges,s.edges,sizeof(edges));
 		owa_value = s.owa_value;
 		index_subregiao = s.index_subregiao;
+		theta_angulo = s.theta_angulo;
+		fitness = s.fitness;
 	}
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
@@ -83,8 +89,7 @@ class SolucaoEdgeSet : public Solucao {
     	return owa_value;
     }
 
-	/* Calcula o fitness atual da solucao
-	 */
+	
 	void calcularObjetivos() {
 		for (int j=0;j<NUMOBJETIVOS;j++){
 			f[j] = 0.0;
