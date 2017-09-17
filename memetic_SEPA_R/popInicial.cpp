@@ -15,7 +15,6 @@ void alocaPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne
 	}
 }
 
-// TODO: descartar?
 void gerarPopulacao1(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg){
 	cout<<"================== Populaçao gerada com doRandomWalk ================== "<<endl;
 	int i, cont;
