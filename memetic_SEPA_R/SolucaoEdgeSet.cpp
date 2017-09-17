@@ -30,7 +30,8 @@ class SolucaoEdgeSet : public Solucao {
 	//grafo *g;
 	double owa_value;
 	double f_normalized[NUMOBJETIVOS]; /*USando pelo Q(barra) do SPEA/R*/
-	
+	int index_subregiao; /// index da subregiao a qual pertence a seluçao SPEA/R
+	double theta_angulo; /// ângulo agudo que a solucao faz com o vetor de definidor da regiao a qual ele pertence (SPEA/R)
 	//double antigof[NUMOBJETIVOS];
 
 	SolucaoEdgeSet(int n,TRandomMersenne &r) {
@@ -41,6 +42,7 @@ class SolucaoEdgeSet : public Solucao {
 			f_normalized[i] = 0;
 		}
 		rg = &r;
+		index_subregiao = -1; // nao foi associado ainda
 		//g = NULL;
 	}
 	~SolucaoEdgeSet() {
@@ -64,6 +66,7 @@ class SolucaoEdgeSet : public Solucao {
 		}
 		memcpy(edges,s.edges,sizeof(edges));
 		owa_value = s.owa_value;
+		index_subregiao = s.index_subregiao;
 	}
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente

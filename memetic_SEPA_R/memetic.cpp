@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <iostream>
 #include <math.h>       /* acos, cos */
+#include <climits>
 
 #include "rmcPrim.cpp"
 #include "SolucaoEdgeSet.cpp"
@@ -86,7 +87,32 @@ void Objective_Normalization(){
 }
 
 void Associate() {
-	
+	for (int q=0; q<TAMANHOPOPULACAO; q++){ //para o individuo q ...
+		double minAngulo = INT_MAX;
+		int indexw = 0;
+		for (int w = 0; w<NUMDIRECOES; w++){  // olha-se o ângulo de cada vetor e pega-se o menor
+			double produtoInterno = 0;
+			double normaSol = 0;
+			double normaDirecao = 0;
+			for (int j=0; j<NUMOBJETIVOS; j++){
+				produtoInterno += populacao[q]->f_normalized[j]*vetoresDirecoes[w][j];
+				normaSol += populacao[q]->f_normalized[j]*populacao[q]->f_normalized[j];
+				normaDirecao += vetoresDirecoes[w][j]*vetoresDirecoes[w][j];
+			}
+			normaSol = sqrt(normaSol);
+			normaDirecao = sqrt(normaDirecao);
+			// acos dá o ângulo do arco-cosceno em radianos. Transformamos pra graus
+			double angulo = acos (produtoInterno/(normaDirecao*normaSol)) * (180.0 / PI);
+			//cout<<"\tângulo vetor "<<w<<" = "<<angulo<<endl;
+			if (angulo<minAngulo){
+				minAngulo = angulo;
+				indexw = w;
+			}
+		}
+		populacao[q]->theta_angulo = minAngulo;
+		populacao[q]->index_subregiao = indexw;
+	//	cout<<"Menor  = "<<populacao[q]->theta_angulo<<" regiao : "<<populacao[q]->index_subregiao<<endl;
+	}
 }
 
 SolucaoEdgeSet * memetic(TRandomMersenne &rg){
@@ -161,10 +187,14 @@ int main(){
 	input(); // ler instância
 	TRandomMersenne rg( 45458992 );
 	
-	// Reference_Generation(vetoresDirecoes);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
-	
+	Reference_Generation(vetoresDirecoes);
+	alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
+	Objective_Normalization();
+	Associate();
+
+
+
 	// Objective_Normalization();
 	// for (int i=0; i<TAMANHOPOPULACAO; i++){
 	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
@@ -192,8 +222,8 @@ int main(){
 	// nova->calculaOwa(w);
 	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
 
-	SolucaoEdgeSet *otimo  = memetic(rg);
-	otimo->printSolucao();
-	cout<<"OWA = "<<otimo->getOWA()<<endl;
+	// SolucaoEdgeSet *otimo  = memetic(rg);
+	// otimo->printSolucao();
+	// cout<<"OWA = "<<otimo->getOWA()<<endl;
 
 }
