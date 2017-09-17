@@ -10,7 +10,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 4 // Varia
-#define NUMEROVERTICES 15 // TESTE
+#define NUMEROVERTICES 45 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -28,7 +28,7 @@
 /*Parâmetros do GA*/
 #define TAXADECRUZAMENTO 0.9  // 90% por geraçao
 #define TAXADEMUTACAO 0.1 // 10% por geraçao
-#define QUANTGERACOES 40 // quantidade de iteracoes do M-GA
+#define QUANTGERACOES 30 // quantidade de iteracoes do M-GA
 
 /*Parâmetros da busca tabu -- NAO UTILIZADO NO MOMENTO*/
 #define MAX_ITERATIONS 20
@@ -36,9 +36,9 @@
 #define TABUTENURE 3 
 
 /*Parâmetros para o Simulated Annealing*/
-#define TEMPERATURA 40 // vai sendo dividido por FATORDECAIMENTO
-#define FATORDECAIMENTO 2.5
-#define ITERACAO_K 20 // vai sendo multiplicado por FATORDECAIMENTO
+#define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 1.8
+#define ITERACAO_K 15 // vai sendo multiplicado por FATORDECAIMENTO
 // O algoritmo para quando a temperatura for menor que 1
 // quanto menor a temperatura, maior a quantidade de iteraçoes
 

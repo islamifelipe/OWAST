@@ -10,6 +10,7 @@
 #include "auxEdgeStruct.h"
 #include <algorithm> // std::sort
 #include <iostream>
+#include <utility>      // std::pair
 
 using namespace std;
 
@@ -123,41 +124,71 @@ class SolucaoEdgeSet : public Solucao {
     }
 
 
-    // para grafos completos e incompletos
-   	void RandomWalk(bool unionGraph[NUMEROVERTICES][NUMEROVERTICES]){
-		int v = rg->IRandom(0, NUMEROVERTICES-1); // vertice inicial
-		int cont = 0;
-		bool isVisitado[NUMEROVERTICES];
-		for (int i=0; i<NUMEROVERTICES; i++)isVisitado[i] = false;
-		isVisitado[v] = true;
-		while (cont<NUMEROVERTICES-1){
-			vector<int> verticesAdjacentes;
-			//olha os vizinhos de v
-			for (int i=0; i<NUMEROVERTICES; i++){
-				if (i!=v && unionGraph[i][v]==true){ // grafo possivelmente nao completo
-					verticesAdjacentes.push_back(i);
+    // para grafos completos e incompletos 
+    void RandomWalk(bool unionGraph[NUMEROVERTICES][NUMEROVERTICES]){
+    	uf.clear();
+    	std::vector<pair<int, int> > amostral;
+    	for (int i=0; i<NUMEROVERTICES; i++){
+    		for (int j=i+1; j<NUMEROVERTICES; j++){
+    			if(unionGraph[i][j]==true) {
+    				amostral.push_back(make_pair(i,j));
+    			}
+    		}
+    	}
+    	int cont=0;
+    	while (cont<NUMEROVERTICES-1 && amostral.size()>0){
+			int are = rg->IRandom(0,amostral.size()-1);
+			if (uf.sameClass(amostral[are].first,amostral[are].second)==false){
+				uf.unionClass(amostral[are].first,amostral[are].second);
+				if (amostral[are].first<amostral[are].second){
+					edges[cont][0] = amostral[are].first;
+					edges[cont][1] = amostral[are].second;
+				} else {
+					edges[cont][0] = amostral[are].second;
+					edges[cont][1] = amostral[are].first;
 				}
+				cont++;
 			}
-
-			if (verticesAdjacentes.size()>0){
-				int viz = verticesAdjacentes[rg->IRandom(0, verticesAdjacentes.size()-1)];
-				if (isVisitado[viz] == false){//agora verificamos se o vertice vizinho nao foi vizitado
-					if (v<viz) {
-			            edges[cont][0] = v;
-			            edges[cont][1] = viz;
-			        } else {
-			        	edges[cont][0] = viz;
-			            edges[cont][1] = v;
-			        }
-					isVisitado[viz] = true;
-					cont++;		
-				} 
-				v = viz;
-			} else {
-				cout<<"ERRO"<<endl;
-			}
+			amostral.erase(amostral.begin()+are);
 		}
-	} 
+		if (cont<NUMEROVERTICES-1) cout<<"ERROR RandomWalk cont = "<<cont<<" amostral.size() = "<<amostral.size()<<endl;
+    }
+
+ //    // para grafos completos e incompletos
+ //   	void RandomWalk(bool unionGraph[NUMEROVERTICES][NUMEROVERTICES]){
+	// 	int v = rg->IRandom(0, NUMEROVERTICES-1); // vertice inicial
+	// 	int cont = 0;
+	// 	bool isVisitado[NUMEROVERTICES];
+	// 	for (int i=0; i<NUMEROVERTICES; i++)isVisitado[i] = false;
+	// 	isVisitado[v] = true;
+	// 	while (cont<NUMEROVERTICES-1){
+	// 		vector<int> verticesAdjacentes;
+	// 		//olha os vizinhos de v
+	// 		for (int i=0; i<NUMEROVERTICES; i++){
+	// 			if (i!=v && unionGraph[i][v]==true){ // grafo possivelmente nao completo
+	// 				verticesAdjacentes.push_back(i);
+	// 			}
+	// 		}
+
+	// 		if (verticesAdjacentes.size()>0){
+	// 			int viz = verticesAdjacentes[rg->IRandom(0, verticesAdjacentes.size()-1)];
+	// 			if (isVisitado[viz] == false){//agora verificamos se o vertice vizinho nao foi vizitado
+	// 				if (v<viz) {
+	// 		            edges[cont][0] = v;
+	// 		            edges[cont][1] = viz;
+	// 		        } else {
+	// 		        	edges[cont][0] = viz;
+	// 		            edges[cont][1] = v;
+	// 		        }
+	// 				isVisitado[viz] = true;
+	// 				cont++;		
+	// 			} 
+	// 			v = viz;
+	// 		} else {
+	// 			cout<<"ERRO"<<endl;
+	// 		}
+	// 	}
+	// } 
 
     /* Faz o crossover entre dois individuos.
     BAseado no crossover sugerido por Raidl and Julstrom (2003)*/

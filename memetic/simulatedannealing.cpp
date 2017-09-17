@@ -43,6 +43,8 @@ void SA(SolucaoEdgeSet &sol,TRandomMersenne &rg){
 		}
 		temperature/=FATORDECAIMENTO;
 		iteracaoK*=FATORDECAIMENTO;
+		// cout<<"temperature = "<<temperature<<endl;
+		// cout<<"iteracaoK = "<<iteracaoK<<endl;
 		quantIteracaoK = (int) iteracaoK;
 		if (xk.getOWA()<sol.getOWA()){ //descida
 			sol = xk;

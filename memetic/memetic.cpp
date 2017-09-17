@@ -60,12 +60,7 @@ void getlite(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 		uniao.push_back(novaPop[i]);
 	}
 	std::sort (uniao.begin(), uniao.end(), comparae);
-	if (!(uniao[0]->getOWA()<=uniao[1]->getOWA() && uniao[1]->getOWA()<=uniao[2]->getOWA())) {
-		cout<<"ERRRROOOOOOO COMPARA"<<endl; // TODO: retirar
-	}
-	for (int i=0; i<TAMANHOPOPULACAO; i++){
-		populacao[i]  = uniao[i];
-	}		
+	for (int i=0; i<TAMANHOPOPULACAO; i++) populacao[i]  = uniao[i];
 
 }
 
@@ -87,6 +82,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		setOtimo(otimo);
+		cout<<"Geraçao "<<i+1<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -126,6 +122,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			} else{
 				*novaPop[j] = *filho;
 			}
+			SA(*novaPop[j], rg);
 		}
 		getlite(novaPop); // o vetor populacao[..] tará as malhores solucoes encontras
 	}
@@ -138,7 +135,23 @@ int main(){
 
 	input(); // ler instância
 	TRandomMersenne rg( 45458992 );
+
+	// Reference_Generation(vetoresDirecoes);
+	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
 	
+	// SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	// populacao[0]->printSolucao();
+	// cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;
+	// cout<<endl;
+	// populacao[5]->printSolucao();
+	// cout<<"OWA pai = "<<populacao[5]->getOWA()<<endl;
+	// cout<<endl;
+	// nova->crossover(*populacao[0], *populacao[5]);
+	// nova->printSolucao();
+	// nova->calculaOwa(w);
+	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
+
 	SolucaoEdgeSet *otimo  = memetic(rg);
 	otimo->printSolucao();
 	cout<<"OWA = "<<otimo->getOWA()<<endl;
