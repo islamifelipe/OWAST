@@ -8,7 +8,7 @@
 class Solucao {
 	protected:
 	double f[NUMOBJETIVOS];
-	public:
+public:
 	TRandomMersenne *rg;
 
 	public:

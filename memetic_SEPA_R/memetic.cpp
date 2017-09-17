@@ -106,7 +106,7 @@ void Environment_Selection(){
 
 
 bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
-	return s1->getOWA()<s2->getOWA();// || (s1->getOWA()==s2->getOWA() && s1->fitness<s2->fitness);
+	return s1->getOWA()<s2->getOWA() || (s1->getOWA()==s2->getOWA() && s1->fitness<s2->fitness);
 	// if (s1->getOWA()<s2->getOWA()) return true;
 	// else  if (s1->getOWA()==s2->getOWA()){
 	// 	return s1->fitness<s2->fitness;
@@ -120,8 +120,10 @@ void Environment_Selection2(){
 		uniao.push_back(Q[i]);
 	}
 	std::sort (uniao.begin(), uniao.end(), comparae2);
-	cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
-	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
+	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
+	for (int i=0; i<TAMANHOPOPULACAO; i++) {
+		*populacao[i]  = *uniao[i];
+	}
 
 }
 
@@ -213,11 +215,11 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			
 	Reference_Generation(vetoresDirecoes,thetaM);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	gerarPopulacao1(populacao, rg); // gera populaçao inicial
+	gerarPopulacao3(populacao, rg,vetoresDirecoes); // gera populaçao inicial
 	*otimo = *populacao[0];
 	int p1,p2,p3,p4;
-	double otimoAntes = otimo->getOWA();
-	int contSemMudanca = 0;
+	// double otimoAntes = otimo->getOWA();
+	// int contSemMudanca = 0;
 	SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]; // cria-se uma populaçao de descentes
 	alocaPopulacao(novaPop, rg); 
 	for (int i=0; i<TAMANHOPOPULACAO*2; i++) Q[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
@@ -233,14 +235,17 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 		// 	contSemMudanca=0;
 		// }
 		// if (contSemMudanca==5){
-		// 	gerarPopulacao1(populacao, rg); 
+		// 	cout<<"RENOVA"<<endl;
+		// 	for (int i=TAMANHOPOPULACAO-1; i>(TAMANHOPOPULACAO-TAMANHOPOPULACAO/2); i--) {
+		// 		populacao[i]->doRandomWalk();
+		// 		populacao[i]->calculaOwa(w); 
+		// 	}
 		// 	contSemMudanca=0;
 		// }
 		cout<<"Geraçao "<<i+1<<"  Otimo = "<<otimo->getOWA()<<endl;
 		// for (int ppp=0; ppp<TAMANHOPOPULACAO; ppp++){
 		// 	cout<<"\t"<<populacao[ppp]->getOWA()<<" ---- "<<populacao[ppp]->fitness<<endl;
 		// }
-		cout<<"\n"<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -265,11 +270,19 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			if (p<TAXADECRUZAMENTO){
 				filho->crossover(*pai, *mae);
 			} else { // se nao cruzar, o filho fica sendo o pai ou o mae (o melhor)
-				if (pai->getOWA()<mae->getOWA()){
-					*filho = *pai;
-				}else {
+				if (mae->getOWA()<pai->getOWA()){
 					*filho = *mae;
+				}else{
+					*filho = *pai;
 				}
+
+				//int ifjf = rg.IRandom(1,3);
+				// if (ifjf==1)
+				// 	renovaKCentrum(filho);
+				// else if (ifjf==2)
+				// 	renovaKTrimmed(filho);
+				// else 
+				// 	renovaHurwicz(filho);
 			}
 			// filho foi definido; Agora aplica-se mutaçao
 			p = rg.Random();
@@ -284,9 +297,9 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 		}
 		for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) *Q[oeir] = *populacao[oeir];
 		for (int oeir=0, conttt=TAMANHOPOPULACAO; oeir<TAMANHOPOPULACAO; oeir++, conttt++) *Q[conttt] = *novaPop[oeir];
-		Objective_Normalization();
-		Associate();
-		Fitness_Assignment();
+		// Objective_Normalization();
+		// Associate();
+		// Fitness_Assignment();
 		Environment_Selection2(); // o vetor populacao[..] tará as malhores solucoes encontras
 
 	}
@@ -298,7 +311,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 309405904950 );
+	TRandomMersenne rg( 994584593910 ); //309405904950
 	
 	// Reference_Generation(vetoresDirecoes, thetaM);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial

@@ -1,0 +1,3 @@
+Consoante \citeonline{jiang2017strength}, o tempo computacional do cálculo da densidade do SPEA2 é consideravelmente caro, principalmente para problemas many-objetivo., mas os autores utilizam o fitness do SPEA2 para somar ao do SPEA/R
+
+O algoritmo evolucionario melhora significativamente quando um bom conjunto de soluçoes iniciais é disponivel
