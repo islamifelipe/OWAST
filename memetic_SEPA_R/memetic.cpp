@@ -64,6 +64,35 @@ void getlite(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 
 }
 
+void Objective_Normalization(){
+	double ideal[NUMOBJETIVOS];
+	double pior[NUMOBJETIVOS];
+	for (int i=0; i<NUMOBJETIVOS; i++){ // pega o i-ésimo melhor e pior objetivos
+		ideal[i] = populacao[0]->getObj(i);
+		pior[i] = populacao[0]->getObj(i);
+		for (int p=0; p<TAMANHOPOPULACAO; p++){
+			if (populacao[p]->getObj(i)<ideal[i]) ideal[i] = populacao[p]->getObj(i);
+			if (populacao[p]->getObj(i)>pior[i]) pior[i] = populacao[p]->getObj(i);
+		}
+	}
+
+	for (int p=0; p<TAMANHOPOPULACAO; p++){
+		for (int i=0; i<NUMOBJETIVOS; i++){
+			populacao[p]->f_normalized[i] = (populacao[p]->getObj(i) - ideal[i])/(pior[i]- ideal[i]+1); /// TUDO : +1 ? 
+		}
+	}
+
+	cout<<"Ideal poit : ";
+	for (int i=0; i<NUMOBJETIVOS; i++){
+		cout<<ideal[i]<<" ";
+	}
+	cout<<"\nWrost poit : ";
+	for (int i=0; i<NUMOBJETIVOS; i++){
+		cout<<pior[i]<<" ";;
+	}
+	cout<<endl;
+}
+
 SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 
 	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
@@ -135,7 +164,22 @@ int main(){
 
 	input(); // ler instância
 	TRandomMersenne rg( 45458992 );
-
+	
+	// Reference_Generation(vetoresDirecoes);
+	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
+	
+	// Objective_Normalization();
+	// for (int i=0; i<TAMANHOPOPULACAO; i++){
+	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
+	// 		cout<<populacao[i]->getObj(o)<<" ";
+	// 	}
+	// 	cout<<"  ----->  ";
+	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
+	// 		cout<<populacao[i]->f_normalized[o]<<" ";
+	// 	}
+	// 	cout<<endl;
+	// }
 	// Reference_Generation(vetoresDirecoes);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial

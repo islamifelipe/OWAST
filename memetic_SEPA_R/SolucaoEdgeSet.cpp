@@ -29,6 +29,8 @@ class SolucaoEdgeSet : public Solucao {
 	UnionFind uf;
 	//grafo *g;
 	double owa_value;
+	double f_normalized[NUMOBJETIVOS]; /*USando pelo Q(barra) do SPEA/R*/
+	
 	//double antigof[NUMOBJETIVOS];
 
 	SolucaoEdgeSet(int n,TRandomMersenne &r) {
@@ -36,6 +38,7 @@ class SolucaoEdgeSet : public Solucao {
 		nEdges = n;
 		for (int i=0; i<NUMOBJETIVOS; i++){
 			f[i]=0;
+			f_normalized[i] = 0;
 		}
 		rg = &r;
 		//g = NULL;
@@ -49,6 +52,7 @@ class SolucaoEdgeSet : public Solucao {
     void shallowCopy(SolucaoEdgeSet &s) {
         for (int i=0; i<NUMOBJETIVOS; i++){
 			s.f[i] = f[i];
+			s.f_normalized[i] = f_normalized[i];
 		}
     }
 
@@ -56,6 +60,7 @@ class SolucaoEdgeSet : public Solucao {
 		nEdges = s.nEdges;
 		for (int i=0; i<NUMOBJETIVOS; i++){
 			f[i] = s.f[i];
+			f_normalized[i] = s.f_normalized[i];
 		}
 		memcpy(edges,s.edges,sizeof(edges));
 		owa_value = s.owa_value;
