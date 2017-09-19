@@ -10,7 +10,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 500  // TESTE
+#define NUMEROVERTICES 100  // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -26,7 +26,7 @@
 #define PORCENT_HURWICZ 10 //--- NAO UTILIZADO NO MOMENTO
 
 /*Parâmetros do GA*/
-#define TAXADECRUZAMENTO 0.9  // 90% por geraçao
+#define TAXADECRUZAMENTO 0.97  // 90% por geraçao
 #define TAXADEMUTACAO 0.1 // 10% por geraçao
 #define QUANTGERACOES 30 // quantidade de iteracoes do M-GA
 

@@ -113,7 +113,7 @@ void gerarPopulacao2(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 }
 
 void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg, double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS]){
-	cout<<"================== Populaçao gerada pelos vetores direcionais do SPEA/R, k-centrum, k-trimmed, Hurwicz ================== "<<endl;
+	cout<<"================== Populaçao gerada pelos vetores direcionais do SPEA/R, doRandomWalk, k-centrum, k-trimmed, Hurwicz ================== "<<endl;
 	SolucaoEdgeSet *aux = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	for (int cont = 0; cont<TAMANHOPOPULACAO; cont++){
 		double lambda[NUMOBJETIVOS];

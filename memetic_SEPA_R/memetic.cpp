@@ -106,24 +106,24 @@ void Environment_Selection(){
 
 
 bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
-	return s1->getOWA()<s2->getOWA() || (s1->getOWA()==s2->getOWA() && s1->fitness<s2->fitness);
-	// if (s1->getOWA()<s2->getOWA()) return true;
-	// else  if (s1->getOWA()==s2->getOWA()){
-	// 	return s1->fitness<s2->fitness;
-	// } else return false;
+	return s1->getOWA()<s2->getOWA(); //|| (s1->getOWA()==s2->getOWA()));// && s1->fitness<s2->fitness);
+	
 } //  crescente
     
 /*As soluçoes de elite sao aqueals de melhor fitess*/
-void Environment_Selection2(){
+void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 	std::vector<SolucaoEdgeSet *> uniao;
-	for (int i=0; i<TAMANHOPOPULACAO*2; i++) {
-		uniao.push_back(Q[i]);
-	}
+	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
+	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
+		
+
+	// for (int i=0; i<TAMANHOPOPULACAO*2; i++) {
+	// 	uniao.push_back(Q[i]);
+	// }
 	std::sort (uniao.begin(), uniao.end(), comparae2);
 	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
-	for (int i=0; i<TAMANHOPOPULACAO; i++) {
-		*populacao[i]  = *uniao[i];
-	}
+	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
+	
 
 }
 
@@ -275,8 +275,9 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 				}else{
 					*filho = *pai;
 				}
-
-				//int ifjf = rg.IRandom(1,3);
+				// filho->doRandomWalk();
+				// filho->calculaOwa(w);
+				// int ifjf = rg.IRandom(1,3);
 				// if (ifjf==1)
 				// 	renovaKCentrum(filho);
 				// else if (ifjf==2)
@@ -290,17 +291,17 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 				novaPop[j]->mutacao(*filho);
 				novaPop[j]->calculaOwa(w); // necessario
 			} else{
-				filho->calculaOwa(w); // TODO : talvez desnecessario!!!
+				filho->calculaOwa(w);
 				*novaPop[j] = *filho;
 			}
 			SA(*novaPop[j], rg);
 		}
-		for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) *Q[oeir] = *populacao[oeir];
-		for (int oeir=0, conttt=TAMANHOPOPULACAO; oeir<TAMANHOPOPULACAO; oeir++, conttt++) *Q[conttt] = *novaPop[oeir];
+		// for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) *Q[oeir] = *populacao[oeir];
+		// for (int oeir=0, conttt=TAMANHOPOPULACAO; oeir<TAMANHOPOPULACAO; oeir++, conttt++) *Q[conttt] = *novaPop[oeir];
 		// Objective_Normalization();
 		// Associate();
 		// Fitness_Assignment();
-		Environment_Selection2(); // o vetor populacao[..] tará as malhores solucoes encontras
+		Environment_Selection2(novaPop); // o vetor populacao[..] tará as malhores solucoes encontras
 
 	}
 
@@ -311,7 +312,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 994584593910 ); //309405904950
+	TRandomMersenne rg( 48594589849 ); //309405904950
 	
 	// Reference_Generation(vetoresDirecoes, thetaM);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial

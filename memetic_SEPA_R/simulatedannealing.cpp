@@ -11,6 +11,7 @@ using namespace std;
 // baseado no modelo classico de SA (notas de aula de Profa. Silvia e Beth)
 // a soluçao sol será modificada no final
 void SA(SolucaoEdgeSet &sol,TRandomMersenne &rg){
+	//cout<<"Inicio do SA = "<<sol.getOWA()<<endl;
 	double temperature = TEMPERATURA;
 	double iteracaoK = ITERACAO_K/1.0;
 	int quantIteracaoK = (int) iteracaoK;
@@ -42,7 +43,7 @@ void SA(SolucaoEdgeSet &sol,TRandomMersenne &rg){
 			}
 		}
 		temperature/=FATORDECAIMENTO;
-		iteracaoK*=FATORDECAIMENTO;
+		iteracaoK*=FATORDECAIMENTOITERACAO;
 		// cout<<"temperature = "<<temperature<<endl;
 		// cout<<"iteracaoK = "<<iteracaoK<<endl;
 		quantIteracaoK = (int) iteracaoK;
@@ -50,6 +51,7 @@ void SA(SolucaoEdgeSet &sol,TRandomMersenne &rg){
 			sol = xk;
 		}
 	} while ((temperature-1.0)>EPS);
+	//cout<<"FIM do SA = "<<sol.getOWA()<<endl;
 
 }
 
