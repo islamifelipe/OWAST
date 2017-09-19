@@ -1,0 +1,52 @@
+Rodando pra 1h
+Optimize a model with 120 rows, 158 columns and 607 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [3e-01, 7e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 120 rows, 158 columns, 607 nonzeros
+Variable types: 84 continuous, 74 integer (74 binary)
+
+Root relaxation: objective 4.440000e+01, 81 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   44.40000    0   26          -   44.40000      -     -    0s
+     0     0   93.00000    0   27          -   93.00000      -     -    0s
+     0     0  107.66061    0   29          -  107.66061      -     -    0s
+     0     0  108.00000    0   29          -  108.00000      -     -    0s
+     0     0  108.44000    0   32          -  108.44000      -     -    0s
+     0     0  108.44000    0   33          -  108.44000      -     -    0s
+     0     0  108.44000    0   32          -  108.44000      -     -    0s
+     0     0  108.44000    0   29          -  108.44000      -     -    0s
+     0     2  108.50000    0   28          -  108.50000      -     -    0s
+* 2674  1176              39     297.2000000  141.80000  52.3%   6.5    0s
+* 2940  1306              25     291.8000000  143.32500  50.9%   6.6    0s
+* 2956  1296              28     284.4000000  143.32500  49.6%   6.6    0s
+H 3222   918                     189.4000000  144.10000  23.9%   6.7    1s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 2
+  Implied bound: 7
+  MIR: 13
+  Flow cover: 50
+  Zero half: 3
+  Network: 4
+
+Explored 12329 nodes (95108 simplex iterations) in 4.61 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.894000000000e+02, best bound 1.893991354467e+02, gap 0.0005%
+Tempo: 4.59 segundos
+
+0 1 0 38 62 35 99 59 73 53 
+1 2 39 35 41 58 35 58 26 46 
+2 4 46 30 56 42 48 40 19 58 
+3 4 12 87 19 90 47 41 18 48 
+(97 190 178 225 229 198 136 205 )
+

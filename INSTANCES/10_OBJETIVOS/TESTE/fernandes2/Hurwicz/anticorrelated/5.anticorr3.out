@@ -1,0 +1,52 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 135 rows, 140 columns and 1746 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [3e-01, 7e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 204
+Presolve removed 81 rows and 18 columns
+Presolve time: 0.00s
+Presolved: 54 rows, 122 columns, 496 nonzeros
+Variable types: 20 continuous, 102 integer (100 binary)
+
+Root relaxation: objective 4.235000e+01, 41 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   42.35000    0    7  204.00000   42.35000  79.2%     -    0s
+     0     0   86.98670    0   12  204.00000   86.98670  57.4%     -    0s
+H    0     0                     201.6000000   86.98670  56.9%     -    0s
+H    0     0                     201.0000000   86.98670  56.7%     -    0s
+     0     0  108.11791    0   11  201.00000  108.11791  46.2%     -    0s
+     0     0  108.18828    0   10  201.00000  108.18828  46.2%     -    0s
+     0     0  108.52149    0   12  201.00000  108.52149  46.0%     -    0s
+     0     0  108.52149    0   10  201.00000  108.52149  46.0%     -    0s
+H    0     0                     196.9000000  108.52149  44.9%     -    0s
+     0     2  109.73476    0   10  196.90000  109.73476  44.3%     -    0s
+*  224    47               6     196.2000000  121.18550  38.2%   2.9    0s
+
+Cutting planes:
+  Gomory: 3
+  MIR: 17
+  Flow cover: 13
+  Flow path: 3
+  Zero half: 1
+  Network: 5
+
+Explored 1365 nodes (2784 simplex iterations) in 0.14 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.962000000000e+02, best bound 1.962000000000e+02, gap 0.0%
+Tempo: 0.14 segundos
+
+0 1 26 66 66 67 64 70 67 74 72 76 
+0 3 92 18 8 8 15 19 17 14 13 17 
+1 2 66 39 31 29 30 37 34 28 36 33 
+3 4 20 80 81 74 69 73 68 68 72 77 
+(204 203 186 178 178 199 186 184 193 203 )
+

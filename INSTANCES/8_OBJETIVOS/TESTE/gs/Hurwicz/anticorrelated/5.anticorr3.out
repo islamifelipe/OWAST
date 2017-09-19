@@ -1,0 +1,54 @@
+Rodando pra 1h
+Optimize a model with 120 rows, 158 columns and 608 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 8e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 120 rows, 158 columns, 608 nonzeros
+Variable types: 84 continuous, 74 integer (74 binary)
+
+Root relaxation: objective 7.850000e+00, 79 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    7.85000    0   26          -    7.85000      -     -    0s
+     0     0   18.37143    0   31          -   18.37143      -     -    0s
+     0     0   19.56000    0   27          -   19.56000      -     -    0s
+     0     0   19.92857    0   28          -   19.92857      -     -    0s
+     0     0   20.19429    0   29          -   20.19429      -     -    0s
+     0     0   20.40591    0   30          -   20.40591      -     -    0s
+     0     0   20.62369    0   31          -   20.62369      -     -    0s
+     0     0   20.93461    0   30          -   20.93461      -     -    0s
+     0     0   20.97261    0   32          -   20.97261      -     -    0s
+     0     0   21.05143    0   33          -   21.05143      -     -    0s
+     0     0   21.05143    0   29          -   21.05143      -     -    0s
+     0     2   21.10683    0   28          -   21.10683      -     -    0s
+* 1838   662              39     178.6000000   30.73333  82.8%   5.3    0s
+H 2455   583                     157.4000000   34.24878  78.2%   5.8    1s
+* 3040   710              37     156.4000000   38.68769  75.3%   6.4    1s
+* 5494   333              40     111.4000000   65.84949  40.9%   8.7    2s
+
+Cutting planes:
+  Gomory: 12
+  MIR: 45
+  Flow cover: 105
+  Flow path: 2
+  Zero half: 3
+  Network: 7
+
+Explored 6609 nodes (69047 simplex iterations) in 3.44 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.114000000000e+02, best bound 1.114000000000e+02, gap 0.0%
+Tempo: 3.42 segundos
+
+0 1 93 7 10 8 11 12 16 12 
+0 3 68 28 36 41 34 34 39 30 
+0 4 82 17 27 19 24 16 27 23 
+2 4 98 2 3 9 13 7 11 7 
+(341 54 76 77 82 69 93 72 )
+

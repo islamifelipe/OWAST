@@ -1,0 +1,57 @@
+Rodando pra 1h
+
+Optimize a model with 64 rows, 60 columns and 504 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [2e-01, 8e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 195.8
+Presolve removed 18 rows and 3 columns
+Presolve time: 0.00s
+Presolved: 46 rows, 57 columns, 263 nonzeros
+Variable types: 20 continuous, 37 integer (35 binary)
+
+Root relaxation: objective 1.745000e+01, 32 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   17.45000    0    9  195.80000   17.45000  91.1%     -    0s
+H    0     0                     159.0000000   17.45000  89.0%     -    0s
+     0     0   29.10161    0   11  159.00000   29.10161  81.7%     -    0s
+     0     0   33.85263    0   13  159.00000   33.85263  78.7%     -    0s
+     0     0   34.03585    0   14  159.00000   34.03585  78.6%     -    0s
+     0     0   34.21782    0   13  159.00000   34.21782  78.5%     -    0s
+     0     0   34.25397    0   13  159.00000   34.25397  78.5%     -    0s
+     0     0   34.32757    0   21  159.00000   34.32757  78.4%     -    0s
+     0     0   34.32757    0   21  159.00000   34.32757  78.4%     -    0s
+H    0     0                     135.4000000   34.32757  74.6%     -    0s
+     0     2   34.44339    0   21  135.40000   34.44339  74.6%     -    0s
+*   13     8               8     134.6000000   34.81613  74.1%   6.6    0s
+*  184    26               8     129.0000000   51.60000  60.0%   3.6    0s
+*  193    24               8     123.8000000   52.95000  57.2%   3.5    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 12
+  MIR: 24
+  Flow cover: 21
+  Flow path: 2
+  Zero half: 1
+  Mod-K: 1
+  Network: 9
+
+Explored 264 nodes (886 simplex iterations) in 0.04 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.238000000000e+02, best bound 1.238000000000e+02, gap 0.0%
+Tempo: 0.03 segundos
+
+0 3 97 26 21 44 27 
+1 4 53 65 24 72 57 
+2 3 42 72 30 38 59 
+3 4 83 40 11 25 40 
+(275 203 86 179 183 )
+

@@ -1,0 +1,52 @@
+Rodando pra 1h
+Optimize a model with 120 rows, 158 columns and 608 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [4e-01, 6e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 120 rows, 158 columns, 608 nonzeros
+Variable types: 84 continuous, 74 integer (74 binary)
+
+Root relaxation: objective 1.387143e+01, 82 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   13.87143    0   26          -   13.87143      -     -    0s
+     0     0   40.60000    0   28          -   40.60000      -     -    0s
+     0     0   42.18857    0   33          -   42.18857      -     -    0s
+     0     0   44.82857    0   27          -   44.82857      -     -    0s
+     0     0   45.77143    0   25          -   45.77143      -     -    0s
+     0     0   45.80952    0   25          -   45.80952      -     -    0s
+     0     0   45.90476    0   30          -   45.90476      -     -    0s
+     0     0   45.90476    0   28          -   45.90476      -     -    0s
+     0     2   46.19048    0   28          -   46.19048      -     -    0s
+* 1195   472              33     175.2000000   68.65121  60.8%   8.3    0s
+* 1823   439              36     145.8000000   83.57578  42.7%   7.9    0s
+* 4035   165              34     102.4000000   95.28000  6.95%   7.8    1s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 1
+  Implied bound: 4
+  MIR: 25
+  Flow cover: 59
+  Flow path: 2
+  Zero half: 6
+  Network: 1
+
+Explored 4458 nodes (38281 simplex iterations) in 2.05 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+02, best bound 1.024000000000e+02, gap 0.0%
+Tempo: 2.04 segundos
+
+0 2 2 47 29 39 21 35 4 1 
+0 3 35 57 67 45 37 66 32 44 
+0 4 8 14 16 12 22 6 35 18 
+1 2 23 22 28 58 24 16 56 38 
+(68 140 140 154 104 123 127 101 )
+

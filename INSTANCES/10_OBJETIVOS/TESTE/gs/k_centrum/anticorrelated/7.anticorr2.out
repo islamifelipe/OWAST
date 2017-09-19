@@ -1,0 +1,51 @@
+Rodando pra 1h
+Optimize a model with 188 rows, 263 columns and 1093 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [1e-01, 1e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+00]
+Presolve time: 0.00s
+Presolved: 188 rows, 263 columns, 1093 nonzeros
+Variable types: 142 continuous, 121 integer (121 binary)
+
+Root relaxation: objective 4.613329e+01, 121 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   46.13329    0   34          -   46.13329      -     -    0s
+     0     0  135.49986    0   36          -  135.49986      -     -    0s
+     0     0  149.19985    0   34          -  149.19985      -     -    0s
+     0     0  149.19985    0   35          -  149.19985      -     -    0s
+     0     0  149.74985    0   36          -  149.74985      -     -    0s
+     0     0  149.74985    0   34          -  149.74985      -     -    0s
+     0     2  151.39985    0   34          -  151.39985      -     -    0s
+ 10202  7098  290.44415   51   27          -  208.86646      -   8.3    5s
+*19926 12764              67     395.8884930  218.79978  44.7%   7.8    7s
+H19927  6409                     262.2219600  218.79978  16.6%   7.8    7s
+ 24553  8135  222.33311   27   20  262.22196  220.88867  15.8%   7.8   10s
+H25005  1040                     226.8886620  220.95741  2.61%   7.8   10s
+
+Cutting planes:
+  MIR: 34
+  Flow cover: 66
+  Flow path: 5
+  Zero half: 10
+  Network: 7
+
+Explored 31501 nodes (247214 simplex iterations) in 13.16 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.268886620000e+02, best bound 2.268725004000e+02, gap 0.0071%
+Tempo: 13.13 segundos
+
+0 4 94 4 8 11 39 49 22 15 42 28 
+1 2 98 19 0 34 45 11 15 21 31 46 
+1 4 88 10 8 27 13 28 15 38 29 29 
+1 6 63 19 43 62 65 23 45 67 43 33 
+2 3 76 26 36 17 55 24 12 43 37 48 
+3 5 66 51 47 45 36 20 37 43 55 17 
+(485 129 142 196 253 155 146 227 237 201 )
+

@@ -1,0 +1,54 @@
+Rodando pra 1h
+
+Optimize a model with 154 rows, 140 columns and 1964 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 218.5
+Presolve removed 36 rows and 6 columns
+Presolve time: 0.00s
+Presolved: 118 rows, 134 columns, 1352 nonzeros
+Variable types: 20 continuous, 114 integer (110 binary)
+
+Root relaxation: objective 0.000000e+00, 53 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   27  218.50000    0.00000   100%     -    0s
+H    0     0                     179.0000000    0.00000   100%     -    0s
+H    0     0                     154.2500000    0.00000   100%     -    0s
+     0     0    0.00000    0   30  154.25000    0.00000   100%     -    0s
+     0     0    0.00000    0   29  154.25000    0.00000   100%     -    0s
+     0     0    0.00000    0   36  154.25000    0.00000   100%     -    0s
+H    0     0                     147.2500000    0.00000   100%     -    0s
+     0     0    0.00000    0   32  147.25000    0.00000   100%     -    0s
+     0     0    0.00000    0   31  147.25000    0.00000   100%     -    0s
+H    0     0                     130.2500000    0.00000   100%     -    0s
+     0     0    0.00000    0   33  130.25000    0.00000   100%     -    0s
+     0     0    0.00000    0   30  130.25000    0.00000   100%     -    0s
+     0     0    0.00000    0   29  130.25000    0.00000   100%     -    0s
+H    0     0                     115.0000000    0.00000   100%     -    0s
+     0     2    0.00000    0   27  115.00000    0.00000   100%     -    0s
+*  330   103              21     105.5000000   14.50000  86.3%   6.5    0s
+*  335   105              24     104.5000000   14.50000  86.1%   6.4    0s
+
+Cutting planes:
+  Flow cover: 1
+  Network: 2
+
+Explored 3650 nodes (18041 simplex iterations) in 0.74 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.045000000000e+02, best bound 1.045000000000e+02, gap 0.0%
+Tempo: 0.7 segundos
+
+0 1 20 34 31 52 54 21 49 51 12 43 
+1 4 4 26 8 20 31 20 16 12 11 22 
+2 3 1 10 10 18 50 3 41 49 37 9 
+2 4 16 10 41 24 49 54 8 43 32 44 
+(41 80 90 114 184 98 114 155 92 118 )
+

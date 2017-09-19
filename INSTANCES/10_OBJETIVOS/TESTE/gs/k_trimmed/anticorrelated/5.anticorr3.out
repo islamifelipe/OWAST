@@ -1,0 +1,50 @@
+Rodando pra 1h
+Optimize a model with 164 rows, 230 columns and 876 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 164 rows, 230 columns, 876 nonzeros
+Variable types: 120 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 0.000000e+00, 67 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   31          -    0.00000      -     -    0s
+     0     0    0.00000    0   35          -    0.00000      -     -    0s
+     0     0    0.00000    0   35          -    0.00000      -     -    0s
+     0     0    0.00000    0   37          -    0.00000      -     -    0s
+     0     0    0.00000    0   29          -    0.00000      -     -    0s
+     0     2    0.00000    0   26          -    0.00000      -     -    0s
+* 3834  1840              60     293.0000000    0.00000   100%   9.6    1s
+* 4499  1571              35     208.5000000    0.00000   100%   9.2    1s
+* 7300  2224              38     197.0000000    0.00000   100%   9.4    3s
+* 8998  2272              48     179.5000000    0.00000   100%   9.2    4s
+ 10202  2603  169.53488   22   23  179.50000   23.10693  87.1%   9.0    5s
+*16587  3621              47     175.0000000   86.48039  50.6%   9.1    8s
+*17994  1540              45     136.0000000   98.18799  27.8%   9.1    8s
+ 22235  1976  112.46111   25   24  136.00000  112.30769  17.4%   8.6   10s
+
+Cutting planes:
+  MIR: 25
+  Flow cover: 16
+  Zero half: 1
+  Network: 1
+
+Explored 28737 nodes (241647 simplex iterations) in 12.33 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.360000000000e+02, best bound 1.360000000000e+02, gap 0.0%
+Tempo: 12.3 segundos
+
+0 1 26 66 66 67 64 70 67 74 72 76 
+0 3 92 18 8 8 15 19 17 14 13 17 
+1 4 69 37 33 40 26 40 34 31 35 28 
+2 4 85 14 24 15 27 15 26 27 17 13 
+(272 135 131 130 132 144 144 146 137 134 )
+

@@ -1,0 +1,54 @@
+Rodando pra 1h
+Optimize a model with 188 rows, 263 columns and 1090 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [1e-01, 1e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+00]
+Presolve time: 0.00s
+Presolved: 188 rows, 263 columns, 1090 nonzeros
+Variable types: 142 continuous, 121 integer (121 binary)
+
+Root relaxation: objective 5.173328e+01, 120 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   51.73328    0   34          -   51.73328      -     -    0s
+     0     0  132.44987    0   35          -  132.44987      -     -    0s
+     0     0  143.74986    0   33          -  143.74986      -     -    0s
+     0     0  143.74986    0   32          -  143.74986      -     -    0s
+     0     0  143.74986    0   31          -  143.74986      -     -    0s
+     0     0  143.74986    0   31          -  143.74986      -     -    0s
+     0     0  143.74986    0   31          -  143.74986      -     -    0s
+     0     0  143.74986    0   31          -  143.74986      -     -    0s
+     0     2  144.02843    0   31          -  144.02843      -     -    0s
+ 10202  7160  227.98684   25   33          -  191.99981      -   9.1    5s
+ 25283 17880  228.88866   49   20          -  201.61091      -   8.9   10s
+*25305  3920              63     231.9997680  201.61091  13.1%   8.9   10s
+*26850  2853              40     223.9997760  203.44424  9.18%   8.9   11s
+*27268  1173              59     213.2220090  203.44424  4.59%   8.9   11s
+
+Cutting planes:
+  Gomory: 3
+  MIR: 41
+  Flow cover: 93
+  Flow path: 5
+  Zero half: 12
+  Network: 11
+
+Explored 31544 nodes (289680 simplex iterations) in 14.16 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.132220090000e+02, best bound 2.132220090000e+02, gap 0.0%
+Tempo: 14.08 segundos
+
+0 6 19 27 57 65 47 17 13 14 40 68 
+1 6 0 45 6 3 24 59 17 21 77 0 
+2 5 18 17 34 6 52 16 82 83 13 39 
+3 4 34 19 17 43 15 85 15 82 69 16 
+3 5 0 14 15 77 47 39 2 28 32 42 
+5 6 12 49 22 45 66 12 22 73 4 27 
+(83 171 151 239 251 228 151 301 235 192 )
+

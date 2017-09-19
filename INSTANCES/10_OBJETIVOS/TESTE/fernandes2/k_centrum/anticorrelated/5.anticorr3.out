@@ -1,0 +1,50 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 135 rows, 140 columns and 1746 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 204
+Presolve removed 89 rows and 98 columns
+Presolve time: 0.00s
+Presolved: 46 rows, 42 columns, 336 nonzeros
+Variable types: 20 continuous, 22 integer (20 binary)
+
+Root relaxation: objective 3.094595e+01, 39 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   30.94595    0   16  204.00000   30.94595  84.8%     -    0s
+     0     0  104.53174    0   20  204.00000  104.53174  48.8%     -    0s
+H    0     0                     202.0000000  104.53174  48.3%     -    0s
+     0     0  111.31288    0   20  202.00000  111.31288  44.9%     -    0s
+     0     0  118.46099    0   19  202.00000  118.46099  41.4%     -    0s
+     0     0  119.42392    0   19  202.00000  119.42392  40.9%     -    0s
+     0     0  127.12333    0   18  202.00000  127.12333  37.1%     -    0s
+     0     0  128.01683    0   20  202.00000  128.01683  36.6%     -    0s
+     0     0  128.84499    0   19  202.00000  128.84499  36.2%     -    0s
+     0     2  129.98962    0   19  202.00000  129.98962  35.6%     -    0s
+*  170     1               9     200.5000000  200.36589  0.07%   5.1    0s
+
+Cutting planes:
+  Gomory: 7
+  MIR: 9
+  Flow cover: 9
+  Network: 2
+
+Explored 171 nodes (1052 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.005000000000e+02, best bound 2.005000000000e+02, gap 0.0%
+Tempo: 0.05 segundos
+
+0 1 26 66 66 67 64 70 67 74 72 76 
+1 2 66 39 31 29 30 37 34 28 36 33 
+2 4 85 14 24 15 27 15 26 27 17 13 
+3 4 20 80 81 74 69 73 68 68 72 77 
+(197 199 202 185 190 195 195 197 197 199 )
+
