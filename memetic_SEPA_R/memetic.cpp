@@ -270,13 +270,13 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			if (p<TAXADECRUZAMENTO){
 				filho->crossover(*pai, *mae);
 			} else { // se nao cruzar, o filho fica sendo o pai ou o mae (o melhor)
-				if (mae->getOWA()<pai->getOWA()){
-					*filho = *mae;
-				}else{
-					*filho = *pai;
-				}
-				// filho->doRandomWalk();
-				// filho->calculaOwa(w);
+				// if (mae->getOWA()<pai->getOWA()){
+				// 	*filho = *mae;
+				// }else{
+				// 	*filho = *pai;
+				// }
+				filho->doRandomWalk();
+				filho->calculaOwa(w);
 				// int ifjf = rg.IRandom(1,3);
 				// if (ifjf==1)
 				// 	renovaKCentrum(filho);
@@ -312,7 +312,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 48594589849 ); //309405904950
+	TRandomMersenne rg( 309405904950 ); //48594589849
 	
 	// Reference_Generation(vetoresDirecoes, thetaM);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial

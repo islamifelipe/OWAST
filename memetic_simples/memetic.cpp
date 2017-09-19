@@ -138,7 +138,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 48594589849 ); //309405904950
+	TRandomMersenne rg( 309405904950 ); //48594589849
 
 	// Reference_Generation(vetoresDirecoes);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
