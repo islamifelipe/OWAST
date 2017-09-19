@@ -117,8 +117,9 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 	SolucaoEdgeSet *aux = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	for (int cont = 0; cont<TAMANHOPOPULACAO; cont++){
 		double lambda[NUMOBJETIVOS];
+		int indfgf = rg.IRandom(0, NUMDIRECOES-1);
 		for (int ll=0; ll<NUMOBJETIVOS; ll++){
-			lambda[ll] =  vetoresDirecoes[cont][ll];
+			lambda[ll] =  vetoresDirecoes[indfgf][ll];
 		} 
 		rmcPrim(*populacao[cont], lambda, rg);
 		populacao[cont]->calculaOwa(w);

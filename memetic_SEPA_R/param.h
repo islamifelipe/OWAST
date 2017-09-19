@@ -11,7 +11,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 100 // TESTE
+#define NUMEROVERTICES 500 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -20,7 +20,7 @@
 #define NUMDIRECOES ((NUMOBJETIVOS*K_LAYER*(K_LAYER+3))/2+1)
 
 /*Parâmetros da populçao*/
-#define TAMANHOPOPULACAO (NUMDIRECOES)  //  #define TAMANHOPOPULACAO 100 
+#define TAMANHOPOPULACAO 100  //#define TAMANHOPOPULACAO (NUMDIRECOES)  // 
 #define PORCENT_RANDOM 10 //--- 
 #define PORCENT_KCENTRUM 30 //---
 #define PORCENT_KTRIMENT 30 //--- 

@@ -218,8 +218,8 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	gerarPopulacao3(populacao, rg,vetoresDirecoes); // gera populaçao inicial
 	*otimo = *populacao[0];
 	int p1,p2,p3,p4;
-	// double otimoAntes = otimo->getOWA();
-	// int contSemMudanca = 0;
+	double otimoAntes = otimo->getOWA();
+	int contSemMudanca = 0;
 	SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]; // cria-se uma populaçao de descentes
 	alocaPopulacao(novaPop, rg); 
 	for (int i=0; i<TAMANHOPOPULACAO*2; i++) Q[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
@@ -228,20 +228,24 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		
 		setOtimo(otimo);
-		// if (otimoAntes == otimo->getOWA()){
-		// 	contSemMudanca++;
-		// } else {
-		// 	otimoAntes = otimo->getOWA();
-		// 	contSemMudanca=0;
-		// }
-		// if (contSemMudanca==5){
-		// 	cout<<"RENOVA"<<endl;
-		// 	for (int i=TAMANHOPOPULACAO-1; i>(TAMANHOPOPULACAO-TAMANHOPOPULACAO/2); i--) {
-		// 		populacao[i]->doRandomWalk();
-		// 		populacao[i]->calculaOwa(w); 
-		// 	}
-		// 	contSemMudanca=0;
-		// }
+		if (otimoAntes == otimo->getOWA()){
+			contSemMudanca++;
+		} else {
+			otimoAntes = otimo->getOWA();
+			contSemMudanca=0;
+		}
+		if (contSemMudanca==5){
+			cout<<"RENOVA"<<endl;
+			for (int i=0; i<TAMANHOPOPULACAO/2; i++) {
+				int idfjifj = rg.IRandom(0,TAMANHOPOPULACAO-1);
+				filho->doRandomWalk();
+				filho->calculaOwa(w); 
+				if (populacao[idfjifj]->getOWA()<filho->getOWA()){
+					*populacao[idfjifj] = *filho;
+				}
+			}
+			contSemMudanca=0;
+		}
 		cout<<"Geraçao "<<i+1<<"  Otimo = "<<otimo->getOWA()<<endl;
 		// for (int ppp=0; ppp<TAMANHOPOPULACAO; ppp++){
 		// 	cout<<"\t"<<populacao[ppp]->getOWA()<<" ---- "<<populacao[ppp]->fitness<<endl;
@@ -362,7 +366,7 @@ int main(){
 	// nova->printSolucao();
 	// nova->calculaOwa(w);
 	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
-
+	cout<<TAMANHOPOPULACAO<<endl;
 	SolucaoEdgeSet *otimo  = memetic(rg);
 	otimo->printSolucao();
 	cout<<"OWA = "<<otimo->getOWA()<<endl;
