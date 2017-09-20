@@ -128,28 +128,37 @@ int main(){
 	// nova->printSolucao();
 	// nova->calculaOwa(w);
 	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
-	
-	int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
-	int index2 = rg.IRandom(0,NUMDIRECOES-1);
-	cout<<"Individuo "<<index+1<<endl;
-	populacao[index]->printSolucao();
-	cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
-	Plasmideo plas(&rg);
-	int tam  =rg.IRandom(2,8);
-	double lambda[NUMOBJETIVOS];
-	for (int ll=0; ll<NUMOBJETIVOS; ll++){
-		lambda[ll] =  vetoresDirecoes[index2][ll];
-	} 
-	plas.geraPlasm_rmcPrim(lambda, tam);
-	cout<<"Plamideo de tamanho "<<tam<<endl;
-	SolucaoEdgeSet nova = *populacao[index];
-	plas.atacaSolucao(nova);
-	cout<<endl;
-	nova.printSolucao();
-	cout<<"OWA = "<<nova.getOWA()<<endl;
-	if(nova.getOWA()<populacao[index]->getOWA()){
-		cout<<"ATAQUE BEM SUCEDIDO!"<<endl;
+	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
+	*otimo = *populacao[0];
+	for (int cofg=0; cofg<200; cofg++){
+		setOtimo(otimo);
+		//cout<<"Otimo = "<<otimo->getOWA()<<endl;
+		//int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		int index2 = rg.IRandom(0,NUMDIRECOES-1);
+		//cout<<"Individuo "<<index+1<<endl;
+		//populacao[index]->printSolucao();
+		//cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
+		Plasmideo plas(&rg);
+		int tam  =rg.IRandom(2,50);
+		double lambda[NUMOBJETIVOS];
+		for (int ll=0; ll<NUMOBJETIVOS; ll++){
+			lambda[ll] =  vetoresDirecoes[index2][ll];
+		} 
+		plas.geraPlasm_rmcPrim(lambda, tam);
+		cout<<"Plamideo de tamanho "<<tam<<endl;
+		SolucaoEdgeSet nova = *otimo;//*populacao[index];
+		plas.atacaSolucao(nova);
+		nova.calculaOwa(w);
+		//cout<<"OWA NOVA = "<<nova.getOWA()<<endl;
+		if(nova.getOWA()<otimo->getOWA()){
+			*otimo = nova;
+			cout<<"ATAQUE BEM SUCEDIDO!"<<endl;
+			cout<<endl;
+			//nova.printSolucao();
+		}
+		SA(*otimo, rg);
 	}
+	cout<<"Otimo = "<<otimo->getOWA()<<endl;
 
 
 	// int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
@@ -160,7 +169,7 @@ int main(){
 	// cout<<endl;
 	// nova->printSolucao();
 
-	
+
 	// cout<<TAMANHOPOPULACAO<<endl;
 	// SolucaoEdgeSet *otimo  = memetic(rg);
 	// otimo->printSolucao();

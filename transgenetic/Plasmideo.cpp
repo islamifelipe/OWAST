@@ -41,12 +41,13 @@ class Plasmideo {
 
 	void geraPlasm_rmcPrim (double *lambda, int tam) {
         tamTrecho = tam;
-		SolucaoEdgeSet agm(NUMEROVERTICES,*rg);
-		rmcPrim (agm,lambda,*rg, tamTrecho);
+		SolucaoEdgeSet *agm = new SolucaoEdgeSet(NUMEROVERTICES-1, *rg); // TODO: fazer sem new
+	 	//SolucaoEdgeSet agm(NUMEROVERTICES,*rg);
+		rmcPrim (*agm,lambda,*rg, tamTrecho);
 
         FOR(i, 0, tamTrecho) {
-            trechoInserir [i][0] = agm.edges[i][0];
-            trechoInserir [i][1] = agm.edges[i][1];
+            trechoInserir [i][0] = agm->edges[i][0];
+            trechoInserir [i][1] = agm->edges[i][1];
         }
 	}
 
