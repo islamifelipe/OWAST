@@ -11,7 +11,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 100 // TESTE
+#define NUMEROVERTICES 200 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 

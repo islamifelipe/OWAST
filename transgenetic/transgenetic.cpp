@@ -142,7 +142,7 @@ int main(){
 		Plasmideo plas(&rg);
 		Plasmideo plas2(&rg);
 		Plasmideo plas3(&rg);
-		int tam  =rg.IRandom(2,50);
+		int tam  =rg.IRandom(2,NUMEROVERTICES-1);
 		double lambda[NUMOBJETIVOS];
 		for (int ll=0; ll<NUMOBJETIVOS; ll++){
 			lambda[ll] =  vetoresDirecoes[index2][ll];
@@ -159,7 +159,7 @@ int main(){
 			cout<<endl;
 			//nova.printSolucao();
 		}
-		tam  =rg.IRandom(2,50);
+		tam  =rg.IRandom(2,NUMEROVERTICES-1);
 		int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
 		plas2.geraPlasm_Solucao(*populacao[index], tam);
 		cout<<"Plamideo sol de tamanho "<<tam<<endl;
@@ -170,12 +170,11 @@ int main(){
 			*otimo = nova2;
 			cout<<"OTIMO ATACADO POR PLAS_SOL!"<<endl;
 			cout<<endl;
-			SA(*otimo, rg);
 			//nova.printSolucao();
-		}
+		}	
+		SA(*otimo, rg);
 
-
-		tam  =rg.IRandom(2,50);
+		tam  =rg.IRandom(2,NUMEROVERTICES-1);
 		index = rg.IRandom(0,TAMANHOPOPULACAO-1);
 		plas3.geraPlasm_Solucao(*otimo, tam);
 		cout<<"Plamideo sol_3 de tamanho "<<tam<<endl;
@@ -186,10 +185,9 @@ int main(){
 			*populacao[index] = nova3;
 			cout<<"ENDOSSIMBIONTE ATACADO POR PLAS_SOL!"<<endl;
 			cout<<endl;
-			SA(*populacao[index], rg);
 			//nova.printSolucao();
 		}
-
+		//SA(*populacao[index], rg);
 
 	}
 	cout<<"Otimo = "<<otimo->getOWA()<<endl;
