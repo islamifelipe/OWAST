@@ -13,8 +13,8 @@
 #include "SolucaoEdgeSet.cpp"
 #include "popInicial.cpp"
 #include "vetoresDirecao.cpp"
-#include "tabuSearch.cpp"
 #include "simulatedannealing.cpp"
+#include "Plasmideo.cpp"
 
 using namespace std;
 
@@ -23,8 +23,6 @@ double w[NUMOBJETIVOS];  // pesos OWA
 SolucaoEdgeSet *populacao[TAMANHOPOPULACAO];
 SolucaoEdgeSet *Q[TAMANHOPOPULACAO*2];
 double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
-double thetaM; // é o maior ângulo entre dois vetores adjacentes, para todos os vetores direcoes
-// thetaM DEVE SER CALCULADO NO MOMENTO QUE OS VETORES SAO DETERMINADOS
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -83,10 +81,9 @@ int main(){
 	input(); // ler instância
 	TRandomMersenne rg( 309405904950 ); //48594589849
 	
-	// Reference_Generation(vetoresDirecoes, thetaM);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao1(populacao, rg); // gera populaçao inicial
-	//cout<<"thetaM = "<<thetaM<<endl;
+	Reference_Generation(vetoresDirecoes);
+	alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	gerarPopulacao3(populacao, rg,vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
 	// for (int i=0; i<TAMANHOPOPULACAO; i++){
 	// 	for (int j=0; j<TAMANHOPOPULACAO; j++){
 	// 		if (*populacao[i]>>*populacao[j]){
@@ -132,7 +129,38 @@ int main(){
 	// nova->calculaOwa(w);
 	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
 	
+	int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	int index2 = rg.IRandom(0,NUMDIRECOES-1);
+	cout<<"Individuo "<<index+1<<endl;
+	populacao[index]->printSolucao();
+	cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
+	Plasmideo plas(&rg);
+	int tam  =rg.IRandom(2,8);
+	double lambda[NUMOBJETIVOS];
+	for (int ll=0; ll<NUMOBJETIVOS; ll++){
+		lambda[ll] =  vetoresDirecoes[index2][ll];
+	} 
+	plas.geraPlasm_rmcPrim(lambda, tam);
+	cout<<"Plamideo de tamanho "<<tam<<endl;
+	SolucaoEdgeSet nova = *populacao[index];
+	plas.atacaSolucao(nova);
+	cout<<endl;
+	nova.printSolucao();
+	cout<<"OWA = "<<nova.getOWA()<<endl;
+	if(nova.getOWA()<populacao[index]->getOWA()){
+		cout<<"ATAQUE BEM SUCEDIDO!"<<endl;
+	}
 
+
+	// int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	// cout<<"Individuo "<<index+1<<endl;
+	// populacao[index]->printSolucao();
+	// SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	// rmcPrim(*nova,vetoresDirecoes[43],rg, 4);
+	// cout<<endl;
+	// nova->printSolucao();
+
+	
 	// cout<<TAMANHOPOPULACAO<<endl;
 	// SolucaoEdgeSet *otimo  = memetic(rg);
 	// otimo->printSolucao();
