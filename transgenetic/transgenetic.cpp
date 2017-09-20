@@ -54,27 +54,28 @@ void setOtimo(SolucaoEdgeSet * otimo){
 
 
 
-bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
-	return s1->getOWA()<s2->getOWA(); //|| (s1->getOWA()==s2->getOWA()));// && s1->fitness<s2->fitness);
+// bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
+// 	return s1->getOWA()<s2->getOWA(); //|| (s1->getOWA()==s2->getOWA()));// && s1->fitness<s2->fitness);
 	
-} //  crescente
+// } //  crescente
     
-/*As soluçoes de elite sao aqueals de melhor fitess*/
-void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
-	std::vector<SolucaoEdgeSet *> uniao;
-	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
-	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
+// /*As soluçoes de elite sao aqueals de melhor fitess*/
+// void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
+// 	std::vector<SolucaoEdgeSet *> uniao;
+// 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
+// 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
 		
-
-	// for (int i=0; i<TAMANHOPOPULACAO*2; i++) {
-	// 	uniao.push_back(Q[i]);
-	// }
-	std::sort (uniao.begin(), uniao.end(), comparae2);
-	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
-	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
+// 	std::sort (uniao.begin(), uniao.end(), comparae2);
+// 	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
+// 	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
 	
+// }
 
-}
+
+/* O ótimo corrente deve sempre ser atacado
+  O ótimo corrente deve sempre fornecer genes pra (pelo menos) um plasmideo
+	Os demais podem ser aleatorios
+  */
 
 int main(){
 
@@ -130,7 +131,7 @@ int main(){
 	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
 	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	*otimo = *populacao[0];
-	for (int cofg=0; cofg<200; cofg++){
+	for (int cofg=0; cofg<30; cofg++){
 		setOtimo(otimo);
 		//cout<<"Otimo = "<<otimo->getOWA()<<endl;
 		//int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
@@ -139,24 +140,57 @@ int main(){
 		//populacao[index]->printSolucao();
 		//cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
 		Plasmideo plas(&rg);
+		Plasmideo plas2(&rg);
+		Plasmideo plas3(&rg);
 		int tam  =rg.IRandom(2,50);
 		double lambda[NUMOBJETIVOS];
 		for (int ll=0; ll<NUMOBJETIVOS; ll++){
 			lambda[ll] =  vetoresDirecoes[index2][ll];
 		} 
 		plas.geraPlasm_rmcPrim(lambda, tam);
-		cout<<"Plamideo de tamanho "<<tam<<endl;
+		cout<<"Plamideo rmcPrim de tamanho "<<tam<<endl;
 		SolucaoEdgeSet nova = *otimo;//*populacao[index];
 		plas.atacaSolucao(nova);
 		nova.calculaOwa(w);
 		//cout<<"OWA NOVA = "<<nova.getOWA()<<endl;
 		if(nova.getOWA()<otimo->getOWA()){
 			*otimo = nova;
-			cout<<"ATAQUE BEM SUCEDIDO!"<<endl;
+			cout<<"OTIMO ATACADO POR PLAS_rmcPrim!"<<endl;
 			cout<<endl;
 			//nova.printSolucao();
 		}
-		SA(*otimo, rg);
+		tam  =rg.IRandom(2,50);
+		int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		plas2.geraPlasm_Solucao(*populacao[index], tam);
+		cout<<"Plamideo sol de tamanho "<<tam<<endl;
+		SolucaoEdgeSet nova2 = *otimo;//*populacao[index];
+		plas2.atacaSolucao(nova2);
+		nova2.calculaOwa(w);
+		if(nova2.getOWA()<otimo->getOWA()){
+			*otimo = nova2;
+			cout<<"OTIMO ATACADO POR PLAS_SOL!"<<endl;
+			cout<<endl;
+			SA(*otimo, rg);
+			//nova.printSolucao();
+		}
+
+
+		tam  =rg.IRandom(2,50);
+		index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		plas3.geraPlasm_Solucao(*otimo, tam);
+		cout<<"Plamideo sol_3 de tamanho "<<tam<<endl;
+		SolucaoEdgeSet nova3 = *populacao[index];//*populacao[index];
+		plas3.atacaSolucao(nova3);
+		nova3.calculaOwa(w);
+		if(nova3.getOWA()<populacao[index]->getOWA()){
+			*populacao[index] = nova3;
+			cout<<"ENDOSSIMBIONTE ATACADO POR PLAS_SOL!"<<endl;
+			cout<<endl;
+			SA(*populacao[index], rg);
+			//nova.printSolucao();
+		}
+
+
 	}
 	cout<<"Otimo = "<<otimo->getOWA()<<endl;
 
