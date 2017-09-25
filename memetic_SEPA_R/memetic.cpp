@@ -313,62 +313,31 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 
 }
 
-int main(){
-
+int main(int argc, char *argv[]){
+	int seemente = std::atoi(argv[1]);
+	TRandomMersenne rg(seemente);
+	cout<<"Semente utilizada : "<<seemente<<endl;
+	FILE *samplefile = fopen(argv[2],"a");
+	FILE *tempofile = fopen(argv[3],"a");
 	input(); // ler instância
-	TRandomMersenne rg( 309405904950 ); //48594589849
+	// TRandomMersenne rg( 309405904950 ); //48594589849
 	
-	// Reference_Generation(vetoresDirecoes, thetaM);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao1(populacao, rg); // gera populaçao inicial
-	//cout<<"thetaM = "<<thetaM<<endl;
-	// for (int i=0; i<TAMANHOPOPULACAO; i++){
-	// 	for (int j=0; j<TAMANHOPOPULACAO; j++){
-	// 		if (*populacao[i]>>*populacao[j]){
-	// 			for (int o=0; o<NUMOBJETIVOS; o++){
-	// 				cout<<populacao[i]->getObj(o)<<" ";
-	// 			}
-	// 			cout<<"   DOMINA   ";
-	// 			for (int o=0; o<NUMOBJETIVOS; o++){
-	// 				cout<<populacao[j]->getObj(o)<<" ";
-	// 			}
-	// 			cout<<"\n"<<endl;
-	// 		}
-	// 	}
-	// }
-	
+	/* CALCULA O TEMPO */
+	struct tms tempoAntes, tempoDepois;
+	times(&tempoAntes);
 
-
-
-	// Objective_Normalization();
-	// for (int i=0; i<TAMANHOPOPULACAO; i++){
-	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
-	// 		cout<<populacao[i]->getObj(o)<<" ";
-	// 	}
-	// 	cout<<"  ----->  ";
-	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
-	// 		cout<<populacao[i]->f_normalized[o]<<" ";
-	// 	}
-	// 	cout<<endl;
-	// }
-	// Reference_Generation(vetoresDirecoes);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
-	
-	// SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
-	// populacao[0]->printSolucao();
-	// cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;
-	// cout<<endl;
-	// populacao[5]->printSolucao();
-	// cout<<"OWA pai = "<<populacao[5]->getOWA()<<endl;
-	// cout<<endl;
-	// nova->crossover(*populacao[0], *populacao[5]);
-	// nova->printSolucao();
-	// nova->calculaOwa(w);
-	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
-	cout<<TAMANHOPOPULACAO<<endl;
 	SolucaoEdgeSet *otimo  = memetic(rg);
+
+	times(&tempoDepois);
+	fprintf(stdout,"Tempo(s) = %.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+	fprintf(tempofile,"%.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+   	
+
 	otimo->printSolucao();
 	cout<<"OWA = "<<otimo->getOWA()<<endl;
+	fprintf(samplefile,"%.2lf\n",otimo->getOWA());
+   
+	fclose(samplefile);
+	fclose(tempofile);
 
 }

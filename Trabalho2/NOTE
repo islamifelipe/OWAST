@@ -1,0 +1,12 @@
+Trabalho 2 da disciplina de Multiobjetivo
+
+Testar o memetico com os vetores do SPEA/R na populaçao inicial
+Testar pra instâncias 10 objetivos k_trimmed correlated e anticorrelated, de 50 até 500 vértices
+30 execuçoes
+comparar com o exato fernandes2 limitado até 3h
+
+Os resultados deste relatorio estao guardados nesta pasta
+
+6*2*3*3*1*1/4/24
+
+TESTE/fernandes2/k_trimmed/trabalho2/

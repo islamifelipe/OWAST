@@ -75,6 +75,13 @@ void setOtimo(SolucaoEdgeSet * otimo){
 /* O ótimo corrente deve sempre ser atacado
   O ótimo corrente deve sempre fornecer genes pra (pelo menos) um plasmideo
 	Os demais podem ser aleatorios
+  
+	CRIAR UMA LISTA (REPOSITORIO) COM AS INFORMACOES GENETICAS
+	TAL REPOSITORIO É VAZIO INICIALMENTE
+	ELE SERÁ PREENCHIDO COM UMA **COPIA** DOS ENDOSSIMBIONTES
+	UM ENDOSSIMBIONTE DA **POPULACAO** É ESCOLHIDO PARA SER ATACADO
+		(1) CASO O ATAQUE FUNCIONE, TAL  ENDOSSIMBIONTE DA **POPULACAO** É MODIFICADO
+		E UMA COPIA DO SEU MATERIAL GENÉTICO É INSERIDO NO REPOSITORIO	
   */
 
 int main(){
