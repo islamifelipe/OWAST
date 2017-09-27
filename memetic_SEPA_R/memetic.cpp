@@ -25,6 +25,8 @@ SolucaoEdgeSet *Q[TAMANHOPOPULACAO*2];
 double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
 double thetaM; // é o maior ângulo entre dois vetores adjacentes, para todos os vetores direcoes
 // thetaM DEVE SER CALCULADO NO MOMENTO QUE OS VETORES SAO DETERMINADOS
+int contaRenovacao =0;
+std::vector<int> otimos; 
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -235,21 +237,22 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			contSemMudanca=0;
 		}
 		if (contSemMudanca==5){
-			cout<<"RENOVA"<<endl;
+			contaRenovacao++;
 			for (int i=0; i<TAMANHOPOPULACAO/2; i++) {
-				int idfjifj = rg.IRandom(0,TAMANHOPOPULACAO-1);
-				filho->doRandomWalk();
-				filho->calculaOwa(w); 
-				if (populacao[idfjifj]->getOWA()<filho->getOWA()){
-					*populacao[idfjifj] = *filho;
-				}
+				int idfjifj  = i;//= rg.IRandom(0,TAMANHOPOPULACAO-1);
+				rmcPrim(*filho, w, rg);
+				filho->calculaOwa(w);
+				*populacao[idfjifj] = *filho;
+				
+			}
+			for (int i=TAMANHOPOPULACAO/3; i<TAMANHOPOPULACAO; i++){
+				filho->mutacao(*otimo);
+				filho->calculaOwa(w);
+				*populacao[i] = *filho;
 			}
 			contSemMudanca=0;
 		}
-		cout<<"Geraçao "<<i+1<<"  Otimo = "<<otimo->getOWA()<<endl;
-		// for (int ppp=0; ppp<TAMANHOPOPULACAO; ppp++){
-		// 	cout<<"\t"<<populacao[ppp]->getOWA()<<" ---- "<<populacao[ppp]->fitness<<endl;
-		// }
+		otimos.push_back(otimo->getOWA());
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -273,21 +276,9 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			double p = rg.Random();
 			if (p<TAXADECRUZAMENTO){
 				filho->crossover(*pai, *mae);
-			} else { // se nao cruzar, o filho fica sendo o pai ou o mae (o melhor)
-				// if (mae->getOWA()<pai->getOWA()){
-				// 	*filho = *mae;
-				// }else{
-				// 	*filho = *pai;
-				// }
+			} else {
 				filho->doRandomWalk();
 				filho->calculaOwa(w);
-				// int ifjf = rg.IRandom(1,3);
-				// if (ifjf==1)
-				// 	renovaKCentrum(filho);
-				// else if (ifjf==2)
-				// 	renovaKTrimmed(filho);
-				// else 
-				// 	renovaHurwicz(filho);
 			}
 			// filho foi definido; Agora aplica-se mutaçao
 			p = rg.Random();
@@ -300,11 +291,6 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			}
 			SA(*novaPop[j], rg);
 		}
-		// for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) *Q[oeir] = *populacao[oeir];
-		// for (int oeir=0, conttt=TAMANHOPOPULACAO; oeir<TAMANHOPOPULACAO; oeir++, conttt++) *Q[conttt] = *novaPop[oeir];
-		// Objective_Normalization();
-		// Associate();
-		// Fitness_Assignment();
 		Environment_Selection2(novaPop); // o vetor populacao[..] tará as malhores solucoes encontras
 
 	}
@@ -329,14 +315,23 @@ int main(int argc, char *argv[]){
 	SolucaoEdgeSet *otimo  = memetic(rg);
 
 	times(&tempoDepois);
+
+	/*========= Estatistica ========= */
+	cout<<"========= Estatistica ========= "<<endl;
 	fprintf(stdout,"Tempo(s) = %.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
 	fprintf(tempofile,"%.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
-   	
+   	cout<<"Quantas vezes a populaçao precisou ser renovada? = "<<contaRenovacao<<endl;
+   	cout<<"Evolucao do otimo por geracao: "<<endl;
+   	for (int i=0; i<otimos.size(); i++){
+   		cout<<otimos[i]<<endl;
+   	}
+
 
 	otimo->printSolucao();
 	cout<<"OWA = "<<otimo->getOWA()<<endl;
 	fprintf(samplefile,"%.2lf\n",otimo->getOWA());
-   
+   	
+
 	fclose(samplefile);
 	fclose(tempofile);
 

@@ -1,0 +1,74 @@
+Semente utilizada : 4420641
+Informacoes sobre a populacao : 
+	SPEA/R = 26
+	doRandomWalk = 0
+	k-centrum = 18
+	k-trimmed = 56
+	Hurwicz = 0
+Geraçao 1  Otimo = 296
+Geraçao 2  Otimo = 296
+Geraçao 3  Otimo = 296
+Geraçao 4  Otimo = 296
+Geraçao 5  Otimo = 296
+RENOVA
+Geraçao 6  Otimo = 296
+Geraçao 7  Otimo = 296
+Geraçao 8  Otimo = 296
+Geraçao 9  Otimo = 296
+Geraçao 10  Otimo = 296
+RENOVA
+Geraçao 11  Otimo = 296
+Geraçao 12  Otimo = 296
+Geraçao 13  Otimo = 296
+Geraçao 14  Otimo = 296
+Geraçao 15  Otimo = 296
+RENOVA
+Geraçao 16  Otimo = 296
+Geraçao 17  Otimo = 296
+Geraçao 18  Otimo = 296
+Geraçao 19  Otimo = 296
+Geraçao 20  Otimo = 296
+RENOVA
+Geraçao 21  Otimo = 296
+Geraçao 22  Otimo = 296
+Geraçao 23  Otimo = 296
+Geraçao 24  Otimo = 296
+Geraçao 25  Otimo = 296
+RENOVA
+Geraçao 26  Otimo = 296
+Geraçao 27  Otimo = 296
+Geraçao 28  Otimo = 296
+Geraçao 29  Otimo = 296
+Geraçao 30  Otimo = 296
+Tempo(s) = 1.47
+3 24 96 11 8 8 5 5 16 9 3 4 
+7 24 92 9 8 7 13 7 18 19 14 8 
+7 17 97 10 11 2 15 9 11 11 3 7 
+7 21 94 7 4 9 12 9 6 7 13 6 
+21 29 98 3 14 11 11 12 1 4 6 14 
+11 29 99 10 8 10 9 1 11 3 6 3 
+17 19 99 11 2 5 0 12 10 3 2 4 
+11 20 95 12 12 17 16 5 4 10 12 11 
+21 26 96 6 17 11 5 14 8 8 4 4 
+20 22 98 8 10 5 14 6 15 3 3 10 
+15 22 92 6 17 11 8 9 6 6 12 9 
+1 15 96 17 16 8 5 6 5 7 3 3 
+10 29 97 2 16 3 6 14 7 15 10 13 
+11 27 94 16 10 19 4 7 15 13 12 10 
+1 23 89 17 15 10 12 12 9 10 8 20 
+5 17 94 9 5 16 18 15 9 16 11 12 
+5 18 94 5 7 14 5 8 7 7 5 7 
+14 18 99 13 9 3 4 11 2 4 8 7 
+8 14 92 20 17 7 13 11 9 15 15 14 
+12 15 96 15 17 8 15 10 13 7 11 13 
+0 12 98 8 12 2 12 10 11 6 14 14 
+23 28 95 5 15 15 10 17 15 5 4 10 
+6 26 89 17 13 13 12 14 11 10 9 23 
+2 6 94 7 5 18 12 17 4 8 16 19 
+6 25 91 16 20 13 11 11 10 8 10 21 
+6 16 93 10 18 5 13 8 18 10 17 12 
+6 13 93 14 19 12 7 13 14 13 12 7 
+4 6 91 19 9 21 11 13 17 12 17 8 
+4 9 91 20 17 11 13 9 9 16 10 11 
+( 2742 323 351 294 291 295 291 265 270 304 )
+OWA = 296

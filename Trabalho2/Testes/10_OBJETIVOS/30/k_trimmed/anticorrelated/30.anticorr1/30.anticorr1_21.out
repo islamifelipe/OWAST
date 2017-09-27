@@ -1,0 +1,72 @@
+Semente utilizada : 7951429
+Informacoes sobre a populacao : 
+	SPEA/R = 32
+	doRandomWalk = 0
+	k-centrum = 21
+	k-trimmed = 47
+	Hurwicz = 0
+Geraçao 1  Otimo = 885
+Geraçao 2  Otimo = 885
+Geraçao 3  Otimo = 875
+Geraçao 4  Otimo = 866
+Geraçao 5  Otimo = 858
+Geraçao 6  Otimo = 858
+Geraçao 7  Otimo = 845
+Geraçao 8  Otimo = 829.5
+Geraçao 9  Otimo = 829.5
+Geraçao 10  Otimo = 825
+Geraçao 11  Otimo = 825
+Geraçao 12  Otimo = 822
+Geraçao 13  Otimo = 822
+Geraçao 14  Otimo = 822
+Geraçao 15  Otimo = 822
+Geraçao 16  Otimo = 822
+RENOVA
+Geraçao 17  Otimo = 822
+Geraçao 18  Otimo = 822
+Geraçao 19  Otimo = 822
+Geraçao 20  Otimo = 822
+Geraçao 21  Otimo = 822
+RENOVA
+Geraçao 22  Otimo = 822
+Geraçao 23  Otimo = 822
+Geraçao 24  Otimo = 822
+Geraçao 25  Otimo = 822
+Geraçao 26  Otimo = 822
+RENOVA
+Geraçao 27  Otimo = 822
+Geraçao 28  Otimo = 822
+Geraçao 29  Otimo = 822
+Geraçao 30  Otimo = 822
+Tempo(s) = 1.52
+4 14 79 17 43 18 16 8 11 49 74 10 
+5 24 96 54 15 59 63 14 2 19 12 30 
+3 20 64 25 51 70 20 8 10 40 22 16 
+8 18 88 35 36 19 64 21 43 26 71 60 
+16 25 94 19 29 62 26 61 13 55 14 79 
+11 26 65 19 13 16 46 32 37 21 11 61 
+2 14 99 1 40 12 78 1 55 64 29 73 
+6 25 91 12 37 13 69 47 2 66 46 40 
+5 15 48 21 42 23 56 14 78 16 28 53 
+7 22 85 16 14 10 35 16 23 76 21 8 
+21 22 75 7 23 37 83 13 34 13 21 79 
+11 14 86 81 14 6 14 18 9 22 61 37 
+12 26 95 10 63 18 50 32 14 15 57 55 
+9 13 50 26 69 42 56 9 14 15 9 79 
+4 29 42 38 19 20 27 32 39 76 15 58 
+21 26 80 15 10 16 81 36 30 32 12 58 
+22 27 59 8 9 12 72 78 26 30 25 65 
+0 18 96 22 7 32 45 19 28 1 38 72 
+2 23 69 31 14 10 57 32 18 33 53 22 
+9 16 80 21 37 36 18 35 56 49 4 65 
+9 15 87 50 10 57 6 9 44 69 18 48 
+18 23 63 25 49 50 17 23 32 42 18 62 
+10 22 47 46 14 18 63 14 45 17 29 62 
+14 17 79 30 19 33 49 77 43 8 6 75 
+19 21 92 5 9 46 45 19 42 44 8 21 
+7 16 94 50 33 20 10 12 7 53 15 34 
+1 2 87 10 6 37 4 74 16 18 33 29 
+3 14 69 84 10 22 20 55 17 78 16 15 
+23 28 91 45 56 2 36 12 8 61 5 49 
+( 2250 823 791 816 1226 821 796 1108 771 1415 )
+OWA = 822
