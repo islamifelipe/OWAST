@@ -145,6 +145,13 @@ class Plasmideo {
 		s = nova;
 	}
 	// após o ataque, deve-se calcular o OWA
+
+
+	IDEIA DE PLASMIDEO:
+	tome dois endossimbiontes (A e B)
+	O plasmideo P será tal que P = (A | B) - (A & B)
+	Inspiraçao: compor um plasmideo cuja informaçao genética una 
+	arestas que, possivelmente, ainda nao se uniram pra formar uma mesma arvore
 };
 
 #endif

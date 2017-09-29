@@ -26,7 +26,7 @@ double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
 double thetaM; // é o maior ângulo entre dois vetores adjacentes, para todos os vetores direcoes
 // thetaM DEVE SER CALCULADO NO MOMENTO QUE OS VETORES SAO DETERMINADOS
 int contaRenovacao =0;
-std::vector<int> otimos; 
+std::vector<double> otimos; 
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -50,6 +50,7 @@ void input(){
 	}
 }
 
+TODO: fazer como no caixeiro
 void setOtimo(SolucaoEdgeSet * otimo){
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
 		if (populacao[i]->getOWA()<otimo->getOWA()) *otimo = *populacao[i];
@@ -110,7 +111,7 @@ void Environment_Selection(){
 bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
 	return s1->getOWA()<s2->getOWA(); //|| (s1->getOWA()==s2->getOWA()));// && s1->fitness<s2->fitness);
 	
-} //  crescente
+} 
     
 /*As soluçoes de elite sao aqueals de melhor fitess*/
 void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
@@ -224,7 +225,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	int contSemMudanca = 0;
 	SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]; // cria-se uma populaçao de descentes
 	alocaPopulacao(novaPop, rg); 
-	for (int i=0; i<TAMANHOPOPULACAO*2; i++) Q[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	//for (int i=0; i<TAMANHOPOPULACAO*2; i++) Q[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
 	
 	
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
@@ -270,7 +271,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			if (populacao[p3]->getOWA()<populacao[p4]->getOWA()){
 				*mae = *populacao[p3];
 			} else {
-				*mae = *populacao[p4];
+				*mae = *populacao[p4]; TODO: nao precisa sempre compiar
 			}
 
 			double p = rg.Random();
