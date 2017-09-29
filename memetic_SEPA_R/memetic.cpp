@@ -118,7 +118,7 @@ void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 	std::vector<SolucaoEdgeSet *> uniao;
 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
-		
+		TODO: melhorar pra evitar ficar com tudo igual
 
 	// for (int i=0; i<TAMANHOPOPULACAO*2; i++) {
 	// 	uniao.push_back(Q[i]);
