@@ -281,6 +281,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 				filho->doRandomWalk();
 				filho->calculaOwa(w);
 			}
+			TODO: resetar o otimo tambem aqui
 			// filho foi definido; Agora aplica-se mutaçao
 			p = rg.Random();
 			if (p<TAXADEMUTACAO){
