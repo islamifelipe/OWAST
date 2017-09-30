@@ -46,35 +46,85 @@ void input(){
 	}
 }
 
+
 void setOtimo(SolucaoEdgeSet * otimo){
+
+	double valorOtimo = otimo->getOWA();
+	int index = -1;
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
-		if (populacao[i]->getOWA()<otimo->getOWA()) *otimo = *populacao[i];
+		if (populacao[i]->getOWA()<valorOtimo){
+			valorOtimo = populacao[i]->getOWA();
+			index = i;
+		}
 	}
+	if (index!=-1) *otimo = *populacao[index];
 }
 
 
+ /*TODO : criar repositorio com 3x o tamanho da populaçao?*/
 
-// bool comparae2 (SolucaoEdgeSet *s1, SolucaoEdgeSet *s2) { 
-// 	return s1->getOWA()<s2->getOWA(); //|| (s1->getOWA()==s2->getOWA()));// && s1->fitness<s2->fitness);
-	
-// } //  crescente
-    
-// /*As soluçoes de elite sao aqueals de melhor fitess*/
-// void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
-// 	std::vector<SolucaoEdgeSet *> uniao;
-// 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
-// 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
-		
-// 	std::sort (uniao.begin(), uniao.end(), comparae2);
-// 	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
-// 	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
-	
-// }
+void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
+	for (int i=0;i<NUMPLASMIDEOS;i++)
+		pl[i].setRandom(&rg);
+	double lambda[NUMOBJETIVOS];
+	int quantPlas1 = PER_PLAS1*NUMPLASMIDEOS/100;
+	int quantPlas2 = PER_PLAS2*NUMPLASMIDEOS/100;
+	int quantPlas3 = PER_PLAS3*NUMPLASMIDEOS/100;
+	int op, k, tam, cont=0, index2, index3, lim;
+	double alfa[6] = {0.2, 0.3, 0.4, 0.6, 0.7, 0.8};
+	for (int i=0; i<quantPlas1 && cont<NUMPLASMIDEOS; i++){
+		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
+		op = rg.IRandom(0,4);
+		switch(op){
+			case 0: // vetores do SPEA/R
+				index2 = rg.IRandom(0,NUMDIRECOES-1);
+				for (int ll=0; ll<NUMOBJETIVOS; ll++) lambda[ll] =  vetoresDirecoes[index2][ll];
+				break;
+			case 1: // vetor do k-centrum
+				k = rg.IRandom(1,NUMOBJETIVOS);
+				for (int ll=0; ll<k; ll++)lambda[ll] = 1.0/k;
+				for (int ll=k; ll<NUMOBJETIVOS; ll++) lambda[ll] = 0;
+				break;
+			case 2: // vetor do k-trimmed
+				lim = (int) NUMOBJETIVOS/2-1;
+				if (lim==0) lim = 1;
+				k = rg.IRandom(1,lim);
+				for (int i=0; i<k; i++) lambda[i] = 0;
+				for (int i=k; i<NUMOBJETIVOS-k; i++) lambda[i] = 1.0/(NUMOBJETIVOS-(2.0*k));
+				for (int i=NUMOBJETIVOS-k; i<NUMOBJETIVOS; i++)lambda[i] = 0;
+				break;
+			case 3: // vetor do Hurwicz
+				index2 = rg.IRandom(0,5);
+				lambda[0] = alfa[index2];
+				lambda[NUMOBJETIVOS-1] = 1.0 - alfa[index2];
+				for (int ll=1; ll<NUMOBJETIVOS-1; ll++)lambda[ll] = 0;
+				break;
+			default: // vetor w (argumento da instância)
+				for (int ll=0; ll<NUMOBJETIVOS; ll++)lambda[ll] =  w[ll];
+				break;
 
+		}
+		pl[cont].geraPlasm_rmcPrim(lambda, tam);
+		cont++;
+	}
+	for (int i=0; i<quantPlas2 && cont<NUMPLASMIDEOS; i++){
+		index2 = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
+		pl[cont].geraPlasm_Solucao(*populacao[index2], tam);
+		cont++;
+	}
+	for (int i=0; i<quantPlas3+1 && cont<NUMPLASMIDEOS; i++){
+		index3 = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		index2 = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1))); // NOTAR: DIFERENTE DE SILVIA
+		pl[cont].geraPlasTwoSolutions(*populacao[index2], *populacao[index3], tam);
+		cont++;
+	}	
+}
 
 /* O ótimo corrente deve sempre ser atacado
   O ótimo corrente deve sempre fornecer genes pra (pelo menos) um plasmideo
-	Os demais podem ser aleatorios
+	Os demais podem ser aleatorios (mas devem constar)
   
 	CRIAR UMA LISTA (REPOSITORIO) COM AS INFORMACOES GENETICAS
 	TAL REPOSITORIO É VAZIO INICIALMENTE
@@ -84,14 +134,58 @@ void setOtimo(SolucaoEdgeSet * otimo){
 		E UMA COPIA DO SEU MATERIAL GENÉTICO É INSERIDO NO REPOSITORIO	
   */
 
-int main(){
-
-	input(); // ler instância
-	TRandomMersenne rg( 309405904950 ); //48594589849
+/*ataca todos da populao, inclusive o otimo*/
+SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
+	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	
 	Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao3(populacao, rg,vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
+	*otimo = *populacao[0];
+	int indexPlas;
+	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
+		setOtimo(otimo);
+		//cria os PLASMIDEOS
+		Plasmideo pl[NUMPLASMIDEOS];
+		criaPlasmideos(rg, pl);
+		
+		// TODO: deixar?
+		for (int plas = 0; plas<NUMPLASMIDEOS; plas++){
+			SolucaoEdgeSet copia = *otimo;//*populacao[index];
+			pl[plas].atacaSolucao(copia);
+			copia.calculaOwa(w);
+			if(copia.getOWA()<otimo->getOWA()){
+				*otimo = copia;
+				//SA(*otimo, rg);
+			}
+		}
+		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
+		for (int pppt = 0; pppt < TAMANHOPOPULACAO; pppt++){
+			indexPlas = rg.IRandom(0,NUMPLASMIDEOS-1);
+			SolucaoEdgeSet copia = *populacao[pppt];//*populacao[index];
+			pl[indexPlas].atacaSolucao(copia);
+			copia.calculaOwa(w);
+			if(copia.getOWA()<populacao[pppt]->getOWA()){
+				*populacao[pppt] = copia;
+				//SA(*populacao[pppt], rg);
+				//cout<<"ATAQUE!"<<endl;
+			}
+		}
+	}
+
+	return otimo;
+}
+
+int main(){
+
+	input(); // ler instância
+	TRandomMersenne rg( 12327 ); //48594589849
+	SolucaoEdgeSet *otimo = transgenetic(rg);
+	cout<<"OTIMO = "<<otimo->getOWA()<<endl;
+	// Reference_Generation(vetoresDirecoes);
+	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
+	// gerarPopulacao3(populacao, rg,vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
+	
 	// for (int i=0; i<TAMANHOPOPULACAO; i++){
 	// 	for (int j=0; j<TAMANHOPOPULACAO; j++){
 	// 		if (*populacao[i]>>*populacao[j]){
@@ -107,97 +201,92 @@ int main(){
 	// 	}
 	// }
 	
-
-
-
-	// Objective_Normalization();
-	// for (int i=0; i<TAMANHOPOPULACAO; i++){
-	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
-	// 		cout<<populacao[i]->getObj(o)<<" ";
+	// SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
+	// *otimo = *populacao[0];
+	// setOtimo(otimo);
+	// //cout<<"OWA = "<<otimo->getOWA()<<endl;;
+	// for(int i=0; i<1000; i++){
+	// 	Plasmideo plas(&rg);
+	// 	int s1 = rg.IRandom(0, TAMANHOPOPULACAO-1);
+	// 	int s2 = rg.IRandom(0, TAMANHOPOPULACAO-1);
+	// 	int tam = rg.IRandom(2, NUMEROVERTICES/2);
+	// 	int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	// 	//cout<<s1<<" "<<s2<<endl;
+	// 	plas.geraPlasTwoSolutions(*otimo,*populacao[s2],tam);
+	// 	//int ing = 21;
+	// 	SolucaoEdgeSet nova2 = *populacao[index];
+	// 	plas.atacaSolucao(nova2);
+	// 	nova2.calculaOwa(w);
+	// 	if (nova2.getOWA()<populacao[index]->getOWA()){
+	// 		cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
+	// 		*populacao[index] = nova2;
+	// 		cout<<"populacao[index] ATACADO!"<<endl;
+	// 		cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
+	// 		cout<<endl;
 	// 	}
-	// 	cout<<"  ----->  ";
-	// 	for (int o=0; o<NUMOBJETIVOS; o++) {
-	// 		cout<<populacao[i]->f_normalized[o]<<" ";
-	// 	}
-	// 	cout<<endl;
 	// }
-	// Reference_Generation(vetoresDirecoes);
-	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao2(populacao, rg,vetoresDirecoes); // gera populaçao inicial
-	
-	// SolucaoEdgeSet *nova = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
-	// populacao[0]->printSolucao();
-	// cout<<"OWA pai = "<<populacao[0]->getOWA()<<endl;
-	// cout<<endl;
-	// populacao[5]->printSolucao();
-	// cout<<"OWA pai = "<<populacao[5]->getOWA()<<endl;
-	// cout<<endl;
-	// nova->crossover(*populacao[0], *populacao[5]);
-	// nova->printSolucao();
-	// nova->calculaOwa(w);
-	// cout<<"OWA NOVA = "<<nova->getOWA()<<endl;
-	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
-	*otimo = *populacao[0];
-	for (int cofg=0; cofg<30; cofg++){
-		setOtimo(otimo);
-		//cout<<"Otimo = "<<otimo->getOWA()<<endl;
-		//int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
-		int index2 = rg.IRandom(0,NUMDIRECOES-1);
-		//cout<<"Individuo "<<index+1<<endl;
-		//populacao[index]->printSolucao();
-		//cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
-		Plasmideo plas(&rg);
-		Plasmideo plas2(&rg);
-		Plasmideo plas3(&rg);
-		int tam  =rg.IRandom(2,NUMEROVERTICES-1);
-		double lambda[NUMOBJETIVOS];
-		for (int ll=0; ll<NUMOBJETIVOS; ll++){
-			lambda[ll] =  vetoresDirecoes[index2][ll];
-		} 
-		plas.geraPlasm_rmcPrim(lambda, tam);
-		cout<<"Plamideo rmcPrim de tamanho "<<tam<<endl;
-		SolucaoEdgeSet nova = *otimo;//*populacao[index];
-		plas.atacaSolucao(nova);
-		nova.calculaOwa(w);
-		//cout<<"OWA NOVA = "<<nova.getOWA()<<endl;
-		if(nova.getOWA()<otimo->getOWA()){
-			*otimo = nova;
-			cout<<"OTIMO ATACADO POR PLAS_rmcPrim!"<<endl;
-			cout<<endl;
-			//nova.printSolucao();
-		}
-		tam  =rg.IRandom(2,NUMEROVERTICES-1);
-		int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
-		plas2.geraPlasm_Solucao(*populacao[index], tam);
-		cout<<"Plamideo sol de tamanho "<<tam<<endl;
-		SolucaoEdgeSet nova2 = *otimo;//*populacao[index];
-		plas2.atacaSolucao(nova2);
-		nova2.calculaOwa(w);
-		if(nova2.getOWA()<otimo->getOWA()){
-			*otimo = nova2;
-			cout<<"OTIMO ATACADO POR PLAS_SOL!"<<endl;
-			cout<<endl;
-			//nova.printSolucao();
-		}	
-		SA(*otimo, rg);
+	//cout<<"OWA = "<<otimo->getOWA()<<endl;;
 
-		tam  =rg.IRandom(2,NUMEROVERTICES-1);
-		index = rg.IRandom(0,TAMANHOPOPULACAO-1);
-		plas3.geraPlasm_Solucao(*otimo, tam);
-		cout<<"Plamideo sol_3 de tamanho "<<tam<<endl;
-		SolucaoEdgeSet nova3 = *populacao[index];//*populacao[index];
-		plas3.atacaSolucao(nova3);
-		nova3.calculaOwa(w);
-		if(nova3.getOWA()<populacao[index]->getOWA()){
-			*populacao[index] = nova3;
-			cout<<"ENDOSSIMBIONTE ATACADO POR PLAS_SOL!"<<endl;
-			cout<<endl;
-			//nova.printSolucao();
-		}
-		//SA(*populacao[index], rg);
+	// for (int cofg=0; cofg<30; cofg++){
+	// 	setOtimo(otimo);
+	// 	//cout<<"Otimo = "<<otimo->getOWA()<<endl;
+	// 	//int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	// 	int index2 = rg.IRandom(0,NUMDIRECOES-1);
+	// 	//cout<<"Individuo "<<index+1<<endl;
+	// 	//populacao[index]->printSolucao();
+	// 	//cout<<"OWA = "<<populacao[index]->getOWA()<<endl;
+	// 	Plasmideo plas(&rg);
+	// 	Plasmideo plas2(&rg);
+	// 	Plasmideo plas3(&rg);
+	// 	int tam  =rg.IRandom(2,NUMEROVERTICES-1);
+	// 	double lambda[NUMOBJETIVOS];
+	// 	for (int ll=0; ll<NUMOBJETIVOS; ll++){
+	// 		lambda[ll] =  vetoresDirecoes[index2][ll];
+	// 	} 
+	// 	plas.geraPlasm_rmcPrim(lambda, tam);
+	// 	cout<<"Plamideo rmcPrim de tamanho "<<tam<<endl;
+	// 	SolucaoEdgeSet nova = *otimo;//*populacao[index];
+	// 	plas.atacaSolucao(nova);
+	// 	nova.calculaOwa(w);
+	// 	//cout<<"OWA NOVA = "<<nova.getOWA()<<endl;
+	// 	if(nova.getOWA()<otimo->getOWA()){
+	// 		*otimo = nova;
+	// 		cout<<"OTIMO ATACADO POR PLAS_rmcPrim!"<<endl;
+	// 		cout<<endl;
+	// 		//nova.printSolucao();
+	// 	}
+	// 	tam  =rg.IRandom(2,NUMEROVERTICES-1);
+	// 	int index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	// 	plas2.geraPlasm_Solucao(*populacao[index], tam);
+	// 	cout<<"Plamideo sol de tamanho "<<tam<<endl;
+	// 	SolucaoEdgeSet nova2 = *otimo;//*populacao[index];
+	// 	plas2.atacaSolucao(nova2);
+	// 	nova2.calculaOwa(w);
+	// 	if(nova2.getOWA()<otimo->getOWA()){
+	// 		*otimo = nova2;
+	// 		cout<<"OTIMO ATACADO POR PLAS_SOL!"<<endl;
+	// 		cout<<endl;
+	// 		//nova.printSolucao();
+	// 	}	
+	// 	SA(*otimo, rg);
 
-	}
-	cout<<"Otimo = "<<otimo->getOWA()<<endl;
+	// 	tam  =rg.IRandom(2,NUMEROVERTICES-1);
+	// 	index = rg.IRandom(0,TAMANHOPOPULACAO-1);
+	// 	plas3.geraPlasm_Solucao(*otimo, tam);
+	// 	cout<<"Plamideo sol_3 de tamanho "<<tam<<endl;
+	// 	SolucaoEdgeSet nova3 = *populacao[index];//*populacao[index];
+	// 	plas3.atacaSolucao(nova3);
+	// 	nova3.calculaOwa(w);
+	// 	if(nova3.getOWA()<populacao[index]->getOWA()){
+	// 		*populacao[index] = nova3;
+	// 		cout<<"ENDOSSIMBIONTE ATACADO POR PLAS_SOL!"<<endl;
+	// 		cout<<endl;
+	// 		//nova.printSolucao();
+	// 	}
+	// 	//SA(*populacao[index], rg);
+
+	// }
+	// cout<<"Otimo = "<<otimo->getOWA()<<endl;
 
 
 	// int index = rg.IRandom(0,TAMANHOPOPULACAO-1);

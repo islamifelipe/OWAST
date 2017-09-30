@@ -273,10 +273,10 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			contSemMudanca=0;
 		}
 		otimos.push_back(otimo->getOWA());
-		for (int aap = 0; aap<TAMANHOPOPULACAO; aap++){
-			cout<<populacao[aap]->getOWA()<<endl;
-		}
-		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
+		// for (int aap = 0; aap<TAMANHOPOPULACAO; aap++){
+		// 	cout<<populacao[aap]->getOWA()<<endl;
+		// }
+		//cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/

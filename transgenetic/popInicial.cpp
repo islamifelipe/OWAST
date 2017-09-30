@@ -112,9 +112,12 @@ void gerarPopulacao2(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 
 }
 
+
 void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg, double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS]){
-	cout<<"================== Populaçao gerada pelos vetores direcionais do SPEA/R, doRandomWalk, k-centrum, k-trimmed, Hurwicz ================== "<<endl;
+	//cout<<"================== Populaçao gerada pelos vetores direcionais do SPEA/R, doRandomWalk, k-centrum, k-trimmed, Hurwicz ================== "<<endl;
 	SolucaoEdgeSet *aux = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
+	int contRandom = 0, speaR = 0, trimed = 0, centrum=0, hur=0;
+	int op = 0;
 	for (int cont = 0; cont<TAMANHOPOPULACAO; cont++){
 		double lambda[NUMOBJETIVOS];
 		int indfgf = rg.IRandom(0, NUMDIRECOES-1);
@@ -123,40 +126,66 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 		} 
 		rmcPrim(*populacao[cont], lambda, rg);
 		populacao[cont]->calculaOwa(w);
-		string op = "SPEA/R";
-
+		op = 0;
 		aux->doRandomWalk();
 		aux->calculaOwa(w);
 		if (aux->getOWA()<populacao[cont]->getOWA()){
 			*populacao[cont] = *aux;
-			op = "doRandomWalk";
+			op = 1;
+			//op = "doRandomWalk";
 		}
 
 		renovaHurwicz(aux);
 		if (aux->getOWA()<populacao[cont]->getOWA()){
 			*populacao[cont] = *aux;
-			op = "renovaHurwicz";
+			op = 2;
+			// op = "renovaHurwicz";
+
 		}
 
 
 		renovaKCentrum(aux);
 		if (aux->getOWA()<populacao[cont]->getOWA()){
 			*populacao[cont] = *aux;
-			op = "renovaKCentrum";
+			//op = "renovaKCentrum";
+			op = 3;
 		}
 
 
 		renovaKTrimmed(aux);
 		if (aux->getOWA()<populacao[cont]->getOWA()){
 			*populacao[cont] = *aux;
-			op = "renovaKTrimmed";
+			op = 4;
+			//op = "renovaKTrimmed";
 		}
 
-		cout<<"Individuo gerado com "<<op<<endl;
-
+		switch(op){
+			case 1:
+				contRandom++;
+				break;
+			case 2:
+				hur++;
+				break;
+			case 3:
+				centrum++;
+				break;
+			case 4:
+				trimed++;
+				break;
+			default:
+				speaR++;
+				break;
+		}
 	}
+	cout<<"Informacoes sobre a populacao : "<<endl;
+	cout<<"\tSPEA/R = "<<100.0*speaR/TAMANHOPOPULACAO<<endl;
+	cout<<"\tdoRandomWalk = "<<100.0*contRandom/TAMANHOPOPULACAO<<endl;
+	cout<<"\tk-centrum = "<<100.0*centrum/TAMANHOPOPULACAO<<endl;
+	cout<<"\tk-trimmed = "<<100.0*trimed/TAMANHOPOPULACAO<<endl;
+	cout<<"\tHurwicz = "<<100.0*hur/TAMANHOPOPULACAO<<endl;
 
 }
+
 
 
 #endif

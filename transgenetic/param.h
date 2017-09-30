@@ -11,7 +11,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 200 // TESTE
+#define NUMEROVERTICES 300 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -26,15 +26,12 @@
 #define PORCENT_KTRIMENT 30 //--- 
 #define PORCENT_HURWICZ 30 //--- 
 
-/*Parâmetros do GA*/
-#define TAXADECRUZAMENTO 0.97  // 98% por geraçao
-#define TAXADEMUTACAO 0.1 // 10% por geraçao
-#define QUANTGERACOES 30 // quantidade de iteracoes do M-GA
 
-/*Parâmetros da busca tabu -- NAO UTILIZADO NO MOMENTO*/
-#define MAX_ITERATIONS 20
-#define MAX_VIZINHOS 20
-#define TABUTENURE 3 
+#define QUANTGERACOES 50 // quantidade de iteracoes do TANSGENETICO
+#define NUMPLASMIDEOS 15 // quantidade total de plasmideos
+#define PER_PLAS1 50 // percentagem de plasmideos gerados pelo rmc-prim
+#define PER_PLAS2 40 // percentagem de plasmideos gerados por uma soluçao
+#define PER_PLAS3 10 // percentagem de plasmideos gerados por duas soluçoes
 
 /*Parâmetros para o Simulated Annealing*/
 #define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO

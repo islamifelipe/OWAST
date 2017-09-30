@@ -43,8 +43,7 @@ class Plasmideo {
 	void geraPlasm_rmcPrim (double *lambda, int tam) {
         tamTrecho = tam;
 		SolucaoEdgeSet *agm = new SolucaoEdgeSet(NUMEROVERTICES-1, *rg); // TODO: fazer sem new
-	 	//SolucaoEdgeSet agm(NUMEROVERTICES,*rg);
-		rmcPrim (*agm,lambda,*rg, tamTrecho);
+	 	rmcPrim (*agm,lambda,*rg, tamTrecho);
 
         FOR(i, 0, tamTrecho) {
             trechoInserir [i][0] = agm->edges[i][0];
@@ -147,11 +146,59 @@ class Plasmideo {
 	// após o ataque, deve-se calcular o OWA
 
 
-	IDEIA DE PLASMIDEO:
+	/*IDEIA DE PLASMIDEO:
 	tome dois endossimbiontes (A e B)
-	O plasmideo P será tal que P = (A | B) - (A & B)
+	O plasmideo P será tal que P = (A | B) - (A & B) NAO FORME CICLO
 	Inspiraçao: compor um plasmideo cuja informaçao genética una 
-	arestas que, possivelmente, ainda nao se uniram pra formar uma mesma arvore
+	arestas que, possivelmente, ainda nao se uniram pra formar uma mesma arvore 
+	@param tam é o tamanho maximo do plasmideo*/
+	void geraPlasTwoSolutions(SolucaoEdgeSet &s1, SolucaoEdgeSet &s2, int tam){
+
+		int amostral[2*NUMEROVERTICES][2];
+		int sizeAmostral = 0;
+		bool ha = false;
+		for (int i=0; i<NUMEROVERTICES-1; i++){
+			ha = false;
+			for(int j=0; j<NUMEROVERTICES-1 && ha==false; j++) ha = (s1.edges[i][0]==s2.edges[j][0] && s1.edges[i][1]==s2.edges[j][1]) || (s1.edges[i][1]==s2.edges[j][0] && s1.edges[i][0]==s2.edges[j][1]);
+			if (ha==false){
+				amostral[sizeAmostral  ][0] = s1.edges[i][0];
+				amostral[sizeAmostral++][1] = s1.edges[i][1];
+			}
+		}
+
+		for (int i=0; i<NUMEROVERTICES-1; i++){
+			ha = false;
+			for(int j=0; j<NUMEROVERTICES-1 && ha==false; j++) ha = (s2.edges[i][0]==s1.edges[j][0] && s2.edges[i][1]==s1.edges[j][1]) || (s2.edges[i][1]==s1.edges[j][0] && s2.edges[i][0]==s1.edges[j][1]);
+			if (ha==false){
+				amostral[sizeAmostral  ][0] = s2.edges[i][0];
+				amostral[sizeAmostral++][1] = s2.edges[i][1];
+			}
+		}
+		UnionFind uf;
+		uf.clear();
+		if (sizeAmostral>tam){ //NUMEROVERTICES-1
+			tamTrecho=0;
+			int cont=0;
+			while (tamTrecho<tam && cont<sizeAmostral){
+				int index = rg->IRandom(0,sizeAmostral-1);
+				if (uf.sameClass(amostral[index][0],amostral[index][1])==false){
+					uf.unionClass(amostral[index][0],amostral[index][1]);
+					trechoInserir [tamTrecho  ][0] = amostral[index][0];
+					trechoInserir [tamTrecho++][1] = amostral[index][1];
+				}
+				cont++;
+			}
+		} else {
+			tamTrecho = 0;
+			for (int i=0; i<sizeAmostral; i++){
+				if (uf.sameClass(amostral[i][0],amostral[i][1])==false){
+					uf.unionClass(amostral[i][0],amostral[i][1]);
+					trechoInserir [tamTrecho  ][0] = amostral[i][0];
+					trechoInserir [tamTrecho++][1] = amostral[i][1];
+				}
+			}
+		}
+	}
 };
 
 #endif

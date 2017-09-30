@@ -26,6 +26,7 @@ void renovaKCentrum(SolucaoEdgeSet *individuo){
 
 void renovaKTrimmed(SolucaoEdgeSet *individuo){
 	int lim = (int) NUMOBJETIVOS/2-1;
+	//cout<<"lim = "<<lim<<endl;
 	if (lim==0) lim = 1;
 	int k = individuo->rg->IRandom(1,lim);
 	double lambda[NUMOBJETIVOS];
