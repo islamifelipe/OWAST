@@ -50,11 +50,18 @@ void input(){
 	}
 }
 
-TODO: fazer como no caixeiro
+
 void setOtimo(SolucaoEdgeSet * otimo){
+
+	double valorOtimo = otimo->getOWA();
+	int index = -1;
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
-		if (populacao[i]->getOWA()<otimo->getOWA()) *otimo = *populacao[i];
+		if (populacao[i]->getOWA()<valorOtimo){
+			valorOtimo = populacao[i]->getOWA();
+			index = i;
+		}
 	}
+	if (index!=-1) *otimo = *populacao[index];
 }
 
 
@@ -118,15 +125,27 @@ void Environment_Selection2(SolucaoEdgeSet *novaPop[TAMANHOPOPULACAO]){
 	std::vector<SolucaoEdgeSet *> uniao;
 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
 	for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
-		TODO: melhorar pra evitar ficar com tudo igual
-
-	// for (int i=0; i<TAMANHOPOPULACAO*2; i++) {
-	// 	uniao.push_back(Q[i]);
-	// }
-	std::sort (uniao.begin(), uniao.end(), comparae2);
-	//cout<<"union[0] = "<<uniao[0]->getOWA()<<endl;
-	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
 	
+	std::sort (uniao.begin(), uniao.end(), comparae2);
+	for (int i=0; i<TAMANHOPOPULACAO; i++) *populacao[i]  = *uniao[i];
+
+	// std::vector<SolucaoEdgeSet *> uniao;
+	// for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(populacao[oeir]);
+	// for (int oeir=0; oeir<TAMANHOPOPULACAO; oeir++) uniao.push_back(novaPop[oeir]);
+		
+	// std::sort (uniao.begin(), uniao.end(), comparae2);
+	
+	// *populacao[0]  = *uniao[0];
+	// int  cont=1;
+	// for (int i=1; cont<TAMANHOPOPULACAO/3 && i<uniao.size(); i++) {
+	// 	if (abs(populacao[cont-1]->getOWA()-uniao[i]->getOWA())>EPS){
+	// 		*populacao[cont++]  = *uniao[i];
+	// 	}
+	// }
+	// //cout<<"cont = "<<cont<<endl;
+	// for (int i=1; cont<TAMANHOPOPULACAO && i<uniao.size(); i++){
+	// 	*populacao[cont++]  = *uniao[i];
+	// }
 
 }
 
@@ -144,7 +163,7 @@ void Objective_Normalization(){
 
 	for (int p=0; p<TAMANHOPOPULACAO*2; p++){
 		for (int i=0; i<NUMOBJETIVOS; i++){
-			Q[p]->f_normalized[i] = (Q[p]->getObj(i) - ideal[i])/(pior[i]- ideal[i]); /// TUDO : +1 ? 
+			Q[p]->f_normalized[i] = (Q[p]->getObj(i) - ideal[i])/(pior[i]- ideal[i]); /// TODO : +1 ? 
 		}
 	}
 }
@@ -212,10 +231,10 @@ void Fitness_Assignment(){
 SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 
 	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
-	SolucaoEdgeSet * pai = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
-	SolucaoEdgeSet * mae = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
+	// SolucaoEdgeSet * pai = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
+	// SolucaoEdgeSet * mae = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	SolucaoEdgeSet * filho = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
-			
+	int pai, mae;		
 	Reference_Generation(vetoresDirecoes,thetaM);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao3(populacao, rg,vetoresDirecoes); // gera populaçao inicial
@@ -254,6 +273,10 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			contSemMudanca=0;
 		}
 		otimos.push_back(otimo->getOWA());
+		for (int aap = 0; aap<TAMANHOPOPULACAO; aap++){
+			cout<<populacao[aap]->getOWA()<<endl;
+		}
+		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -264,24 +287,25 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			p4 = rg.IRandom(0, TAMANHOPOPULACAO-1);
 
 			if(populacao[p1]->getOWA()<populacao[p2]->getOWA()){
-				*pai = *populacao[p1];
+				pai = p1;;
 			} else {
-				*pai = *populacao[p2];
+				pai = p2;
 			}
 			if (populacao[p3]->getOWA()<populacao[p4]->getOWA()){
-				*mae = *populacao[p3];
+				mae = p3;
 			} else {
-				*mae = *populacao[p4]; TODO: nao precisa sempre compiar
+				mae = p4;
 			}
 
 			double p = rg.Random();
 			if (p<TAXADECRUZAMENTO){
-				filho->crossover(*pai, *mae);
+				filho->crossover(*populacao[pai], *populacao[mae]);
+				filho->calculaOwa(w);
 			} else {
 				filho->doRandomWalk();
 				filho->calculaOwa(w);
 			}
-			TODO: resetar o otimo tambem aqui
+			if (filho->getOWA()<otimo->getOWA()) *otimo = *filho;
 			// filho foi definido; Agora aplica-se mutaçao
 			p = rg.Random();
 			if (p<TAXADEMUTACAO){

@@ -9,8 +9,6 @@ using namespace std;
 
 extern double w[NUMOBJETIVOS];  
 
-// TODO: melhorar a hibridizaçao entre os vetores do KCENTRUM e cia com os do SPEA/R
-
 void alocaPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg){
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
 		populacao[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
