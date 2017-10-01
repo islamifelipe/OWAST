@@ -8,10 +8,10 @@
 
 #define PI 3.14159265
 #define f(k,i,j) custos[k][i][j] // objetivo k, vertice i j 
-#define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
+#define EPS 1e-9 // qualquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 300 // TESTE
+#define NUMEROVERTICES 500 // TESTE
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -21,6 +21,7 @@
 
 /*Parâmetros da populçao*/
 #define TAMANHOPOPULACAO 100  //#define TAMANHOPOPULACAO (NUMDIRECOES)  // 
+#define TAMANHOREPOSITORIO (TAMANHOPOPULACAO*3)
 #define PORCENT_RANDOM 10 //--- 
 #define PORCENT_KCENTRUM 30 //---
 #define PORCENT_KTRIMENT 30 //--- 
@@ -32,6 +33,8 @@
 #define PER_PLAS1 50 // percentagem de plasmideos gerados pelo rmc-prim
 #define PER_PLAS2 40 // percentagem de plasmideos gerados por uma soluçao
 #define PER_PLAS3 10 // percentagem de plasmideos gerados por duas soluçoes
+#define PROB_TRANS2 0.3 // SA
+#define PROB_TRANS1 0.8 // primTrans
 
 /*Parâmetros para o Simulated Annealing*/
 #define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO

@@ -15,14 +15,17 @@
 #include "vetoresDirecao.cpp"
 #include "simulatedannealing.cpp"
 #include "Plasmideo.cpp"
+#include "primTransposon.cpp"
 
 using namespace std;
 
 double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
 double w[NUMOBJETIVOS];  // pesos OWA
 SolucaoEdgeSet *populacao[TAMANHOPOPULACAO];
-SolucaoEdgeSet *Q[TAMANHOPOPULACAO*2];
+SolucaoEdgeSet *repositorio[TAMANHOREPOSITORIO];
+int sizeRepositorio; // no maximo TAMANHOREPOSITORIO
 double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
+
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -57,11 +60,45 @@ void setOtimo(SolucaoEdgeSet * otimo){
 			index = i;
 		}
 	}
-	if (index!=-1) *otimo = *populacao[index];
+	if (index!=-1) {
+		*otimo = *populacao[index];
+	}
 }
 
+void getLambda(double lambda[NUMOBJETIVOS], TRandomMersenne &rg){
+	int op = rg.IRandom(0,4);
+	int index2, k, lim;
+	double alfa[6] = {0.2, 0.3, 0.4, 0.6, 0.7, 0.8};
+	switch(op){
+		case 0: // vetores do SPEA/R
+			index2 = rg.IRandom(0,NUMDIRECOES-1);
+			for (int ll=0; ll<NUMOBJETIVOS; ll++) lambda[ll] =  vetoresDirecoes[index2][ll];
+			break;
+		case 1: // vetor do k-centrum
+			k = rg.IRandom(1,NUMOBJETIVOS);
+			for (int ll=0; ll<k; ll++)lambda[ll] = 1.0/k;
+			for (int ll=k; ll<NUMOBJETIVOS; ll++) lambda[ll] = 0;
+			break;
+		case 2: // vetor do k-trimmed
+			lim = (int) NUMOBJETIVOS/2-1;
+			if (lim==0) lim = 1;
+			k = rg.IRandom(1,lim);
+			for (int i=0; i<k; i++) lambda[i] = 0;
+			for (int i=k; i<NUMOBJETIVOS-k; i++) lambda[i] = 1.0/(NUMOBJETIVOS-(2.0*k));
+			for (int i=NUMOBJETIVOS-k; i<NUMOBJETIVOS; i++)lambda[i] = 0;
+			break;
+		case 3: // vetor do Hurwicz
+			index2 = rg.IRandom(0,5);
+			lambda[0] = alfa[index2];
+			lambda[NUMOBJETIVOS-1] = 1.0 - alfa[index2];
+			for (int ll=1; ll<NUMOBJETIVOS-1; ll++)lambda[ll] = 0;
+			break;
+		default: // vetor w (argumento da instância)
+			for (int ll=0; ll<NUMOBJETIVOS; ll++)lambda[ll] =  w[ll];
+			break;
 
- /*TODO : criar repositorio com 3x o tamanho da populaçao?*/
+	}
+}
 
 void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 	for (int i=0;i<NUMPLASMIDEOS;i++)
@@ -70,54 +107,24 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 	int quantPlas1 = PER_PLAS1*NUMPLASMIDEOS/100;
 	int quantPlas2 = PER_PLAS2*NUMPLASMIDEOS/100;
 	int quantPlas3 = PER_PLAS3*NUMPLASMIDEOS/100;
-	int op, k, tam, cont=0, index2, index3, lim;
-	double alfa[6] = {0.2, 0.3, 0.4, 0.6, 0.7, 0.8};
+	int tam, cont=0, index2, index3;
 	for (int i=0; i<quantPlas1 && cont<NUMPLASMIDEOS; i++){
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
-		op = rg.IRandom(0,4);
-		switch(op){
-			case 0: // vetores do SPEA/R
-				index2 = rg.IRandom(0,NUMDIRECOES-1);
-				for (int ll=0; ll<NUMOBJETIVOS; ll++) lambda[ll] =  vetoresDirecoes[index2][ll];
-				break;
-			case 1: // vetor do k-centrum
-				k = rg.IRandom(1,NUMOBJETIVOS);
-				for (int ll=0; ll<k; ll++)lambda[ll] = 1.0/k;
-				for (int ll=k; ll<NUMOBJETIVOS; ll++) lambda[ll] = 0;
-				break;
-			case 2: // vetor do k-trimmed
-				lim = (int) NUMOBJETIVOS/2-1;
-				if (lim==0) lim = 1;
-				k = rg.IRandom(1,lim);
-				for (int i=0; i<k; i++) lambda[i] = 0;
-				for (int i=k; i<NUMOBJETIVOS-k; i++) lambda[i] = 1.0/(NUMOBJETIVOS-(2.0*k));
-				for (int i=NUMOBJETIVOS-k; i<NUMOBJETIVOS; i++)lambda[i] = 0;
-				break;
-			case 3: // vetor do Hurwicz
-				index2 = rg.IRandom(0,5);
-				lambda[0] = alfa[index2];
-				lambda[NUMOBJETIVOS-1] = 1.0 - alfa[index2];
-				for (int ll=1; ll<NUMOBJETIVOS-1; ll++)lambda[ll] = 0;
-				break;
-			default: // vetor w (argumento da instância)
-				for (int ll=0; ll<NUMOBJETIVOS; ll++)lambda[ll] =  w[ll];
-				break;
-
-		}
+		getLambda(lambda, rg);
 		pl[cont].geraPlasm_rmcPrim(lambda, tam);
 		cont++;
 	}
 	for (int i=0; i<quantPlas2 && cont<NUMPLASMIDEOS; i++){
-		index2 = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		index2 = rg.IRandom(0,sizeRepositorio-1);
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
-		pl[cont].geraPlasm_Solucao(*populacao[index2], tam);
+		pl[cont].geraPlasm_Solucao(*repositorio[index2], tam);
 		cont++;
 	}
 	for (int i=0; i<quantPlas3+1 && cont<NUMPLASMIDEOS; i++){
-		index3 = rg.IRandom(0,TAMANHOPOPULACAO-1);
-		index2 = rg.IRandom(0,TAMANHOPOPULACAO-1);
+		index3 = rg.IRandom(0,sizeRepositorio-1);
+		index2 = rg.IRandom(0,sizeRepositorio-1);
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1))); // NOTAR: DIFERENTE DE SILVIA
-		pl[cont].geraPlasTwoSolutions(*populacao[index2], *populacao[index3], tam);
+		pl[cont].geraPlasTwoSolutions(*repositorio[index2], *repositorio[index3], tam);
 		cont++;
 	}	
 }
@@ -134,15 +141,37 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 		E UMA COPIA DO SEU MATERIAL GENÉTICO É INSERIDO NO REPOSITORIO	
   */
 
+void addRepositorio(TRandomMersenne &rg, SolucaoEdgeSet *novaS){
+	if (sizeRepositorio<TAMANHOREPOSITORIO){
+		repositorio[sizeRepositorio] = new SolucaoEdgeSet(NUMEROVERTICES-1,rg);
+		*repositorio[sizeRepositorio++] = *novaS; 
+	}else{
+		double max = INT_MIN;
+		int index = -1;
+		for (int i=0; i<sizeRepositorio; i++){
+			if (repositorio[i]->getOWA()>max){
+				max = repositorio[i]->getOWA();
+				index = i;
+			}
+		}
+		//int index = rg.IRandom(0,sizeRepositorio-1);
+		if (novaS->getOWA()<max)
+			*repositorio[index] = *novaS;
+	}
+}
+
 /*ataca todos da populao, inclusive o otimo*/
 SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
-	
+	sizeRepositorio = 0;
 	Reference_Generation(vetoresDirecoes);
 	alocaPopulacao(populacao, rg); // aloca populaçao inicial
 	gerarPopulacao3(populacao, rg,vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
+	for (int i=0; i<TAMANHOPOPULACAO; i++) addRepositorio(rg, populacao[i]);
 	*otimo = *populacao[0];
 	int indexPlas;
+	double p;
+	PrimTransposon ptrans(&rg); // nao precisa ser redeclarado a cada iteraçao!!!
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		setOtimo(otimo);
 		//cria os PLASMIDEOS
@@ -155,8 +184,8 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 			pl[plas].atacaSolucao(copia);
 			copia.calculaOwa(w);
 			if(copia.getOWA()<otimo->getOWA()){
+				addRepositorio(rg, otimo);
 				*otimo = copia;
-				//SA(*otimo, rg);
 			}
 		}
 		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
@@ -166,41 +195,76 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 			pl[indexPlas].atacaSolucao(copia);
 			copia.calculaOwa(w);
 			if(copia.getOWA()<populacao[pppt]->getOWA()){
+				addRepositorio(rg, populacao[pppt]);
 				*populacao[pppt] = copia;
-				//SA(*populacao[pppt], rg);
-				//cout<<"ATAQUE!"<<endl;
 			}
+			p = rg.Random();
+			if (p<PROB_TRANS1){
+				copia = *populacao[pppt];
+				double lambda[NUMOBJETIVOS];
+				getLambda(lambda, rg);
+				ptrans.atacaSolucao(copia,lambda);
+				copia.calculaOwa(w);
+				if (copia.getOWA()<populacao[pppt]->getOWA()){
+					//cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
+					addRepositorio(rg, populacao[pppt]);
+					*populacao[pppt] = copia;
+					//cout<<"ATAQUE!"<<endl;
+					//cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
+					
+				}
+			}
+			p = rg.Random();
+			if (p<PROB_TRANS2){
+				addRepositorio(rg, populacao[pppt]);
+				SA(*populacao[pppt], rg);
+			}
+
 		}
 	}
 
 	return otimo;
 }
-
+// TODO: anotar estatisticas
+// TODO: tempo
+// TODO: renovar (DIVERSIFICAR) a populaçao?
 int main(){
 
 	input(); // ler instância
-	TRandomMersenne rg( 12327 ); //48594589849
+	TRandomMersenne rg( 5436977 ); //48594589849
 	SolucaoEdgeSet *otimo = transgenetic(rg);
 	cout<<"OTIMO = "<<otimo->getOWA()<<endl;
+
+
+
+
+
+
 	// Reference_Generation(vetoresDirecoes);
 	// alocaPopulacao(populacao, rg); // aloca populaçao inicial
-	// gerarPopulacao3(populacao, rg,vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
-	
-	// for (int i=0; i<TAMANHOPOPULACAO; i++){
-	// 	for (int j=0; j<TAMANHOPOPULACAO; j++){
-	// 		if (*populacao[i]>>*populacao[j]){
-	// 			for (int o=0; o<NUMOBJETIVOS; o++){
-	// 				cout<<populacao[i]->getObj(o)<<" ";
-	// 			}
-	// 			cout<<"   DOMINA   ";
-	// 			for (int o=0; o<NUMOBJETIVOS; o++){
-	// 				cout<<populacao[j]->getObj(o)<<" ";
-	// 			}
-	// 			cout<<"\n"<<endl;
-	// 		}
+	// gerarPopulacao3(populacao, rg,vetoresDirecoes);
+	// double lambda[NUMOBJETIVOS];
+
+
+	// PrimTransposon ptrans(&rg);
+	// SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
+	// *otimo = *populacao[0];
+	// setOtimo(otimo);
+	// for (int i=0; i<1000; i++){
+	// 	int s1 = rg.IRandom(0, TAMANHOPOPULACAO-1);
+	// 	SolucaoEdgeSet nova = *populacao[s1];
+	// 	getLambda(lambda, rg);
+	// 	ptrans.atacaSolucao(nova,lambda);
+	// 	nova.calculaOwa(w);
+	// 	if (nova.getOWA()<populacao[s1]->getOWA()){
+	// 		cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
+	// 		*populacao[s1] = nova;
+	// 		cout<<"ATAQUE!"<<endl;
+	// 		cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
+			
+	// 		cout<<endl;
 	// 	}
 	// }
-	
 	// SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	// *otimo = *populacao[0];
 	// setOtimo(otimo);
