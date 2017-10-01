@@ -178,7 +178,6 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 		Plasmideo pl[NUMPLASMIDEOS];
 		criaPlasmideos(rg, pl);
 		
-		// TODO: deixar?
 		for (int plas = 0; plas<NUMPLASMIDEOS; plas++){
 			SolucaoEdgeSet copia = *otimo;//*populacao[index];
 			pl[plas].atacaSolucao(copia);
@@ -227,7 +226,6 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 }
 // TODO: anotar estatisticas
 // TODO: tempo
-// TODO: renovar (DIVERSIFICAR) a populaçao?
 int main(){
 
 	input(); // ler instância
