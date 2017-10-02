@@ -17,6 +17,9 @@ using namespace std;
 
 extern double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
 
+extern int contQuantCalculouFitness; // guarda a quantidade de vezes em que a funçao calculaOwa foi invocada
+
+
 // typedef struct {
 // 	int listaadj[NUMEROVERTICES][NUMEROVERTICES], graus[NUMEROVERTICES];
 // 	bool completo;
@@ -77,6 +80,7 @@ class SolucaoEdgeSet : public Solucao {
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
     void calculaOwa(double w[NUMOBJETIVOS]){
+    	contQuantCalculouFitness++;
     	std::vector<int> myvector(f, f+NUMOBJETIVOS); 
 		std::sort (myvector.begin(), myvector.end(), myfunction); 
 		double ret = 0;

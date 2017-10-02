@@ -26,6 +26,37 @@ SolucaoEdgeSet *repositorio[TAMANHOREPOSITORIO];
 int sizeRepositorio; // no maximo TAMANHOREPOSITORIO
 double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
 
+std::vector<double> otimos;  // guarda os otimos a cada geraçao
+std::vector<double> temposOtimos;  // guarda o tempo (decorrido desde o inicio) em que a soluçao i foi atingida
+int quantPlas1; // quantidade de plas1;
+int quantPlas2; // quantidade de plas2;
+int quantPlas3; // quantidade de plas3;
+int contPlasm1; // conta quantas vezes o plasmideo rmc-prim tenta atacar
+int contSucessoPlasm1; // conta quantos sucessos o plasm1 teve em atacar
+int contPlasm2; // conta quantas vezes o plasmideo "de uma soluçao" tenta atacar
+int contSucessoPlasm2; // conta quantos sucessos o plasm2 teve em atacar
+int contPlasm3; // conta quantas vezes o plasmideo "de duas soluçoes" tenta atacar
+int contSucessoPlasm3; // conta quantos sucessos o plasm3 teve em atacar
+int contPrimTrans; // conta a quantidade e vezes em que o primTrans tenta atacar
+int contSucessPrimTrans; // conta a quantidade de sucesso que o primTrans obteve
+int contSucessoSA; // quantidade de vezes em que o SA retornou uma soluçao melhor (trans2)
+int contQuantCalculouFitness; // guarda a quantidade de vezes em que a funçao calculaOwa foi invocada
+int quantSAinvocado; // quantidade de vezes em que o SA (trans2) foi invocado
+
+struct tms tempoAntes, tempoDepois, tempoDepois222;
+
+
+void contSucessPlas(int index){
+	if (index>=0 && index<quantPlas1) contSucessoPlasm1++;
+	else if (index>=quantPlas1 && index<quantPlas2+quantPlas1) contSucessoPlasm2++;
+	else contSucessoPlasm3++;
+}
+
+void contAtaquePlas(int index){
+	if (index>=0 && index<quantPlas1) contPlasm1++;
+	else if (index>=quantPlas1 && index<quantPlas2+quantPlas1) contPlasm2++;
+	else contPlasm3++;
+}
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -104,9 +135,10 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 	for (int i=0;i<NUMPLASMIDEOS;i++)
 		pl[i].setRandom(&rg);
 	double lambda[NUMOBJETIVOS];
-	int quantPlas1 = PER_PLAS1*NUMPLASMIDEOS/100;
-	int quantPlas2 = PER_PLAS2*NUMPLASMIDEOS/100;
-	int quantPlas3 = PER_PLAS3*NUMPLASMIDEOS/100;
+	quantPlas1 = (int) PER_PLAS1*NUMPLASMIDEOS/100;
+	quantPlas2 = (int) PER_PLAS2*NUMPLASMIDEOS/100;
+	quantPlas3 = (int) PER_PLAS3*NUMPLASMIDEOS/100;
+	if (quantPlas1+quantPlas2+quantPlas3==NUMPLASMIDEOS-1)quantPlas3++;
 	int tam, cont=0, index2, index3;
 	for (int i=0; i<quantPlas1 && cont<NUMPLASMIDEOS; i++){
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
@@ -120,7 +152,7 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 		pl[cont].geraPlasm_Solucao(*repositorio[index2], tam);
 		cont++;
 	}
-	for (int i=0; i<quantPlas3+1 && cont<NUMPLASMIDEOS; i++){
+	for (int i=0; i<quantPlas3 && cont<NUMPLASMIDEOS; i++){
 		index3 = rg.IRandom(0,sizeRepositorio-1);
 		index2 = rg.IRandom(0,sizeRepositorio-1);
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1))); // NOTAR: DIFERENTE DE SILVIA
@@ -174,6 +206,10 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 	PrimTransposon ptrans(&rg); // nao precisa ser redeclarado a cada iteraçao!!!
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		setOtimo(otimo);
+		otimos.push_back(otimo->getOWA());
+		times(&tempoDepois222);
+		temposOtimos.push_back((double) (tempoDepois222.tms_utime - tempoAntes.tms_utime) / 100.0);
+		
 		//cria os PLASMIDEOS
 		Plasmideo pl[NUMPLASMIDEOS];
 		criaPlasmideos(rg, pl);
@@ -181,20 +217,24 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 		for (int plas = 0; plas<NUMPLASMIDEOS; plas++){
 			SolucaoEdgeSet copia = *otimo;//*populacao[index];
 			pl[plas].atacaSolucao(copia);
+			contAtaquePlas(plas);
 			copia.calculaOwa(w);
 			if(copia.getOWA()<otimo->getOWA()){
 				addRepositorio(rg, otimo);
+				contSucessPlas(plas);
 				*otimo = copia;
 			}
 		}
-		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
+		//cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
 		for (int pppt = 0; pppt < TAMANHOPOPULACAO; pppt++){
 			indexPlas = rg.IRandom(0,NUMPLASMIDEOS-1);
 			SolucaoEdgeSet copia = *populacao[pppt];//*populacao[index];
 			pl[indexPlas].atacaSolucao(copia);
+			contAtaquePlas(indexPlas);
 			copia.calculaOwa(w);
 			if(copia.getOWA()<populacao[pppt]->getOWA()){
 				addRepositorio(rg, populacao[pppt]);
+				contSucessPlas(indexPlas);
 				*populacao[pppt] = copia;
 			}
 			p = rg.Random();
@@ -208,15 +248,16 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 					//cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
 					addRepositorio(rg, populacao[pppt]);
 					*populacao[pppt] = copia;
-					//cout<<"ATAQUE!"<<endl;
-					//cout<<"OWA = "<<populacao[s1]->getOWA()<<endl;
-					
+					contSucessPrimTrans++;
+				
 				}
 			}
 			p = rg.Random();
 			if (p<PROB_TRANS2){
+				double fitg = populacao[pppt]->getOWA();
 				addRepositorio(rg, populacao[pppt]);
 				SA(*populacao[pppt], rg);
+				if (populacao[pppt]->getOWA()<fitg) contSucessoSA++;
 			}
 
 		}
@@ -224,16 +265,66 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 
 	return otimo;
 }
-// TODO: anotar estatisticas
-// TODO: tempo
-int main(){
 
+
+int main(int argc, char *argv[]){
+	int seemente = std::atoi(argv[1]);
+	TRandomMersenne rg(seemente);
+	cout<<"========= Estatisticas ========= "<<endl;
+	cout<<"Semente utilizada : "<<seemente<<endl;
+	FILE *samplefile = fopen(argv[2],"a");
+	FILE *tempofile = fopen(argv[3],"a");
 	input(); // ler instância
-	TRandomMersenne rg( 5436977 ); //48594589849
+
+	times(&tempoAntes);
+
 	SolucaoEdgeSet *otimo = transgenetic(rg);
-	cout<<"OTIMO = "<<otimo->getOWA()<<endl;
+
+	times(&tempoDepois);
+
+	otimos.push_back(otimo->getOWA());
+	temposOtimos.push_back( (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+
+	/*========= Estatistica ========= */
+	fprintf(stdout,"Tempo(s) Final = %.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+	fprintf(tempofile,"%.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+
+	cout<<"Quantidade de geraçoes = "<<QUANTGERACOES<<endl;
+   	cout<<"Quantidade de plasm1 = "<<quantPlas1<<endl;
+   	cout<<"Quantidade de plasm2 = "<<quantPlas2<<endl;
+   	cout<<"Quantidade de plasm3 = "<<quantPlas3<<endl;
+   	cout<<"Quantidade de ataques do plasm1 = "<<contPlasm1<<endl;
+   	cout<<"Quantidade de sucesso do plasm1 = "<<contSucessoPlasm1<<endl;
+   	cout<<"Taxa de sucesso do plasm1 = "<<(double)contSucessoPlasm1/contPlasm1<<endl;
+   	cout<<"Quantidade de ataques do plasm2 = "<<contPlasm2<<endl;
+   	cout<<"Quantidade de sucesso do plasm2 = "<<contSucessoPlasm2<<endl;
+   	cout<<"Taxa de sucesso do plasm2 = "<<(double)contSucessoPlasm2/contPlasm2<<endl;
+   	cout<<"Quantidade de ataques do plasm3 = "<<contPlasm3<<endl;
+   	cout<<"Quantidade de sucesso do plasm3 = "<<contSucessoPlasm3<<endl;
+   	cout<<"Taxa de sucesso do plasm3 = "<<(double)contSucessoPlasm3/contPlasm3<<endl;
+   	cout<<"Quantidade de ataque do primTrans = "<<contPrimTrans<<endl;
+   	cout<<"Quantidade de sucesso do primTrans = "<<contSucessPrimTrans<<endl;
+   	cout<<"Taxa de sucesso do primTrans = "<<(double)contSucessPrimTrans/contPrimTrans<<endl;
+   	cout<<"Quantidade de ataques do saTrans = "<<quantSAinvocado<<endl;
+   	cout<<"Quantidade de sucesso do saTrans = "<<contSucessoSA<<endl;
+   	cout<<"Taxa de sucesso do saTrans = "<<(double)contSucessoSA/quantSAinvocado<<endl;
+  	cout<<"Quantidade de vezes em que o fitness foi avaliado = "<<contQuantCalculouFitness<<endl;
 
 
+	cout<<"Evolucao do otimo por geracao (fitness, tempo(s)): "<<endl;
+   	for (int i=0; i<otimos.size(); i++){
+   		cout<<otimos[i]<<", "<<temposOtimos[i]<<"s"<<endl;
+   	}
+
+   	cout<<endl;
+   	cout<<"Soluçao encontrada: "<<endl;
+	otimo->printSolucao();
+	cout<<"OWA = "<<otimo->getOWA()<<endl;
+	fprintf(samplefile,"%.2lf\n",otimo->getOWA());
+   	
+
+	fclose(samplefile);
+	fclose(tempofile);
 
 
 

@@ -15,6 +15,9 @@ using namespace std;
 
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 
+extern int contPrimTrans; // conta a quantidade e vezes em que o primTrans tenta atacar
+
+
 /*This code file was kindly provided by Monteiro */
 
 struct auxEdgeSet {
@@ -43,7 +46,7 @@ class PrimTransposon{
 
 		/*Permite que um número aleatório entre 5 e 10% das arestas de s permaneçam na solução, completando com arestas geradas a partir do rmcprim */
 		void atacaSolucao(SolucaoEdgeSet &s, double lambda[NUMOBJETIVOS]) { // altera soluçao "s"
-
+			contPrimTrans++;
             int reftam; // quantidade de arestas que poderao permanecer na solucao "s"
 			int nArestas = NUMEROVERTICES-1;
             if (NUMEROVERTICES < 30)
