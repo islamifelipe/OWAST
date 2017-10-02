@@ -172,7 +172,7 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 				break;
 		}
 	}
-	cout<<"Informacoes sobre a populacao : "<<endl;
+	cout<<"Informacoes sobre a populacao inicial : "<<endl;
 	cout<<"\tSPEA/R = "<<100.0*speaR/TAMANHOPOPULACAO<<endl;
 	cout<<"\tdoRandomWalk = "<<100.0*contRandom/TAMANHOPOPULACAO<<endl;
 	cout<<"\tk-centrum = "<<100.0*centrum/TAMANHOPOPULACAO<<endl;

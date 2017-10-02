@@ -26,7 +26,17 @@ double vetoresDirecoes[NUMDIRECOES][NUMOBJETIVOS];
 double thetaM; // é o maior ângulo entre dois vetores adjacentes, para todos os vetores direcoes
 // thetaM DEVE SER CALCULADO NO MOMENTO QUE OS VETORES SAO DETERMINADOS
 int contaRenovacao =0;
-std::vector<double> otimos; 
+std::vector<double> otimos;  // guarda os otimos a cada geraçao
+std::vector<double> temposOtimos;  // guarda o tempo (decorrido desde o inicio) em que a soluçao i foi atingida
+int contCrossovers; // quantidade de crossovers executados
+int contMutacoes; // quantidade de mutaçoes executadas
+int contSucessoCrossovers; // quantidade de crossovers com sucesso (individuos melhores que os pais)
+int contSucessoMutacoes; // quantidade de mutaçoes com sucesso (individuos melhores que o anterior sem mutaçao)
+int contSucessoSA; // quantidade de vezes em que o SA retornou uma soluçao melhor
+int contQuantCalculouFitness; // guarda a quantidade de vezes em que a funçao calculaOwa foi invocada
+int quantSAinvocado; // quantidade de vezes em que o SA foi invocado
+
+struct tms tempoAntes, tempoDepois, tempoDepois222;
 
 void input(){
 	int n,p; // esta leitura de n e p é somente para cumprir o formato da instância. Os valores de fato estao em param.h
@@ -230,6 +240,14 @@ void Fitness_Assignment(){
 
 SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 
+	contCrossovers = 0; 
+	contMutacoes = 0; 
+	contSucessoCrossovers = 0;
+	contSucessoMutacoes = 0;
+	contSucessoSA = 0; 
+	contQuantCalculouFitness = 0;
+	quantSAinvocado = 0;
+
 	SolucaoEdgeSet * otimo = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	// SolucaoEdgeSet * pai = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
 	// SolucaoEdgeSet * mae = new SolucaoEdgeSet(NUMEROVERTICES-1, rg); //poderia ser global, pra otimizar;
@@ -250,6 +268,9 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 	for (int i=0; i<QUANTGERACOES; i++){ // para cada geraçao...
 		
 		setOtimo(otimo);
+		otimos.push_back(otimo->getOWA());
+		times(&tempoDepois222);
+		temposOtimos.push_back((double) (tempoDepois222.tms_utime - tempoAntes.tms_utime) / 100.0);
 		if (otimoAntes == otimo->getOWA()){
 			contSemMudanca++;
 		} else {
@@ -272,11 +293,10 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			}
 			contSemMudanca=0;
 		}
-		otimos.push_back(otimo->getOWA());
 		// for (int aap = 0; aap<TAMANHOPOPULACAO; aap++){
 		// 	cout<<populacao[aap]->getOWA()<<endl;
 		// }
-		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
+		//cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
 		for (int j=0; j<TAMANHOPOPULACAO; j++){ // deve-se criar TAMANHOPOPULACAO novos individuos
 
 			/*SORTEIA 4 individuos*/
@@ -301,6 +321,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			if (p<TAXADECRUZAMENTO){
 				filho->crossover(*populacao[pai], *populacao[mae]);
 				filho->calculaOwa(w);
+				if (filho->getOWA()<populacao[pai]->getOWA() || filho->getOWA()<populacao[mae]->getOWA()) contSucessoCrossovers++;
 			} else {
 				filho->doRandomWalk();
 				filho->calculaOwa(w);
@@ -311,11 +332,14 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 			if (p<TAXADEMUTACAO){
 				novaPop[j]->mutacao(*filho);
 				novaPop[j]->calculaOwa(w); // necessario
+				if (novaPop[j]->getOWA() < filho->getOWA()) contSucessoMutacoes++;
 			} else{
 				filho->calculaOwa(w);
 				*novaPop[j] = *filho;
 			}
+			double fitsss = novaPop[j]->getOWA();
 			SA(*novaPop[j], rg);
+			if (novaPop[j]->getOWA()<fitsss) contSucessoSA++;
 		}
 		Environment_Selection2(novaPop); // o vetor populacao[..] tará as malhores solucoes encontras
 
@@ -328,6 +352,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 int main(int argc, char *argv[]){
 	int seemente = std::atoi(argv[1]);
 	TRandomMersenne rg(seemente);
+	cout<<"========= Estatisticas ========= "<<endl;
 	cout<<"Semente utilizada : "<<seemente<<endl;
 	FILE *samplefile = fopen(argv[2],"a");
 	FILE *tempofile = fopen(argv[3],"a");
@@ -335,24 +360,39 @@ int main(int argc, char *argv[]){
 	// TRandomMersenne rg( 309405904950 ); //48594589849
 	
 	/* CALCULA O TEMPO */
-	struct tms tempoAntes, tempoDepois;
+	
 	times(&tempoAntes);
 
 	SolucaoEdgeSet *otimo  = memetic(rg);
 
 	times(&tempoDepois);
 
+	otimos.push_back(otimo->getOWA());
+	temposOtimos.push_back( (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+
 	/*========= Estatistica ========= */
-	cout<<"========= Estatistica ========= "<<endl;
-	fprintf(stdout,"Tempo(s) = %.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
+	fprintf(stdout,"Tempo(s) Final = %.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
 	fprintf(tempofile,"%.2lf\n", (double) (tempoDepois.tms_utime - tempoAntes.tms_utime) / 100.0 );
-   	cout<<"Quantas vezes a populaçao precisou ser renovada? = "<<contaRenovacao<<endl;
-   	cout<<"Evolucao do otimo por geracao: "<<endl;
+   	cout<<"Quantidade de geraçoes = "<<QUANTGERACOES<<endl;
+   	cout<<"Quantas vezes em que a populaçao foi renovada = "<<contaRenovacao<<endl;
+   	cout<<"Quantidade de crossovers = "<<contCrossovers<<endl;
+   	cout<<"Quantidade de sucesso dos crossovers = "<<contSucessoCrossovers<<endl;
+   	cout<<"Taxa de sucesso dos crossovers = "<<(double)contSucessoCrossovers/contCrossovers<<endl;
+   	cout<<"Quantidade de mutaçoes = "<<contMutacoes<<endl;
+   	cout<<"Quantidade de sucesso da mutaçao = "<<contSucessoMutacoes<<endl;
+   	cout<<"Taxa de sucesso das mutaçoes = "<<(double)contSucessoMutacoes/contMutacoes<<endl;
+   	cout<<"Quantidade de vezes em que o SA foi invocado = "<<quantSAinvocado<<endl;
+   	cout<<"Quantidade de sucesso do SA = "<<contSucessoSA<<endl;
+   	cout<<"TAXA de sucesso do SA = "<<(double)contSucessoSA/quantSAinvocado<<endl;
+   	cout<<"Quantidade de vezes em que o fitness foi avaliado = "<<contQuantCalculouFitness<<endl;
+
+   	cout<<"Evolucao do otimo por geracao (fitness, tempo(s)): "<<endl;
    	for (int i=0; i<otimos.size(); i++){
-   		cout<<otimos[i]<<endl;
+   		cout<<otimos[i]<<", "<<temposOtimos[i]<<"s"<<endl;
    	}
 
-
+   	cout<<endl;
+   	cout<<"Soluçao encontrada: "<<endl;
 	otimo->printSolucao();
 	cout<<"OWA = "<<otimo->getOWA()<<endl;
 	fprintf(samplefile,"%.2lf\n",otimo->getOWA());

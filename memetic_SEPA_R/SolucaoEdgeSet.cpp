@@ -16,6 +16,10 @@
 using namespace std;
 
 extern double custos[NUMOBJETIVOS][NUMEROVERTICES][NUMEROVERTICES];
+extern int contCrossovers; // quantidade de crossovers executados
+extern int contMutacoes; // quantidade de mutaçoes executadas
+extern int contQuantCalculouFitness; // guarda a quantidade de vezes em que a funçao calculaOwa foi invocada
+
 
 // typedef struct {
 // 	int listaadj[NUMEROVERTICES][NUMEROVERTICES], graus[NUMEROVERTICES];
@@ -77,6 +81,7 @@ class SolucaoEdgeSet : public Solucao {
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
     void calculaOwa(double w[NUMOBJETIVOS]){
+    	contQuantCalculouFitness++; // externo
     	std::vector<int> myvector(f, f+NUMOBJETIVOS); 
 		std::sort (myvector.begin(), myvector.end(), myfunction); 
 		double ret = 0;
@@ -167,45 +172,10 @@ class SolucaoEdgeSet : public Solucao {
 		if (cont<NUMEROVERTICES-1) cout<<"ERROR RandomWalk cont = "<<cont<<" amostral.size() = "<<amostral.size()<<endl;
     }
 
- //    // para grafos completos e incompletos
- //   	void RandomWalk(bool unionGraph[NUMEROVERTICES][NUMEROVERTICES]){
-	// 	int v = rg->IRandom(0, NUMEROVERTICES-1); // vertice inicial
-	// 	int cont = 0;
-	// 	bool isVisitado[NUMEROVERTICES];
-	// 	for (int i=0; i<NUMEROVERTICES; i++)isVisitado[i] = false;
-	// 	isVisitado[v] = true;
-	// 	while (cont<NUMEROVERTICES-1){
-	// 		vector<int> verticesAdjacentes;
-	// 		//olha os vizinhos de v
-	// 		for (int i=0; i<NUMEROVERTICES; i++){
-	// 			if (i!=v && unionGraph[i][v]==true){ // grafo possivelmente nao completo
-	// 				verticesAdjacentes.push_back(i);
-	// 			}
-	// 		}
-
-	// 		if (verticesAdjacentes.size()>0){
-	// 			int viz = verticesAdjacentes[rg->IRandom(0, verticesAdjacentes.size()-1)];
-	// 			if (isVisitado[viz] == false){//agora verificamos se o vertice vizinho nao foi vizitado
-	// 				if (v<viz) {
-	// 		            edges[cont][0] = v;
-	// 		            edges[cont][1] = viz;
-	// 		        } else {
-	// 		        	edges[cont][0] = viz;
-	// 		            edges[cont][1] = v;
-	// 		        }
-	// 				isVisitado[viz] = true;
-	// 				cont++;		
-	// 			} 
-	// 			v = viz;
-	// 		} else {
-	// 			cout<<"ERRO"<<endl;
-	// 		}
-	// 	}
-	// } 
-
     /* Faz o crossover entre dois individuos.
     BAseado no crossover sugerido por Raidl and Julstrom (2003)*/
 	void crossover(const SolucaoEdgeSet &pai, const SolucaoEdgeSet &mae) {
+		contCrossovers++;
 		bool unionGraph[NUMEROVERTICES][NUMEROVERTICES];
 		memset(unionGraph,false,sizeof(unionGraph));
 
@@ -322,6 +292,7 @@ class SolucaoEdgeSet : public Solucao {
 	}
 
 	void mutacao(SolucaoEdgeSet &sol){
+		contMutacoes++;
 		int a1 = rg->IRandom(0,NUMEROVERTICES-1-1), a2;
 		while ((a2 = rg->IRandom(0,NUMEROVERTICES-1-1)) == a1);
 		trocaArestas(a1,a2,calcularTrocaArestas(a1,a2,sol),sol);
