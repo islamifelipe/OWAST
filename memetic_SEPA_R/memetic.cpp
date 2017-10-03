@@ -286,7 +286,7 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 				*populacao[idfjifj] = *filho;
 				
 			}
-			for (int i=TAMANHOPOPULACAO/3; i<TAMANHOPOPULACAO; i++){
+			for (int i=0; i<TAMANHOPOPULACAO/3; i++){
 				int idfjifj  = rg.IRandom(0,TAMANHOPOPULACAO-1);
 				filho->mutacao(*otimo);
 				filho->calculaOwa(w);
