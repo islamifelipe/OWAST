@@ -44,8 +44,7 @@ class Plasmideo {
         tamTrecho = tam;
 		SolucaoEdgeSet *agm = new SolucaoEdgeSet(NUMEROVERTICES-1, *rg); // TODO: fazer sem new
 	 	rmcPrim (*agm,lambda,*rg, tamTrecho);
-
-        FOR(i, 0, tamTrecho) {
+	 	FOR(i, 0, tamTrecho) {
             trechoInserir [i][0] = agm->edges[i][0];
             trechoInserir [i][1] = agm->edges[i][1];
         }

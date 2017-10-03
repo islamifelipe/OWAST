@@ -280,16 +280,17 @@ SolucaoEdgeSet * memetic(TRandomMersenne &rg){
 		if (contSemMudanca==5){
 			contaRenovacao++;
 			for (int i=0; i<TAMANHOPOPULACAO/2; i++) {
-				int idfjifj  = i;//= rg.IRandom(0,TAMANHOPOPULACAO-1);
+				int idfjifj  = rg.IRandom(0,TAMANHOPOPULACAO-1);
 				rmcPrim(*filho, w, rg);
 				filho->calculaOwa(w);
 				*populacao[idfjifj] = *filho;
 				
 			}
 			for (int i=TAMANHOPOPULACAO/3; i<TAMANHOPOPULACAO; i++){
+				int idfjifj  = rg.IRandom(0,TAMANHOPOPULACAO-1);
 				filho->mutacao(*otimo);
 				filho->calculaOwa(w);
-				*populacao[i] = *filho;
+				*populacao[idfjifj] = *filho;
 			}
 			contSemMudanca=0;
 		}

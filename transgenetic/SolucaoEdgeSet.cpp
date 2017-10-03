@@ -98,9 +98,22 @@ class SolucaoEdgeSet : public Solucao {
 		for (int j=0;j<NUMOBJETIVOS;j++){
 			f[j] = 0.0;
 		}
-		for (int i=0;i<NUMEROVERTICES-1;i++)
-			for (int j=0;j<NUMOBJETIVOS;j++)
+		for (int i=0;i<NUMEROVERTICES-1;i++){
+			for (int j=0;j<NUMOBJETIVOS;j++){
 				f[j] += f(j,edges[i][0],edges[i][1]);
+			}
+		}
+	}
+
+	void calcularObjetivos(int tam) {
+		for (int j=0;j<NUMOBJETIVOS;j++){
+			f[j] = 0.0;
+		}
+		for (int i=0;i<tam;i++){
+			for (int j=0;j<NUMOBJETIVOS;j++){
+				f[j] += f(j,edges[i][0],edges[i][1]);
+			}
+		}
 	}
 
 	// para grafos completos

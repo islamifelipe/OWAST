@@ -180,7 +180,7 @@ void rmcPrim (SolucaoEdgeSet &s, double lambda[NUMOBJETIVOS], TRandomMersenne &r
 		cont++;
 	}
 	// atualiza os custos da solucao
-	s.calcularObjetivos();
+	s.calcularObjetivos(tamanho);
 }
 
 
