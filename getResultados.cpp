@@ -1,5 +1,5 @@
 
-/*Este programa lê o aquivo saida de uma instância 
+/*Este programa lê o aquivo saida de uma instância do solver
 e retorna os resultados desejados :
 
 nós		gap 	obj		tempo*/
@@ -48,5 +48,6 @@ int main(int argc, const char * argv[]){
 	 	}
 	 	aux = s;
     }
-    cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
+   // cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
+    cout<<obj<<","<<timee<<endl;
 }
