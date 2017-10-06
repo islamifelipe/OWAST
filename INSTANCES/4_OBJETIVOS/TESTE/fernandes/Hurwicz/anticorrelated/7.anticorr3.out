@@ -1,0 +1,55 @@
+Rodando pra 1h
+
+Optimize a model with 76 rows, 83 columns and 630 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [2e-01, 8e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 273.8
+Presolve removed 10 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 66 rows, 81 columns, 420 nonzeros
+Variable types: 42 continuous, 39 integer (37 binary)
+
+Root relaxation: objective 1.355636e+01, 87 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   13.55636    0   12  273.80000   13.55636  95.0%     -    0s
+H    0     0                     220.2000000   13.55636  93.8%     -    0s
+     0     0   28.29349    0   14  220.20000   28.29349  87.2%     -    0s
+     0     0   31.01143    0   16  220.20000   31.01143  85.9%     -    0s
+     0     0   33.89426    0   16  220.20000   33.89426  84.6%     -    0s
+     0     0   38.50503    0   19  220.20000   38.50503  82.5%     -    0s
+     0     0   38.52515    0   20  220.20000   38.52515  82.5%     -    0s
+     0     0   38.56442    0   19  220.20000   38.56442  82.5%     -    0s
+     0     0   38.56442    0   17  220.20000   38.56442  82.5%     -    0s
+     0     2   38.62619    0   17  220.20000   38.62619  82.5%     -    0s
+*   81    48              20     213.4000000   39.02081  81.7%   6.9    0s
+*  211   104              20     177.0000000   39.54647  77.7%   5.5    0s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 24
+  Flow cover: 23
+  Flow path: 2
+  Zero half: 10
+  Network: 2
+
+Explored 1666 nodes (13264 simplex iterations) in 1.14 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.770000000000e+02, best bound 1.770000000000e+02, gap 0.0%
+Tempo: 1.13 segundos
+
+0 3 87 24 24 22 
+0 5 79 26 18 21 
+1 6 86 16 18 23 
+2 6 89 14 8 15 
+4 5 99 2 0 2 
+4 6 89 21 21 18 
+(529 103 89 101 )
+

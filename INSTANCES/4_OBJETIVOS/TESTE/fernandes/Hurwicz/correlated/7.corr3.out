@@ -1,0 +1,56 @@
+Rodando pra 1h
+
+Optimize a model with 76 rows, 83 columns and 634 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [4e-01, 6e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 223.4
+Presolve removed 10 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 66 rows, 81 columns, 418 nonzeros
+Variable types: 42 continuous, 39 integer (37 binary)
+
+Root relaxation: objective 1.617778e+01, 53 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   16.17778    0   12  223.40000   16.17778  92.8%     -    0s
+H    0     0                     147.0000000   16.17778  89.0%     -    0s
+H    0     0                     132.0000000   16.17778  87.7%     -    0s
+     0     0   47.21875    0   14  132.00000   47.21875  64.2%     -    0s
+H    0     0                     122.0000000   47.21875  61.3%     -    0s
+     0     0   47.22400    0   13  122.00000   47.22400  61.3%     -    0s
+     0     0   50.79000    0   18  122.00000   50.79000  58.4%     -    0s
+     0     0   50.85000    0   18  122.00000   50.85000  58.3%     -    0s
+     0     0   51.13404    0   21  122.00000   51.13404  58.1%     -    0s
+     0     0   51.13404    0   18  122.00000   51.13404  58.1%     -    0s
+H    0     0                      83.0000000   51.13404  38.4%     -    0s
+     0     2   51.13913    0   18   83.00000   51.13913  38.4%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 15
+  MIR: 25
+  Flow cover: 25
+  Flow path: 7
+  Zero half: 1
+  Network: 8
+
+Explored 582 nodes (1942 simplex iterations) in 0.08 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.300000000000e+01, best bound 8.300000000000e+01, gap 0.0%
+Tempo: 0.08 segundos
+
+0 4 2 6 4 7 
+1 2 35 32 35 36 
+1 3 4 12 8 18 
+1 4 8 11 10 16 
+4 5 4 17 16 15 
+5 6 3 4 9 9 
+(56 82 82 101 )
+

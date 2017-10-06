@@ -1,0 +1,55 @@
+Rodando pra 1h
+
+Optimize a model with 88 rows, 93 columns and 887 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [1e+00, 1e+00]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 418
+Presolve removed 24 rows and 4 columns
+Presolve time: 0.00s
+Presolved: 64 rows, 89 columns, 379 nonzeros
+Variable types: 42 continuous, 47 integer (46 binary)
+
+Root relaxation: objective 0.000000e+00, 30 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   11  418.00000    0.00000   100%     -    0s
+H    0     0                     250.0000000    0.00000   100%     -    0s
+H    0     0                     227.0000000    0.00000   100%     -    0s
+     0     0    0.00000    0   14  227.00000    0.00000   100%     -    0s
+H    0     0                     186.0000000    0.00000   100%     -    0s
+     0     0    0.00000    0   13  186.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   14  186.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   19  186.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   14  186.00000    0.00000   100%     -    0s
+     0     2    0.00000    0   10  186.00000    0.00000   100%     -    0s
+H  117    44                     180.0000000   61.12500  66.0%   4.1    0s
+*  167    54              10     175.0000000   76.00000  56.6%   4.1    0s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 45
+  MIR: 5
+  Flow cover: 10
+  Flow path: 1
+  Network: 1
+
+Explored 1439 nodes (4739 simplex iterations) in 0.17 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.750000000000e+02, best bound 1.750000000000e+02, gap 0.0%
+Tempo: 0.16 segundos
+
+0 1 24 54 42 29 31 
+1 2 10 19 5 13 21 
+1 4 4 38 19 11 38 
+1 6 37 20 21 63 24 
+3 4 13 21 40 50 28 
+4 5 4 28 48 48 20 
+(92 180 175 214 162 )
+

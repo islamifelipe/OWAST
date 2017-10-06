@@ -1,0 +1,69 @@
+Rodando pra 1h
+
+Optimize a model with 139 rows, 165 columns and 1724 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [3e-01, 3e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Found heuristic solution: objective 677.999
+Presolve removed 12 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 127 rows, 163 columns, 1230 nonzeros
+Variable types: 90 continuous, 73 integer (70 binary)
+
+Root relaxation: objective 0.000000e+00, 40 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   13  677.99932    0.00000   100%     -    0s
+H    0     0                     350.9996490    0.00000   100%     -    0s
+     0     0    0.00000    0   22  350.99965    0.00000   100%     -    0s
+     0     0    0.00000    0   15  350.99965    0.00000   100%     -    0s
+     0     0    0.00000    0   20  350.99965    0.00000   100%     -    0s
+H    0     0                     266.9997330    0.00000   100%     -    0s
+H    0     0                     231.6664350    0.00000   100%     -    0s
+     0     0    0.00000    0   19  231.66643    0.00000   100%     -    0s
+     0     0    0.00000    0   25  231.66643    0.00000   100%     -    0s
+     0     0    0.00000    0   21  231.66643    0.00000   100%     -    0s
+     0     0    0.00000    0   22  231.66643    0.00000   100%     -    0s
+     0     0    0.00000    0   16  231.66643    0.00000   100%     -    0s
+H    0     0                     188.9998110    0.00000   100%     -    0s
+     0     2    0.00000    0   16  188.99981    0.00000   100%     -    0s
+H  135    94                     170.9998290   54.45093  68.2%  12.7    0s
+*  169   110              21     153.6665130   56.28389  63.4%  11.8    0s
+*  171   104              20     148.3331850   56.28389  62.1%  11.7    0s
+*  173    97              22     144.6665220   56.28389  61.1%  11.5    0s
+H  481   236                     142.6665240   71.04755  50.2%   9.2    0s
+H  510   243                     137.6665290   71.98604  47.7%   9.2    0s
+H 1305   424                     136.6665300   71.98604  47.3%   9.7    0s
+H 1495   538                     135.9998640   71.98604  47.1%   9.4    0s
+H 1576   596                     134.3331990   71.98604  46.4%   9.1    0s
+ 14143  5016  131.18505   42    7  134.33320   73.32562  45.4%   9.0    5s
+ 25923  2739     cutoff   33       134.33320  107.10712  20.3%  12.1   10s
+
+Cutting planes:
+  MIR: 9
+  Flow cover: 13
+  Flow path: 3
+  Network: 3
+
+Explored 32188 nodes (361942 simplex iterations) in 11.88 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.343331990000e+02, best bound 1.343331990000e+02, gap 0.0%
+Tempo: 11.8 segundos
+
+0 5 5 11 5 16 5 
+0 6 8 9 21 20 11 
+1 2 8 14 8 20 12 
+2 3 17 23 19 21 23 
+2 4 1 13 5 9 2 
+2 5 16 17 17 19 27 
+5 9 19 18 23 31 30 
+7 9 5 12 9 9 12 
+8 9 15 19 14 17 24 
+(94 136 121 162 146 )
+

@@ -1,0 +1,53 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 97 rows, 102 columns and 1088 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [4e-01, 6e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 215
+Presolve removed 49 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 48 rows, 88 columns, 384 nonzeros
+Variable types: 20 continuous, 68 integer (66 binary)
+
+Root relaxation: objective 1.670000e+01, 34 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   16.70000    0   12  215.00000   16.70000  92.2%     -    0s
+H    0     0                     117.0000000   16.70000  85.7%     -    0s
+     0     0   40.48633    0   16  117.00000   40.48633  65.4%     -    0s
+     0     0   43.41564    0   17  117.00000   43.41564  62.9%     -    0s
+H    0     0                     102.4000000   43.41564  57.6%     -    0s
+     0     0   44.95014    0   15  102.40000   44.95014  56.1%     -    0s
+     0     0   45.57433    0   11  102.40000   45.57433  55.5%     -    0s
+     0     0   45.64534    0   13  102.40000   45.64534  55.4%     -    0s
+     0     0   45.66759    0   15  102.40000   45.66759  55.4%     -    0s
+     0     0   45.66759    0    9  102.40000   45.66759  55.4%     -    0s
+     0     2   45.78348    0    9  102.40000   45.78348  55.3%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 36
+  MIR: 27
+  Flow cover: 15
+  Flow path: 2
+  Zero half: 1
+  Network: 4
+
+Explored 844 nodes (2491 simplex iterations) in 0.09 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+02, best bound 1.024000000000e+02, gap 0.0%
+Tempo: 0.09 segundos
+
+0 2 2 47 29 39 21 35 4 1 
+0 3 35 57 67 45 37 66 32 44 
+0 4 8 14 16 12 22 6 35 18 
+1 2 23 22 28 58 24 16 56 38 
+(68 140 140 154 104 123 127 101 )
+
