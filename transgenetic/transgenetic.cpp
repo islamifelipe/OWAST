@@ -225,7 +225,7 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 				*otimo = copia;
 			}
 		}
-		//cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
+		cout<<"Geracao "<<i+1<<" otimo = "<<otimo->getOWA()<<endl;
 		for (int pppt = 0; pppt < TAMANHOPOPULACAO; pppt++){
 			indexPlas = rg.IRandom(0,NUMPLASMIDEOS-1);
 			SolucaoEdgeSet copia = *populacao[pppt];//*populacao[index];

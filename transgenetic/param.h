@@ -11,7 +11,7 @@
 #define EPS 1e-9 // qualquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 50 // Varia
+#define NUMEROVERTICES 800 // Varia
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -28,53 +28,48 @@
 #define PORCENT_HURWICZ 30 //--- 
 
 
-#define QUANTGERACOES 50 // quantidade de iteracoes do TANSGENETICO
-#define NUMPLASMIDEOS 15 // quantidade total de plasmideos
-#define PER_PLAS1 50 // percentagem de plasmideos gerados pelo rmc-prim
-#define PER_PLAS2 40 // percentagem de plasmideos gerados por uma soluçao
-#define PER_PLAS3 10 // percentagem de plasmideos gerados por duas soluçoes
-#define PROB_TRANS2 0.3 // SA
-#define PROB_TRANS1 0.8 // primTrans
+#define QUANTGERACOES 50//40 - 50 // quantidade de iteracoes do TANSGENETICO
+#define NUMPLASMIDEOS 20 // 13 - 20 quantidade total de plasmideos
+#define PER_PLAS1 30 // 25 - 31 percentagem de plasmideos gerados pelo rmc-prim
+#define PER_PLAS2 40 // 35 - 41 percentagem de plasmideos gerados por uma soluçao
+#define PER_PLAS3 (100 - PER_PLAS1 - PER_PLAS2) // // percentagem de plasmideos gerados por duas soluçoes
+#define PROB_TRANS2 0.4//0.3 - 0.45// SA
+#define PROB_TRANS1 0.8 // 0.5 - 0.8// primTrans
 
-/*Parâmetros para o Simulated Annealing*/
-#define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO
-#define FATORDECAIMENTO 1.8
-#define FATORDECAIMENTOITERACAO 1.8
-#define ITERACAO_K 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+
+
+// /*Parâmetros para o Simulated Annealing*/
+// #define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO
+// #define FATORDECAIMENTO 1.8
+// #define FATORDECAIMENTOITERACAO 1.8
+// #define ITERACAO_K 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+// // O algoritmo para quando a temperatura for menor que 1
+// // quanto menor a temperatura, maior a quantidade de iteraçoes
+
+
+
+
+// /*Parâmetros para o Simulated Annealing*/
+#define TEMPERATURA 24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 2.0//1.7 - 2.0
+#define FATORDECAIMENTOITERACAO 1.5//1.4 - 1.7
+#define ITERACAO_K 14 //10 - 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+
+
+// /*Parâmetros para o Simulated Annealing*/
+// #define TEMPERATURA 20 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
+// #define FATORDECAIMENTO 1.7//1.7 - 2.0
+// #define FATORDECAIMENTOITERACAO 1.7//1.4 - 1.7
+// #define ITERACAO_K 15 //10 - 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+
+
+// /*Parâmetros para o Simulated Annealing*/
+// #define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO
+// #define FATORDECAIMENTO 1.7
+// #define FATORDECAIMENTOITERACAO 1.7
+// #define ITERACAO_K 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
 // O algoritmo para quando a temperatura for menor que 1
 // quanto menor a temperatura, maior a quantidade de iteraçoes
 
 
 #endif
-
-
-#define NUMEROVERTICES 30
-#define NUMEROVERTICES 35
-#define NUMEROVERTICES 40
-#define NUMEROVERTICES 45
-#define NUMEROVERTICES 50
-#define NUMEROVERTICES 100
-#define NUMEROVERTICES 200
-#define NUMEROVERTICES 300
-#define NUMEROVERTICES 400
-#define NUMEROVERTICES 500
-#define NUMEROVERTICES 600
-#define NUMEROVERTICES 700
-#define NUMEROVERTICES 800
-#define NUMEROVERTICES 900
-#define NUMEROVERTICES 1000
-#define NUMEROVERTICES 30
-#define NUMEROVERTICES 35
-#define NUMEROVERTICES 40
-#define NUMEROVERTICES 45
-#define NUMEROVERTICES 50
-#define NUMEROVERTICES 100
-#define NUMEROVERTICES 200
-#define NUMEROVERTICES 300
-#define NUMEROVERTICES 400
-#define NUMEROVERTICES 500
-#define NUMEROVERTICES 600
-#define NUMEROVERTICES 700
-#define NUMEROVERTICES 800
-#define NUMEROVERTICES 900
-#define NUMEROVERTICES 1000

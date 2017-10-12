@@ -109,14 +109,12 @@ class Plasmideo {
 		uf.clear();
 		SolucaoEdgeSet nova = s; 
 		int contEdges = 0;
-
 		// coloca as arestas do trecho selecionado
 		FOR(i,0,tamTrecho) {
 			nova.edges[contEdges][0] = trechoInserir[i][0];
 			nova.edges[contEdges++][1] = trechoInserir[i][1];
 			uf.unionClass(trechoInserir[i][0],trechoInserir[i][1]);
 		}
-
 		// tenta colocar as arestas da solucao
 		FOR(i,0,NUMEROARESTAS) {
 			if (!uf.sameClass(s.edges[i][0],s.edges[i][1])) {
@@ -125,7 +123,7 @@ class Plasmideo {
 				uf.unionClass(s.edges[i][0],s.edges[i][1]);
 			}
 		}
-
+		
 		// completa a solucao com arestas quaisquer
 		while (contEdges < NUMEROARESTAS) {
 			int e[2] = { rg->IRandom(0,NUMEROVERTICES-1), rg->IRandom(0,NUMEROVERTICES-1) };

@@ -6,12 +6,13 @@
 #include "rand/randomc.h"
 
 
+
 #define PI 3.14159265
 #define f(k,i,j) custos[k][i][j] // objetivo k, vertice i j 
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 50 // Varia
+#define NUMEROVERTICES 800 // Varia
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -27,9 +28,9 @@
 #define PORCENT_HURWICZ 30 //--- 
 
 /*Parâmetros do GA*/
-#define TAXADECRUZAMENTO 0.97  // 98% por geraçao
-#define TAXADEMUTACAO 0.1 // 10% por geraçao
-#define QUANTGERACOES 50 // quantidade de iteracoes do M-GA
+#define TAXADECRUZAMENTO 0.97//0.90 - 0.99 //0.97  // 98% por geraçao
+#define TAXADEMUTACAO 0.1//0.1 - 0.3 // 10% por geraçao
+#define QUANTGERACOES 50 //40 - 50 // quantidade de iteracoes do M-GA
 
 /*Parâmetros da busca tabu -- NAO UTILIZADO NO MOMENTO*/
 #define MAX_ITERATIONS 20
@@ -37,27 +38,14 @@
 #define TABUTENURE 3 
 
 /*Parâmetros para o Simulated Annealing*/
-#define TEMPERATURA 30 // vai sendo dividido por FATORDECAIMENTO
-#define FATORDECAIMENTO 1.8
-#define FATORDECAIMENTOITERACAO 1.8
-#define ITERACAO_K 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+#define TEMPERATURA 24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 2.0//1.7 - 2.0
+#define FATORDECAIMENTOITERACAO 1.5//1.4 - 1.7
+#define ITERACAO_K 14 //10 - 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
+
+
 // O algoritmo para quando a temperatura for menor que 1
 // quanto menor a temperatura, maior a quantidade de iteraçoes
 
 
 #endif
-#define NUMEROVERTICES 30
-#define NUMEROVERTICES 35
-#define NUMEROVERTICES 40
-#define NUMEROVERTICES 45
-#define NUMEROVERTICES 50
-#define NUMEROVERTICES 100
-#define NUMEROVERTICES 200
-#define NUMEROVERTICES 300
-#define NUMEROVERTICES 400
-#define NUMEROVERTICES 500
-#define NUMEROVERTICES 600
-#define NUMEROVERTICES 700
-#define NUMEROVERTICES 800
-#define NUMEROVERTICES 900
-#define NUMEROVERTICES 1000

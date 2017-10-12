@@ -1,0 +1,13 @@
+Trabalho 2 da disciplina de Multiobjetivo
+
+Testar pra instâncias 10 objetivos k_trimmed correlated e anticorrelated, de 30 até 500 vértices
+30 execuçoes
+comparar com o exato fernandes2 limitado até 1h
+
+
+
+Os resultados deste relatorio estao guardados nesta pasta (com copia na pasta do memético_SPEA/R)
+
+6*2*3*3*1*1/4/24
+
+TESTE/fernandes2/k_trimmed/trabalho2/
