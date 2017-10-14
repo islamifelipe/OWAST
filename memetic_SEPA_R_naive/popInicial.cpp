@@ -9,7 +9,6 @@ using namespace std;
 
 extern double w[NUMOBJETIVOS];  
 
-
 void alocaPopulacao(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenne &rg){
 	for (int i=0; i<TAMANHOPOPULACAO; i++){
 		populacao[i] = new SolucaoEdgeSet(NUMEROVERTICES-1, rg);
@@ -27,6 +26,7 @@ void renovaKCentrum(SolucaoEdgeSet *individuo){
 
 void renovaKTrimmed(SolucaoEdgeSet *individuo){
 	int lim = (int) NUMOBJETIVOS/2-1;
+	//cout<<"lim = "<<lim<<endl;
 	if (lim==0) lim = 1;
 	int k = individuo->rg->IRandom(1,lim);
 	double lambda[NUMOBJETIVOS];
@@ -172,7 +172,7 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 				break;
 		}
 	}
-	cout<<"Informacoes sobre a populacao : "<<endl;
+	cout<<"Informacoes sobre a populacao inicial : "<<endl;
 	cout<<"\tSPEA/R = "<<100.0*speaR/TAMANHOPOPULACAO<<endl;
 	//cout<<"\tdoRandomWalk = "<<100.0*contRandom/TAMANHOPOPULACAO<<endl;
 	cout<<"\tk-centrum = "<<100.0*centrum/TAMANHOPOPULACAO<<endl;
@@ -180,7 +180,6 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 	cout<<"\tHurwicz = "<<100.0*hur/TAMANHOPOPULACAO<<endl;
 
 }
-
 
 
 #endif

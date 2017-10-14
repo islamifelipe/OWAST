@@ -122,13 +122,13 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 		rmcPrim(*populacao[cont], lambda, rg);
 		populacao[cont]->calculaOwa(w);
 		op = 0;
-		aux->doRandomWalk();
-		aux->calculaOwa(w);
-		if (aux->getOWA()<populacao[cont]->getOWA()){
-			*populacao[cont] = *aux;
-			op = 1;
-			//op = "doRandomWalk";
-		}
+		// aux->doRandomWalk();
+		// aux->calculaOwa(w);
+		// if (aux->getOWA()<populacao[cont]->getOWA()){
+		// 	*populacao[cont] = *aux;
+		// 	op = 1;
+		// 	//op = "doRandomWalk";
+		// }
 
 		renovaHurwicz(aux);
 		if (aux->getOWA()<populacao[cont]->getOWA()){

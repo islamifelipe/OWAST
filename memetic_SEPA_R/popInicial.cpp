@@ -122,13 +122,13 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 		rmcPrim(*populacao[cont], lambda, rg);
 		populacao[cont]->calculaOwa(w);
 		op = 0;
-		aux->doRandomWalk();
-		aux->calculaOwa(w);
-		if (aux->getOWA()<populacao[cont]->getOWA()){
-			*populacao[cont] = *aux;
-			op = 1;
-			//op = "doRandomWalk";
-		}
+		//aux->doRandomWalk();
+		//aux->calculaOwa(w);
+		// if (aux->getOWA()<populacao[cont]->getOWA()){
+		// 	*populacao[cont] = *aux;
+		// 	op = 1;
+		// 	//op = "doRandomWalk";
+		// }
 
 		renovaHurwicz(aux);
 		if (aux->getOWA()<populacao[cont]->getOWA()){
@@ -174,7 +174,7 @@ void gerarPopulacao3(SolucaoEdgeSet *populacao[TAMANHOPOPULACAO], TRandomMersenn
 	}
 	cout<<"Informacoes sobre a populacao inicial : "<<endl;
 	cout<<"\tSPEA/R = "<<100.0*speaR/TAMANHOPOPULACAO<<endl;
-	cout<<"\tdoRandomWalk = "<<100.0*contRandom/TAMANHOPOPULACAO<<endl;
+	//cout<<"\tdoRandomWalk = "<<100.0*contRandom/TAMANHOPOPULACAO<<endl;
 	cout<<"\tk-centrum = "<<100.0*centrum/TAMANHOPOPULACAO<<endl;
 	cout<<"\tk-trimmed = "<<100.0*trimed/TAMANHOPOPULACAO<<endl;
 	cout<<"\tHurwicz = "<<100.0*hur/TAMANHOPOPULACAO<<endl;
