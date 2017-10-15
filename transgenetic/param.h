@@ -11,7 +11,7 @@
 #define EPS 1e-9 // qualquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 50 // Varia
+#define NUMEROVERTICES 200 // Varia
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -28,7 +28,7 @@
 #define PORCENT_HURWICZ 30 //--- 
 
 
-#define QUANTGERACOES 45//50//40 - 50 // quantidade de iteracoes do TANSGENETICO
+#define QUANTGERACOES 46//50//40 - 50 // quantidade de iteracoes do TANSGENETICO
 #define NUMPLASMIDEOS 20//20 // 13 - 20 quantidade total de plasmideos
 #define PER_PLAS1 25//30 // 25 - 31 percentagem de plasmideos gerados pelo rmc-prim
 #define PER_PLAS2 40//40 // 35 - 41 percentagem de plasmideos gerados por uma soluçao
@@ -50,11 +50,10 @@
 
 
 /*Parâmetros para o Simulated Annealing*/
-#define TEMPERATURA 21//24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
-#define FATORDECAIMENTO 1.76//2.0//1.7 - 2.0
-#define FATORDECAIMENTOITERACAO 1.63//1.4 - 1.7
+#define TEMPERATURA 20//24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 1.78//2.0//1.7 - 2.0
+#define FATORDECAIMENTOITERACAO 1.66//1.4 - 1.7
 #define ITERACAO_K 10 //10 - 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
-
 
 
 // // /*Parâmetros para o Simulated Annealing*/

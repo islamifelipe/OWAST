@@ -12,7 +12,7 @@
 #define EPS 1e-9 // quanquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 50 // Varia
+#define NUMEROVERTICES 200 // Varia
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -28,9 +28,9 @@
 #define PORCENT_HURWICZ 30 //--- 
 
 /*Parâmetros do GA*/
-#define TAXADECRUZAMENTO 0.92 //0.97//0.90 - 0.99 //0.97  // 98% por geraçao
-#define TAXADEMUTACAO 0.1//0.1 - 0.3 // 10% por geraçao
-#define QUANTGERACOES 45//50 //40 - 50 // quantidade de iteracoes do M-GA
+#define TAXADECRUZAMENTO 0.95  //0.97//0.90 - 0.99 //0.97  // 98% por geraçao
+#define TAXADEMUTACAO 0.11//0.1 - 0.3 // 10% por geraçao
+#define QUANTGERACOES 46//50 //40 - 50 // quantidade de iteracoes do M-GA
 
 /*Parâmetros da busca tabu -- NAO UTILIZADO NO MOMENTO*/
 #define MAX_ITERATIONS 20
@@ -39,9 +39,9 @@
 
 
 /*Parâmetros para o Simulated Annealing*/
-#define TEMPERATURA 21//24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
-#define FATORDECAIMENTO 1.76//2.0//1.7 - 2.0
-#define FATORDECAIMENTOITERACAO 1.63//1.4 - 1.7
+#define TEMPERATURA 20//24 // 20 - 26 // vai sendo dividido por FATORDECAIMENTO
+#define FATORDECAIMENTO 1.78//2.0//1.7 - 2.0
+#define FATORDECAIMENTOITERACAO 1.66//1.4 - 1.7
 #define ITERACAO_K 10 //10 - 15 // vai sendo multiplicado por FATORDECAIMENTOITERACAO
 
 
