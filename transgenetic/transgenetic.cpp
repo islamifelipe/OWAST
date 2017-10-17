@@ -137,8 +137,9 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 	double lambda[NUMOBJETIVOS];
 	quantPlas1 = (int) PER_PLAS1*NUMPLASMIDEOS/100;
 	quantPlas2 = (int) PER_PLAS2*NUMPLASMIDEOS/100;
-	quantPlas3 = (int) PER_PLAS3*NUMPLASMIDEOS/100;
-	if (quantPlas1+quantPlas2+quantPlas3==NUMPLASMIDEOS-1)quantPlas3++;
+	//quantPlas3 = (int) PER_PLAS3*NUMPLASMIDEOS/100;
+	//if (quantPlas1+quantPlas2+quantPlas3==NUMPLASMIDEOS-1)quantPlas3++;
+	quantPlas3 = NUMPLASMIDEOS - quantPlas1 -quantPlas2;
 	int tam, cont=0, index2, index3;
 	for (int i=0; i<quantPlas1 && cont<NUMPLASMIDEOS; i++){
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
@@ -146,12 +147,14 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 		pl[cont].geraPlasm_rmcPrim(lambda, tam);
 		cont++;
 	}
+	//cout<<"cont = "<<quantPlas1<<endl;
 	for (int i=0; i<quantPlas2 && cont<NUMPLASMIDEOS; i++){
 		index2 = rg.IRandom(0,sizeRepositorio-1);
 		tam =rg.IRandom(2,(int)(0.5*(NUMEROVERTICES-1)));// NOTAR: DIFERENTE DE SILVIA
 		pl[cont].geraPlasm_Solucao(*repositorio[index2], tam);
 		cont++;
 	}
+	//cout<<"cont = "<<quantPlas2<<endl;
 	for (int i=0; i<quantPlas3 && cont<NUMPLASMIDEOS; i++){
 		index3 = rg.IRandom(0,sizeRepositorio-1);
 		index2 = rg.IRandom(0,sizeRepositorio-1);
@@ -159,6 +162,7 @@ void criaPlasmideos(TRandomMersenne &rg, Plasmideo pl[NUMPLASMIDEOS]){
 		pl[cont].geraPlasTwoSolutions(*repositorio[index2], *repositorio[index3], tam);
 		cont++;
 	}	
+	//cout<<"cont = "<<quantPlas3<<endl;
 }
 
 /* O ótimo corrente deve sempre ser atacado
@@ -213,7 +217,6 @@ SolucaoEdgeSet *transgenetic(TRandomMersenne &rg){
 		//cria os PLASMIDEOS
 		Plasmideo pl[NUMPLASMIDEOS];
 		criaPlasmideos(rg, pl);
-		
 		for (int plas = 0; plas<NUMPLASMIDEOS; plas++){
 			SolucaoEdgeSet copia = *otimo;//*populacao[index];
 			pl[plas].atacaSolucao(copia);

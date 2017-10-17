@@ -116,6 +116,7 @@ class Plasmideo {
 			uf.unionClass(trechoInserir[i][0],trechoInserir[i][1]);
 		}
 		// tenta colocar as arestas da solucao
+
 		FOR(i,0,NUMEROARESTAS) {
 			if (!uf.sameClass(s.edges[i][0],s.edges[i][1])) {
 				nova.edges[contEdges][0] = s.edges[i][0];
