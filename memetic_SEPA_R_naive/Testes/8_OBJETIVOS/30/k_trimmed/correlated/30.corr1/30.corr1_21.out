@@ -1,0 +1,103 @@
+========= Estatisticas ========= 
+Semente utilizada : 1762959
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 15
+	k-centrum = 25
+	k-trimmed = 60
+	Hurwicz = 0
+Tempo(s) Final = 0.04
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4585
+Quantidade de sucesso dos crossovers = 449
+Taxa de sucesso dos crossovers = 0.097928
+Quantidade de mutaçoes = 1093
+Quantidade de sucesso da mutaçao = 11
+Taxa de sucesso das mutaçoes = 0.010064
+Quantidade de vezes em que o SA foi invocado = 0
+Quantidade de sucesso do SA = 0
+TAXA de sucesso do SA = -nan
+Quantidade de vezes em que o fitness foi avaliado = 10664
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+796.5, 0s
+766.5, 0s
+744.5, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.01s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.02s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.03s
+742, 0.04s
+742, 0.04s
+742, 0.04s
+742, 0.04s
+
+Soluçao encontrada: 
+7 15 51 65 17 23 16 63 12 89 
+9 10 18 42 23 35 29 4 26 19 
+9 25 18 82 9 30 17 18 70 68 
+3 16 4 17 51 17 68 10 25 71 
+19 27 0 28 56 23 2 5 25 30 
+13 24 27 62 36 50 7 14 37 22 
+0 21 15 6 14 16 40 11 72 59 
+18 24 27 58 7 53 15 40 29 70 
+13 14 18 13 21 76 4 15 25 30 
+4 7 43 10 24 20 37 29 45 41 
+11 22 37 80 9 36 19 21 76 34 
+1 14 4 35 67 12 63 25 4 49 
+9 24 51 65 14 13 22 45 46 14 
+6 25 2 12 4 37 36 48 2 17 
+10 28 2 8 11 18 76 19 11 9 
+15 18 10 16 27 16 7 28 49 12 
+5 16 3 71 1 7 30 7 16 51 
+26 29 36 28 52 29 8 29 45 16 
+5 21 49 41 16 27 28 25 62 43 
+22 27 19 63 21 24 18 45 3 37 
+16 17 22 73 31 16 15 23 44 60 
+12 27 13 73 6 6 26 28 50 49 
+20 27 8 42 35 9 7 2 34 37 
+6 23 72 73 41 20 15 28 18 32 
+0 27 9 17 27 31 4 18 9 66 
+8 10 55 81 34 20 33 16 70 17 
+5 13 36 31 9 32 17 54 29 63 
+2 26 20 58 44 25 38 4 47 44 
+8 29 4 43 18 38 4 37 78 23 
+( 673 1293 725 759 701 711 1059 1172 )
+OWA = 742

@@ -1,0 +1,103 @@
+========= Estatisticas ========= 
+Semente utilizada : 28314
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 8
+	k-centrum = 19
+	k-trimmed = 73
+	Hurwicz = 0
+Tempo(s) Final = 0.04
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4669
+Quantidade de sucesso dos crossovers = 538
+Taxa de sucesso dos crossovers = 0.115228
+Quantidade de mutaçoes = 1062
+Quantidade de sucesso da mutaçao = 21
+Taxa de sucesso das mutaçoes = 0.019774
+Quantidade de vezes em que o SA foi invocado = 0
+Quantidade de sucesso do SA = 0
+TAXA de sucesso do SA = -nan
+Quantidade de vezes em que o fitness foi avaliado = 10664
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+796.5, 0s
+771.5, 0s
+744, 0.01s
+741.5, 0.01s
+727, 0.01s
+727, 0.01s
+727, 0.01s
+727, 0.01s
+727, 0.01s
+727, 0.01s
+727, 0.01s
+721, 0.01s
+721, 0.01s
+721, 0.01s
+721, 0.01s
+721, 0.02s
+721, 0.02s
+721, 0.02s
+721, 0.02s
+721, 0.02s
+721, 0.02s
+721, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.02s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.03s
+719, 0.04s
+719, 0.04s
+
+Soluçao encontrada: 
+5 21 49 41 16 27 28 25 62 43 
+18 24 27 58 7 53 15 40 29 70 
+3 19 26 84 18 12 49 26 61 13 
+15 18 10 16 27 16 7 28 49 12 
+6 23 72 73 41 20 15 28 18 32 
+9 24 51 65 14 13 22 45 46 14 
+4 7 43 10 24 20 37 29 45 41 
+8 10 55 81 34 20 33 16 70 17 
+12 27 13 73 6 6 26 28 50 49 
+16 17 22 73 31 16 15 23 44 60 
+2 5 8 61 42 11 1 69 31 42 
+8 29 4 43 18 38 4 37 78 23 
+6 10 36 19 10 11 18 65 65 69 
+11 22 37 80 9 36 19 21 76 34 
+2 26 20 58 44 25 38 4 47 44 
+20 27 8 42 35 9 7 2 34 37 
+9 10 18 42 23 35 29 4 26 19 
+22 27 19 63 21 24 18 45 3 37 
+0 27 9 17 27 31 4 18 9 66 
+19 27 0 28 56 23 2 5 25 30 
+7 22 3 4 37 32 43 6 71 38 
+6 22 57 76 23 11 49 20 20 32 
+13 24 27 62 36 50 7 14 37 22 
+0 21 15 6 14 16 40 11 72 59 
+9 25 18 82 9 30 17 18 70 68 
+13 14 18 13 21 76 4 15 25 30 
+10 28 2 8 11 18 76 19 11 9 
+5 16 3 71 1 7 30 7 16 51 
+1 14 4 35 67 12 63 25 4 49 
+( 674 1384 722 698 716 693 1194 1110 )
+OWA = 719

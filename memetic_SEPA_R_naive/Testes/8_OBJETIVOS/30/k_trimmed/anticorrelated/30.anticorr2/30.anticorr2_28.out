@@ -1,0 +1,103 @@
+========= Estatisticas ========= 
+Semente utilizada : 6973622
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 18
+	k-centrum = 27
+	k-trimmed = 55
+	Hurwicz = 0
+Tempo(s) Final = 0.04
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4654
+Quantidade de sucesso dos crossovers = 384
+Taxa de sucesso dos crossovers = 0.0825097
+Quantidade de mutaçoes = 866
+Quantidade de sucesso da mutaçao = 3
+Taxa de sucesso das mutaçoes = 0.0034642
+Quantidade de vezes em que o SA foi invocado = 0
+Quantidade de sucesso do SA = 0
+TAXA de sucesso do SA = -nan
+Quantidade de vezes em que o fitness foi avaliado = 10664
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+715, 0s
+715, 0s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.01s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+711, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.02s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.03s
+708, 0.04s
+708, 0.04s
+
+Soluçao encontrada: 
+0 28 98 5 5 47 46 35 46 5 
+16 17 84 12 28 11 34 29 38 8 
+0 27 99 15 35 18 1 25 15 11 
+9 28 97 42 24 4 5 38 28 28 
+13 29 89 16 11 11 39 22 12 51 
+10 26 90 34 51 26 43 24 5 13 
+15 20 88 38 5 43 44 5 18 37 
+1 27 90 40 6 8 27 52 21 12 
+5 26 92 28 7 11 50 10 9 46 
+14 25 60 31 53 27 24 22 26 25 
+5 14 93 47 4 42 35 4 15 25 
+15 29 86 34 18 12 24 44 20 25 
+20 21 99 13 19 36 46 38 16 8 
+8 18 84 26 37 40 15 10 49 7 
+8 23 97 11 16 5 21 5 48 4 
+4 19 79 32 31 45 34 30 17 12 
+11 28 98 5 45 12 45 20 13 31 
+7 17 91 7 40 47 11 17 44 42 
+12 24 86 30 8 41 43 40 11 8 
+9 25 90 26 38 16 24 5 31 24 
+6 21 75 18 15 26 22 29 12 59 
+8 9 63 21 31 28 32 38 18 27 
+19 20 92 10 21 4 20 47 28 30 
+2 27 74 40 50 21 19 13 24 19 
+3 28 80 15 23 55 38 13 38 19 
+17 29 76 21 12 24 49 35 20 34 
+17 27 91 22 8 13 52 7 15 52 
+13 22 90 35 24 8 10 39 41 25 
+21 24 87 18 26 21 39 33 13 22 
+( 2518 692 691 702 892 729 691 709 )
+OWA = 708
