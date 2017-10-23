@@ -11,7 +11,7 @@
 #define EPS 1e-9 // qualquer coisa menor que esse valor, é considerado 0
 
 #define NUMOBJETIVOS 10 // Varia
-#define NUMEROVERTICES 300 // Varia
+#define NUMEROVERTICES 1000 // Varia
 #define NUMEROARESTAS (NUMEROVERTICES-1)
 
 
@@ -34,7 +34,7 @@
 #define PER_PLAS2 39//40 // 35 - 41 percentagem de plasmideos gerados por uma soluçao
 #define PER_PLAS3 (100 - PER_PLAS1 - PER_PLAS2) // // percentagem de plasmideos gerados por duas soluçoes
 #define PROB_TRANS2 0.45 //0.4//0.3 - 0.45// SA
-#define PROB_TRANS1 0.72//0.8 // 0.5 - 0.8// primTrans
+#define PROB_TRANS1 0.72 //0.72//0.8 // 0.5 - 0.8// primTrans
 
 
 

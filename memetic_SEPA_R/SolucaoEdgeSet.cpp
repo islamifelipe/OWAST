@@ -77,6 +77,7 @@ class SolucaoEdgeSet : public Solucao {
 		index_subregiao = s.index_subregiao;
 		theta_angulo = s.theta_angulo;
 		fitness = s.fitness;
+		rg = s.rg;
 	}
 
     bool static myfunction (int i,int j) { return !(i<j); } // nao crescente
@@ -177,8 +178,12 @@ class SolucaoEdgeSet : public Solucao {
 	void crossover(const SolucaoEdgeSet &pai, const SolucaoEdgeSet &mae) {
 		contCrossovers++;
 		bool unionGraph[NUMEROVERTICES][NUMEROVERTICES];
-		memset(unionGraph,false,sizeof(unionGraph));
-
+		//memset(unionGraph,false,sizeof(unionGraph));
+		for (int i=0; i<NUMEROVERTICES; i++){
+			for (int j=0; j<NUMEROVERTICES; j++){
+				unionGraph[i][j] = false;
+			}
+		}
 		for (int i=0;i<NUMEROVERTICES-1;i++) {
 			if (!unionGraph[pai.edges[i][0]][pai.edges[i][1]]) {
 				unionGraph[pai.edges[i][0]][pai.edges[i][1]] = unionGraph[pai.edges[i][1]][pai.edges[i][0]] = true;
