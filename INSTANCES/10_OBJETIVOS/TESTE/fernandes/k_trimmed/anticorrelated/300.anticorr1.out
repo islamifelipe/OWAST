@@ -1,0 +1,64 @@
+Rodando pra 1h
+
+Optimize a model with 90129 rows, 134660 columns and 4928329 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+Presolve removed 4 rows and 4 columns (presolve time = 6s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 10s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 16s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 20s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 26s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 31s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 35s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 40s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 45s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 51s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 56s) ...
+Presolve removed 8 rows and 8 columns (presolve time = 60s) ...
+Presolve removed 8 rows and 8 columns
+Presolve time: 60.46s
+Presolved: 90121 rows, 134652 columns, 4928273 nonzeros
+Variable types: 89700 continuous, 44952 integer (44950 binary)
+Optimize a model with 90121 rows, 134652 columns and 4928273 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 2e+04]
+Presolved: 90121 rows, 134652 columns, 4928273 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   9.145840e+02   0.000000e+00     71s
+     686    0.0000000e+00   0.000000e+00   0.000000e+00     71s
+
+Root relaxation: objective 0.000000e+00, 686 iterations, 3.60 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0  320          -    0.00000      -     -  680s
+     0     0  256.06054    0  436          -  256.06054      -     - 1271s
+     0     0  278.47614    0  422          -  278.47614      -     - 3400s
+     0     0          -    0               -  278.47614      -     - 3600s
+
+Cutting planes:
+  MIR: 12
+  Flow cover: 380
+  Flow path: 49
+  Network: 56
+
+Explored 0 nodes (324446 simplex iterations) in 3600.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Time limit reached
+Best objective -, best bound 2.785000000000e+02, gap -
+Tempo: 3593.98 segundos
+
+Error code = 10004
+Var::get
