@@ -6,9 +6,9 @@ do
 	c=1
 	while [ $c -le 30 ]; 
     do
-    		./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr1/$i.corr1_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr1/$i.corr1_avaliado.log
-			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr2/$i.corr2_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr2/$i.corr2_avaliado.log
-			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr3/$i.corr3_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr3/$i.corr3_avaliado.log
+    		./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr1/$i.anticorr1_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr1/$i.anticorr1_plasm1.log
+			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr2/$i.anticorr2_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr2/$i.anticorr2_plasm1.log
+			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr3/$i.anticorr3_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr3/$i.anticorr3_plasm1.log
 			c=$((c+1))
     done
 done 
