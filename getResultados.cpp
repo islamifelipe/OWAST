@@ -49,5 +49,5 @@ int main(int argc, const char * argv[]){
 	 	aux = s;
     }
    // cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
-    cout<<obj<<","<<timee<<endl;
+    cout<<obj<<","<<gap<<endl;
 }

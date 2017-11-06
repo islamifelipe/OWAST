@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]){
 	 double objBu, tempo;
 	 while (cin>>s){
 	 	if (s=="tempo(s)):"){
-	 		for (int i=0; i<51; i++){
+	 		for (int i=0; i<49; i++){
 	 			cin>>obj;
 	 			cin>>aux; //,
 	 			cin>>tem;
