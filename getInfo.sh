@@ -6,9 +6,9 @@ do
 	c=1
 	while [ $c -le 30 ]; 
     do
-    		./getInfo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr1/$i.corr1_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr1/$i.corr1_renovada.log
-			./getInfo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr2/$i.corr2_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr2/$i.corr2_renovada.log
-			./getInfo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr3/$i.corr3_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_trimmed/correlated/$i.corr3/$i.corr3_renovada.log
+    		./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr1/$i.corr1_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr1/$i.corr1_avaliado.log
+			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr2/$i.corr2_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr2/$i.corr2_avaliado.log
+			./getInfo <  transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr3/$i.corr3_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/Hurwicz/correlated/$i.corr3/$i.corr3_avaliado.log
 			c=$((c+1))
     done
 done 
