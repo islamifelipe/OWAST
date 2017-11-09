@@ -42,5 +42,5 @@ int main(int argc, const char * argv[]){
 	double mediana = (valores[N/2-1] + valores[N/2])/2.0; // -1 porque o index começa do zero. Se fosse do 1, seria [N/2] + [N/2-1]
 	double media = sum/N;
 	//cout<<media<<endl;//", ,"<<mediana<<", ,"<<min<<endl;
-	cout<<mediana<<endl;
+	cout<<media<<endl;
 }

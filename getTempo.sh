@@ -6,9 +6,9 @@ do
 	c=1
 	while [ $c -le 30 ]; 
     do
-    		./getTempo <  transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr1/$i.anticorr1_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr1/$i.anticorr1_tempoProOtimo.log
-			./getTempo <  transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr2/$i.anticorr2_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr2/$i.anticorr2_tempoProOtimo.log
-			./getTempo <  transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr3/$i.anticorr3_"$c".out  >> transgenetic/Testes/8_OBJETIVOS/$i/k_trimmed/anticorrelated/$i.anticorr3/$i.anticorr3_tempoProOtimo.log
+    		./getTempo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr1/$i.anticorr1_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr1/$i.anticorr1_tempoProOtimoo.log
+			./getTempo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr2/$i.anticorr2_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr2/$i.anticorr2_tempoProOtimoo.log
+			./getTempo <  memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr3/$i.anticorr3_"$c".out  >> memetic_SEPA_R/Testes/8_OBJETIVOS/$i/k_centrum/anticorrelated/$i.anticorr3/$i.anticorr3_tempoProOtimoo.log
 			c=$((c+1))
     done
 done 
