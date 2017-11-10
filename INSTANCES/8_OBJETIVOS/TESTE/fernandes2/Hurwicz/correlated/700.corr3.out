@@ -1,0 +1,16 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 490072 rows, 734022 columns and 18078449 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [2e-01, 8e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 7e+02]
+Found heuristic solution: objective 34334
+
+Explored 0 nodes (0 simplex iterations) in 4.60 seconds
+Thread count was 1 (of 4 available processors)
+
+Best objective 3.433400000000e+04, best bound -, gap -
+Error code = 10001
+Out of memory
