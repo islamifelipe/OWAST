@@ -1,0 +1,47 @@
+Rodando pra 1h
+Optimize a model with 120 rows, 158 columns and 608 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 120 rows, 158 columns, 608 nonzeros
+Variable types: 84 continuous, 74 integer (74 binary)
+
+Root relaxation: objective 0.000000e+00, 44 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   24          -    0.00000      -     -    0s
+     0     0    0.00000    0   26          -    0.00000      -     -    0s
+     0     0    0.00000    0   26          -    0.00000      -     -    0s
+     0     0    0.00000    0   34          -    0.00000      -     -    0s
+     0     0    0.00000    0   34          -    0.00000      -     -    0s
+     0     2    0.00000    0   22          -    0.00000      -     -    0s
+* 1161   342              43     201.0000000   30.91667  84.6%   6.9    0s
+* 1214   325              37     192.5000000   32.46735  83.1%   6.8    0s
+* 1527   369              40     185.5000000   45.11750  75.7%   7.0    0s
+H 1577   277                     138.5000000   45.55846  67.1%   7.0    0s
+* 2764   417              33     125.5000000   73.57500  41.4%   6.9    1s
+* 2880   354              35     119.5000000   78.47500  34.3%   7.0    1s
+* 3608   350              29     118.5000000   94.00000  20.7%   6.8    1s
+
+Cutting planes:
+  MIR: 5
+  Flow cover: 11
+
+Explored 4446 nodes (36822 simplex iterations) in 1.62 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.185000000000e+02, best bound 1.184921875000e+02, gap 0.0066%
+Tempo: 1.61 segundos
+
+0 1 36 22 55 18 35 30 24 59 
+0 2 2 47 29 39 21 35 4 1 
+0 3 35 57 67 45 37 66 32 44 
+0 4 8 14 16 12 22 6 35 18 
+(81 140 167 114 115 137 95 122 )
+

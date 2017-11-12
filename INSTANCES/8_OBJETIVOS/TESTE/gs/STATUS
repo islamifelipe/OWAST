@@ -1,11 +1,11 @@
 k_trimmed
-	CORRELATED completo até 0
-	anticorrelated completo até 0 
+	CORRELATED completo até 600.3
+	anticorrelated completo até 400.3 
 
 k_centrum
-	CORRELATED completo até  0
-	anticorrelated completo até 0 
+	CORRELATED completo até  600.3
+	anticorrelated completo até 400.3 
 
 Hurwicz
-	CORRELATED completo até 100.3
-	anticorrelated completo até 100.3
+	CORRELATED completo até 600.3
+	anticorrelated completo até 600.3
