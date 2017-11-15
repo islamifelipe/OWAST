@@ -1,0 +1,226 @@
+*******************************************************************************
+* irace: An implementation in R of Iterated Race
+* Version: 2.4.1844
+* Copyright (C) 2010-2017
+* Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+* Jeremie Dubois-Lacoste  
+* Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+*
+* This is free software, and you are welcome to redistribute it under certain
+* conditions.  See the GNU General Public License for details. There is NO
+* WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* irace builds upon previous code from the race package:
+*
+* race: Racing methods for the selection of the best
+* Copyright (C) 2003 Mauro Birattari
+*******************************************************************************
+# installed at: /usr/local/lib/R/site-library/irace
+# called with: 
+Warning: A default scenario file './scenario.txt' has been found and will be read
+# 2017-10-12 12:54:47 BRT: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 4
+# minNbSurvival: 4
+# nbParameters: 7
+# seed: 1222492972
+# confidence level: 0.95
+# budget: 5000
+# mu: 5
+# deterministic: FALSE
+
+# 2017-10-12 12:54:47 BRT: Iteration 1 of 4
+# experimentsUsedSoFar: 0
+# remainingBudget: 5000
+# currentBudget: 1250
+# nbConfigurations: 208
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|        208|         76|    39016.00000|        208|04:31:44|   NA|  NA|    NA|
+|x|          2|        208|        131|    20596.80000|        416|02:30:43|+0.12|0.56|0.8737|
+|x|          3|        208|        131|    16397.93667|        624|02:35:56|+0.03|0.35|0.9908|
+|x|          4|        208|         76|    17669.09000|        832|04:41:52|-0.00|0.25|1.0084|
+|=|          5|        208|         61|    17663.87000|       1040|04:49:29|+0.00|0.20|0.9994|
+|=|          6|        208|         61|    17297.65833|       1248|02:16:14|+0.01|0.18|0.9814|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:          61    mean value:     17297.65833
+Description of the best configuration:
+   .ID. TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+61   61             0.92           0.1            45          21            1.76         10                    1.63       NA
+
+# 2017-10-13 10:20:50 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+61              0.92          0.10            45          21            1.76         10                    1.63
+92              0.90          0.12            41          24            1.81         13                    1.66
+127             0.96          0.20            48          22            1.84         14                    1.42
+50              0.91          0.11            49          25            1.75         12                    1.52
+# 2017-10-13 10:20:50 BRT: Iteration 2 of 4
+# experimentsUsedSoFar: 1248
+# remainingBudget: 3752
+# currentBudget: 1250
+# nbConfigurations: 182
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|        182|        332|    5245.200000|        182|03:00:50|   NA|  NA|    NA|
+|x|          5|        182|        225|    11387.85000|        360|04:11:02|-0.07|0.47|1.0553|
+|x|          6|        182|        300|    12733.73333|        538|02:06:52|+0.00|0.33|0.9813|
+|x|          3|        182|        385|    11566.20750|        716|02:11:28|-0.03|0.23|1.0243|
+|=|          4|        182|         50|    13550.96200|        894|04:40:38|-0.01|0.19|1.0080|
+|=|          2|        182|         61|    11655.97500|       1072|02:24:30|-0.01|0.16|0.9943|
+|=|          1|        182|         61|    15585.12143|       1250|04:25:26|+0.00|0.14|0.9972|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:          61    mean value:     15585.12143
+Description of the best configuration:
+   .ID. TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+61   61             0.92           0.1            45          21            1.76         10                    1.63       NA
+
+# 2017-10-14 09:21:41 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+61              0.92          0.10            45          21            1.76         10                    1.63
+255             0.96          0.18            48          20            1.78         14                    1.43
+352             0.97          0.15            50          20            1.71         14                    1.42
+226             0.96          0.14            41          21            1.81         11                    1.58
+# 2017-10-14 09:21:41 BRT: Iteration 3 of 4
+# experimentsUsedSoFar: 2498
+# remainingBudget: 2502
+# currentBudget: 1251
+# nbConfigurations: 159
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|        159|        531|    9392.350000|        159|02:40:45|   NA|  NA|    NA|
+|x|          4|        159|        467|    15458.89500|        314|03:47:34|-0.07|0.47|1.0588|
+|x|          6|        159|        505|    15450.08333|        469|02:00:17|-0.05|0.30|0.9922|
+|x|          1|        159|        462|    21376.35500|        624|03:40:07|-0.02|0.23|0.9829|
+|=|          5|        159|        462|    20603.26400|        779|03:53:00|-0.03|0.18|1.0102|
+|=|          2|        159|        462|    17526.93667|        934|01:48:26|-0.01|0.16|1.0007|
+|=|          7|        159|        460|    15841.37857|       1089|02:17:49|-0.00|0.14|0.9973|
+|=|          3|        159|        460|    14861.23250|       1244|01:51:54|+0.01|0.13|0.9887|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         460    mean value:     14861.23250
+Description of the best configuration:
+    .ID. TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+460  460             0.95          0.11            46          20            1.78         10                    1.66       61
+
+# 2017-10-15 07:21:38 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+460             0.95          0.11            46          20            1.78         10                    1.66
+255             0.96          0.18            48          20            1.78         14                    1.43
+61              0.92          0.10            45          21            1.76         10                    1.63
+462             0.97          0.15            49          21            1.74         14                    1.42
+# 2017-10-15 07:21:38 BRT: Iteration 4 of 4
+# experimentsUsedSoFar: 3742
+# remainingBudget: 1258
+# currentBudget: 1258
+# nbConfigurations: 143
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          9|        143|        560|    12249.60000|        143|03:02:37|   NA|  NA|    NA|
+|x|          1|        143|        679|    25667.00000|        282|02:55:37|+0.08|0.54|0.9364|
+|x|          3|        143|        679|    19777.77667|        421|02:09:55|+0.06|0.38|0.9430|
+|x|          5|        143|        679|    19210.88250|        560|03:29:09|+0.08|0.31|0.9236|
+|-|          4|         70|        679|    19712.12600|        699|03:05:26|-0.08|0.14|1.0617|
+|=|          2|         70|        679|    16782.33833|        765|00:45:52|-0.05|0.12|1.0339|
+|=|          7|         70|        612|    15121.15714|        831|00:58:35|-0.04|0.10|1.0227|
+|=|          6|         70|        612|    15160.51250|        897|00:46:17|-0.03|0.10|1.0071|
+|=|          8|         70|        612|    14522.88333|        963|01:00:18|-0.02|0.09|0.9960|
+|=|         10|         70|        612|    14720.03500|       1033|01:33:42|-0.02|0.09|0.9910|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         612    mean value:     14720.03500
+Description of the best configuration:
+    .ID. TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+612  612             0.96          0.16            50          21            1.76         14                    1.43      462
+
+# 2017-10-16 03:09:13 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+612             0.96          0.16            50          21            1.76         14                    1.43
+460             0.95          0.11            46          20            1.78         10                    1.66
+679             0.93          0.11            49          20            1.74         11                    1.68
+255             0.96          0.18            48          20            1.78         14                    1.43
+# 2017-10-16 03:09:13 BRT: Iteration 5 of 5
+# experimentsUsedSoFar: 4775
+# remainingBudget: 225
+# currentBudget: 225
+# nbConfigurations: 24
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         11|         24|        255|    12471.30000|         24|00:33:44|   NA|  NA|    NA|
+|x|          3|         24|        683|    10235.59000|         44|00:14:36|+0.19|0.60|0.8241|
+|x|          6|         24|        683|    11964.39333|         64|00:13:55|+0.05|0.37|0.9715|
+|x|          9|         24|        683|    12090.59500|         84|00:25:46|-0.00|0.25|0.9394|
+|=|         10|         24|        683|    12967.01600|        104|00:26:52|-0.00|0.20|0.9537|
+|=|          5|         24|        683|    13724.23000|        124|00:27:41|+0.02|0.19|0.9374|
+|=|          8|         24|        255|    13122.45857|        144|00:18:10|+0.02|0.16|0.9348|
+|=|          4|         24|        695|    14226.56250|        164|00:26:58|+0.01|0.14|0.9378|
+|=|          1|         24|        679|    17014.06889|        184|00:25:36|+0.03|0.14|0.9281|
+|=|          7|         24|        255|    15788.52100|        204|00:17:33|+0.00|0.10|0.9546|
+|=|          2|         24|        255|    14548.58273|        224|00:13:58|+0.02|0.11|0.9293|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         255    mean value:     14548.58273
+Description of the best configuration:
+    .ID. TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+255  255             0.96          0.18            48          20            1.78         14                    1.43      127
+
+# 2017-10-16 07:14:09 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+255             0.96          0.18            48          20            1.78         14                    1.43
+612             0.96          0.16            50          21            1.76         14                    1.43
+679             0.93          0.11            49          20            1.74         11                    1.68
+695             0.97          0.18            49          20            1.71         14                    1.42
+# 2017-10-16 07:14:09 BRT: Stopped because there is not enough budget left to race more than the minimum (4)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 6
+# nbIterations: 6
+# experimentsUsedSoFar: 4999
+# timeUsed: 0
+# remainingBudget: 1
+# currentBudget: 1
+# number of elites: 4
+# nbConfigurations: 3
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    TAXADECRUZAMENTO TAXADEMUTACAO QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+255             0.96          0.18            48          20            1.78         14                    1.43
+612             0.96          0.16            50          21            1.76         14                    1.43
+679             0.93          0.11            49          20            1.74         11                    1.68
+695             0.97          0.18            49          20            1.71         14                    1.42
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+255  -TAXADECRUZAMENTO 0.96 -TAXADEMUTACAO 0.18 -QUANTGERACOES 48 -TEMPERATURA 20 -FATORDECAIMENTO 1.78 -ITERACAO_K 14 -FATORDECAIMENTOITERACAO 1.43
+612  -TAXADECRUZAMENTO 0.96 -TAXADEMUTACAO 0.16 -QUANTGERACOES 50 -TEMPERATURA 21 -FATORDECAIMENTO 1.76 -ITERACAO_K 14 -FATORDECAIMENTOITERACAO 1.43
+679  -TAXADECRUZAMENTO 0.93 -TAXADEMUTACAO 0.11 -QUANTGERACOES 49 -TEMPERATURA 20 -FATORDECAIMENTO 1.74 -ITERACAO_K 11 -FATORDECAIMENTOITERACAO 1.68
+695  -TAXADECRUZAMENTO 0.97 -TAXADEMUTACAO 0.18 -QUANTGERACOES 49 -TEMPERATURA 20 -FATORDECAIMENTO 1.71 -ITERACAO_K 14 -FATORDECAIMENTOITERACAO 1.42

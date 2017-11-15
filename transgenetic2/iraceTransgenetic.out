@@ -1,0 +1,236 @@
+*******************************************************************************
+* irace: An implementation in R of Iterated Race
+* Version: 2.4.1844
+* Copyright (C) 2010-2017
+* Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+* Jeremie Dubois-Lacoste  
+* Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+*
+* This is free software, and you are welcome to redistribute it under certain
+* conditions.  See the GNU General Public License for details. There is NO
+* WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* irace builds upon previous code from the race package:
+*
+* race: Racing methods for the selection of the best
+* Copyright (C) 2003 Mauro Birattari
+*******************************************************************************
+# installed at: /home/islamefelipe/R/x86_64-pc-linux-gnu-library/3.0/irace
+# called with: 
+Warning: A default scenario file './scenario.txt' has been found and will be read
+# 2017-10-12 13:59:53 BRT: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 10
+# seed: 1087953132
+# confidence level: 0.95
+# budget: 5000
+# mu: 5
+# deterministic: FALSE
+
+# 2017-10-12 13:59:53 BRT: Iteration 1 of 5
+# experimentsUsedSoFar: 0
+# remainingBudget: 5000
+# currentBudget: 1000
+# nbConfigurations: 166
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|        166|        160|    2117.300000|        166|01:36:37|   NA|  NA|    NA|
+|x|          2|        166|        160|    2586.900000|        332|02:13:05|+0.00|0.50|0.9950|
+|x|          3|        166|          7|    14677.16667|        498|04:03:25|+0.05|0.37|0.9050|
+|x|          4|        166|        139|    15398.87500|        664|03:57:04|+0.01|0.26|0.9589|
+|=|          5|        166|          7|    14802.02000|        830|03:55:11|+0.02|0.21|0.9593|
+|=|          6|        166|        137|    13107.23333|        996|03:16:39|-0.00|0.16|0.9840|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         137    mean value:     13107.23333
+Description of the best configuration:
+    .ID. NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+137  137            19        25        38        0.45        0.68            50          20            1.76         15                     1.7       NA
+
+# 2017-10-13 09:01:57 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+137            19        25        38        0.45        0.68            50          20            1.76         15                    1.70
+112            16        26        39        0.35        0.63            47          22            1.72         15                    1.58
+75             16        30        37        0.43        0.65            48          20            1.77         12                    1.61
+54             19        30        39        0.38        0.72            46          23            1.88         13                    1.55
+7              20        28        37        0.43        0.67            48          23            1.97         15                    1.53
+# 2017-10-13 09:01:57 BRT: Iteration 2 of 5
+# experimentsUsedSoFar: 996
+# remainingBudget: 4004
+# currentBudget: 1001
+# nbConfigurations: 147
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|        147|        181|    7997.770000|        147|01:35:51|   NA|  NA|    NA|
+|x|          2|        147|        189|    5525.635000|        289|02:08:12|+0.12|0.56|0.8858|
+|x|          4|        147|        189|    9518.790000|        431|03:37:11|+0.04|0.36|0.9690|
+|x|          6|        147|        189|    8185.392500|        573|03:11:17|+0.05|0.29|0.9946|
+|=|          3|        147|        248|    14327.25600|        715|03:43:43|+0.02|0.21|1.0037|
+|=|          5|        147|        189|    14095.06167|        857|03:40:42|+0.03|0.19|0.9890|
+|=|          1|        147|        219|    12327.65429|        999|01:37:49|+0.03|0.17|0.9763|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         219    mean value:     12327.65429
+Description of the best configuration:
+    .ID. NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+219  219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68      137
+
+# 2017-10-14 04:36:48 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68
+189            18        29        38        0.44        0.57            48          22            1.93         13                    1.58
+292            17        31        37        0.41        0.63            47          20            1.72         14                    1.48
+243            20        28        39        0.35        0.68            47          20            1.76         14                    1.66
+137            19        25        38        0.45        0.68            50          20            1.76         15                    1.70
+# 2017-10-14 04:36:48 BRT: Iteration 3 of 5
+# experimentsUsedSoFar: 1995
+# remainingBudget: 3005
+# currentBudget: 1001
+# nbConfigurations: 129
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|        129|        410|    21499.10000|        129|03:24:24|   NA|  NA|    NA|
+|x|          4|        129|        219|    19502.25000|        253|03:15:15|+0.09|0.55|0.9411|
+|x|          1|        129|        219|    13710.46667|        377|01:22:19|+0.10|0.40|0.9413|
+|x|          5|        129|        219|    13400.35000|        501|03:14:28|+0.03|0.28|0.9677|
+|=|          3|        129|        219|    18511.08000|        625|03:23:52|+0.04|0.24|0.9740|
+|-|          2|         64|        219|    15936.40000|        749|01:49:29|-0.09|0.09|1.0826|
+|=|          7|         64|        219|    14802.46857|        808|00:38:26|-0.06|0.09|1.0627|
+|=|          6|         64|        219|    13474.48500|        867|01:22:45|-0.03|0.10|1.0346|
+|=|          9|         64|        219|    13850.78667|        931|02:04:00|-0.00|0.11|1.0068|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         219    mean value:     13850.78667
+Description of the best configuration:
+    .ID. NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+219  219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68      137
+
+# 2017-10-15 01:11:52 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68
+311            19        25        39        0.45        0.72            50          20            1.77         15                    1.67
+430            20        26        40        0.34        0.64            49          22            1.78         14                    1.67
+243            20        28        39        0.35        0.68            47          20            1.76         14                    1.66
+189            18        29        38        0.44        0.57            48          22            1.93         13                    1.58
+# 2017-10-15 01:11:52 BRT: Iteration 4 of 5
+# experimentsUsedSoFar: 2926
+# remainingBudget: 2074
+# currentBudget: 1037
+# nbConfigurations: 108
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         10|        108|        479|    9352.520000|        108|01:45:16|   NA|  NA|    NA|
+|x|          4|        108|        477|    13428.91000|        211|02:59:01|+0.05|0.53|0.9135|
+|x|          5|        108|        494|    13109.94000|        314|02:56:31|+0.06|0.37|0.9425|
+|x|          3|        108|        494|    19584.58000|        417|03:00:29|+0.04|0.28|0.9623|
+|=|          1|        108|        219|    16086.25800|        520|01:18:21|+0.06|0.25|0.9405|
+|-|          6|         52|        219|    14101.64833|        623|02:36:27|-0.05|0.12|1.0347|
+|=|          8|         52|        219|    15158.88429|        670|01:25:27|-0.01|0.13|1.0089|
+|=|          2|         52|        219|    13646.89875|        717|00:46:49|-0.01|0.12|1.0038|
+|=|          7|         52|        459|    13060.40667|        764|00:34:23|+0.00|0.11|1.0031|
+|=|          9|         52|        311|    13396.66100|        811|01:39:51|+0.01|0.11|0.9980|
+|=|         11|         52|        430|    13611.69545|        863|00:43:40|+0.01|0.10|0.9971|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         430    mean value:     13611.69545
+Description of the best configuration:
+    .ID. NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+430  430            20        26        40        0.34        0.64            49          22            1.78         14                    1.67      219
+
+# 2017-10-15 20:58:10 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+430            20        26        40        0.34        0.64            49          22            1.78         14                    1.67
+311            19        25        39        0.45        0.72            50          20            1.77         15                    1.67
+496            18        29        37        0.45        0.56            48          21            1.91         13                    1.63
+219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68
+459            19        28        39        0.37        0.74            46          21            1.74         14                    1.67
+# 2017-10-15 20:58:10 BRT: Iteration 5 of 5
+# experimentsUsedSoFar: 3789
+# remainingBudget: 1211
+# currentBudget: 1211
+# nbConfigurations: 105
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+                                                                   
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         12|        105|        622|    5246.100000|        105|01:43:17|   NA|  NA|    NA|
+|x|         10|        105|        551|    7320.295000|        205|01:42:02|-0.01|0.49|1.0362|
+|x|          1|        105|        311|    5590.683333|        305|01:10:47|-0.06|0.29|1.0733|
+|x|          7|        105|        311|    6192.677500|        405|01:09:55|-0.05|0.21|1.0383|
+|=|          9|        105|        311|    8314.302000|        505|03:25:39|-0.02|0.18|0.9973|
+|=|          6|        105|        624|    7620.790000|        605|02:26:19|-0.04|0.13|1.0105|
+|=|          4|        105|        311|    9036.415714|        705|02:56:13|-0.01|0.13|0.9968|
+|=|          2|        105|        311|    8289.551250|        805|01:37:12|-0.01|0.12|0.9873|
+|=|         11|        105|        311|    9090.623333|        905|01:12:41|-0.01|0.11|0.9983|
+|=|          5|        105|        624|    9426.854000|       1005|02:53:18|-0.01|0.09|1.0036|
+|=|          3|        105|        624|    12112.36727|       1105|02:52:11|-0.00|0.09|1.0009|
+|=|          8|        105|        311|    12895.55917|       1205|02:48:19|+0.01|0.09|0.9973|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best configuration:         311    mean value:     12895.55917
+Description of the best configuration:
+    .ID. NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO .PARENT.
+311  311            19        25        39        0.45        0.72            50          20            1.77         15                    1.67      137
+
+# 2017-10-16 22:56:10 BRT: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+311            19        25        39        0.45        0.72            50          20            1.77         15                    1.67
+624            20        29        39        0.37        0.74            46          21            1.75         14                    1.67
+430            20        26        40        0.34        0.64            49          22            1.78         14                    1.67
+496            18        29        37        0.45        0.56            48          21            1.91         13                    1.63
+219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68
+# 2017-10-16 22:56:10 BRT: Stopped because there is not enough budget left to race more than the minimum (5)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 6
+# nbIterations: 6
+# experimentsUsedSoFar: 4994
+# timeUsed: 0
+# remainingBudget: 6
+# currentBudget: 6
+# number of elites: 5
+# nbConfigurations: 5
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    NUMPLASMIDEOS PER_PLAS1 PER_PLAS2 PROB_TRANS2 PROB_TRANS1 QUANTGERACOES TEMPERATURA FATORDECAIMENTO ITERACAO_K FATORDECAIMENTOITERACAO
+311            19        25        39        0.45        0.72            50          20            1.77         15                    1.67
+624            20        29        39        0.37        0.74            46          21            1.75         14                    1.67
+430            20        26        40        0.34        0.64            49          22            1.78         14                    1.67
+496            18        29        37        0.45        0.56            48          21            1.91         13                    1.63
+219            20        25        40        0.34        0.64            50          21            1.77         15                    1.68
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+311  -NUMPLASMIDEOS 19 -PER_PLAS1 25 -PER_PLAS2 39 -PROB_TRANS2 0.45 -PROB_TRANS1 0.72 -QUANTGERACOES 50 -TEMPERATURA 20 -FATORDECAIMENTO 1.77 -ITERACAO_K 15 -FATORDECAIMENTOITERACAO 1.67
+624  -NUMPLASMIDEOS 20 -PER_PLAS1 29 -PER_PLAS2 39 -PROB_TRANS2 0.37 -PROB_TRANS1 0.74 -QUANTGERACOES 46 -TEMPERATURA 21 -FATORDECAIMENTO 1.75 -ITERACAO_K 14 -FATORDECAIMENTOITERACAO 1.67
+430  -NUMPLASMIDEOS 20 -PER_PLAS1 26 -PER_PLAS2 40 -PROB_TRANS2 0.34 -PROB_TRANS1 0.64 -QUANTGERACOES 49 -TEMPERATURA 22 -FATORDECAIMENTO 1.78 -ITERACAO_K 14 -FATORDECAIMENTOITERACAO 1.67
+496  -NUMPLASMIDEOS 18 -PER_PLAS1 29 -PER_PLAS2 37 -PROB_TRANS2 0.45 -PROB_TRANS1 0.56 -QUANTGERACOES 48 -TEMPERATURA 21 -FATORDECAIMENTO 1.91 -ITERACAO_K 13 -FATORDECAIMENTOITERACAO 1.63
+219  -NUMPLASMIDEOS 20 -PER_PLAS1 25 -PER_PLAS2 40 -PROB_TRANS2 0.34 -PROB_TRANS1 0.64 -QUANTGERACOES 50 -TEMPERATURA 21 -FATORDECAIMENTO 1.77 -ITERACAO_K 15 -FATORDECAIMENTOITERACAO 1.68

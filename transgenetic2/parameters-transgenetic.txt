@@ -1,0 +1,11 @@
+### Parameter file for the ACOTSP software
+NUMPLASMIDEOS		"-NUMPLASMIDEOS "	i	(13,20)
+PER_PLAS1		"-PER_PLAS1 "		i 	(25,31)
+PER_PLAS2		"-PER_PLAS2 "		i	(35, 41)
+PROB_TRANS2		"-PROB_TRANS2 "		r	(0.3, 0.45)
+PROB_TRANS1		"-PROB_TRANS1 "		r	(0.5, 0.8)
+QUANTGERACOES		"-QUANTGERACOES "       i       (40,50)
+TEMPERATURA             "-TEMPERATURA " i       (20,26)
+FATORDECAIMENTO         "-FATORDECAIMENTO "     r       (1.7, 2.0)
+ITERACAO_K              "-ITERACAO_K "          i       (10, 15)
+FATORDECAIMENTOITERACAO "-FATORDECAIMENTOITERACAO "     r       (1.4, 1.7)
