@@ -1,0 +1,55 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 79 rows, 93 columns and 829 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [1e+00, 1e+00]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 6e+00]
+Found heuristic solution: objective 357
+Presolve removed 23 rows and 19 columns
+Presolve time: 0.00s
+Presolved: 56 rows, 74 columns, 334 nonzeros
+Variable types: 42 continuous, 32 integer (31 binary)
+
+Root relaxation: objective 0.000000e+00, 18 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0    5  357.00000    0.00000   100%     -    0s
+H    0     0                     331.0000000    0.00000   100%     -    0s
+H    0     0                     288.0000000    0.00000   100%     -    0s
+H    0     0                     243.0000000    0.00000   100%     -    0s
+     0     0    0.00000    0   10  243.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   12  243.00000    0.00000   100%     -    0s
+     0     0    0.00000    0    4  243.00000    0.00000   100%     -    0s
+H    0     0                     221.0000000    0.00000   100%     -    0s
+     0     2    0.00000    0    4  221.00000    0.00000   100%     -    0s
+H   27    20                     196.0000000   39.50000  79.8%   8.6    0s
+*  114    60              12     192.0000000   59.16667  69.2%   3.9    0s
+*  159    70              17     182.0000000   63.16667  65.3%   3.6    0s
+H  218    75                     175.0000000   77.66667  55.6%   3.7    0s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 39
+  MIR: 7
+  Flow cover: 7
+  Flow path: 1
+
+Explored 2029 nodes (5457 simplex iterations) in 0.16 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.750000000000e+02, best bound 1.750000000000e+02, gap 0.0%
+Tempo: 0.16 segundos
+
+0 6 38 49 49 65 28 
+1 2 10 19 5 13 21 
+1 4 4 38 19 11 38 
+1 6 37 20 21 63 24 
+3 4 13 21 40 50 28 
+4 5 4 28 48 48 20 
+(106 175 182 250 159 )
+

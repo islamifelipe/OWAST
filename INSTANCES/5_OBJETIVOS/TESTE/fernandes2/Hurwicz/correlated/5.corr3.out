@@ -1,0 +1,51 @@
+Executando Fernandes MODIFICADO
+Rodando pra 1h
+Optimize a model with 55 rows, 60 columns and 446 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+07]
+  Objective range [3e-01, 7e-01]
+  Bounds range    [1e+00, 1e+07]
+  RHS range       [1e+00, 4e+00]
+Found heuristic solution: objective 264
+Presolve removed 16 rows and 8 columns
+Presolve time: 0.00s
+Presolved: 39 rows, 52 columns, 246 nonzeros
+Variable types: 20 continuous, 32 integer (30 binary)
+
+Root relaxation: objective 1.907500e+01, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.07500    0   10  264.00000   19.07500  92.8%     -    0s
+H    0     0                     188.7000000   19.07500  89.9%     -    0s
+H    0     0                     109.0000000   19.07500  82.5%     -    0s
+     0     0   76.30000    0    4  109.00000   76.30000  30.0%     -    0s
+H    0     0                     108.4000000   76.30000  29.6%     -    0s
+     0     0   76.30000    0    4  108.40000   76.30000  29.6%     -    0s
+     0     0   78.75182    0    9  108.40000   78.75182  27.4%     -    0s
+H    0     0                     101.5000000   78.75182  22.4%     -    0s
+     0     0   78.79643    0   13  101.50000   78.79643  22.4%     -    0s
+     0     0   82.63451    0   13  101.50000   82.63451  18.6%     -    0s
+     0     0   82.96196    0   16  101.50000   82.96196  18.3%     -    0s
+     0     0   83.22502    0   13  101.50000   83.22502  18.0%     -    0s
+     0     0   83.75735    0    7  101.50000   83.75735  17.5%     -    0s
+     0     0   90.11935    0    3  101.50000   90.11935  11.2%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 1
+
+Explored 0 nodes (122 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.015000000000e+02, best bound 1.015000000000e+02, gap 0.0%
+Tempo: 0.01 segundos
+
+0 1 31 37 37 31 41 
+0 2 28 28 36 34 32 
+0 3 17 17 19 29 24 
+0 4 8 20 17 13 10 
+(84 102 109 107 107 )
+

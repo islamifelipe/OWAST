@@ -2,6 +2,5 @@ Melhorias
 
 ==> Tempo para atingir o otimo: lado a lado com a valor do otimo
 ==> versao do mersenne
-==> Transponsson com Kruskal
 ==> barras para o grafico com taxa de sucesso
 ==> taxa de melhoria (diferença do fitness da soluçao atacada e a antiga)

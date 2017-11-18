@@ -345,15 +345,28 @@ class SolucaoEdgeSet : public Solucao {
 	}
 
 	bool isTree(){ // verificador
+		//cout<<"Teste  = ";
 		UnionFind uf;
+		bool vetkktk[NUMEROVERTICES];
+		for(int i=0; i<NUMEROVERTICES; i++)vetkktk[i] = false;
 		for (int i=0; i<NUMEROVERTICES-1; i++){
 			if (uf.sameClass(this->edges[i][0],this->edges[i][1])==false){
+				vetkktk[this->edges[i][0]] = true;
+				vetkktk[this->edges[i][1]] = true;
 				uf.unionClass(this->edges[i][0],this->edges[i][1]);
 			} else {
 				cout<<"ERROROROROROROROROROROROROROR TREEEE"<<endl;
 				return false;
 			}
 		}
+		for(int i=0; i<NUMEROVERTICES; i++){
+			if (vetkktk[i]==false) {
+				cout<<"ERROROROROROROROROROROROROROR TREEEE"<<endl;
+				
+				return false;
+			}
+		}
+			//cout<<"true"<<endl;;
 		return true;
 	}
 

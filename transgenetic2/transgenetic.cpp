@@ -240,7 +240,7 @@ SolucaoEdgeSet *transgenetic(){
 	gerarPopulacao3(populacao, vetoresDirecoes);//cout<<"thetaM = "<<thetaM<<endl;
 	// calculaOrdenacoes(vetoresDirecoes);
 	for (int i=0; i<TAMANHOPOPULACAO; i++) {
-		//populacao[i]->isTree();
+		populacao[i]->isTree();
 		addRepositorio(populacao[i]);
 	}
 	*otimo = *populacao[0];
@@ -279,7 +279,7 @@ SolucaoEdgeSet *transgenetic(){
 				addRepositorio(populacao[pppt]);
 				contSucessPlas(indexPlas, populacao[pppt]->getOWA()-copia.getOWA());
 				*populacao[pppt] = copia;
-				//populacao[pppt]->isTree();
+				populacao[pppt]->isTree();
 			}
 			p = genrand64_real3();
 			if (p<PROB_TRANS1){
@@ -295,7 +295,7 @@ SolucaoEdgeSet *transgenetic(){
 					
 					addRepositorio(populacao[pppt]);
 					*populacao[pppt] = copia;
-					//populacao[pppt]->isTree();
+					populacao[pppt]->isTree();
 					contSucessPrimTrans++;
 					
 				}
@@ -305,7 +305,7 @@ SolucaoEdgeSet *transgenetic(){
 				double fitg = populacao[pppt]->getOWA();
 				addRepositorio(populacao[pppt]);
 				SA(*populacao[pppt]);
-				//populacao[pppt]->isTree();
+				populacao[pppt]->isTree();
 				if (populacao[pppt]->getOWA()<fitg) {
 					contSucessoSA++;
 					//cout<<populacao[pppt]->getOWA()<<" ==> "<<fitg<<endl;
