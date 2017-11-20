@@ -1,0 +1,54 @@
+Rodando pra 1h
+Optimize a model with 93 rows, 113 columns and 474 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 8e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+00]
+Presolve time: 0.00s
+Presolved: 93 rows, 113 columns, 474 nonzeros
+Variable types: 67 continuous, 46 integer (46 binary)
+
+Root relaxation: objective 1.260833e+01, 75 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   12.60833    0   19          -   12.60833      -     -    0s
+     0     0   33.37500    0   22          -   33.37500      -     -    0s
+     0     0   33.95429    0   24          -   33.95429      -     -    0s
+     0     0   36.97449    0   24          -   36.97449      -     -    0s
+     0     0   37.04400    0   24          -   37.04400      -     -    0s
+     0     0   37.35938    0   25          -   37.35938      -     -    0s
+     0     0   37.35938    0   27          -   37.35938      -     -    0s
+     0     0   37.35938    0   22          -   37.35938      -     -    0s
+H    0     0                     241.4000000   37.35938  84.5%     -    0s
+     0     2   37.45938    0   22  241.40000   37.45938  84.5%     -    0s
+*  286   204              27     218.0000000   40.26000  81.5%   7.8    0s
+H  300   204                     179.8000000   40.61933  77.4%   7.7    0s
+H  561   315                     157.0000000   43.98903  72.0%   6.6    0s
+
+Cutting planes:
+  Gomory: 3
+  Implied bound: 3
+  MIR: 30
+  Flow cover: 60
+  Flow path: 4
+  Zero half: 16
+  Network: 5
+
+Explored 1124 nodes (17815 simplex iterations) in 1.11 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.570000000000e+02, best bound 1.570000000000e+02, gap 0.0%
+Tempo: 1.1 segundos
+
+0 6 56 46 61 23 38 
+1 6 92 35 22 10 19 
+2 5 83 41 46 8 26 
+3 4 87 7 43 8 43 
+3 6 98 15 10 5 21 
+4 5 77 40 31 19 26 
+(493 184 213 73 173 )
+

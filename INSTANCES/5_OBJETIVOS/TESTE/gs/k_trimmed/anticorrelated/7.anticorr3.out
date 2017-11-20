@@ -1,0 +1,50 @@
+Rodando pra 1h
+Optimize a model with 93 rows, 113 columns and 474 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [1e+00, 1e+00]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+00]
+Presolve time: 0.00s
+Presolved: 93 rows, 113 columns, 474 nonzeros
+Variable types: 67 continuous, 46 integer (46 binary)
+
+Root relaxation: objective 0.000000e+00, 29 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   11          -    0.00000      -     -    0s
+H    0     0                     301.0000000    0.00000   100%     -    0s
+     0     0    0.00000    0   15  301.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   22  301.00000    0.00000   100%     -    0s
+     0     0    0.00000    0   13  301.00000    0.00000   100%     -    0s
+     0     2    0.00000    0   13  301.00000    0.00000   100%     -    0s
+*   52    29              24     221.0000000    0.00000   100%   7.2    0s
+H  216   139                     201.0000000    0.00000   100%  10.1    0s
+H  246   126                     182.0000000    0.00000   100%   9.2    0s
+* 1705   334              33     181.0000000   47.53238  73.7%   8.7    0s
+* 1709   313              35     175.0000000   47.53238  72.8%   8.7    0s
+* 3538   412              32     174.0000000   93.03846  46.5%   8.2    0s
+H 3730   404                     170.0000000   96.66129  43.1%   8.2    1s
+* 4726    58              30     162.0000000  145.36198  10.3%   8.2    1s
+
+Cutting planes:
+  MIR: 2
+  Flow cover: 2
+
+Explored 4786 nodes (39608 simplex iterations) in 1.35 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.620000000000e+02, best bound 1.620000000000e+02, gap 0.0%
+Tempo: 1.35 segundos
+
+0 4 95 8 4 10 5 
+0 5 90 22 18 11 9 
+1 2 52 47 51 48 43 
+1 5 62 37 35 46 40 
+3 5 83 14 25 19 17 
+3 6 71 34 28 29 28 
+(453 162 161 163 142 )
+

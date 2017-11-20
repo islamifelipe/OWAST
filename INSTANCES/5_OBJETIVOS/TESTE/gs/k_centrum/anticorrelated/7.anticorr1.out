@@ -1,0 +1,54 @@
+Rodando pra 1h
+Optimize a model with 93 rows, 113 columns and 474 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+00]
+Presolve time: 0.00s
+Presolved: 93 rows, 113 columns, 474 nonzeros
+Variable types: 67 continuous, 46 integer (46 binary)
+
+Root relaxation: objective 5.486667e+01, 72 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   54.86667    0   19          -   54.86667      -     -    0s
+     0     0  144.36667    0   22          -  144.36667      -     -    0s
+     0     0  158.32000    0   20          -  158.32000      -     -    0s
+     0     0  160.95372    0   22          -  160.95372      -     -    0s
+     0     0  161.69134    0   23          -  161.69134      -     -    0s
+     0     0  161.75412    0   24          -  161.75412      -     -    0s
+     0     0  161.80637    0   24          -  161.80637      -     -    0s
+     0     0  161.80637    0   23          -  161.80637      -     -    0s
+H    0     0                     354.0000000  161.80637  54.3%     -    0s
+H    0     0                     278.2500000  161.80637  41.8%     -    0s
+     0     2  161.89086    0   23  278.25000  161.89086  41.8%     -    0s
+*   43    28              26     248.2500000  162.88447  34.4%   7.3    0s
+* 1796   141              21     237.2500000  217.29333  8.41%   6.7    0s
+
+Cutting planes:
+  Gomory: 9
+  Implied bound: 17
+  MIR: 30
+  Flow cover: 53
+  Flow path: 8
+  Zero half: 1
+  Network: 14
+
+Explored 2246 nodes (14462 simplex iterations) in 0.62 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.372500000000e+02, best bound 2.372500000000e+02, gap 0.0%
+Tempo: 0.62 segundos
+
+0 3 25 41 74 29 39 
+0 4 17 49 51 20 30 
+1 2 81 8 4 28 54 
+1 4 45 55 30 37 20 
+1 6 1 69 51 39 44 
+3 5 42 27 27 90 33 
+(211 249 237 243 220 )
+

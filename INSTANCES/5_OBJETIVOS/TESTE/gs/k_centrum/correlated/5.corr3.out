@@ -1,0 +1,50 @@
+Rodando pra 1h
+Optimize a model with 69 rows, 80 columns and 311 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 69 rows, 80 columns, 311 nonzeros
+Variable types: 45 continuous, 35 integer (35 binary)
+
+Root relaxation: objective 2.545000e+01, 44 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   25.45000    0   17          -   25.45000      -     -    0s
+     0     0  101.80000    0   16          -  101.80000      -     -    0s
+     0     0  101.80000    0   16          -  101.80000      -     -    0s
+     0     0  101.80000    0   14          -  101.80000      -     -    0s
+     0     0  101.80000    0   14          -  101.80000      -     -    0s
+     0     0  101.80000    0   13          -  101.80000      -     -    0s
+     0     0  101.80000    0   13          -  101.80000      -     -    0s
+     0     0  101.80000    0   16          -  101.80000      -     -    0s
+     0     0  101.80000    0   14          -  101.80000      -     -    0s
+     0     2  101.80000    0   14          -  101.80000      -     -    0s
+*   27    22              17     262.5000000  101.80000  61.2%  10.3    0s
+*   44    28              18     242.0000000  101.80000  57.9%   8.6    0s
+H  199    53                     157.0000000  106.25000  32.3%   8.3    0s
+*  223     6               7     108.0000000  106.25000  1.62%   7.9    0s
+
+Cutting planes:
+  Gomory: 4
+  Implied bound: 7
+  MIR: 16
+  Flow cover: 25
+
+Explored 236 nodes (2007 simplex iterations) in 0.07 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.080000000000e+02, best bound 1.080000000000e+02, gap 0.0%
+Tempo: 0.06 segundos
+
+0 1 31 37 37 31 41 
+0 2 28 28 36 34 32 
+0 3 17 17 19 29 24 
+0 4 8 20 17 13 10 
+(84 102 109 107 107 )
+

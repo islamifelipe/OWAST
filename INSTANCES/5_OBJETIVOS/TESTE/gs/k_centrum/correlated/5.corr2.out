@@ -1,0 +1,51 @@
+Rodando pra 1h
+Optimize a model with 69 rows, 80 columns and 311 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 4e+00]
+Presolve time: 0.00s
+Presolved: 69 rows, 80 columns, 311 nonzeros
+Variable types: 45 continuous, 35 integer (35 binary)
+
+Root relaxation: objective 3.025000e+01, 48 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   30.25000    0   17          -   30.25000      -     -    0s
+H    0     0                     134.5000000   30.25000  77.5%     -    0s
+     0     0   98.73333    0   19  134.50000   98.73333  26.6%     -    0s
+H    0     0                     133.2500000   98.73333  25.9%     -    0s
+     0     0   99.50000    0   18  133.25000   99.50000  25.3%     -    0s
+     0     0  101.35000    0   20  133.25000  101.35000  23.9%     -    0s
+     0     0  105.16000    0   18  133.25000  105.16000  21.1%     -    0s
+     0     0  105.27368    0   16  133.25000  105.27368  21.0%     -    0s
+     0     0  107.20000    0   19  133.25000  107.20000  19.5%     -    0s
+     0     0  107.20000    0   17  133.25000  107.20000  19.5%     -    0s
+     0     0  107.20000    0   16  133.25000  107.20000  19.5%     -    0s
+     0     0  107.20000    0   16  133.25000  107.20000  19.5%     -    0s
+     0     0  107.20000    0   16  133.25000  107.20000  19.5%     -    0s
+     0     0  107.20000    0   16  133.25000  107.20000  19.5%     -    0s
+     0     2  110.60000    0   16  133.25000  110.60000  17.0%     -    0s
+
+Cutting planes:
+  Implied bound: 1
+  MIR: 12
+  Flow cover: 25
+  Network: 1
+
+Explored 227 nodes (1749 simplex iterations) in 0.06 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.332500000000e+02, best bound 1.332500000000e+02, gap 0.0%
+Tempo: 0.06 segundos
+
+0 1 9 7 32 46 7 
+0 2 11 14 29 53 18 
+0 3 28 50 51 27 60 
+2 4 30 26 29 56 28 
+(78 97 141 182 113 )
+
