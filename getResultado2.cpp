@@ -43,4 +43,5 @@ int main(int argc, const char * argv[]){
 	double media = sum/N;
 	//cout<<media<<endl;//", ,"<<mediana<<", ,"<<min<<endl;
 	cout<<media<<endl;
+	//cout<<mediana<<endl;
 }
