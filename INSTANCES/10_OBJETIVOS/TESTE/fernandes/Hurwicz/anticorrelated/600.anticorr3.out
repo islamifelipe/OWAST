@@ -1,0 +1,15 @@
+Rodando pra 1h
+
+Optimize a model with 360129 rows, 539210 columns and 19742489 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+04]
+  Objective range [3e-01, 7e-01]
+  Bounds range    [1e+00, 1e+04]
+  RHS range       [1e+00, 1e+04]
+
+Explored 0 nodes (0 simplex iterations) in 10.88 seconds
+Thread count was 1 (of 4 available processors)
+
+Best objective -, best bound -, gap -
+Error code = 10001
+Out of memory
