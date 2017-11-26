@@ -48,6 +48,12 @@ int main(int argc, const char * argv[]){
 	 	}
 	 	aux = s;
     }
-   // cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
-    cout<<obj<<","<<gap<<endl;
+    if (timee>=3600){ 
+    	cout<<nos<<","<<gap<<"% "<<","<<obj<<endl;;
+    }
+    else {
+    	cout<<nos<<","<<timee<<"s "<<","<<obj<<endl;;
+	}
+    //cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
+   // cout<<obj<<","<<gap<<endl;
 }
