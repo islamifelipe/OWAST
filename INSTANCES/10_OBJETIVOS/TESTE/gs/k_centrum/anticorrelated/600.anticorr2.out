@@ -1,0 +1,76 @@
+Rodando pra 1h
+Optimize a model with 360139 rows, 539300 columns and 3591981 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+02]
+Presolve removed 0 rows and 0 columns (presolve time = 5s) ...
+Presolve time: 9.38s
+Presolved: 360139 rows, 539300 columns, 3591981 nonzeros
+Variable types: 359500 continuous, 179800 integer (179800 binary)
+Optimize a model with 360139 rows, 539300 columns and 3591981 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 6e+02]
+Presolved: 360139 rows, 539300 columns, 3591981 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.814585e+03   0.000000e+00     32s
+    1314    0.0000000e+00   7.527080e+02   0.000000e+00     35s
+    2247    1.2367924e-04   1.176172e+01   0.000000e+00     64s
+    4407    7.6283483e-04   2.261344e+03   0.000000e+00    175s
+    6369    1.8204797e-03   3.280193e+03   0.000000e+00    265s
+    8228    2.1201690e+01   3.980531e+03   0.000000e+00    314s
+   10256    2.1203352e+01   7.103952e+03   0.000000e+00    352s
+   12355    2.1204838e+01   7.056897e+03   0.000000e+00    392s
+   14848    2.1206128e+01   6.272443e+03   0.000000e+00    432s
+   17375    2.3488078e+01   4.400998e+03   0.000000e+00    470s
+   20001    2.3491665e+01   4.646828e+03   0.000000e+00    518s
+   23127    2.4575224e+01   1.137098e+04   0.000000e+00    576s
+   25991    2.7515827e+01   4.584739e+03   0.000000e+00    626s
+   28516    2.7612352e+01   4.569013e+03   0.000000e+00    677s
+   32006    2.7804792e+01   3.128173e+03   0.000000e+00    757s
+   35947    2.9237057e+01   5.468131e+03   0.000000e+00    850s
+   38973    2.9241002e+01   3.174802e+03   0.000000e+00    935s
+   43063    2.9428191e+01   4.271240e+03   0.000000e+00   1070s
+   47153    2.9431239e+01   6.568250e+03   0.000000e+00   1199s
+   50642    2.9524322e+01   3.131632e+03   0.000000e+00   1292s
+   54638    2.9993845e+01   3.117431e+03   0.000000e+00   1410s
+   58728    3.0909208e+01   3.034981e+03   0.000000e+00   1548s
+   62818    3.1087663e+01   6.124791e+03   0.000000e+00   1704s
+   66908    3.1090315e+01   5.673536e+03   0.000000e+00   1854s
+   70998    3.1091247e+01   4.971111e+03   0.000000e+00   1919s
+   75088    3.1093728e+01   4.442605e+03   0.000000e+00   2053s
+   79178    3.1095313e+01   4.245570e+03   0.000000e+00   2153s
+   83268    3.1357303e+01   5.147478e+03   0.000000e+00   2314s
+   87358    3.1358998e+01   5.655160e+03   0.000000e+00   2488s
+   91448    3.1360772e+01   3.753205e+03   0.000000e+00   2664s
+   95538    3.1362692e+01   3.845248e+03   0.000000e+00   2832s
+   99628    3.1446834e+01   8.177410e+03   0.000000e+00   2944s
+  103718    3.1448655e+01   3.931426e+03   0.000000e+00   3124s
+  107808    3.1532003e+01   4.373195e+03   0.000000e+00   3299s
+  111898    3.1887007e+01   4.049272e+03   0.000000e+00   3439s
+  115988    3.1972453e+01   5.873832e+03   0.000000e+00   3579s
+
+Root relaxation: time limit, 116686 iterations, 3570.80 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0          -    0               -          -      -     - 3600s
+
+Explored 0 nodes (116686 simplex iterations) in 3600.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Time limit reached
+Best objective -, best bound -, gap -
+Tempo: 3593.84 segundos
+
+Error code = 10004
+Var::get

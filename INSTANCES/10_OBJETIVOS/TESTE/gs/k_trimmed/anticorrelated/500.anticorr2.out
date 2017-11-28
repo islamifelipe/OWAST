@@ -1,0 +1,52 @@
+Rodando pra 1h
+Optimize a model with 250139 rows, 374450 columns and 2493660 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 5e+02]
+Presolve removed 0 rows and 0 columns (presolve time = 5s) ...
+Presolve time: 6.33s
+Presolved: 250139 rows, 374450 columns, 2493660 nonzeros
+Variable types: 249600 continuous, 124850 integer (124850 binary)
+Optimize a model with 250139 rows, 374450 columns and 2493660 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e-01, 2e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 5e+02]
+Presolved: 250139 rows, 374450 columns, 2493660 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.514975e+03   0.000000e+00     22s
+    1078    0.0000000e+00   0.000000e+00   0.000000e+00     24s
+
+Root relaxation: objective 0.000000e+00, 1078 iterations, 3.25 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0  527          -    0.00000      -     -  355s
+     0     0    0.00000    0  408          -    0.00000      -     - 1105s
+     0     0    0.00000    0  289          -    0.00000      -     - 1106s
+     0     0    0.00000    0  174          -    0.00000      -     - 1211s
+     0     0    0.00000    0   55          -    0.00000      -     - 1214s
+     0     0    0.00000    0   28          -    0.00000      -     - 1239s
+     0     0    0.00000    0   28          -    0.00000      -     - 1259s
+     0     0    0.00000    0   61          -    0.00000      -     - 3600s
+
+Cutting planes:
+  Flow cover: 539
+
+Explored 0 nodes (488497 simplex iterations) in 3600.19 seconds
+Thread count was 1 (of 4 available processors)
+
+Time limit reached
+Best objective -, best bound 0.000000000000e+00, gap -
+Tempo: 3590.83 segundos
+
+Error code = 10004
+Var::get

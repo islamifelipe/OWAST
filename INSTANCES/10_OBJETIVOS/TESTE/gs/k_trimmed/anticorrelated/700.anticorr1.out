@@ -1,0 +1,54 @@
+Rodando pra 1h
+Optimize a model with 490139 rows, 734150 columns and 4889853 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 7e+02]
+Presolve removed 0 rows and 0 columns (presolve time = 5s) ...
+Presolve time: 9.84s
+Presolved: 490139 rows, 734150 columns, 4889853 nonzeros
+Variable types: 489400 continuous, 244750 integer (244750 binary)
+Optimize a model with 490139 rows, 734150 columns and 4889853 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [5e-01, 5e-01]
+  Bounds range    [1e+00, 1e+06]
+  RHS range       [1e+00, 7e+02]
+Presolved: 490139 rows, 734150 columns, 4889853 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.114683e+03   0.000000e+00     31s
+    1477    0.0000000e+00   0.000000e+00   0.000000e+00     33s
+
+Root relaxation: objective 0.000000e+00, 1477 iterations, 4.20 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0  727          -    0.00000      -     -  979s
+     0     0    0.00000    0  573          -    0.00000      -     - 2370s
+     0     0    0.00000    0  419          -    0.00000      -     - 2371s
+     0     0    0.00000    0  270          -    0.00000      -     - 2511s
+     0     0    0.00000    0  116          -    0.00000      -     - 2514s
+     0     0    0.00000    0   28          -    0.00000      -     - 2561s
+     0     0    0.00000    0   28          -    0.00000      -     - 2564s
+     0     0    0.00000    0   44          -    0.00000      -     - 2583s
+     0     0    0.00000    0  107          -    0.00000      -     - 3600s
+
+Cutting planes:
+  MIR: 1
+  Flow cover: 729
+
+Explored 0 nodes (685431 simplex iterations) in 3600.20 seconds
+Thread count was 1 (of 4 available processors)
+
+Time limit reached
+Best objective -, best bound 0.000000000000e+00, gap -
+Tempo: 3594.95 segundos
+
+Error code = 10004
+Var::get
