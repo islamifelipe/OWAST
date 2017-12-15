@@ -3,7 +3,7 @@
 e retorna os resultados desejados :
 
 nós		gap 	obj		tempo*/
-
+#include <iomanip>      // std::setprecision
 
 #include <iostream>
 #include <vector> 
@@ -16,44 +16,63 @@ nós		gap 	obj		tempo*/
 #include <sys/times.h>
 #include <unistd.h>
 #include <stdlib.h>     /* srand, rand */
+#include <fstream>      // std::ifstream
 using namespace std;
 
-
-int main(int argc, const char * argv[]){
-	// FILE * entrada = fopen (argv[1], "r");
-
-	// if (entrada==NULL) return 1;
-	 //char  buffer[1026];
+std::ifstream innn;
+void leeer(){
 	double nos, obj, gap, timee;
 	 string s, aux;
-	 while (cin>>s){
+	 while (innn>>s){
 	 	if (s=="Explored"){
-	 		cin>>nos;
+	 		innn>>nos;
 	 	}
 	 	if (s=="iterations)"){
 			string a;
-			cin>>a;
-			cin>>timee;
+			innn>>a;
+			innn>>timee;
 	 	}
 	 	if (s=="objective" && aux=="Best"){
-	 		cin>>obj;
+	 		innn>>obj;
 	 		string a,b,c, d, e;
-	 		cin>>a;
-	 		cin>>b;
-	 		cin>>c;
-	 		cin>>d;
-	 		cin>>e;
+	 		innn>>a;
+	 		innn>>b;
+	 		innn>>c;
+	 		innn>>d;
+	 		innn>>e;
 	 		//cout<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<endl;
-	 		cin>>gap;
+	 		innn>>gap;
 	 	}
 	 	aux = s;
     }
+   cout<<nos<<",";
     if (timee>=3600){ 
-    	cout<<nos<<","<<gap<<"% "<<","<<obj<<endl;;
+    	
+    	cout<<gap<<"% "<<","<<obj<<",";;
     }
     else {
-    	cout<<nos<<","<<timee<<"s "<<","<<obj<<endl;;
+    	cout<<timee<<"s "<<","<<obj<<",";;
 	}
-    //cout<<nos<<","<<gap<<","<<obj<<","<<timee<<endl;
-   // cout<<obj<<","<<gap<<endl;
+}
+
+
+int main(int argc, const char * argv[]){
+	innn.open(argv[1], std::ifstream::in);
+	leeer();
+	innn.close();
+	innn.open(argv[2], std::ifstream::in);
+	leeer();
+	innn.close();
+	innn.open(argv[3], std::ifstream::in);
+	leeer();
+	innn.close();
+	innn.open(argv[4], std::ifstream::in);
+	leeer();
+	innn.close();
+	innn.open(argv[5], std::ifstream::in);
+	leeer();
+	innn.close();
+	innn.open(argv[6], std::ifstream::in);
+	leeer();
+	cout<<endl;
 }
