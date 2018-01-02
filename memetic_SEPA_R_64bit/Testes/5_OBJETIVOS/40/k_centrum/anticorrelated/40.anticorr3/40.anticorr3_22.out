@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 7870740
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 36
+	k-centrum = 14
+	k-trimmed = 42
+	Hurwicz = 8
+Tempo(s) Final = 0.94
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 4
+Quantidade de crossovers = 4617
+Quantidade de sucesso dos crossovers = 272
+Taxa de sucesso dos crossovers = 0.0589127
+Média de melhoria das crossovers = 7.23868
+Quantidade de mutaçoes = 998
+Quantidade de sucesso da mutaçao = 90
+Taxa de sucesso das mutaçoes = 0.0901804
+Média de melhoria das mutaçoes = 2.10421
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1438
+TAXA de sucesso do SA = 0.299583
+Média de melhoria do SA = 22.8821
+Quantidade de vezes em que o fitness foi avaliado = 1176732
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+2029, 0.01s
+1890.5, 0.03s
+1890.5, 0.05s
+1887.5, 0.07s
+1887.5, 0.09s
+1887.5, 0.11s
+1884.5, 0.13s
+1884.5, 0.15s
+1884, 0.17s
+1883.5, 0.19s
+1882.5, 0.21s
+1882.5, 0.22s
+1882.5, 0.24s
+1881.5, 0.26s
+1881.5, 0.28s
+1881.5, 0.3s
+1881, 0.32s
+1881, 0.34s
+1881, 0.36s
+1880.5, 0.38s
+1880.5, 0.4s
+1880.5, 0.42s
+1880.5, 0.44s
+1880.5, 0.46s
+1880.5, 0.48s
+1880.5, 0.5s
+1880.5, 0.52s
+1880.5, 0.53s
+1880.5, 0.55s
+1880.5, 0.57s
+1880.5, 0.59s
+1880.5, 0.61s
+1880.5, 0.63s
+1880.5, 0.65s
+1880.5, 0.67s
+1880.5, 0.69s
+1880.5, 0.71s
+1880.5, 0.73s
+1880.5, 0.75s
+1879, 0.77s
+1879, 0.79s
+1879, 0.81s
+1876.5, 0.83s
+1876.5, 0.85s
+1876.5, 0.86s
+1876.5, 0.88s
+1876.5, 0.9s
+1876.5, 0.92s
+1876.5, 0.94s
+
+Soluçao encontrada: 
+29 33 88 14 16 12 12 
+5 31 80 16 25 17 30 
+5 35 21 71 73 72 74 
+10 26 35 59 65 55 54 
+19 24 30 68 60 62 65 
+20 32 6 85 86 87 82 
+8 28 78 28 22 19 18 
+14 28 65 32 29 31 30 
+19 30 26 72 66 76 65 
+19 25 72 26 24 23 33 
+7 25 25 72 68 66 66 
+10 15 22 71 68 69 71 
+13 15 51 41 41 53 54 
+15 22 51 47 43 45 43 
+25 38 65 33 39 30 36 
+15 37 52 44 47 50 51 
+24 36 83 16 20 20 19 
+23 36 38 52 54 58 55 
+7 16 6 88 87 80 86 
+11 24 19 77 80 73 69 
+22 25 93 7 5 9 8 
+11 32 27 61 71 64 62 
+6 16 49 46 45 44 44 
+26 35 39 53 51 56 56 
+28 33 93 6 7 9 10 
+16 29 92 6 6 6 7 
+11 17 92 9 6 10 11 
+3 7 85 14 19 13 16 
+27 28 91 16 12 7 8 
+29 34 3 83 90 89 84 
+9 24 29 67 60 71 61 
+24 39 50 47 47 56 42 
+1 29 11 81 79 88 80 
+18 27 36 53 54 54 64 
+12 24 94 10 14 15 17 
+3 4 19 80 78 68 71 
+3 21 13 75 75 75 74 
+2 29 47 58 51 46 50 
+0 11 11 82 76 87 87 
+( 1887 1866 1859 1865 1865 )
+OWA = 1876.5

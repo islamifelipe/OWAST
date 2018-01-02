@@ -1,0 +1,136 @@
+========= Estatisticas ========= 
+Semente utilizada : 4812160
+Informacoes sobre a populacao : 
+	SPEA/R = 45
+	k-centrum = 42
+	k-trimmed = 7
+	Hurwicz = 6
+Tempo(s) Final = 0.56
+Quantidade de geraçoes = 48
+Quantidade de plasm1 = 4
+Quantidade de plasm2 = 7
+Quantidade de plasm3 = 8
+Quantidade de ataques do plasm1 = 1183
+Quantidade de sucesso do plasm1 = 57
+Taxa de sucesso do plasm1 = 0.0481826
+Média de melhoria do plasm1 = 4.70795
+Quantidade de ataques do plasm2 = 2145
+Quantidade de sucesso do plasm2 = 307
+Taxa de sucesso do plasm2 = 0.143124
+Média de melhoria do plasm2 = 4.24592
+Quantidade de ataques do plasm3 = 2384
+Quantidade de sucesso do plasm3 = 253
+Taxa de sucesso do plasm3 = 0.106124
+Média de melhoria do plasm3 = 3.14849
+Quantidade de ataque do primTrans = 3368
+Quantidade de sucesso do primTrans = 13
+Taxa de sucesso do primTrans = 0.00385986
+Média de melhoria do primTrans = 0.382126
+Quantidade de ataques do saTrans = 2144
+Quantidade de sucesso do saTrans = 669
+Taxa de sucesso do saTrans = 0.312034
+Média de melhoria do saTrans = 14.0583
+Quantidade de vezes em que o fitness foi avaliado = 530472
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+2164, 0.01s
+2061, 0.02s
+2061, 0.03s
+2061, 0.04s
+2054, 0.05s
+2054, 0.06s
+2054, 0.08s
+2054, 0.09s
+2054, 0.1s
+2054, 0.11s
+2054, 0.12s
+2033.5, 0.14s
+2016.5, 0.15s
+2016.5, 0.16s
+2016.5, 0.17s
+2014, 0.19s
+2014, 0.2s
+2014, 0.21s
+2014, 0.22s
+2014, 0.23s
+2014, 0.24s
+2014, 0.25s
+2014, 0.27s
+2014, 0.28s
+2014, 0.29s
+2014, 0.3s
+2014, 0.31s
+2014, 0.32s
+2014, 0.33s
+2014, 0.34s
+2012.5, 0.36s
+2003.5, 0.37s
+2003.5, 0.38s
+2003.5, 0.39s
+2003.5, 0.4s
+2003.5, 0.41s
+2003.5, 0.43s
+2000, 0.44s
+2000, 0.45s
+2000, 0.46s
+2000, 0.47s
+2000, 0.48s
+2000, 0.5s
+2000, 0.51s
+2000, 0.52s
+2000, 0.53s
+2000, 0.54s
+2000, 0.56s
+2000, 0.56s
+
+Soluçao encontrada: 
+18 20 36 32 49 47 40 
+7 20 5 57 52 53 79 
+7 41 5 51 53 62 60 
+7 49 45 61 30 33 30 
+47 49 6 57 48 54 62 
+7 19 1 53 61 52 61 
+19 27 37 56 33 46 32 
+45 47 80 11 42 19 17 
+7 8 98 18 24 0 4 
+22 24 11 57 60 77 72 
+47 23 97 21 9 13 7 
+23 29 11 56 64 63 48 
+34 46 58 61 28 25 24 
+21 28 7 54 59 53 51 
+38 25 96 18 15 21 7 
+21 40 5 60 49 73 54 
+41 34 69 38 25 15 19 
+31 37 81 31 20 12 16 
+5 16 54 35 43 27 24 
+27 39 45 38 48 27 50 
+27 33 89 11 5 24 31 
+33 43 3 52 62 54 67 
+2 33 33 43 43 47 43 
+27 37 7 50 55 91 53 
+2 21 17 43 65 51 47 
+21 48 63 34 21 22 19 
+0 37 2 57 49 60 96 
+5 10 85 7 36 17 7 
+10 31 86 11 15 18 20 
+5 14 83 12 10 12 16 
+14 17 14 46 45 82 43 
+0 30 21 43 39 45 54 
+3 14 7 48 61 57 78 
+3 35 93 7 23 20 27 
+44 47 33 55 54 33 36 
+24 44 63 34 28 20 20 
+12 24 43 43 28 28 33 
+7 15 0 58 78 51 54 
+4 15 6 57 58 57 51 
+4 32 66 18 19 30 18 
+5 9 10 57 60 51 65 
+32 36 22 49 40 51 63 
+13 21 46 29 35 33 40 
+2 6 85 9 26 9 18 
+11 24 24 43 40 47 54 
+9 26 19 80 47 67 81 
+11 38 83 18 21 26 11 
+1 26 22 55 64 51 40 
+4 42 9 67 49 73 49 
+( 1981 2001 1988 1999 1991 )
+OWA = 2000

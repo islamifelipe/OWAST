@@ -1,0 +1,126 @@
+========= Estatisticas ========= 
+Semente utilizada : 9240859
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 29
+	k-centrum = 25
+	k-trimmed = 46
+	Hurwicz = 0
+Tempo(s) Final = 1.12
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4609
+Quantidade de sucesso dos crossovers = 378
+Taxa de sucesso dos crossovers = 0.0820135
+Média de melhoria das crossovers = 9.53938
+Quantidade de mutaçoes = 1147
+Quantidade de sucesso da mutaçao = 23
+Taxa de sucesso das mutaçoes = 0.0200523
+Média de melhoria das mutaçoes = 0.568439
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1083
+TAXA de sucesso do SA = 0.225625
+Média de melhoria do SA = 43.5367
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+858, 0.01s
+858, 0.03s
+858, 0.05s
+856, 0.08s
+844, 0.1s
+844, 0.12s
+844, 0.15s
+827, 0.17s
+827, 0.19s
+827, 0.22s
+827, 0.24s
+827, 0.26s
+827, 0.29s
+827, 0.31s
+827, 0.33s
+827, 0.36s
+827, 0.38s
+827, 0.4s
+827, 0.43s
+827, 0.45s
+827, 0.47s
+827, 0.5s
+827, 0.52s
+827, 0.54s
+827, 0.57s
+827, 0.59s
+827, 0.61s
+827, 0.63s
+827, 0.66s
+827, 0.68s
+827, 0.7s
+827, 0.73s
+827, 0.75s
+827, 0.77s
+827, 0.8s
+827, 0.82s
+827, 0.84s
+827, 0.87s
+827, 0.89s
+827, 0.91s
+827, 0.94s
+827, 0.96s
+827, 0.98s
+827, 1.01s
+827, 1.03s
+827, 1.05s
+827, 1.08s
+827, 1.1s
+827, 1.12s
+
+Soluçao encontrada: 
+22 30 10 13 20 61 19 
+17 30 2 35 11 14 45 
+13 31 21 12 5 9 60 
+36 43 9 42 20 28 42 
+31 39 1 25 15 28 65 
+13 38 0 34 30 63 37 
+44 49 19 8 5 69 65 
+35 48 19 16 5 30 27 
+5 44 17 18 7 43 37 
+1 18 20 6 34 10 67 
+41 45 8 9 13 75 35 
+30 34 10 32 6 38 80 
+26 46 1 43 3 77 14 
+12 27 4 14 51 58 31 
+0 49 18 10 19 59 29 
+13 33 24 9 5 32 83 
+5 14 29 15 28 41 61 
+16 21 27 13 11 22 51 
+6 40 0 14 4 12 26 
+27 48 15 19 16 17 16 
+4 45 0 14 21 43 20 
+37 45 39 20 19 15 44 
+16 20 9 2 10 24 42 
+29 33 18 24 22 48 24 
+3 7 30 7 9 52 49 
+17 40 15 3 10 71 6 
+23 42 0 0 64 60 24 
+0 32 5 3 32 19 61 
+0 23 6 14 18 14 80 
+21 25 10 49 2 71 28 
+16 47 1 21 6 66 15 
+35 36 5 10 10 62 52 
+42 43 55 11 20 44 39 
+24 36 4 12 43 32 4 
+21 35 6 4 20 71 41 
+28 48 11 3 5 40 29 
+39 49 51 22 17 55 45 
+28 45 8 10 24 74 62 
+7 44 11 5 33 67 36 
+10 19 4 18 3 27 27 
+30 45 0 19 2 56 34 
+7 15 21 30 6 73 64 
+11 42 15 16 12 47 77 
+8 10 31 34 25 84 79 
+19 45 2 24 13 68 45 
+9 36 3 8 35 6 66 
+1 22 12 24 14 16 64 
+35 46 10 16 7 24 7 
+2 5 12 14 17 16 15 
+( 648 824 827 2131 2069 )
+OWA = 827

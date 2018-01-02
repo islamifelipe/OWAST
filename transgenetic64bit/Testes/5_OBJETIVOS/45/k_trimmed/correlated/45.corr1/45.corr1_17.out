@@ -1,0 +1,131 @@
+========= Estatisticas ========= 
+Semente utilizada : 4881137
+Informacoes sobre a populacao : 
+	SPEA/R = 1
+	k-centrum = 15
+	k-trimmed = 84
+	Hurwicz = 0
+Tempo(s) Final = 0.48
+Quantidade de geraçoes = 48
+Quantidade de plasm1 = 4
+Quantidade de plasm2 = 7
+Quantidade de plasm3 = 8
+Quantidade de ataques do plasm1 = 1168
+Quantidade de sucesso do plasm1 = 85
+Taxa de sucesso do plasm1 = 0.072774
+Média de melhoria do plasm1 = 0.383276
+Quantidade de ataques do plasm2 = 2116
+Quantidade de sucesso do plasm2 = 324
+Taxa de sucesso do plasm2 = 0.153119
+Média de melhoria do plasm2 = 0.956522
+Quantidade de ataques do plasm3 = 2428
+Quantidade de sucesso do plasm3 = 59
+Taxa de sucesso do plasm3 = 0.0242998
+Média de melhoria do plasm3 = 0.226798
+Quantidade de ataque do primTrans = 3437
+Quantidade de sucesso do primTrans = 47
+Taxa de sucesso do primTrans = 0.0136747
+Média de melhoria do primTrans = 0.163902
+Quantidade de ataques do saTrans = 2097
+Quantidade de sucesso do saTrans = 2
+Taxa de sucesso do saTrans = 0.000953743
+Média de melhoria do saTrans = 0.00492767
+Quantidade de vezes em que o fitness foi avaliado = 519120
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+877.332, 0.01s
+873.332, 0.02s
+866.666, 0.03s
+866.666, 0.04s
+859.666, 0.05s
+859.666, 0.06s
+859.666, 0.07s
+859.666, 0.07s
+855.666, 0.08s
+855.666, 0.09s
+855.666, 0.1s
+855.666, 0.11s
+855.666, 0.12s
+855.666, 0.13s
+855.666, 0.14s
+855.666, 0.15s
+855.666, 0.16s
+855.666, 0.17s
+855.666, 0.18s
+855.666, 0.19s
+855.666, 0.2s
+855.666, 0.21s
+855.666, 0.22s
+855.666, 0.23s
+855.666, 0.24s
+855.666, 0.25s
+855.666, 0.26s
+855.666, 0.26s
+855.666, 0.27s
+855.666, 0.28s
+855.666, 0.29s
+855.666, 0.3s
+855.666, 0.31s
+855.666, 0.32s
+855.666, 0.33s
+855.666, 0.34s
+855.666, 0.35s
+855.666, 0.36s
+855.666, 0.37s
+855.666, 0.38s
+855.666, 0.4s
+855.666, 0.4s
+855.666, 0.42s
+855.666, 0.43s
+855.666, 0.44s
+855.666, 0.45s
+855.666, 0.46s
+855.666, 0.47s
+855.666, 0.48s
+
+Soluçao encontrada: 
+22 29 7 14 63 8 72 
+28 30 19 9 17 67 30 
+20 44 16 17 17 34 78 
+25 42 16 18 14 34 48 
+25 3 14 33 25 8 58 
+3 11 30 10 25 17 69 
+11 44 17 12 24 11 64 
+44 13 9 2 17 3 35 
+44 15 13 8 31 8 58 
+15 17 5 12 2 13 28 
+3 0 33 10 8 48 8 
+20 2 5 15 34 14 2 
+2 27 21 5 4 26 75 
+27 41 13 5 3 25 4 
+41 16 25 13 5 5 59 
+16 12 10 4 21 15 3 
+12 43 0 29 22 2 58 
+16 8 24 15 20 19 74 
+27 24 35 33 12 11 76 
+20 33 0 27 30 6 56 
+33 23 0 8 8 1 74 
+23 38 18 22 4 22 46 
+38 6 14 6 7 20 18 
+38 21 17 33 6 5 4 
+38 30 27 6 39 7 42 
+30 7 11 7 35 9 9 
+38 5 16 29 14 13 33 
+23 35 3 15 24 22 19 
+35 19 39 43 13 8 68 
+16 1 1 24 30 11 68 
+1 39 9 25 4 25 4 
+38 29 46 28 21 22 38 
+29 9 1 41 9 20 31 
+21 32 6 29 7 35 12 
+0 14 45 28 20 28 57 
+14 31 14 15 24 13 38 
+31 34 7 37 8 5 35 
+12 18 14 4 43 30 60 
+12 36 38 40 19 19 57 
+19 4 16 35 12 32 62 
+41 26 64 24 38 19 55 
+39 10 29 26 12 43 47 
+20 40 47 10 48 30 29 
+17 37 11 53 27 9 64 
+( 805 879 866 822 1925 )
+OWA = 855.666

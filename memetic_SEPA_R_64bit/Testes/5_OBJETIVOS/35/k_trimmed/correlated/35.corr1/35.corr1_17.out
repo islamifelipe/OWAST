@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 5223567
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 24
+	k-centrum = 32
+	k-trimmed = 44
+	Hurwicz = 0
+Tempo(s) Final = 0.83
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 9
+Quantidade de crossovers = 4604
+Quantidade de sucesso dos crossovers = 383
+Taxa de sucesso dos crossovers = 0.0831885
+Média de melhoria das crossovers = 13.2027
+Quantidade de mutaçoes = 1152
+Quantidade de sucesso da mutaçao = 27
+Taxa de sucesso das mutaçoes = 0.0234375
+Média de melhoria das mutaçoes = 0.75434
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1051
+TAXA de sucesso do SA = 0.218958
+Média de melhoria do SA = 30.2292
+Quantidade de vezes em que o fitness foi avaliado = 1177147
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+727, 0s
+721, 0.02s
+681, 0.04s
+681, 0.06s
+681, 0.08s
+681, 0.09s
+681, 0.11s
+681, 0.13s
+681, 0.14s
+681, 0.16s
+681, 0.18s
+681, 0.2s
+681, 0.21s
+681, 0.23s
+681, 0.25s
+681, 0.26s
+681, 0.28s
+681, 0.3s
+681, 0.32s
+681, 0.33s
+681, 0.35s
+681, 0.37s
+681, 0.38s
+681, 0.4s
+681, 0.42s
+681, 0.44s
+681, 0.45s
+681, 0.47s
+681, 0.49s
+681, 0.5s
+681, 0.52s
+681, 0.54s
+681, 0.56s
+681, 0.57s
+681, 0.59s
+681, 0.61s
+681, 0.62s
+681, 0.64s
+681, 0.66s
+681, 0.68s
+681, 0.69s
+681, 0.71s
+681, 0.73s
+681, 0.74s
+681, 0.76s
+681, 0.78s
+681, 0.8s
+681, 0.81s
+681, 0.83s
+
+Soluçao encontrada: 
+1 16 37 44 68 11 21 
+2 24 5 9 13 8 34 
+12 21 11 39 65 19 9 
+16 33 0 26 13 30 10 
+15 26 44 19 28 20 23 
+10 14 11 61 35 10 60 
+0 12 6 46 13 8 8 
+6 29 20 47 30 58 25 
+10 34 19 20 80 34 4 
+3 27 52 17 25 13 24 
+26 30 44 24 30 29 18 
+12 17 42 21 38 11 23 
+17 23 1 70 57 0 34 
+7 21 27 50 41 21 8 
+16 19 1 10 49 0 43 
+0 32 26 7 18 13 12 
+8 14 4 23 19 57 1 
+13 17 1 25 34 3 39 
+24 33 34 34 15 8 33 
+11 34 42 32 17 41 11 
+3 4 33 33 48 18 19 
+9 14 8 75 65 1 27 
+29 32 5 37 68 2 32 
+18 31 20 73 20 24 4 
+20 30 20 44 11 28 5 
+5 10 27 14 78 17 11 
+19 31 20 36 37 15 8 
+9 22 33 14 66 7 29 
+3 24 7 45 48 10 48 
+9 18 25 59 44 25 9 
+26 28 19 28 73 29 27 
+9 13 8 65 25 46 2 
+9 25 4 36 61 33 6 
+15 34 16 49 36 32 4 
+( 672 1232 1368 681 671 )
+OWA = 681

@@ -1,0 +1,121 @@
+========= Estatisticas ========= 
+Semente utilizada : 6089023
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 0
+	k-trimmed = 100
+	Hurwicz = 0
+Tempo(s) Final = 1.04
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 9
+Quantidade de crossovers = 4609
+Quantidade de sucesso dos crossovers = 399
+Taxa de sucesso dos crossovers = 0.0865698
+Média de melhoria das crossovers = 3.64266
+Quantidade de mutaçoes = 1149
+Quantidade de sucesso da mutaçao = 15
+Taxa de sucesso das mutaçoes = 0.0130548
+Média de melhoria das mutaçoes = 0.467363
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 797
+TAXA de sucesso do SA = 0.166042
+Média de melhoria do SA = 27.9735
+Quantidade de vezes em que o fitness foi avaliado = 1177147
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+784, 0.01s
+777, 0.03s
+777, 0.05s
+777, 0.07s
+777, 0.09s
+777, 0.12s
+777, 0.14s
+777, 0.16s
+777, 0.18s
+777, 0.2s
+777, 0.22s
+777, 0.24s
+777, 0.27s
+777, 0.29s
+777, 0.31s
+777, 0.33s
+777, 0.35s
+777, 0.37s
+777, 0.39s
+777, 0.42s
+777, 0.44s
+777, 0.46s
+777, 0.48s
+777, 0.5s
+777, 0.52s
+777, 0.54s
+777, 0.57s
+777, 0.59s
+777, 0.61s
+777, 0.63s
+777, 0.65s
+777, 0.67s
+777, 0.69s
+777, 0.72s
+777, 0.74s
+777, 0.76s
+777, 0.78s
+777, 0.8s
+777, 0.82s
+777, 0.84s
+777, 0.87s
+777, 0.89s
+777, 0.91s
+777, 0.93s
+777, 0.95s
+777, 0.97s
+777, 0.99s
+777, 1.02s
+777, 1.04s
+
+Soluçao encontrada: 
+2 44 80 15 11 13 27 
+33 37 92 8 24 23 27 
+28 43 90 33 16 16 22 
+12 38 75 13 28 20 35 
+3 22 99 3 10 10 48 
+3 36 83 9 13 12 50 
+39 40 99 34 11 11 20 
+34 35 94 29 8 24 27 
+17 28 84 15 9 19 45 
+1 22 68 18 19 16 44 
+40 41 82 13 21 13 15 
+13 27 78 30 17 16 34 
+3 30 98 14 40 9 6 
+5 22 90 27 17 7 53 
+11 38 89 26 29 12 14 
+15 25 90 6 6 8 31 
+8 37 78 29 24 11 19 
+20 21 95 27 8 28 45 
+1 4 98 22 7 28 11 
+1 29 90 7 20 14 9 
+6 25 99 0 3 18 49 
+1 32 76 17 16 31 25 
+34 36 95 22 3 33 19 
+24 33 97 2 10 5 3 
+16 34 91 22 12 29 14 
+13 25 97 8 34 1 31 
+0 43 93 8 23 21 22 
+14 18 89 17 5 14 32 
+11 35 83 11 18 33 15 
+5 9 69 24 22 20 39 
+21 42 99 24 19 27 49 
+9 19 97 1 21 17 14 
+7 9 95 8 46 2 50 
+13 44 95 17 6 2 3 
+31 41 94 8 25 29 44 
+10 18 92 45 10 9 31 
+2 19 97 2 39 28 20 
+24 28 96 30 3 18 48 
+12 23 98 5 14 24 23 
+16 18 88 21 19 9 39 
+15 42 81 32 16 10 15 
+31 37 92 18 7 5 11 
+16 26 96 42 25 4 22 
+3 40 88 15 38 8 42 
+( 3949 777 772 707 1242 )
+OWA = 777

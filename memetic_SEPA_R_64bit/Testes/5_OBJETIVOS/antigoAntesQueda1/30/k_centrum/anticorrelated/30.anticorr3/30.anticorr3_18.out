@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 3264154
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 16
+	k-centrum = 25
+	k-trimmed = 59
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4618
+Quantidade de sucesso dos crossovers = 193
+Taxa de sucesso dos crossovers = 0.041793
+Média de melhoria das crossovers = 0.196676
+Quantidade de mutaçoes = 1143
+Quantidade de sucesso da mutaçao = 14
+Taxa de sucesso das mutaçoes = 0.0122485
+Média de melhoria das mutaçoes = 0.467192
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 455
+TAXA de sucesso do SA = 0.0947917
+Média de melhoria do SA = 17.5229
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+897, 0s
+897, 0.02s
+896.75, 0.03s
+896, 0.05s
+896, 0.06s
+896, 0.08s
+896, 0.09s
+896, 0.11s
+896, 0.12s
+896, 0.14s
+896, 0.16s
+896, 0.17s
+896, 0.19s
+896, 0.2s
+896, 0.22s
+896, 0.23s
+896, 0.25s
+896, 0.26s
+896, 0.28s
+896, 0.29s
+896, 0.31s
+896, 0.32s
+896, 0.34s
+896, 0.35s
+896, 0.37s
+896, 0.38s
+896, 0.4s
+896, 0.41s
+896, 0.43s
+896, 0.44s
+896, 0.46s
+896, 0.47s
+896, 0.49s
+896, 0.5s
+896, 0.52s
+896, 0.53s
+896, 0.55s
+896, 0.56s
+896, 0.58s
+896, 0.59s
+896, 0.61s
+896, 0.62s
+896, 0.64s
+896, 0.65s
+896, 0.67s
+896, 0.69s
+896, 0.7s
+896, 0.72s
+896, 0.73s
+
+Soluçao encontrada: 
+1 20 97 14 5 5 14 
+14 28 94 6 4 15 17 
+2 29 87 24 12 12 17 
+11 29 97 14 14 7 3 
+4 24 93 11 20 9 17 
+9 27 98 14 10 6 12 
+22 27 95 7 10 18 7 
+3 19 93 12 9 7 10 
+3 16 91 9 9 13 15 
+7 18 98 1 8 12 10 
+21 28 97 2 7 7 14 
+13 25 97 12 6 14 10 
+12 21 99 11 2 13 12 
+1 23 96 9 17 6 8 
+6 21 92 6 8 14 20 
+23 24 98 2 8 10 12 
+17 19 97 5 6 4 3 
+0 25 94 15 9 18 5 
+18 26 94 9 10 7 8 
+7 8 98 8 7 2 5 
+0 27 97 8 15 3 8 
+15 23 99 8 8 6 8 
+1 28 97 7 8 4 4 
+0 23 94 8 13 13 6 
+19 21 98 3 12 12 8 
+5 21 96 6 7 4 4 
+20 29 98 4 12 10 1 
+10 17 97 9 7 7 3 
+26 27 97 16 7 6 11 
+( 2778 260 270 264 272 )
+OWA = 896

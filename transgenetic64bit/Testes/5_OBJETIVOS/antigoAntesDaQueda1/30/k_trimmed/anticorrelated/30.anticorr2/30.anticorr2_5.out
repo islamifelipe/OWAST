@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 1396025
+Informacoes sobre a populacao : 
+	SPEA/R = 0
+	k-centrum = 7
+	k-trimmed = 93
+	Hurwicz = 0
+Tempo(s) Final = 0.31
+Quantidade de geraçoes = 48
+Quantidade de plasm1 = 4
+Quantidade de plasm2 = 7
+Quantidade de plasm3 = 8
+Quantidade de ataques do plasm1 = 1216
+Quantidade de sucesso do plasm1 = 15
+Taxa de sucesso do plasm1 = 0.0123355
+Média de melhoria do plasm1 = 0.0715461
+Quantidade de ataques do plasm2 = 2093
+Quantidade de sucesso do plasm2 = 157
+Taxa de sucesso do plasm2 = 0.0750119
+Média de melhoria do plasm2 = 0.524606
+Quantidade de ataques do plasm3 = 2403
+Quantidade de sucesso do plasm3 = 121
+Taxa de sucesso do plasm3 = 0.0503537
+Média de melhoria do plasm3 = 0.314191
+Quantidade de ataque do primTrans = 3476
+Quantidade de sucesso do primTrans = 4
+Taxa de sucesso do primTrans = 0.00115075
+Média de melhoria do primTrans = 0.00632911
+Quantidade de ataques do saTrans = 2205
+Quantidade de sucesso do saTrans = 52
+Taxa de sucesso do saTrans = 0.0235828
+Média de melhoria do saTrans = 0.411791
+Quantidade de vezes em que o fitness foi avaliado = 545403
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+571, 0s
+564, 0.01s
+564, 0.01s
+564, 0.02s
+564, 0.03s
+564, 0.03s
+564, 0.04s
+564, 0.05s
+563, 0.05s
+563, 0.06s
+560, 0.07s
+560, 0.07s
+560, 0.08s
+560, 0.09s
+559, 0.09s
+559, 0.1s
+559, 0.1s
+559, 0.11s
+559, 0.12s
+559, 0.12s
+559, 0.13s
+559, 0.14s
+559, 0.14s
+559, 0.15s
+559, 0.16s
+559, 0.16s
+559, 0.17s
+559, 0.18s
+559, 0.18s
+559, 0.19s
+559, 0.2s
+559, 0.2s
+559, 0.21s
+559, 0.21s
+559, 0.22s
+559, 0.23s
+559, 0.23s
+559, 0.24s
+559, 0.25s
+559, 0.25s
+559, 0.26s
+559, 0.27s
+559, 0.27s
+559, 0.28s
+559, 0.29s
+559, 0.29s
+559, 0.3s
+559, 0.31s
+559, 0.31s
+
+Soluçao encontrada: 
+7 9 86 12 12 36 26 
+22 23 92 15 25 14 33 
+5 22 81 42 22 10 55 
+13 19 79 13 17 31 22 
+7 13 84 13 10 22 47 
+9 27 87 37 10 17 14 
+16 18 79 25 44 19 25 
+1 18 96 22 5 15 34 
+1 6 89 15 26 9 31 
+11 18 59 21 20 27 23 
+1 19 93 15 26 26 26 
+7 29 94 11 16 13 49 
+3 29 95 8 13 41 35 
+3 8 97 14 2 14 28 
+8 25 96 2 3 43 26 
+3 4 94 32 9 15 3 
+4 20 94 4 45 6 42 
+15 20 89 17 5 14 7 
+20 26 82 13 19 11 42 
+20 24 93 25 17 7 17 
+14 20 94 24 3 24 4 
+14 17 74 15 22 25 29 
+22 27 94 17 39 5 51 
+21 22 86 8 14 7 9 
+2 21 95 8 49 2 38 
+12 25 80 44 13 11 54 
+0 4 82 19 42 13 13 
+12 28 81 30 23 21 37 
+10 21 86 29 8 56 27 
+( 2531 550 559 554 847 )
+OWA = 559

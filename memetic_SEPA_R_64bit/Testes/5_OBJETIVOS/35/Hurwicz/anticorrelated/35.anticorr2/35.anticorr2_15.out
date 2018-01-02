@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 7539748
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 16
+	k-centrum = 32
+	k-trimmed = 0
+	Hurwicz = 52
+Tempo(s) Final = 0.82
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4584
+Quantidade de sucesso dos crossovers = 344
+Taxa de sucesso dos crossovers = 0.0750436
+Média de melhoria das crossovers = 1.3579
+Quantidade de mutaçoes = 1122
+Quantidade de sucesso da mutaçao = 21
+Taxa de sucesso das mutaçoes = 0.0187166
+Média de melhoria das mutaçoes = 0.461586
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 768
+TAXA de sucesso do SA = 0.16
+Média de melhoria do SA = 26.8058
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+767.3, 0s
+767.3, 0.02s
+767.3, 0.04s
+767.3, 0.05s
+767.3, 0.07s
+766, 0.09s
+766, 0.11s
+766, 0.12s
+766, 0.14s
+766, 0.16s
+766, 0.17s
+766, 0.19s
+766, 0.21s
+766, 0.23s
+766, 0.24s
+766, 0.26s
+766, 0.28s
+766, 0.29s
+766, 0.31s
+766, 0.33s
+766, 0.34s
+766, 0.36s
+766, 0.38s
+766, 0.4s
+766, 0.41s
+766, 0.43s
+766, 0.45s
+766, 0.46s
+766, 0.48s
+766, 0.5s
+766, 0.51s
+766, 0.53s
+766, 0.55s
+766, 0.57s
+766, 0.58s
+766, 0.6s
+766, 0.62s
+766, 0.63s
+766, 0.65s
+766, 0.67s
+766, 0.69s
+766, 0.7s
+766, 0.72s
+766, 0.74s
+766, 0.75s
+766, 0.77s
+766, 0.79s
+766, 0.8s
+766, 0.82s
+
+Soluçao encontrada: 
+2 17 8 67 52 58 62 
+10 15 1 61 86 86 51 
+2 5 1 73 58 51 50 
+13 15 7 73 83 61 81 
+8 32 0 92 84 75 77 
+1 31 7 61 54 72 66 
+9 30 0 57 82 81 63 
+20 24 2 86 75 57 51 
+3 5 6 86 61 75 50 
+26 29 3 48 72 91 95 
+1 10 3 76 56 79 50 
+5 18 2 61 51 79 53 
+11 24 3 97 52 57 59 
+1 29 6 55 79 47 62 
+2 27 5 60 60 80 50 
+9 20 8 55 58 53 60 
+3 4 15 49 47 43 90 
+7 20 7 74 66 55 47 
+18 22 3 49 75 63 73 
+2 23 3 70 68 55 58 
+0 24 2 63 53 59 88 
+7 32 4 54 58 69 87 
+18 28 0 78 58 55 95 
+11 21 8 56 59 76 49 
+24 29 2 54 55 61 74 
+0 6 3 68 58 63 63 
+2 9 1 58 51 90 58 
+2 19 3 53 72 69 62 
+12 15 4 51 84 71 81 
+25 27 2 87 80 58 49 
+16 17 0 84 88 60 66 
+1 34 7 49 71 52 85 
+8 33 7 82 57 82 49 
+11 14 0 56 62 53 78 
+( 133 2243 2225 2236 2232 )
+OWA = 766

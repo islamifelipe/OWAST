@@ -1,0 +1,121 @@
+========= Estatisticas ========= 
+Semente utilizada : 9379208
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 1
+	k-trimmed = 99
+	Hurwicz = 0
+Tempo(s) Final = 1.03
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 9
+Quantidade de crossovers = 4606
+Quantidade de sucesso dos crossovers = 401
+Taxa de sucesso dos crossovers = 0.0870604
+Média de melhoria das crossovers = 3.61615
+Quantidade de mutaçoes = 1152
+Quantidade de sucesso da mutaçao = 21
+Taxa de sucesso das mutaçoes = 0.0182292
+Média de melhoria das mutaçoes = 0.585069
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 810
+TAXA de sucesso do SA = 0.16875
+Média de melhoria do SA = 27.4433
+Quantidade de vezes em que o fitness foi avaliado = 1177147
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+797, 0.01s
+789, 0.03s
+780, 0.05s
+780, 0.07s
+780, 0.09s
+780, 0.11s
+780, 0.14s
+780, 0.16s
+780, 0.18s
+780, 0.2s
+780, 0.22s
+780, 0.24s
+780, 0.26s
+780, 0.29s
+780, 0.31s
+780, 0.33s
+780, 0.35s
+780, 0.37s
+780, 0.39s
+780, 0.41s
+780, 0.43s
+780, 0.45s
+780, 0.48s
+780, 0.5s
+780, 0.52s
+780, 0.54s
+780, 0.56s
+780, 0.58s
+780, 0.6s
+780, 0.62s
+780, 0.65s
+780, 0.67s
+780, 0.69s
+780, 0.71s
+780, 0.73s
+780, 0.75s
+780, 0.77s
+780, 0.79s
+780, 0.82s
+780, 0.84s
+780, 0.86s
+780, 0.88s
+780, 0.9s
+780, 0.92s
+780, 0.94s
+780, 0.97s
+780, 0.99s
+780, 1.01s
+780, 1.03s
+
+Soluçao encontrada: 
+15 25 90 6 6 8 31 
+2 44 80 15 11 13 27 
+9 19 97 1 21 17 14 
+5 44 81 31 11 20 29 
+1 4 98 22 7 28 11 
+8 37 78 29 24 11 19 
+34 35 94 29 8 24 27 
+39 40 99 34 11 11 20 
+21 42 99 24 19 27 49 
+40 41 82 13 21 13 15 
+20 21 95 27 8 28 45 
+33 37 92 8 24 23 27 
+1 29 90 7 20 14 9 
+13 44 95 17 6 2 3 
+18 30 77 12 19 35 15 
+31 41 94 8 25 29 44 
+1 32 76 17 16 31 25 
+25 36 67 22 43 28 61 
+16 18 88 21 19 9 39 
+24 28 96 30 3 18 48 
+10 18 92 45 10 9 31 
+16 34 91 22 12 29 14 
+7 9 95 8 46 2 50 
+31 37 92 18 7 5 11 
+0 43 93 8 23 21 22 
+28 43 90 33 16 16 22 
+1 22 68 18 19 16 44 
+13 26 88 7 36 49 37 
+24 33 97 2 10 5 3 
+17 28 84 15 9 19 45 
+3 22 99 3 10 10 48 
+3 36 83 9 13 12 50 
+14 18 89 17 5 14 32 
+5 22 90 27 17 7 53 
+13 27 78 30 17 16 34 
+11 35 83 11 18 33 15 
+15 42 81 32 16 10 15 
+12 38 75 13 28 20 35 
+3 30 98 14 40 9 6 
+6 25 99 0 3 18 49 
+12 23 98 5 14 24 23 
+5 9 69 24 22 20 39 
+11 38 89 26 29 12 14 
+3 40 88 15 38 8 42 
+( 3877 775 780 773 1292 )
+OWA = 780

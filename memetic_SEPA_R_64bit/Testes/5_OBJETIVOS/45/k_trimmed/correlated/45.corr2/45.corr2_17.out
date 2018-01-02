@@ -1,0 +1,121 @@
+========= Estatisticas ========= 
+Semente utilizada : 3076272
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 4
+	k-trimmed = 96
+	Hurwicz = 0
+Tempo(s) Final = 1.02
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 6
+Quantidade de crossovers = 4615
+Quantidade de sucesso dos crossovers = 366
+Taxa de sucesso dos crossovers = 0.0793066
+Média de melhoria das crossovers = 4.12243
+Quantidade de mutaçoes = 1019
+Quantidade de sucesso da mutaçao = 16
+Taxa de sucesso das mutaçoes = 0.0157017
+Média de melhoria das mutaçoes = 0.595682
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 730
+TAXA de sucesso do SA = 0.152083
+Média de melhoria do SA = 33.9967
+Quantidade de vezes em que o fitness foi avaliado = 1176898
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+708, 0.01s
+708, 0.03s
+708, 0.05s
+708, 0.07s
+708, 0.09s
+702, 0.12s
+702, 0.14s
+702, 0.16s
+702, 0.18s
+699, 0.2s
+694, 0.22s
+685, 0.24s
+685, 0.26s
+683, 0.28s
+682, 0.31s
+680, 0.33s
+680, 0.35s
+680, 0.37s
+680, 0.39s
+680, 0.41s
+680, 0.43s
+680, 0.45s
+680, 0.47s
+680, 0.49s
+680, 0.52s
+680, 0.54s
+680, 0.56s
+680, 0.58s
+680, 0.6s
+680, 0.62s
+680, 0.64s
+680, 0.66s
+680, 0.68s
+680, 0.71s
+680, 0.73s
+680, 0.75s
+680, 0.77s
+680, 0.79s
+680, 0.81s
+680, 0.83s
+680, 0.85s
+680, 0.88s
+680, 0.9s
+680, 0.92s
+680, 0.94s
+680, 0.96s
+678, 0.98s
+678, 1s
+678, 1.02s
+
+Soluçao encontrada: 
+29 42 7 14 16 6 21 
+19 38 15 19 8 8 8 
+26 44 13 22 10 33 19 
+2 40 4 9 14 16 30 
+10 41 1 4 16 36 33 
+1 38 10 17 12 24 40 
+2 5 0 15 5 9 32 
+6 24 3 29 5 14 33 
+28 40 3 11 32 34 41 
+22 44 0 21 12 27 5 
+9 38 16 21 9 8 45 
+1 16 1 14 17 22 12 
+0 43 0 24 17 13 42 
+21 43 11 14 11 53 31 
+13 23 5 9 12 3 10 
+14 36 21 10 30 31 22 
+2 19 8 24 5 37 22 
+15 29 2 16 17 18 23 
+25 41 4 3 2 25 16 
+1 8 15 15 18 43 43 
+1 33 10 16 14 12 29 
+13 28 4 14 5 14 50 
+5 18 16 11 11 24 49 
+19 44 3 5 15 41 3 
+2 20 2 26 27 12 3 
+17 38 21 14 28 25 53 
+6 36 1 6 9 39 7 
+35 43 2 10 18 42 50 
+32 36 38 28 28 67 54 
+12 34 13 9 27 9 49 
+19 27 24 12 26 33 17 
+31 39 8 18 4 46 14 
+10 21 2 6 25 23 35 
+37 42 3 20 20 37 2 
+2 43 4 21 7 47 35 
+38 42 24 13 16 21 27 
+30 31 15 18 16 24 32 
+33 34 19 28 17 11 21 
+7 43 2 10 6 7 44 
+5 36 11 12 27 12 40 
+11 38 10 11 27 43 49 
+31 42 1 6 16 46 36 
+4 19 0 24 8 25 8 
+3 9 10 28 13 13 12 
+( 382 677 678 1133 1247 )
+OWA = 678

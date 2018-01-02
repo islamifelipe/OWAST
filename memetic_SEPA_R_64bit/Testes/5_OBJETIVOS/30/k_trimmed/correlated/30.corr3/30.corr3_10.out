@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 2435881
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 18
+	k-centrum = 12
+	k-trimmed = 68
+	Hurwicz = 2
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4601
+Quantidade de sucesso dos crossovers = 336
+Taxa de sucesso dos crossovers = 0.0730276
+Média de melhoria das crossovers = 0.958705
+Quantidade de mutaçoes = 1098
+Quantidade de sucesso da mutaçao = 16
+Taxa de sucesso das mutaçoes = 0.0145719
+Média de melhoria das mutaçoes = 0.510929
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 888
+TAXA de sucesso do SA = 0.185
+Média de melhoria do SA = 39.5356
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+257, 0s
+257, 0.02s
+257, 0.03s
+255, 0.05s
+255, 0.06s
+255, 0.08s
+255, 0.09s
+255, 0.11s
+255, 0.12s
+255, 0.14s
+255, 0.15s
+255, 0.17s
+255, 0.18s
+255, 0.2s
+255, 0.21s
+255, 0.23s
+255, 0.24s
+255, 0.26s
+255, 0.27s
+255, 0.29s
+255, 0.31s
+255, 0.32s
+255, 0.34s
+255, 0.35s
+255, 0.37s
+255, 0.38s
+255, 0.4s
+255, 0.41s
+255, 0.43s
+255, 0.44s
+255, 0.46s
+255, 0.47s
+255, 0.49s
+255, 0.5s
+255, 0.52s
+255, 0.53s
+255, 0.55s
+255, 0.56s
+255, 0.58s
+255, 0.59s
+255, 0.61s
+255, 0.62s
+255, 0.64s
+255, 0.65s
+255, 0.67s
+255, 0.68s
+255, 0.7s
+255, 0.71s
+255, 0.73s
+
+Soluçao encontrada: 
+13 24 6 19 18 13 15 
+21 22 14 12 18 24 15 
+1 29 0 7 13 9 4 
+5 28 5 19 9 12 14 
+5 7 9 19 10 22 18 
+2 21 2 3 13 15 2 
+14 23 0 9 5 11 3 
+4 27 1 8 3 6 10 
+11 18 1 8 6 4 7 
+4 21 3 6 13 14 11 
+2 20 2 2 4 4 9 
+17 23 6 7 11 12 8 
+4 10 0 9 4 11 6 
+12 17 1 9 3 3 4 
+16 25 0 4 2 2 4 
+19 28 8 13 7 17 9 
+5 6 2 11 8 16 5 
+23 26 10 16 14 23 12 
+8 17 2 17 5 11 9 
+7 29 1 15 2 14 3 
+7 17 0 13 11 3 4 
+15 24 2 15 5 7 8 
+3 10 2 15 6 9 5 
+15 20 4 9 4 18 10 
+19 25 1 6 8 2 3 
+9 12 12 12 13 23 20 
+0 21 9 18 8 13 18 
+17 24 6 14 15 14 6 
+0 11 5 5 17 8 12 
+( 114 320 255 340 254 )
+OWA = 255

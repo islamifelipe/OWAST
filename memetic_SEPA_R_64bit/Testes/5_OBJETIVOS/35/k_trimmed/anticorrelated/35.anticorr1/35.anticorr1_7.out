@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 4876013
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 0
+	k-trimmed = 100
+	Hurwicz = 0
+Tempo(s) Final = 0.82
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4616
+Quantidade de sucesso dos crossovers = 473
+Taxa de sucesso dos crossovers = 0.10247
+Média de melhoria das crossovers = 9.98874
+Quantidade de mutaçoes = 1119
+Quantidade de sucesso da mutaçao = 19
+Taxa de sucesso das mutaçoes = 0.0169794
+Média de melhoria das mutaçoes = 0.500447
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 887
+TAXA de sucesso do SA = 0.184792
+Média de melhoria do SA = 22.4846
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+756, 0s
+746, 0.02s
+741, 0.04s
+741, 0.06s
+741, 0.07s
+741, 0.09s
+741, 0.11s
+741, 0.12s
+741, 0.14s
+739, 0.16s
+739, 0.17s
+739, 0.19s
+739, 0.21s
+739, 0.22s
+739, 0.24s
+739, 0.26s
+739, 0.28s
+739, 0.29s
+739, 0.31s
+739, 0.33s
+739, 0.34s
+739, 0.36s
+739, 0.38s
+739, 0.39s
+739, 0.41s
+739, 0.43s
+739, 0.44s
+739, 0.46s
+739, 0.48s
+739, 0.49s
+739, 0.51s
+739, 0.53s
+739, 0.55s
+739, 0.56s
+739, 0.58s
+739, 0.6s
+737, 0.61s
+737, 0.63s
+737, 0.65s
+737, 0.66s
+737, 0.68s
+737, 0.7s
+737, 0.72s
+737, 0.73s
+737, 0.75s
+737, 0.77s
+737, 0.78s
+737, 0.8s
+737, 0.82s
+
+Soluçao encontrada: 
+8 28 43 15 16 21 52 
+18 20 70 56 6 20 72 
+23 34 86 9 32 2 6 
+2 28 95 18 27 9 42 
+9 32 99 5 33 35 27 
+23 26 43 14 19 19 87 
+6 22 58 14 26 8 81 
+14 29 78 13 20 21 73 
+8 16 90 57 3 17 72 
+8 14 66 11 21 37 11 
+10 28 63 7 22 20 21 
+28 30 80 24 9 39 7 
+19 30 92 4 48 2 16 
+0 23 61 40 10 19 30 
+21 23 97 39 42 1 19 
+5 15 46 21 28 23 72 
+19 23 81 7 15 5 43 
+4 13 63 44 23 11 10 
+16 27 70 23 34 9 41 
+6 13 87 34 10 30 25 
+15 32 72 41 5 14 58 
+8 13 90 13 20 13 69 
+11 34 53 18 41 23 23 
+19 31 8 21 28 23 93 
+13 17 63 14 43 14 60 
+1 34 39 15 14 35 66 
+24 25 97 2 10 60 8 
+13 15 75 8 9 65 35 
+9 33 93 41 11 5 67 
+3 12 46 27 12 29 29 
+3 24 96 41 20 3 66 
+6 7 97 15 37 6 31 
+9 12 45 20 24 24 26 
+18 19 80 6 13 62 27 
+( 2422 737 731 724 1465 )
+OWA = 737

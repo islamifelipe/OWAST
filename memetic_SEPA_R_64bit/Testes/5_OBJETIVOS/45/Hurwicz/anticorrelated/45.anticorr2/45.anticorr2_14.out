@@ -1,0 +1,121 @@
+========= Estatisticas ========= 
+Semente utilizada : 9052089
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 12
+	k-centrum = 38
+	k-trimmed = 0
+	Hurwicz = 50
+Tempo(s) Final = 1.04
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4600
+Quantidade de sucesso dos crossovers = 531
+Taxa de sucesso dos crossovers = 0.115435
+Média de melhoria das crossovers = 5.95265
+Quantidade de mutaçoes = 1127
+Quantidade de sucesso da mutaçao = 23
+Taxa de sucesso das mutaçoes = 0.0204082
+Média de melhoria das mutaçoes = 0.266371
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 611
+TAXA de sucesso do SA = 0.127292
+Média de melhoria do SA = 17.7446
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+1354.2, 0.01s
+1354.2, 0.03s
+1354.2, 0.05s
+1354.2, 0.07s
+1354.2, 0.1s
+1354.2, 0.12s
+1349.8, 0.14s
+1341.4, 0.16s
+1341.4, 0.18s
+1336, 0.2s
+1336, 0.23s
+1336, 0.25s
+1336, 0.27s
+1336, 0.29s
+1336, 0.31s
+1336, 0.33s
+1336, 0.35s
+1336, 0.38s
+1336, 0.4s
+1336, 0.42s
+1336, 0.44s
+1336, 0.46s
+1336, 0.48s
+1336, 0.5s
+1336, 0.53s
+1336, 0.55s
+1336, 0.57s
+1336, 0.59s
+1336, 0.61s
+1336, 0.63s
+1336, 0.65s
+1336, 0.68s
+1336, 0.7s
+1336, 0.72s
+1336, 0.74s
+1336, 0.76s
+1336, 0.78s
+1336, 0.8s
+1336, 0.82s
+1336, 0.85s
+1336, 0.87s
+1336, 0.89s
+1336, 0.91s
+1336, 0.93s
+1336, 0.95s
+1336, 0.98s
+1336, 1s
+1336, 1.02s
+1336, 1.04s
+
+Soluçao encontrada: 
+0 20 15 52 53 58 79 
+2 36 4 80 70 76 82 
+27 32 2 52 69 92 59 
+22 26 20 46 50 52 63 
+19 21 4 75 92 59 68 
+27 37 13 73 48 61 51 
+7 23 0 89 55 60 57 
+26 30 9 73 59 89 53 
+2 31 0 89 54 66 84 
+9 43 3 53 89 54 66 
+1 36 13 71 69 50 74 
+8 29 1 64 89 94 55 
+16 30 8 49 54 76 83 
+8 23 4 69 81 54 88 
+12 40 9 46 57 50 80 
+17 40 5 79 47 48 66 
+27 38 4 56 51 86 59 
+9 23 2 56 87 70 70 
+25 39 6 52 82 92 72 
+10 12 13 47 46 52 45 
+20 25 4 66 66 82 74 
+10 14 3 98 79 56 69 
+26 37 8 61 59 49 88 
+24 43 0 53 54 68 96 
+7 37 10 58 78 90 49 
+15 28 5 92 59 72 63 
+6 24 5 73 65 53 52 
+13 24 7 95 68 71 63 
+15 27 10 66 59 68 49 
+17 23 3 54 95 58 87 
+30 39 10 49 46 74 57 
+18 21 14 73 63 65 43 
+33 34 8 63 58 69 55 
+8 11 5 68 61 49 47 
+3 32 1 58 81 58 91 
+10 42 6 69 61 89 67 
+27 34 13 57 79 59 45 
+24 36 16 42 62 45 46 
+14 41 7 55 49 71 58 
+40 44 1 75 61 56 80 
+5 27 3 69 73 56 67 
+21 40 2 97 51 62 60 
+4 27 3 71 88 90 54 
+18 35 21 57 48 41 62 
+( 300 2890 2865 2890 2876 )
+OWA = 1336

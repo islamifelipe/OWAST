@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 2795793
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 30
+	k-centrum = 34
+	k-trimmed = 36
+	Hurwicz = 0
+Tempo(s) Final = 0.74
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4614
+Quantidade de sucesso dos crossovers = 409
+Taxa de sucesso dos crossovers = 0.0886433
+Média de melhoria das crossovers = 8.50477
+Quantidade de mutaçoes = 1027
+Quantidade de sucesso da mutaçao = 25
+Taxa de sucesso das mutaçoes = 0.0243427
+Média de melhoria das mutaçoes = 0.767283
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1063
+TAXA de sucesso do SA = 0.221458
+Média de melhoria do SA = 25.5369
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+599, 0s
+599, 0.02s
+592, 0.04s
+589, 0.05s
+589, 0.07s
+578, 0.08s
+578, 0.1s
+574, 0.11s
+574, 0.13s
+570, 0.14s
+570, 0.16s
+570, 0.17s
+570, 0.19s
+570, 0.2s
+570, 0.22s
+570, 0.24s
+570, 0.25s
+570, 0.27s
+570, 0.28s
+570, 0.3s
+570, 0.31s
+570, 0.33s
+570, 0.34s
+570, 0.36s
+570, 0.37s
+570, 0.39s
+570, 0.4s
+570, 0.42s
+570, 0.44s
+570, 0.45s
+570, 0.47s
+570, 0.48s
+570, 0.5s
+570, 0.51s
+570, 0.53s
+570, 0.54s
+570, 0.56s
+570, 0.57s
+570, 0.59s
+570, 0.61s
+570, 0.62s
+570, 0.64s
+570, 0.65s
+570, 0.67s
+570, 0.68s
+570, 0.7s
+570, 0.71s
+570, 0.73s
+570, 0.74s
+
+Soluçao encontrada: 
+9 12 24 17 11 15 65 
+0 10 15 35 11 5 68 
+23 27 30 21 42 7 27 
+2 23 4 5 10 63 60 
+3 6 33 11 8 39 75 
+3 25 14 10 17 56 40 
+5 26 23 8 31 18 35 
+6 14 2 27 6 28 27 
+0 6 12 11 37 24 20 
+23 24 12 42 8 9 3 
+12 15 3 29 4 10 36 
+5 29 5 32 20 50 39 
+22 28 0 2 20 67 47 
+5 12 62 18 17 33 21 
+7 8 19 5 23 16 71 
+15 21 54 12 15 52 64 
+2 20 17 25 53 40 7 
+16 17 3 9 53 46 3 
+14 17 5 22 26 43 36 
+16 26 32 8 27 14 17 
+5 11 5 62 1 21 15 
+7 13 44 12 28 64 11 
+19 21 11 3 7 75 43 
+3 18 3 25 37 53 51 
+1 22 30 8 6 58 64 
+0 20 48 23 12 60 83 
+17 22 34 29 12 58 9 
+4 11 13 49 11 73 7 
+8 18 6 10 13 73 9 
+( 563 570 566 1170 1053 )
+OWA = 570

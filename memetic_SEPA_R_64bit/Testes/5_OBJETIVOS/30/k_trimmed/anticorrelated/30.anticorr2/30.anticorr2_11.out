@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 1746715
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 7
+	k-trimmed = 93
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4609
+Quantidade de sucesso dos crossovers = 450
+Taxa de sucesso dos crossovers = 0.0976351
+Média de melhoria das crossovers = 3.5639
+Quantidade de mutaçoes = 1049
+Quantidade de sucesso da mutaçao = 16
+Taxa de sucesso das mutaçoes = 0.0152526
+Média de melhoria das mutaçoes = 0.382269
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 828
+TAXA de sucesso do SA = 0.1725
+Média de melhoria do SA = 22.7531
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+594, 0s
+571, 0.02s
+570, 0.03s
+562, 0.05s
+562, 0.06s
+562, 0.08s
+562, 0.09s
+562, 0.11s
+562, 0.12s
+562, 0.14s
+562, 0.15s
+562, 0.17s
+562, 0.18s
+562, 0.2s
+562, 0.22s
+562, 0.23s
+562, 0.25s
+562, 0.26s
+562, 0.28s
+562, 0.29s
+562, 0.31s
+562, 0.32s
+562, 0.34s
+562, 0.35s
+562, 0.37s
+562, 0.38s
+562, 0.4s
+562, 0.41s
+562, 0.43s
+562, 0.44s
+562, 0.46s
+562, 0.47s
+562, 0.49s
+562, 0.5s
+562, 0.52s
+562, 0.53s
+562, 0.55s
+562, 0.56s
+562, 0.58s
+562, 0.59s
+562, 0.61s
+562, 0.62s
+562, 0.64s
+562, 0.65s
+562, 0.67s
+562, 0.68s
+562, 0.7s
+562, 0.71s
+562, 0.73s
+
+Soluçao encontrada: 
+1 18 96 22 5 15 34 
+14 17 74 15 22 25 29 
+22 23 92 15 25 14 33 
+20 24 93 25 17 7 17 
+20 26 82 13 19 11 42 
+7 13 84 13 10 22 47 
+0 4 82 19 42 13 13 
+2 21 95 8 49 2 38 
+11 18 59 21 20 27 23 
+3 29 95 8 13 41 35 
+9 27 87 37 10 17 14 
+22 27 94 17 39 5 51 
+14 20 94 24 3 24 4 
+4 20 94 4 45 6 42 
+10 21 86 29 8 56 27 
+3 4 94 32 9 15 3 
+8 25 96 2 3 43 26 
+3 16 69 16 23 46 18 
+13 19 79 13 17 31 22 
+3 8 97 14 2 14 28 
+23 29 94 15 36 13 48 
+1 19 93 15 26 26 26 
+12 28 81 30 23 21 37 
+21 22 86 8 14 7 9 
+12 25 80 44 13 11 54 
+5 22 81 42 22 10 55 
+7 29 94 11 16 13 49 
+1 6 89 15 26 9 31 
+15 20 89 17 5 14 7 
+( 2529 544 562 558 862 )
+OWA = 562

@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 6904219
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 18
+	k-centrum = 18
+	k-trimmed = 64
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4613
+Quantidade de sucesso dos crossovers = 173
+Taxa de sucesso dos crossovers = 0.0375027
+Média de melhoria das crossovers = 0.206265
+Quantidade de mutaçoes = 1126
+Quantidade de sucesso da mutaçao = 14
+Taxa de sucesso das mutaçoes = 0.0124334
+Média de melhoria das mutaçoes = 0.327709
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 456
+TAXA de sucesso do SA = 0.095
+Média de melhoria do SA = 18.0875
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+896.75, 0s
+896.75, 0.02s
+896.5, 0.03s
+896.5, 0.05s
+896.5, 0.07s
+896, 0.08s
+896, 0.1s
+896, 0.11s
+896, 0.13s
+896, 0.14s
+896, 0.16s
+896, 0.17s
+896, 0.19s
+896, 0.2s
+896, 0.22s
+896, 0.23s
+896, 0.25s
+896, 0.26s
+896, 0.28s
+896, 0.29s
+896, 0.31s
+896, 0.32s
+896, 0.34s
+896, 0.35s
+896, 0.37s
+896, 0.38s
+896, 0.4s
+896, 0.41s
+896, 0.43s
+896, 0.44s
+896, 0.46s
+896, 0.47s
+896, 0.49s
+896, 0.5s
+896, 0.52s
+896, 0.54s
+896, 0.55s
+896, 0.57s
+896, 0.58s
+896, 0.6s
+896, 0.61s
+896, 0.63s
+896, 0.64s
+896, 0.66s
+896, 0.67s
+896, 0.69s
+896, 0.7s
+896, 0.72s
+896, 0.73s
+
+Soluçao encontrada: 
+11 29 97 14 14 7 3 
+7 18 98 1 8 12 10 
+6 21 92 6 8 14 20 
+18 26 94 9 10 7 8 
+3 19 93 12 9 7 10 
+24 29 94 9 11 17 6 
+10 17 97 9 7 7 3 
+13 25 97 12 6 14 10 
+5 21 96 6 7 4 4 
+26 27 97 16 7 6 11 
+4 24 93 11 20 9 17 
+22 27 95 7 10 18 7 
+17 19 97 5 6 4 3 
+1 28 97 7 8 4 4 
+2 29 87 24 12 12 17 
+3 8 97 14 9 16 4 
+15 23 99 8 8 6 8 
+9 27 98 14 10 6 12 
+3 16 91 9 9 13 15 
+14 28 94 6 4 15 17 
+20 29 98 4 12 10 1 
+0 23 94 8 13 13 6 
+12 21 99 11 2 13 12 
+10 25 98 8 16 6 9 
+7 8 98 8 7 2 5 
+23 24 98 2 8 10 12 
+0 27 97 8 15 3 8 
+1 20 97 14 5 5 14 
+21 28 97 2 7 7 14 
+( 2779 264 268 267 270 )
+OWA = 896

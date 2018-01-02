@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 5427086
+Informacoes sobre a populacao : 
+	SPEA/R = 10
+	k-centrum = 31
+	k-trimmed = 0
+	Hurwicz = 59
+Tempo(s) Final = 0.31
+Quantidade de geraçoes = 48
+Quantidade de plasm1 = 4
+Quantidade de plasm2 = 7
+Quantidade de plasm3 = 8
+Quantidade de ataques do plasm1 = 1241
+Quantidade de sucesso do plasm1 = 18
+Taxa de sucesso do plasm1 = 0.0145044
+Média de melhoria do plasm1 = 0.160113
+Quantidade de ataques do plasm2 = 2116
+Quantidade de sucesso do plasm2 = 421
+Taxa de sucesso do plasm2 = 0.19896
+Média de melhoria do plasm2 = 1.29967
+Quantidade de ataques do plasm3 = 2355
+Quantidade de sucesso do plasm3 = 158
+Taxa de sucesso do plasm3 = 0.0670913
+Média de melhoria do plasm3 = 0.36879
+Quantidade de ataque do primTrans = 3422
+Quantidade de sucesso do primTrans = 124
+Taxa de sucesso do primTrans = 0.0362361
+Média de melhoria do primTrans = 1.81774
+Quantidade de ataques do saTrans = 2191
+Quantidade de sucesso do saTrans = 64
+Taxa de sucesso do saTrans = 0.0292104
+Média de melhoria do saTrans = 0.161433
+Quantidade de vezes em que o fitness foi avaliado = 541947
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+724.4, 0s
+724.4, 0.01s
+724.4, 0.01s
+724.4, 0.02s
+724.4, 0.03s
+724.4, 0.04s
+718.2, 0.04s
+717.8, 0.05s
+717.8, 0.05s
+717.8, 0.06s
+717.8, 0.07s
+717.8, 0.07s
+717.8, 0.08s
+717.8, 0.09s
+717.8, 0.09s
+717.8, 0.1s
+717.8, 0.11s
+717.8, 0.11s
+716, 0.12s
+716, 0.13s
+716, 0.13s
+716, 0.14s
+716, 0.15s
+716, 0.15s
+716, 0.16s
+716, 0.16s
+716, 0.17s
+716, 0.18s
+716, 0.18s
+716, 0.19s
+716, 0.2s
+716, 0.2s
+716, 0.21s
+716, 0.22s
+716, 0.22s
+716, 0.23s
+716, 0.23s
+716, 0.24s
+716, 0.25s
+716, 0.25s
+716, 0.26s
+716, 0.27s
+716, 0.27s
+716, 0.28s
+716, 0.29s
+716, 0.29s
+716, 0.3s
+716, 0.31s
+716, 0.31s
+
+Soluçao encontrada: 
+2 11 2 79 94 88 93 
+11 28 4 95 69 73 68 
+2 19 5 60 62 81 92 
+11 13 2 95 58 59 98 
+13 17 0 79 96 93 50 
+11 0 3 77 80 94 50 
+6 28 7 88 92 71 84 
+19 27 3 94 54 55 77 
+6 29 2 93 50 71 72 
+13 15 5 67 51 75 66 
+8 27 3 59 80 65 81 
+3 25 10 87 73 86 72 
+15 24 12 64 57 68 57 
+26 27 6 75 83 51 90 
+3 26 0 63 55 70 55 
+3 1 0 57 76 65 60 
+26 12 5 52 61 59 59 
+1 14 5 63 71 68 66 
+14 16 0 76 64 60 67 
+14 21 1 75 95 64 73 
+26 23 5 55 92 67 59 
+14 7 3 59 69 79 92 
+3 18 4 88 82 61 77 
+18 10 4 58 57 52 71 
+18 4 2 72 93 85 61 
+27 20 3 54 96 97 57 
+24 22 10 51 82 63 60 
+29 5 9 73 48 84 73 
+5 9 7 88 62 90 52 
+( 122 2096 2102 2094 2032 )
+OWA = 716

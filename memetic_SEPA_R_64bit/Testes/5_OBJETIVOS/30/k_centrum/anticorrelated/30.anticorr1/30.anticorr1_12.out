@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 1289507
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 40
+	k-centrum = 44
+	k-trimmed = 6
+	Hurwicz = 10
+Tempo(s) Final = 0.76
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4616
+Quantidade de sucesso dos crossovers = 521
+Taxa de sucesso dos crossovers = 0.112868
+Média de melhoria das crossovers = 8.90175
+Quantidade de mutaçoes = 1004
+Quantidade de sucesso da mutaçao = 29
+Taxa de sucesso das mutaçoes = 0.0288845
+Média de melhoria das mutaçoes = 0.508466
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1011
+TAXA de sucesso do SA = 0.210625
+Média de melhoria do SA = 20.1329
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+1133, 0s
+1035.5, 0.02s
+1035.5, 0.04s
+1035.5, 0.05s
+1035.5, 0.07s
+1035.5, 0.08s
+1035.5, 0.1s
+1031.5, 0.12s
+1031.5, 0.13s
+1029, 0.15s
+1021, 0.16s
+1021, 0.18s
+1019.5, 0.19s
+1019.5, 0.21s
+1019.5, 0.22s
+1019.5, 0.24s
+1019.5, 0.26s
+1019.5, 0.27s
+1019.5, 0.29s
+1019.5, 0.3s
+1019.5, 0.32s
+1019.5, 0.33s
+1019.5, 0.35s
+1016.5, 0.37s
+1016.5, 0.38s
+1016.5, 0.4s
+1016.5, 0.41s
+1016.5, 0.43s
+1016.5, 0.44s
+1013, 0.46s
+1013, 0.48s
+1013, 0.49s
+1013, 0.51s
+1013, 0.52s
+1013, 0.54s
+1013, 0.55s
+1013, 0.57s
+1013, 0.59s
+1013, 0.6s
+1013, 0.62s
+1013, 0.63s
+1013, 0.65s
+1013, 0.66s
+1013, 0.68s
+1013, 0.7s
+1013, 0.71s
+1013, 0.73s
+1013, 0.74s
+1013, 0.76s
+
+Soluçao encontrada: 
+13 14 11 21 75 21 53 
+18 24 6 34 36 25 25 
+9 11 22 61 52 16 23 
+18 22 47 29 32 11 15 
+11 27 31 15 19 36 45 
+4 8 8 32 27 92 40 
+3 12 38 13 47 36 33 
+16 17 31 22 41 54 20 
+0 7 30 18 62 25 25 
+27 28 4 30 35 40 74 
+1 18 82 31 5 14 11 
+5 13 11 59 36 60 31 
+4 24 55 49 13 10 36 
+19 24 0 34 61 38 62 
+10 15 6 56 43 58 34 
+15 19 58 48 21 16 62 
+0 14 50 23 41 17 22 
+16 21 67 26 10 9 40 
+15 17 41 39 25 49 23 
+23 25 82 8 11 14 44 
+22 26 8 44 31 52 53 
+6 23 79 41 15 26 8 
+20 21 23 47 70 17 16 
+24 29 94 18 1 58 18 
+2 15 11 94 36 53 23 
+11 26 25 22 33 24 50 
+0 16 19 34 32 55 47 
+12 21 2 39 76 30 43 
+25 27 57 19 34 22 10 
+( 998 1006 1020 978 986 )
+OWA = 1013

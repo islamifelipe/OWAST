@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 4165018
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 0
+	k-trimmed = 100
+	Hurwicz = 0
+Tempo(s) Final = 0.90
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4590
+Quantidade de sucesso dos crossovers = 360
+Taxa de sucesso dos crossovers = 0.0784314
+Média de melhoria das crossovers = 8.81329
+Quantidade de mutaçoes = 1143
+Quantidade de sucesso da mutaçao = 24
+Taxa de sucesso das mutaçoes = 0.0209974
+Média de melhoria das mutaçoes = 0.571304
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 855
+TAXA de sucesso do SA = 0.178125
+Média de melhoria do SA = 27.2427
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+758, 0s
+747, 0.02s
+747, 0.04s
+742, 0.06s
+742, 0.08s
+742, 0.1s
+742, 0.11s
+742, 0.13s
+742, 0.15s
+742, 0.17s
+742, 0.19s
+742, 0.21s
+742, 0.23s
+742, 0.24s
+742, 0.26s
+742, 0.28s
+742, 0.3s
+742, 0.32s
+742, 0.34s
+742, 0.36s
+742, 0.38s
+742, 0.39s
+742, 0.41s
+742, 0.43s
+742, 0.45s
+742, 0.47s
+742, 0.49s
+742, 0.51s
+742, 0.52s
+742, 0.54s
+742, 0.56s
+742, 0.58s
+742, 0.6s
+742, 0.62s
+742, 0.64s
+742, 0.65s
+742, 0.67s
+742, 0.69s
+742, 0.71s
+742, 0.73s
+742, 0.75s
+742, 0.77s
+742, 0.78s
+742, 0.8s
+742, 0.82s
+742, 0.84s
+742, 0.86s
+742, 0.88s
+742, 0.9s
+
+Soluçao encontrada: 
+30 32 78 7 10 69 58 
+8 25 48 38 28 17 87 
+6 12 80 17 11 5 46 
+18 24 90 33 5 31 66 
+4 8 56 20 31 33 33 
+25 29 67 48 7 7 64 
+14 38 58 32 22 8 22 
+16 27 84 8 15 21 25 
+7 37 30 14 34 14 64 
+3 10 89 7 7 42 24 
+3 4 47 11 13 12 23 
+13 37 85 9 35 22 71 
+19 30 43 13 14 11 77 
+6 28 71 12 33 12 48 
+2 26 92 14 21 17 51 
+18 28 91 24 21 2 18 
+23 25 98 14 48 3 24 
+11 38 30 40 16 17 54 
+33 36 96 4 1 1 9 
+7 21 87 20 4 31 55 
+2 17 43 20 12 28 90 
+9 32 93 13 10 24 46 
+2 29 81 31 17 7 38 
+27 31 82 59 5 5 23 
+9 26 90 9 20 26 34 
+35 36 94 5 10 7 1 
+6 35 97 11 26 31 60 
+34 38 98 32 2 29 41 
+4 39 77 44 27 7 10 
+20 26 18 16 18 31 90 
+0 29 77 17 46 7 81 
+14 25 48 11 16 29 50 
+1 34 97 2 20 4 1 
+16 17 53 13 19 21 55 
+15 19 86 4 54 25 67 
+3 5 46 26 25 36 59 
+17 37 83 5 21 17 57 
+31 36 83 7 5 23 78 
+19 22 87 31 13 2 27 
+( 2853 741 742 734 1827 )
+OWA = 742

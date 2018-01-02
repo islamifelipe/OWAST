@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 9544101
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 33
+	k-centrum = 32
+	k-trimmed = 35
+	Hurwicz = 0
+Tempo(s) Final = 0.83
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4595
+Quantidade de sucesso dos crossovers = 440
+Taxa de sucesso dos crossovers = 0.0957563
+Média de melhoria das crossovers = 10.1589
+Quantidade de mutaçoes = 1129
+Quantidade de sucesso da mutaçao = 30
+Taxa de sucesso das mutaçoes = 0.0265722
+Média de melhoria das mutaçoes = 0.919398
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1059
+TAXA de sucesso do SA = 0.220625
+Média de melhoria do SA = 30.5181
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+702, 0.01s
+702, 0.02s
+700, 0.04s
+689, 0.06s
+670, 0.08s
+670, 0.09s
+663, 0.11s
+663, 0.13s
+663, 0.14s
+659, 0.16s
+659, 0.18s
+659, 0.2s
+659, 0.21s
+659, 0.23s
+659, 0.25s
+659, 0.26s
+659, 0.28s
+659, 0.3s
+659, 0.32s
+659, 0.33s
+659, 0.35s
+659, 0.37s
+659, 0.39s
+659, 0.4s
+659, 0.42s
+659, 0.44s
+659, 0.45s
+659, 0.47s
+659, 0.49s
+659, 0.51s
+659, 0.52s
+659, 0.54s
+659, 0.56s
+659, 0.58s
+659, 0.59s
+659, 0.61s
+659, 0.63s
+659, 0.64s
+659, 0.66s
+659, 0.68s
+659, 0.7s
+659, 0.71s
+659, 0.73s
+659, 0.75s
+659, 0.77s
+659, 0.78s
+659, 0.8s
+659, 0.82s
+659, 0.83s
+
+Soluçao encontrada: 
+16 19 1 10 49 0 43 
+3 27 52 17 25 13 24 
+11 34 42 32 17 41 11 
+3 14 15 31 19 5 43 
+6 17 23 40 46 34 5 
+3 4 33 33 48 18 19 
+19 31 20 36 37 15 8 
+16 33 0 26 13 30 10 
+0 32 26 7 18 13 12 
+18 31 20 73 20 24 4 
+8 14 4 23 19 57 1 
+10 24 31 26 13 20 28 
+20 30 20 44 11 28 5 
+9 14 8 75 65 1 27 
+24 33 34 34 15 8 33 
+9 22 33 14 66 7 29 
+5 10 27 14 78 17 11 
+7 21 27 50 41 21 8 
+1 18 0 6 43 2 70 
+15 34 16 49 36 32 4 
+17 25 0 25 41 42 9 
+15 26 44 19 28 20 23 
+23 29 50 22 57 10 19 
+12 21 11 39 65 19 9 
+26 30 44 24 30 29 18 
+29 32 5 37 68 2 32 
+10 34 19 20 80 34 4 
+2 24 5 9 13 8 34 
+0 12 6 46 13 8 8 
+13 17 1 25 34 3 39 
+16 25 14 49 27 31 2 
+9 25 4 36 61 33 6 
+17 23 1 70 57 0 34 
+26 28 19 28 73 29 27 
+( 655 1089 1326 654 659 )
+OWA = 659

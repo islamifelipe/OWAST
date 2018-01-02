@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 3609457
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 22
+	k-centrum = 38
+	k-trimmed = 40
+	Hurwicz = 0
+Tempo(s) Final = 0.74
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4583
+Quantidade de sucesso dos crossovers = 349
+Taxa de sucesso dos crossovers = 0.076151
+Média de melhoria das crossovers = 5.95636
+Quantidade de mutaçoes = 1085
+Quantidade de sucesso da mutaçao = 20
+Taxa de sucesso das mutaçoes = 0.0184332
+Média de melhoria das mutaçoes = 0.735484
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1044
+TAXA de sucesso do SA = 0.2175
+Média de melhoria do SA = 27.8723
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+594, 0s
+594, 0.02s
+594, 0.04s
+594, 0.05s
+580, 0.07s
+580, 0.08s
+580, 0.1s
+580, 0.11s
+574, 0.13s
+574, 0.14s
+574, 0.16s
+574, 0.17s
+574, 0.19s
+574, 0.2s
+574, 0.22s
+574, 0.23s
+574, 0.25s
+574, 0.26s
+574, 0.28s
+574, 0.3s
+574, 0.31s
+574, 0.33s
+574, 0.34s
+574, 0.36s
+574, 0.37s
+574, 0.39s
+574, 0.4s
+574, 0.42s
+574, 0.43s
+574, 0.45s
+574, 0.46s
+574, 0.48s
+574, 0.49s
+574, 0.51s
+574, 0.53s
+574, 0.54s
+574, 0.56s
+574, 0.57s
+574, 0.59s
+574, 0.6s
+574, 0.62s
+574, 0.63s
+574, 0.65s
+574, 0.66s
+574, 0.68s
+574, 0.69s
+574, 0.71s
+574, 0.72s
+574, 0.74s
+
+Soluçao encontrada: 
+17 22 34 29 12 58 9 
+23 27 30 21 42 7 27 
+19 21 11 3 7 75 43 
+3 6 33 11 8 39 75 
+2 5 7 25 36 26 11 
+0 16 11 15 30 23 28 
+11 28 13 19 41 73 36 
+4 11 13 49 11 73 7 
+2 23 4 5 10 63 60 
+20 21 22 38 23 28 25 
+3 25 14 10 17 56 40 
+5 12 62 18 17 33 21 
+14 17 5 22 26 43 36 
+6 14 2 27 6 28 27 
+0 6 12 11 37 24 20 
+5 29 5 32 20 50 39 
+22 28 0 2 20 67 47 
+9 12 24 17 11 15 65 
+0 10 15 35 11 5 68 
+8 18 6 10 13 73 9 
+5 26 23 8 31 18 35 
+7 13 44 12 28 64 11 
+23 24 12 42 8 9 3 
+16 26 32 8 27 14 17 
+1 22 30 8 6 58 64 
+8 17 67 23 29 25 19 
+5 21 21 34 19 36 69 
+7 8 19 5 23 16 71 
+12 15 3 29 4 10 36 
+( 574 568 573 1109 1018 )
+OWA = 574

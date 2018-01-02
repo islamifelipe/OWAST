@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 816813
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 6
+	k-centrum = 18
+	k-trimmed = 76
+	Hurwicz = 0
+Tempo(s) Final = 0.86
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4596
+Quantidade de sucesso dos crossovers = 369
+Taxa de sucesso dos crossovers = 0.0802872
+Média de melhoria das crossovers = 2.71519
+Quantidade de mutaçoes = 1104
+Quantidade de sucesso da mutaçao = 22
+Taxa de sucesso das mutaçoes = 0.0199275
+Média de melhoria das mutaçoes = 0.523098
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 965
+TAXA de sucesso do SA = 0.201042
+Média de melhoria do SA = 20.4423
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+779.5, 0s
+740.5, 0.02s
+740.5, 0.04s
+740, 0.06s
+734, 0.08s
+734, 0.09s
+734, 0.11s
+732, 0.13s
+732, 0.14s
+732, 0.16s
+731, 0.18s
+731, 0.2s
+731, 0.22s
+731, 0.23s
+731, 0.25s
+731, 0.27s
+731, 0.29s
+731, 0.3s
+731, 0.32s
+731, 0.34s
+731, 0.36s
+731, 0.38s
+731, 0.39s
+731, 0.41s
+731, 0.43s
+731, 0.45s
+731, 0.46s
+731, 0.48s
+731, 0.5s
+731, 0.52s
+731, 0.54s
+731, 0.55s
+731, 0.57s
+731, 0.59s
+731, 0.61s
+731, 0.62s
+731, 0.64s
+731, 0.66s
+731, 0.68s
+731, 0.7s
+731, 0.71s
+731, 0.73s
+731, 0.75s
+731, 0.77s
+731, 0.78s
+731, 0.8s
+731, 0.82s
+731, 0.84s
+731, 0.86s
+
+Soluçao encontrada: 
+6 23 72 73 41 20 15 28 18 32 
+5 13 36 31 9 32 17 54 29 63 
+6 22 57 76 23 11 49 20 20 32 
+9 24 51 65 14 13 22 45 46 14 
+8 28 13 74 36 13 76 26 50 22 
+11 22 37 80 9 36 19 21 76 34 
+3 19 26 84 18 12 49 26 61 13 
+10 28 2 8 11 18 76 19 11 9 
+4 26 14 23 24 24 15 76 43 51 
+18 24 27 58 7 53 15 40 29 70 
+9 10 18 42 23 35 29 4 26 19 
+20 27 8 42 35 9 7 2 34 37 
+19 27 0 28 56 23 2 5 25 30 
+22 27 19 63 21 24 18 45 3 37 
+26 29 36 28 52 29 8 29 45 16 
+5 21 49 41 16 27 28 25 62 43 
+5 16 3 71 1 7 30 7 16 51 
+16 17 22 73 31 16 15 23 44 60 
+1 28 59 78 29 14 62 23 83 80 
+13 24 27 62 36 50 7 14 37 22 
+0 21 15 6 14 16 40 11 72 59 
+8 29 4 43 18 38 4 37 78 23 
+2 26 20 58 44 25 38 4 47 44 
+13 14 18 13 21 76 4 15 25 30 
+0 27 9 17 27 31 4 18 9 66 
+9 25 18 82 9 30 17 18 70 68 
+12 27 13 73 6 6 26 28 50 49 
+4 7 43 10 24 20 37 29 45 41 
+15 18 10 16 27 16 7 28 49 12 
+( 726 1418 682 724 736 720 1203 1127 )
+OWA = 731

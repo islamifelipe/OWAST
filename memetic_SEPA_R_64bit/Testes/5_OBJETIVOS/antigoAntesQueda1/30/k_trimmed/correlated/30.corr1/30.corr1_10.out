@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 6516459
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 34
+	k-centrum = 21
+	k-trimmed = 45
+	Hurwicz = 0
+Tempo(s) Final = 0.74
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4622
+Quantidade de sucesso dos crossovers = 359
+Taxa de sucesso dos crossovers = 0.077672
+Média de melhoria das crossovers = 7.12376
+Quantidade de mutaçoes = 1109
+Quantidade de sucesso da mutaçao = 22
+Taxa de sucesso das mutaçoes = 0.0198377
+Média de melhoria das mutaçoes = 0.513075
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 996
+TAXA de sucesso do SA = 0.2075
+Média de melhoria do SA = 24.9981
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+604, 0s
+595, 0.02s
+595, 0.04s
+576, 0.05s
+576, 0.07s
+576, 0.08s
+576, 0.1s
+576, 0.11s
+576, 0.13s
+576, 0.14s
+576, 0.16s
+576, 0.17s
+576, 0.19s
+576, 0.2s
+576, 0.22s
+576, 0.24s
+576, 0.25s
+576, 0.27s
+576, 0.28s
+576, 0.3s
+576, 0.31s
+576, 0.33s
+576, 0.34s
+576, 0.36s
+576, 0.37s
+576, 0.39s
+576, 0.4s
+576, 0.42s
+576, 0.44s
+576, 0.45s
+576, 0.47s
+576, 0.48s
+576, 0.5s
+576, 0.51s
+576, 0.53s
+576, 0.54s
+576, 0.56s
+576, 0.57s
+576, 0.59s
+576, 0.6s
+576, 0.62s
+576, 0.64s
+576, 0.65s
+576, 0.67s
+576, 0.68s
+576, 0.7s
+576, 0.71s
+576, 0.73s
+576, 0.74s
+
+Soluçao encontrada: 
+3 6 33 11 8 39 75 
+15 21 54 12 15 52 64 
+8 17 67 23 29 25 19 
+0 6 12 11 37 24 20 
+5 26 23 8 31 18 35 
+21 28 37 18 16 82 32 
+5 29 5 32 20 50 39 
+8 18 6 10 13 73 9 
+6 14 2 27 6 28 27 
+3 18 3 25 37 53 51 
+5 12 62 18 17 33 21 
+19 21 11 3 7 75 43 
+23 24 12 42 8 9 3 
+12 25 12 7 48 36 55 
+0 10 15 35 11 5 68 
+9 12 24 17 11 15 65 
+3 25 14 10 17 56 40 
+5 11 5 62 1 21 15 
+2 23 4 5 10 63 60 
+22 28 0 2 20 67 47 
+12 15 3 29 4 10 36 
+1 22 30 8 6 58 64 
+7 8 19 5 23 16 71 
+17 20 1 17 59 64 53 
+0 16 11 15 30 23 28 
+7 13 44 12 28 64 11 
+4 11 13 49 11 73 7 
+17 24 18 39 11 81 53 
+23 27 30 21 42 7 27 
+( 570 573 576 1220 1138 )
+OWA = 576

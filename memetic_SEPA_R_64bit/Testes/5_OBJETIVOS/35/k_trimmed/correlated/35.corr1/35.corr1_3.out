@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 6176072
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 34
+	k-centrum = 33
+	k-trimmed = 33
+	Hurwicz = 0
+Tempo(s) Final = 0.84
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4611
+Quantidade de sucesso dos crossovers = 362
+Taxa de sucesso dos crossovers = 0.0785079
+Média de melhoria das crossovers = 10.9295
+Quantidade de mutaçoes = 1106
+Quantidade de sucesso da mutaçao = 21
+Taxa de sucesso das mutaçoes = 0.0189873
+Média de melhoria das mutaçoes = 0.712477
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1018
+TAXA de sucesso do SA = 0.212083
+Média de melhoria do SA = 29.9946
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+718, 0s
+701, 0.02s
+693, 0.04s
+687, 0.06s
+687, 0.08s
+687, 0.09s
+687, 0.11s
+687, 0.13s
+687, 0.14s
+687, 0.16s
+687, 0.18s
+687, 0.2s
+687, 0.21s
+687, 0.23s
+687, 0.25s
+687, 0.27s
+687, 0.28s
+687, 0.3s
+687, 0.32s
+687, 0.34s
+687, 0.35s
+687, 0.37s
+687, 0.39s
+687, 0.4s
+687, 0.42s
+687, 0.44s
+687, 0.46s
+687, 0.47s
+687, 0.49s
+687, 0.51s
+687, 0.53s
+687, 0.54s
+687, 0.56s
+687, 0.58s
+687, 0.59s
+687, 0.61s
+687, 0.63s
+687, 0.65s
+687, 0.66s
+687, 0.68s
+687, 0.7s
+687, 0.72s
+687, 0.73s
+687, 0.75s
+687, 0.77s
+687, 0.78s
+687, 0.8s
+687, 0.82s
+687, 0.84s
+
+Soluçao encontrada: 
+9 22 33 14 66 7 29 
+16 33 0 26 13 30 10 
+19 31 20 36 37 15 8 
+20 30 20 44 11 28 5 
+1 16 37 44 68 11 21 
+1 18 0 6 43 2 70 
+0 14 1 41 1 42 30 
+3 14 15 31 19 5 43 
+0 12 6 46 13 8 8 
+26 28 19 28 73 29 27 
+0 32 26 7 18 13 12 
+2 24 5 9 13 8 34 
+9 14 8 75 65 1 27 
+10 24 31 26 13 20 28 
+15 34 16 49 36 32 4 
+3 27 52 17 25 13 24 
+6 25 2 40 18 21 44 
+7 21 27 50 41 21 8 
+3 4 33 33 48 18 19 
+8 14 4 23 19 57 1 
+27 30 18 8 23 30 32 
+9 25 4 36 61 33 6 
+12 21 11 39 65 19 9 
+23 29 50 22 57 10 19 
+11 34 42 32 17 41 11 
+29 32 5 37 68 2 32 
+6 17 23 40 46 34 5 
+10 34 19 20 80 34 4 
+15 26 44 19 28 20 23 
+13 17 1 25 34 3 39 
+5 10 27 14 78 17 11 
+24 33 34 34 15 8 33 
+18 31 20 73 20 24 4 
+16 25 14 49 27 31 2 
+( 667 1093 1259 687 682 )
+OWA = 687

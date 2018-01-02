@@ -1,0 +1,121 @@
+========= Estatisticas ========= 
+Semente utilizada : 7917955
+Informacoes sobre a populacao : 
+	SPEA/R = 47
+	k-centrum = 21
+	k-trimmed = 14
+	Hurwicz = 18
+Tempo(s) Final = 0.45
+Quantidade de geraçoes = 48
+Quantidade de plasm1 = 4
+Quantidade de plasm2 = 7
+Quantidade de plasm3 = 8
+Quantidade de ataques do plasm1 = 1170
+Quantidade de sucesso do plasm1 = 64
+Taxa de sucesso do plasm1 = 0.0547009
+Média de melhoria do plasm1 = 0.676923
+Quantidade de ataques do plasm2 = 2130
+Quantidade de sucesso do plasm2 = 361
+Taxa de sucesso do plasm2 = 0.169484
+Média de melhoria do plasm2 = 2.22183
+Quantidade de ataques do plasm3 = 2412
+Quantidade de sucesso do plasm3 = 193
+Taxa de sucesso do plasm3 = 0.0800166
+Média de melhoria do plasm3 = 0.876036
+Quantidade de ataque do primTrans = 3461
+Quantidade de sucesso do primTrans = 46
+Taxa de sucesso do primTrans = 0.013291
+Média de melhoria do primTrans = 0.449148
+Quantidade de ataques do saTrans = 2210
+Quantidade de sucesso do saTrans = 151
+Taxa de sucesso do saTrans = 0.0683258
+Média de melhoria do saTrans = 0.694118
+Quantidade de vezes em que o fitness foi avaliado = 546603
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+862, 0.01s
+840, 0.02s
+840, 0.03s
+840, 0.04s
+840, 0.04s
+840, 0.05s
+840, 0.06s
+840, 0.07s
+839, 0.08s
+839, 0.09s
+839, 0.1s
+834.5, 0.11s
+834.5, 0.12s
+834.5, 0.13s
+834.5, 0.14s
+834.5, 0.14s
+834.5, 0.15s
+834.5, 0.16s
+834.5, 0.17s
+834.5, 0.18s
+834.5, 0.19s
+834.5, 0.2s
+834.5, 0.21s
+834.5, 0.22s
+834.5, 0.23s
+833, 0.24s
+830.5, 0.24s
+830.5, 0.26s
+829.5, 0.26s
+829.5, 0.27s
+826, 0.28s
+826, 0.29s
+826, 0.3s
+826, 0.31s
+826, 0.32s
+826, 0.33s
+826, 0.34s
+826, 0.35s
+826, 0.36s
+826, 0.37s
+826, 0.38s
+826, 0.38s
+826, 0.4s
+826, 0.4s
+826, 0.41s
+826, 0.42s
+826, 0.43s
+826, 0.44s
+826, 0.45s
+
+Soluçao encontrada: 
+8 10 9 49 41 25 32 16 17 25 
+23 33 10 25 25 25 9 26 41 20 
+19 21 19 13 20 19 15 58 34 11 
+13 29 2 25 26 18 21 13 33 38 
+9 29 14 17 46 42 8 32 27 11 
+13 24 9 39 8 33 16 12 48 9 
+9 12 8 15 40 52 52 34 4 15 
+1 24 17 31 13 34 15 15 32 32 
+2 29 16 32 18 9 41 23 21 27 
+13 33 0 20 7 6 38 21 11 19 
+13 28 12 7 26 37 38 50 27 15 
+17 28 16 15 10 11 52 16 19 33 
+13 14 15 24 54 22 9 43 13 28 
+0 1 1 2 30 17 40 43 26 25 
+1 27 2 41 10 22 20 15 9 17 
+11 33 7 19 22 7 32 13 41 5 
+1 4 8 9 43 10 4 26 31 6 
+16 21 5 27 3 47 7 37 34 33 
+6 12 14 15 18 35 26 12 53 43 
+9 8 1 41 9 14 45 7 21 13 
+16 32 7 12 18 39 19 27 26 4 
+16 22 1 18 47 26 24 11 31 9 
+0 22 5 4 29 27 20 15 20 28 
+16 20 10 48 14 9 21 41 13 19 
+3 8 11 6 12 12 7 36 38 51 
+8 34 2 46 39 8 26 2 11 47 
+9 30 0 48 8 30 8 1 30 49 
+1 7 7 52 5 5 8 9 6 45 
+3 26 3 12 6 30 23 18 44 15 
+5 23 1 37 9 1 33 12 2 19 
+18 26 9 15 26 23 14 18 12 47 
+18 25 7 18 30 14 29 28 7 39 
+26 31 2 13 14 48 48 50 7 15 
+14 15 12 28 34 18 15 37 38 13 
+( 262 823 760 775 815 817 827 825 )
+OWA = 826

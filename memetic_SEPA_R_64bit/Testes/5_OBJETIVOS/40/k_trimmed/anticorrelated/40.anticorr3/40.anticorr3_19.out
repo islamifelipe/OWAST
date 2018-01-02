@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 4935948
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 11
+	k-centrum = 18
+	k-trimmed = 71
+	Hurwicz = 0
+Tempo(s) Final = 0.90
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 9
+Quantidade de crossovers = 4603
+Quantidade de sucesso dos crossovers = 451
+Taxa de sucesso dos crossovers = 0.0979796
+Média de melhoria das crossovers = 2.62459
+Quantidade de mutaçoes = 1158
+Quantidade de sucesso da mutaçao = 18
+Taxa de sucesso das mutaçoes = 0.015544
+Média de melhoria das mutaçoes = 0.607945
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 804
+TAXA de sucesso do SA = 0.1675
+Média de melhoria do SA = 47.7871
+Quantidade de vezes em que o fitness foi avaliado = 1177147
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+337, 0.01s
+336, 0.03s
+335, 0.04s
+335, 0.06s
+335, 0.08s
+335, 0.1s
+335, 0.12s
+335, 0.14s
+335, 0.16s
+335, 0.17s
+335, 0.19s
+335, 0.21s
+335, 0.23s
+335, 0.25s
+335, 0.27s
+335, 0.29s
+335, 0.3s
+335, 0.32s
+335, 0.34s
+335, 0.36s
+335, 0.38s
+335, 0.4s
+335, 0.42s
+335, 0.44s
+335, 0.45s
+335, 0.47s
+335, 0.49s
+335, 0.51s
+335, 0.53s
+335, 0.55s
+335, 0.56s
+335, 0.58s
+335, 0.6s
+335, 0.62s
+335, 0.64s
+335, 0.66s
+335, 0.68s
+335, 0.69s
+335, 0.71s
+335, 0.73s
+335, 0.75s
+335, 0.77s
+335, 0.79s
+335, 0.81s
+335, 0.82s
+335, 0.84s
+335, 0.86s
+335, 0.88s
+335, 0.9s
+
+Soluçao encontrada: 
+33 39 99 14 0 5 8 
+21 27 96 5 7 14 11 
+2 23 98 14 10 4 11 
+3 12 97 2 12 7 4 
+4 5 99 3 7 9 13 
+22 25 93 7 5 9 8 
+3 34 96 7 3 8 5 
+27 31 95 4 5 12 8 
+5 27 99 1 6 1 11 
+23 24 95 8 8 17 17 
+10 29 95 7 15 14 13 
+29 38 96 13 14 6 14 
+6 10 95 11 10 17 13 
+21 28 98 13 5 6 6 
+8 30 95 10 10 8 6 
+16 29 92 6 6 6 7 
+16 28 94 5 5 8 13 
+11 26 97 4 4 14 11 
+25 32 97 5 11 9 7 
+2 11 97 12 12 3 2 
+14 22 99 7 7 14 7 
+7 12 99 11 3 7 11 
+27 35 98 15 1 13 11 
+16 26 99 7 8 2 5 
+9 22 97 7 16 5 4 
+1 19 99 1 1 8 11 
+20 35 93 15 16 13 7 
+8 13 90 16 9 11 12 
+15 24 87 23 17 11 13 
+7 18 99 10 14 6 12 
+8 14 97 8 13 13 8 
+0 3 99 1 7 1 8 
+28 33 93 6 7 9 10 
+5 17 99 8 8 4 4 
+25 33 99 12 13 1 8 
+0 1 99 14 9 5 7 
+35 36 98 7 12 11 13 
+8 37 98 1 13 8 3 
+32 34 97 15 3 6 2 
+( 3762 335 332 325 344 )
+OWA = 335

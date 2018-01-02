@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 3524292
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 23
+	k-centrum = 29
+	k-trimmed = 48
+	Hurwicz = 0
+Tempo(s) Final = 0.74
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4633
+Quantidade de sucesso dos crossovers = 476
+Taxa de sucesso dos crossovers = 0.102741
+Média de melhoria das crossovers = 8.50335
+Quantidade de mutaçoes = 1161
+Quantidade de sucesso da mutaçao = 32
+Taxa de sucesso das mutaçoes = 0.0275624
+Média de melhoria das mutaçoes = 0.789836
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1087
+TAXA de sucesso do SA = 0.226458
+Média de melhoria do SA = 25.1663
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+594, 0s
+594, 0.02s
+594, 0.04s
+586, 0.05s
+583, 0.07s
+570, 0.08s
+570, 0.1s
+566, 0.11s
+566, 0.13s
+566, 0.14s
+566, 0.16s
+566, 0.17s
+566, 0.19s
+566, 0.2s
+566, 0.22s
+566, 0.23s
+566, 0.25s
+566, 0.27s
+566, 0.28s
+566, 0.3s
+566, 0.31s
+566, 0.33s
+566, 0.34s
+566, 0.36s
+566, 0.37s
+566, 0.39s
+566, 0.4s
+566, 0.42s
+566, 0.44s
+566, 0.45s
+566, 0.47s
+566, 0.48s
+566, 0.5s
+566, 0.51s
+566, 0.53s
+566, 0.54s
+566, 0.56s
+566, 0.57s
+566, 0.59s
+566, 0.6s
+566, 0.62s
+566, 0.63s
+566, 0.65s
+566, 0.67s
+566, 0.68s
+566, 0.7s
+566, 0.71s
+566, 0.73s
+566, 0.74s
+
+Soluçao encontrada: 
+1 22 30 8 6 58 64 
+19 21 11 3 7 75 43 
+2 5 7 25 36 26 11 
+23 27 30 21 42 7 27 
+5 29 5 32 20 50 39 
+0 16 11 15 30 23 28 
+6 14 2 27 6 28 27 
+15 21 54 12 15 52 64 
+3 25 14 10 17 56 40 
+5 11 5 62 1 21 15 
+22 28 0 2 20 67 47 
+12 15 3 29 4 10 36 
+0 6 12 11 37 24 20 
+2 23 4 5 10 63 60 
+23 24 12 42 8 9 3 
+7 8 19 5 23 16 71 
+21 28 37 18 16 82 32 
+7 13 44 12 28 64 11 
+9 12 24 17 11 15 65 
+3 18 3 25 37 53 51 
+4 11 13 49 11 73 7 
+8 18 6 10 13 73 9 
+17 22 34 29 12 58 9 
+5 12 62 18 17 33 21 
+5 26 23 8 31 18 35 
+17 20 1 17 59 64 53 
+3 6 33 11 8 39 75 
+16 26 32 8 27 14 17 
+0 10 15 35 11 5 68 
+( 546 566 563 1176 1048 )
+OWA = 566

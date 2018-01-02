@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 4596995
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 12
+	k-centrum = 35
+	k-trimmed = 0
+	Hurwicz = 53
+Tempo(s) Final = 0.92
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 6
+Quantidade de crossovers = 4588
+Quantidade de sucesso dos crossovers = 608
+Taxa de sucesso dos crossovers = 0.13252
+Média de melhoria das crossovers = 4.0102
+Quantidade de mutaçoes = 1035
+Quantidade de sucesso da mutaçao = 22
+Taxa de sucesso das mutaçoes = 0.021256
+Média de melhoria das mutaçoes = 0.414879
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 545
+TAXA de sucesso do SA = 0.113542
+Média de melhoria do SA = 16.2177
+Quantidade de vezes em que o fitness foi avaliado = 1176898
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+1168.6, 0.01s
+1168.6, 0.03s
+1168.6, 0.05s
+1168.6, 0.07s
+1163.8, 0.09s
+1162.6, 0.11s
+1161.6, 0.13s
+1160.6, 0.15s
+1158.4, 0.17s
+1157.8, 0.19s
+1151.6, 0.2s
+1151.6, 0.22s
+1151, 0.24s
+1150.6, 0.26s
+1150.6, 0.28s
+1150.6, 0.3s
+1150.6, 0.32s
+1150.6, 0.33s
+1150.6, 0.35s
+1150.6, 0.37s
+1150.6, 0.39s
+1150.6, 0.41s
+1150.6, 0.43s
+1150.6, 0.45s
+1150.6, 0.47s
+1150.6, 0.49s
+1150.6, 0.51s
+1150.6, 0.52s
+1150.6, 0.54s
+1150.6, 0.56s
+1150.6, 0.58s
+1150.6, 0.6s
+1150.6, 0.62s
+1150.6, 0.64s
+1150.6, 0.66s
+1150.6, 0.68s
+1150.6, 0.7s
+1150.6, 0.71s
+1150.6, 0.73s
+1150.6, 0.75s
+1150.6, 0.77s
+1150.6, 0.79s
+1150.6, 0.81s
+1150.6, 0.83s
+1150.6, 0.85s
+1150.6, 0.87s
+1150.6, 0.88s
+1150.6, 0.9s
+1150.6, 0.92s
+
+Soluçao encontrada: 
+0 22 4 61 60 49 54 
+18 34 1 49 74 81 83 
+5 9 4 79 54 52 86 
+17 39 5 53 75 81 67 
+10 37 3 63 77 66 84 
+37 39 6 90 60 63 53 
+8 9 16 51 45 45 64 
+33 39 1 52 72 64 76 
+17 34 5 87 77 55 57 
+12 26 10 57 48 49 90 
+3 5 1 65 70 86 69 
+30 38 8 51 50 52 55 
+6 16 2 73 69 57 50 
+14 19 1 51 50 62 93 
+9 36 0 76 66 57 88 
+11 37 3 70 60 92 56 
+24 32 4 59 54 96 59 
+15 36 2 68 51 77 67 
+15 29 0 66 51 83 69 
+16 35 3 61 58 88 58 
+12 17 17 64 62 65 46 
+28 34 19 46 51 62 41 
+4 25 0 62 98 71 67 
+13 21 1 94 97 59 61 
+7 16 8 47 46 82 85 
+13 29 1 88 77 65 67 
+4 27 1 91 76 69 95 
+15 20 4 68 53 79 69 
+1 29 11 49 77 46 46 
+14 29 4 64 67 77 54 
+25 26 3 64 75 67 65 
+3 11 5 55 75 63 48 
+10 30 5 70 56 51 55 
+2 32 7 49 67 62 87 
+9 24 0 93 87 52 57 
+8 16 7 81 55 46 72 
+6 23 19 53 57 57 48 
+3 31 14 67 55 75 58 
+9 22 6 50 57 57 58 
+( 211 2537 2509 2560 2557 )
+OWA = 1150.6

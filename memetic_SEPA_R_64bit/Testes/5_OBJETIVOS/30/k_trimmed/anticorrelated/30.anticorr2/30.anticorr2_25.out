@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 6958382
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 5
+	k-trimmed = 95
+	Hurwicz = 0
+Tempo(s) Final = 0.72
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4630
+Quantidade de sucesso dos crossovers = 429
+Taxa de sucesso dos crossovers = 0.0926566
+Média de melhoria das crossovers = 3.33024
+Quantidade de mutaçoes = 1121
+Quantidade de sucesso da mutaçao = 19
+Taxa de sucesso das mutaçoes = 0.0169492
+Média de melhoria das mutaçoes = 0.447814
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 897
+TAXA de sucesso do SA = 0.186875
+Média de melhoria do SA = 22.4183
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+571, 0s
+571, 0.01s
+571, 0.03s
+568, 0.04s
+560, 0.06s
+560, 0.07s
+559, 0.09s
+559, 0.1s
+559, 0.12s
+559, 0.13s
+559, 0.15s
+559, 0.16s
+559, 0.18s
+559, 0.19s
+559, 0.21s
+559, 0.22s
+559, 0.24s
+559, 0.25s
+559, 0.27s
+559, 0.28s
+559, 0.3s
+559, 0.31s
+559, 0.33s
+559, 0.34s
+559, 0.36s
+559, 0.37s
+559, 0.39s
+559, 0.4s
+559, 0.42s
+559, 0.43s
+559, 0.45s
+559, 0.46s
+559, 0.48s
+559, 0.49s
+559, 0.51s
+559, 0.52s
+559, 0.54s
+559, 0.56s
+559, 0.57s
+559, 0.59s
+559, 0.6s
+559, 0.62s
+559, 0.63s
+559, 0.65s
+559, 0.66s
+559, 0.68s
+559, 0.69s
+559, 0.71s
+559, 0.72s
+
+Soluçao encontrada: 
+3 8 97 14 2 14 28 
+0 4 82 19 42 13 13 
+7 13 84 13 10 22 47 
+20 26 82 13 19 11 42 
+11 18 59 21 20 27 23 
+9 27 87 37 10 17 14 
+12 25 80 44 13 11 54 
+1 6 89 15 26 9 31 
+10 21 86 29 8 56 27 
+7 9 86 12 12 36 26 
+4 20 94 4 45 6 42 
+1 19 93 15 26 26 26 
+15 20 89 17 5 14 7 
+8 25 96 2 3 43 26 
+22 23 92 15 25 14 33 
+14 20 94 24 3 24 4 
+2 21 95 8 49 2 38 
+22 27 94 17 39 5 51 
+20 24 93 25 17 7 17 
+3 29 95 8 13 41 35 
+13 19 79 13 17 31 22 
+16 18 79 25 44 19 25 
+3 4 94 32 9 15 3 
+21 22 86 8 14 7 9 
+1 18 96 22 5 15 34 
+7 29 94 11 16 13 49 
+12 28 81 30 23 21 37 
+14 17 74 15 22 25 29 
+5 22 81 42 22 10 55 
+( 2531 550 559 554 847 )
+OWA = 559

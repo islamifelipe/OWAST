@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 6659106
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 27
+	k-centrum = 61
+	k-trimmed = 3
+	Hurwicz = 9
+Tempo(s) Final = 0.74
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4605
+Quantidade de sucesso dos crossovers = 489
+Taxa de sucesso dos crossovers = 0.106189
+Média de melhoria das crossovers = 3.11583
+Quantidade de mutaçoes = 1127
+Quantidade de sucesso da mutaçao = 16
+Taxa de sucesso das mutaçoes = 0.014197
+Média de melhoria das mutaçoes = 0.475244
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 961
+TAXA de sucesso do SA = 0.200208
+Média de melhoria do SA = 29.9233
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+544.4, 0s
+530.4, 0.02s
+526.5, 0.03s
+526.5, 0.05s
+523.1, 0.06s
+520, 0.08s
+520, 0.1s
+520, 0.11s
+520, 0.13s
+520, 0.14s
+520, 0.16s
+520, 0.17s
+520, 0.19s
+520, 0.2s
+520, 0.22s
+520, 0.23s
+520, 0.25s
+520, 0.26s
+520, 0.28s
+520, 0.29s
+520, 0.31s
+520, 0.32s
+520, 0.34s
+520, 0.36s
+520, 0.37s
+520, 0.39s
+520, 0.4s
+520, 0.42s
+520, 0.43s
+520, 0.45s
+520, 0.46s
+518, 0.48s
+518, 0.49s
+518, 0.51s
+518, 0.52s
+518, 0.54s
+518, 0.55s
+518, 0.57s
+518, 0.59s
+518, 0.6s
+518, 0.62s
+518, 0.63s
+518, 0.65s
+518, 0.66s
+518, 0.68s
+518, 0.69s
+518, 0.71s
+518, 0.72s
+518, 0.74s
+
+Soluçao encontrada: 
+18 27 4 11 8 45 31 
+8 13 8 17 41 21 49 
+15 25 7 43 27 4 22 
+12 16 7 48 23 6 6 
+12 25 5 22 35 12 23 
+2 27 9 29 15 14 25 
+0 22 13 20 18 24 24 
+7 23 20 15 50 47 11 
+8 9 1 2 6 7 5 
+15 24 27 13 30 26 17 
+9 15 4 6 35 38 27 
+3 6 3 19 5 49 5 
+1 10 4 46 23 27 6 
+7 26 4 29 9 22 37 
+0 18 2 36 50 1 10 
+21 23 3 14 7 11 48 
+1 16 0 20 2 47 24 
+5 15 5 49 14 4 36 
+3 14 1 22 8 12 30 
+17 23 7 19 11 13 21 
+4 29 2 26 29 14 34 
+9 27 7 33 43 31 14 
+12 19 6 19 39 12 36 
+16 29 3 9 21 24 36 
+10 28 1 13 6 24 15 
+20 29 4 48 6 44 2 
+3 23 9 5 11 20 23 
+23 28 9 10 37 27 20 
+0 11 0 22 49 28 19 
+( 175 665 658 654 656 )
+OWA = 518

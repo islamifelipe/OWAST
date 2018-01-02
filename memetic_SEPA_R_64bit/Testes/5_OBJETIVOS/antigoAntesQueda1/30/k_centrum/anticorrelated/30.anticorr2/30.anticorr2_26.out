@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 8659571
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 25
+	k-centrum = 39
+	k-trimmed = 36
+	Hurwicz = 0
+Tempo(s) Final = 0.76
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4620
+Quantidade de sucesso dos crossovers = 608
+Taxa de sucesso dos crossovers = 0.131602
+Média de melhoria das crossovers = 2.80274
+Quantidade de mutaçoes = 1104
+Quantidade de sucesso da mutaçao = 24
+Taxa de sucesso das mutaçoes = 0.0217391
+Média de melhoria das mutaçoes = 0.318538
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 423
+TAXA de sucesso do SA = 0.088125
+Média de melhoria do SA = 7.61521
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+1217.67, 0s
+1206.67, 0.02s
+1206.67, 0.04s
+1204.33, 0.05s
+1202.33, 0.07s
+1194.33, 0.08s
+1194.33, 0.1s
+1194, 0.12s
+1191.67, 0.13s
+1191, 0.15s
+1189, 0.16s
+1183, 0.18s
+1183, 0.2s
+1183, 0.21s
+1183, 0.23s
+1183, 0.24s
+1183, 0.26s
+1183, 0.27s
+1183, 0.29s
+1183, 0.31s
+1183, 0.32s
+1183, 0.34s
+1182.67, 0.35s
+1182.67, 0.37s
+1182.67, 0.39s
+1182.67, 0.4s
+1182.67, 0.42s
+1182.67, 0.43s
+1182.67, 0.45s
+1182.67, 0.46s
+1182.67, 0.48s
+1182.67, 0.5s
+1182.67, 0.51s
+1182.67, 0.53s
+1182.67, 0.54s
+1182.67, 0.56s
+1182.67, 0.57s
+1182.67, 0.59s
+1182.67, 0.61s
+1182.67, 0.62s
+1182.67, 0.64s
+1182.67, 0.65s
+1182.67, 0.67s
+1182.67, 0.68s
+1182.67, 0.7s
+1182.67, 0.72s
+1182.67, 0.73s
+1182.67, 0.75s
+1182.67, 0.76s
+
+Soluçao encontrada: 
+3 4 94 32 9 15 3 
+15 20 89 17 5 14 7 
+9 24 71 28 31 21 28 
+11 18 59 21 20 27 23 
+0 25 43 62 40 44 33 
+14 29 78 29 24 21 19 
+2 18 25 42 79 50 40 
+7 9 86 12 12 36 26 
+12 26 5 52 61 59 59 
+1 6 89 15 26 9 31 
+21 22 86 8 14 7 9 
+2 4 24 40 40 53 47 
+5 28 17 45 63 49 50 
+14 17 74 15 22 25 29 
+20 24 93 25 17 7 17 
+2 14 59 30 34 29 31 
+6 13 76 16 27 36 23 
+13 19 79 13 17 31 22 
+20 26 82 13 19 11 42 
+10 18 4 58 57 52 71 
+3 19 61 31 37 24 30 
+3 8 97 14 2 14 28 
+0 4 82 19 42 13 13 
+3 26 0 63 55 70 55 
+1 23 13 82 43 47 43 
+4 21 21 51 40 47 48 
+5 15 95 20 23 27 12 
+3 16 69 16 23 46 18 
+24 27 72 29 14 23 39 
+( 1743 898 896 907 896 )
+OWA = 1182.67

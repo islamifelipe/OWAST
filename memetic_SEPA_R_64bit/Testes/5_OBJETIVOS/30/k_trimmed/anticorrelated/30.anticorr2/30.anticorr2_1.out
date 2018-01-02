@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 6892762
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 0
+	k-centrum = 3
+	k-trimmed = 97
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4601
+Quantidade de sucesso dos crossovers = 372
+Taxa de sucesso dos crossovers = 0.080852
+Média de melhoria das crossovers = 2.95762
+Quantidade de mutaçoes = 1139
+Quantidade de sucesso da mutaçao = 13
+Taxa de sucesso das mutaçoes = 0.0114135
+Média de melhoria das mutaçoes = 0.325724
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 865
+TAXA de sucesso do SA = 0.180208
+Média de melhoria do SA = 23.9287
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+571, 0s
+571, 0.02s
+561, 0.03s
+561, 0.05s
+560, 0.06s
+560, 0.08s
+560, 0.09s
+560, 0.11s
+560, 0.12s
+560, 0.14s
+560, 0.16s
+560, 0.17s
+560, 0.19s
+560, 0.2s
+560, 0.22s
+560, 0.23s
+560, 0.25s
+560, 0.26s
+560, 0.28s
+560, 0.29s
+560, 0.31s
+560, 0.32s
+560, 0.34s
+560, 0.35s
+560, 0.37s
+560, 0.38s
+560, 0.4s
+560, 0.41s
+560, 0.43s
+560, 0.44s
+560, 0.46s
+560, 0.47s
+560, 0.49s
+560, 0.5s
+560, 0.52s
+560, 0.53s
+560, 0.55s
+560, 0.56s
+560, 0.58s
+560, 0.59s
+560, 0.61s
+560, 0.62s
+560, 0.64s
+560, 0.65s
+560, 0.67s
+560, 0.68s
+560, 0.7s
+560, 0.71s
+560, 0.73s
+
+Soluçao encontrada: 
+7 13 84 13 10 22 47 
+10 21 86 29 8 56 27 
+7 29 94 11 16 13 49 
+1 19 93 15 26 26 26 
+4 20 94 4 45 6 42 
+2 21 95 8 49 2 38 
+12 25 80 44 13 11 54 
+21 22 86 8 14 7 9 
+3 4 94 32 9 15 3 
+1 6 89 15 26 9 31 
+9 19 84 45 15 14 16 
+14 17 74 15 22 25 29 
+15 20 89 17 5 14 7 
+9 27 87 37 10 17 14 
+11 18 59 21 20 27 23 
+14 20 94 24 3 24 4 
+13 19 79 13 17 31 22 
+22 23 92 15 25 14 33 
+3 29 95 8 13 41 35 
+1 18 96 22 5 15 34 
+16 18 79 25 44 19 25 
+12 28 81 30 23 21 37 
+0 4 82 19 42 13 13 
+20 26 82 13 19 11 42 
+5 15 95 20 23 27 12 
+20 24 93 25 17 7 17 
+3 8 97 14 2 14 28 
+8 25 96 2 3 43 26 
+23 29 94 15 36 13 48 
+( 2543 559 560 557 791 )
+OWA = 560

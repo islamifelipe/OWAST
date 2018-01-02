@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 4193906
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 13
+	k-centrum = 28
+	k-trimmed = 0
+	Hurwicz = 59
+Tempo(s) Final = 0.93
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 4
+Quantidade de crossovers = 4629
+Quantidade de sucesso dos crossovers = 297
+Taxa de sucesso dos crossovers = 0.0641607
+Média de melhoria das crossovers = 2.77265
+Quantidade de mutaçoes = 986
+Quantidade de sucesso da mutaçao = 148
+Taxa de sucesso das mutaçoes = 0.150101
+Média de melhoria das mutaçoes = 1.98682
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1777
+TAXA de sucesso do SA = 0.370208
+Média de melhoria do SA = 16.0702
+Quantidade de vezes em que o fitness foi avaliado = 1176732
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+1905.8, 0.01s
+1868.4, 0.03s
+1868.4, 0.05s
+1867.4, 0.07s
+1865.4, 0.09s
+1865.4, 0.11s
+1863, 0.13s
+1863, 0.15s
+1858.4, 0.17s
+1858.4, 0.18s
+1858.4, 0.2s
+1858.4, 0.22s
+1857.6, 0.24s
+1854.4, 0.26s
+1854.4, 0.28s
+1854.4, 0.3s
+1854.4, 0.32s
+1854.4, 0.34s
+1854.4, 0.36s
+1854.4, 0.38s
+1854.4, 0.39s
+1854.4, 0.41s
+1851.4, 0.43s
+1851.4, 0.45s
+1849.6, 0.47s
+1849.6, 0.49s
+1849.6, 0.51s
+1849.6, 0.53s
+1849.2, 0.55s
+1849.2, 0.56s
+1849.2, 0.58s
+1849.2, 0.6s
+1849, 0.62s
+1849, 0.64s
+1849, 0.66s
+1849, 0.68s
+1849, 0.7s
+1849, 0.72s
+1849, 0.74s
+1849, 0.76s
+1849, 0.77s
+1849, 0.79s
+1849, 0.81s
+1849, 0.83s
+1849, 0.85s
+1849, 0.87s
+1849, 0.89s
+1849, 0.91s
+1849, 0.93s
+
+Soluçao encontrada: 
+6 23 55 44 40 47 39 
+7 15 86 16 14 24 14 
+20 34 76 25 20 24 23 
+0 26 92 13 17 18 8 
+4 22 7 93 93 93 89 
+15 31 16 73 76 83 71 
+16 29 92 6 6 6 7 
+13 38 42 61 50 52 52 
+36 38 6 82 89 87 80 
+0 24 77 33 31 28 23 
+1 5 36 68 67 58 54 
+27 28 91 16 12 7 8 
+5 36 48 52 46 58 43 
+14 20 61 33 40 34 34 
+9 38 44 55 47 49 49 
+15 19 47 49 55 44 45 
+8 21 36 60 68 57 55 
+6 8 6 85 83 84 84 
+5 7 61 34 42 47 34 
+29 33 88 14 16 12 12 
+7 25 25 72 68 66 66 
+2 35 13 77 73 77 78 
+6 9 15 75 82 83 73 
+1 32 58 45 35 39 37 
+26 38 84 18 20 14 14 
+20 33 41 56 55 50 54 
+18 21 1 86 96 86 86 
+8 28 78 28 22 19 18 
+12 23 75 24 25 33 21 
+3 12 97 2 12 7 4 
+7 39 0 87 84 96 88 
+15 30 22 73 67 76 70 
+15 22 51 47 43 45 43 
+11 28 71 24 33 32 28 
+10 20 90 14 19 14 16 
+10 31 26 64 72 66 62 
+10 37 3 96 89 86 85 
+17 38 21 67 70 71 66 
+1 35 72 31 34 34 23 
+( 1910 1898 1911 1906 1756 )
+OWA = 1849

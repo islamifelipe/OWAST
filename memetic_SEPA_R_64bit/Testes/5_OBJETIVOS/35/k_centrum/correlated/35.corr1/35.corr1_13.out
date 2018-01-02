@@ -1,0 +1,111 @@
+========= Estatisticas ========= 
+Semente utilizada : 6201124
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 47
+	k-centrum = 29
+	k-trimmed = 24
+	Hurwicz = 0
+Tempo(s) Final = 0.84
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4600
+Quantidade de sucesso dos crossovers = 474
+Taxa de sucesso dos crossovers = 0.103043
+Média de melhoria das crossovers = 7.74011
+Quantidade de mutaçoes = 1072
+Quantidade de sucesso da mutaçao = 24
+Taxa de sucesso das mutaçoes = 0.0223881
+Média de melhoria das mutaçoes = 0.653918
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 756
+TAXA de sucesso do SA = 0.1575
+Média de melhoria do SA = 24.7315
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+934.5, 0.01s
+934.5, 0.02s
+917, 0.04s
+915.5, 0.06s
+915.5, 0.08s
+915.5, 0.09s
+908, 0.11s
+908, 0.13s
+908, 0.14s
+908, 0.16s
+908, 0.18s
+908, 0.2s
+908, 0.21s
+908, 0.23s
+908, 0.25s
+908, 0.27s
+908, 0.28s
+908, 0.3s
+908, 0.32s
+908, 0.34s
+908, 0.35s
+908, 0.37s
+908, 0.39s
+908, 0.41s
+908, 0.42s
+908, 0.44s
+908, 0.46s
+908, 0.48s
+908, 0.49s
+908, 0.51s
+908, 0.53s
+908, 0.54s
+908, 0.56s
+908, 0.58s
+908, 0.6s
+908, 0.61s
+908, 0.63s
+908, 0.65s
+908, 0.67s
+908, 0.68s
+908, 0.7s
+908, 0.72s
+908, 0.74s
+908, 0.75s
+908, 0.77s
+908, 0.79s
+908, 0.8s
+908, 0.82s
+908, 0.84s
+
+Soluçao encontrada: 
+5 23 1 12 18 22 63 
+8 14 4 23 19 57 1 
+11 34 42 32 17 41 11 
+22 32 55 38 40 60 14 
+7 21 27 50 41 21 8 
+16 33 0 26 13 30 10 
+0 12 6 46 13 8 8 
+20 30 20 44 11 28 5 
+6 25 2 40 18 21 44 
+23 29 50 22 57 10 19 
+2 24 5 9 13 8 34 
+17 25 0 25 41 42 9 
+18 31 20 73 20 24 4 
+0 32 26 7 18 13 12 
+3 14 15 31 19 5 43 
+27 30 18 8 23 30 32 
+22 23 20 14 21 45 45 
+16 28 0 4 46 39 76 
+2 9 21 18 26 58 13 
+30 33 17 9 18 27 65 
+16 19 1 10 49 0 43 
+15 31 2 9 52 44 37 
+12 33 18 49 9 21 31 
+24 33 34 34 15 8 33 
+19 31 20 36 37 15 8 
+7 23 2 31 17 70 9 
+4 30 23 11 24 41 40 
+10 24 31 26 13 20 28 
+16 25 14 49 27 31 2 
+3 27 52 17 25 13 24 
+1 18 0 6 43 2 70 
+13 17 1 25 34 3 39 
+15 26 44 19 28 20 23 
+15 34 16 49 36 32 4 
+( 607 902 901 909 907 )
+OWA = 908

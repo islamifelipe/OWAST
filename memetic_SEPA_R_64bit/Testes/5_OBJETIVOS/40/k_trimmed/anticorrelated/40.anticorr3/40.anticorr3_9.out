@@ -1,0 +1,116 @@
+========= Estatisticas ========= 
+Semente utilizada : 3658870
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 7
+	k-centrum = 17
+	k-trimmed = 76
+	Hurwicz = 0
+Tempo(s) Final = 0.90
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 7
+Quantidade de crossovers = 4655
+Quantidade de sucesso dos crossovers = 390
+Taxa de sucesso dos crossovers = 0.0837809
+Média de melhoria das crossovers = 1.88743
+Quantidade de mutaçoes = 1079
+Quantidade de sucesso da mutaçao = 11
+Taxa de sucesso das mutaçoes = 0.0101946
+Média de melhoria das mutaçoes = 0.44671
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 753
+TAXA de sucesso do SA = 0.156875
+Média de melhoria do SA = 35.6469
+Quantidade de vezes em que o fitness foi avaliado = 1176981
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+331, 0.01s
+331, 0.03s
+331, 0.04s
+331, 0.06s
+331, 0.08s
+330, 0.1s
+330, 0.12s
+330, 0.14s
+330, 0.16s
+330, 0.17s
+330, 0.19s
+330, 0.21s
+330, 0.23s
+330, 0.25s
+330, 0.27s
+329, 0.28s
+329, 0.3s
+329, 0.32s
+329, 0.34s
+329, 0.36s
+329, 0.38s
+329, 0.4s
+329, 0.41s
+329, 0.43s
+329, 0.45s
+329, 0.47s
+329, 0.49s
+329, 0.51s
+329, 0.53s
+329, 0.54s
+329, 0.56s
+329, 0.58s
+329, 0.6s
+329, 0.62s
+329, 0.64s
+329, 0.66s
+329, 0.67s
+329, 0.69s
+329, 0.71s
+329, 0.73s
+329, 0.75s
+329, 0.77s
+329, 0.79s
+329, 0.8s
+329, 0.82s
+329, 0.84s
+329, 0.86s
+329, 0.88s
+329, 0.9s
+
+Soluçao encontrada: 
+21 28 98 13 5 6 6 
+9 22 97 7 16 5 4 
+32 34 97 15 3 6 2 
+8 30 95 10 10 8 6 
+6 10 95 11 10 17 13 
+22 25 93 7 5 9 8 
+5 17 99 8 8 4 4 
+14 22 99 7 7 14 7 
+2 23 98 14 10 4 11 
+27 35 98 15 1 13 11 
+5 37 92 16 12 6 7 
+21 27 96 5 7 14 11 
+20 35 93 15 16 13 7 
+8 13 90 16 9 11 12 
+1 19 99 1 1 8 11 
+8 37 98 1 13 8 3 
+4 5 99 3 7 9 13 
+25 32 97 5 11 9 7 
+16 29 92 6 6 6 7 
+0 1 99 14 9 5 7 
+15 24 87 23 17 11 13 
+3 34 96 7 3 8 5 
+25 33 99 12 13 1 8 
+37 38 96 16 12 11 7 
+10 29 95 7 15 14 13 
+11 26 97 4 4 14 11 
+27 31 95 4 5 12 8 
+28 33 93 6 7 9 10 
+5 27 99 1 6 1 11 
+11 17 92 9 6 10 11 
+35 36 98 7 12 11 13 
+33 39 99 14 0 5 8 
+7 18 99 10 14 6 12 
+0 3 99 1 7 1 8 
+16 26 99 7 8 2 5 
+24 30 93 17 7 15 11 
+3 12 97 2 12 7 4 
+7 12 99 11 3 7 11 
+2 11 97 12 12 3 2 
+( 3753 359 329 323 328 )
+OWA = 329

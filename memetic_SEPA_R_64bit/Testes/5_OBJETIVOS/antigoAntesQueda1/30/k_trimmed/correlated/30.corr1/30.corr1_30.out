@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 9805544
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 29
+	k-centrum = 29
+	k-trimmed = 42
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 5
+Quantidade de crossovers = 4613
+Quantidade de sucesso dos crossovers = 402
+Taxa de sucesso dos crossovers = 0.087145
+Média de melhoria das crossovers = 5.43291
+Quantidade de mutaçoes = 980
+Quantidade de sucesso da mutaçao = 28
+Taxa de sucesso das mutaçoes = 0.0285714
+Média de melhoria das mutaçoes = 0.746939
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 1068
+TAXA de sucesso do SA = 0.2225
+Média de melhoria do SA = 25.5588
+Quantidade de vezes em que o fitness foi avaliado = 1176815
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+594, 0s
+594, 0.02s
+594, 0.03s
+594, 0.05s
+582, 0.06s
+580, 0.08s
+575, 0.09s
+567, 0.11s
+565, 0.12s
+564, 0.14s
+564, 0.15s
+564, 0.17s
+564, 0.18s
+561, 0.2s
+558, 0.21s
+558, 0.23s
+558, 0.24s
+558, 0.26s
+558, 0.27s
+558, 0.29s
+558, 0.31s
+558, 0.32s
+558, 0.34s
+558, 0.35s
+558, 0.37s
+558, 0.38s
+558, 0.4s
+555, 0.41s
+551, 0.43s
+551, 0.44s
+551, 0.46s
+551, 0.47s
+551, 0.49s
+551, 0.5s
+551, 0.52s
+551, 0.53s
+551, 0.55s
+551, 0.57s
+551, 0.58s
+551, 0.6s
+551, 0.61s
+551, 0.63s
+551, 0.64s
+551, 0.66s
+551, 0.67s
+551, 0.69s
+551, 0.7s
+551, 0.72s
+551, 0.73s
+
+Soluçao encontrada: 
+2 5 7 25 36 26 11 
+0 10 15 35 11 5 68 
+4 11 13 49 11 73 7 
+8 22 13 18 32 69 48 
+19 21 11 3 7 75 43 
+23 27 30 21 42 7 27 
+5 26 23 8 31 18 35 
+3 25 14 10 17 56 40 
+1 22 30 8 6 58 64 
+0 20 48 23 12 60 83 
+6 14 2 27 6 28 27 
+3 6 33 11 8 39 75 
+2 23 4 5 10 63 60 
+7 13 44 12 28 64 11 
+7 8 19 5 23 16 71 
+16 26 32 8 27 14 17 
+23 24 12 42 8 9 3 
+17 22 34 29 12 58 9 
+8 18 6 10 13 73 9 
+5 11 5 62 1 21 15 
+22 24 41 8 26 72 55 
+15 21 54 12 15 52 64 
+22 28 0 2 20 67 47 
+14 17 5 22 26 43 36 
+5 29 5 32 20 50 39 
+0 6 12 11 37 24 20 
+12 25 12 7 48 36 55 
+9 12 24 17 11 15 65 
+12 15 3 29 4 10 36 
+( 551 551 548 1201 1140 )
+OWA = 551

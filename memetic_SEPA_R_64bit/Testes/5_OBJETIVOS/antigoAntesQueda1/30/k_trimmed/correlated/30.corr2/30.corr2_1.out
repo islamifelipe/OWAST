@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 8374115
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 5
+	k-centrum = 0
+	k-trimmed = 95
+	Hurwicz = 0
+Tempo(s) Final = 0.73
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 9
+Quantidade de crossovers = 4609
+Quantidade de sucesso dos crossovers = 75
+Taxa de sucesso dos crossovers = 0.0162725
+Média de melhoria das crossovers = 0.279381
+Quantidade de mutaçoes = 1120
+Quantidade de sucesso da mutaçao = 14
+Taxa de sucesso das mutaçoes = 0.0125
+Média de melhoria das mutaçoes = 0.316964
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 721
+TAXA de sucesso do SA = 0.150208
+Média de melhoria do SA = 24.756
+Quantidade de vezes em que o fitness foi avaliado = 1177147
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+555.999, 0.01s
+555.999, 0.03s
+555.999, 0.04s
+555.999, 0.06s
+555.999, 0.07s
+555.999, 0.09s
+555.999, 0.1s
+555.999, 0.12s
+555.999, 0.13s
+555.999, 0.15s
+555.999, 0.16s
+555.999, 0.18s
+555.999, 0.19s
+555.999, 0.21s
+555.999, 0.22s
+555.999, 0.24s
+555.999, 0.25s
+555.999, 0.27s
+555.999, 0.28s
+555.999, 0.3s
+555.999, 0.31s
+555.999, 0.33s
+555.999, 0.34s
+555.999, 0.36s
+555.999, 0.37s
+555.999, 0.39s
+555.999, 0.4s
+555.999, 0.42s
+555.999, 0.43s
+555.999, 0.45s
+555.999, 0.46s
+555.999, 0.48s
+555.999, 0.49s
+555.999, 0.51s
+555.999, 0.52s
+555.999, 0.54s
+555.999, 0.55s
+555.999, 0.57s
+555.999, 0.58s
+555.999, 0.6s
+555.999, 0.61s
+555.999, 0.63s
+555.999, 0.64s
+555.999, 0.66s
+555.999, 0.67s
+555.999, 0.69s
+555.999, 0.7s
+555.999, 0.72s
+555.999, 0.73s
+
+Soluçao encontrada: 
+8 9 1 2 6 7 5 
+0 9 1 27 1 15 41 
+0 18 2 36 50 1 10 
+0 22 13 20 18 24 24 
+8 11 32 40 17 19 19 
+11 27 10 42 23 20 7 
+2 27 9 29 15 14 25 
+15 27 2 47 32 29 9 
+15 25 7 43 27 4 22 
+12 25 5 22 35 12 23 
+12 16 7 48 23 6 6 
+5 15 5 49 14 4 36 
+16 29 3 9 21 24 36 
+10 29 5 48 10 4 16 
+10 28 1 13 6 24 15 
+17 29 15 52 19 9 15 
+17 23 7 19 11 13 21 
+3 23 9 5 11 20 23 
+3 14 1 22 8 12 30 
+3 6 3 19 5 49 5 
+1 10 4 46 23 27 6 
+21 23 3 14 7 11 48 
+20 29 4 48 6 44 2 
+4 29 2 26 29 14 34 
+15 24 27 13 30 26 17 
+12 19 6 19 39 12 36 
+13 24 17 57 27 17 13 
+6 26 8 19 25 21 36 
+7 26 4 29 9 22 37 
+( 213 863 547 504 617 )
+OWA = 555.999

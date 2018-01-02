@@ -1,0 +1,106 @@
+========= Estatisticas ========= 
+Semente utilizada : 8954773
+Informacoes sobre a populacao inicial : 
+	SPEA/R = 18
+	k-centrum = 25
+	k-trimmed = 0
+	Hurwicz = 57
+Tempo(s) Final = 0.75
+Quantidade de geraçoes = 48
+Quantas vezes em que a populaçao foi renovada = 8
+Quantidade de crossovers = 4638
+Quantidade de sucesso dos crossovers = 469
+Taxa de sucesso dos crossovers = 0.101121
+Média de melhoria das crossovers = 1.88922
+Quantidade de mutaçoes = 1124
+Quantidade de sucesso da mutaçao = 10
+Taxa de sucesso das mutaçoes = 0.0088968
+Média de melhoria das mutaçoes = 0.163701
+Quantidade de vezes em que o SA foi invocado = 4800
+Quantidade de sucesso do SA = 975
+TAXA de sucesso do SA = 0.203125
+Média de melhoria do SA = 26.4617
+Quantidade de vezes em que o fitness foi avaliado = 1177064
+Evolucao do otimo por geracao (fitness, tempo(s)): 
+454, 0s
+454, 0.02s
+445.4, 0.04s
+445.2, 0.05s
+438.8, 0.07s
+438.8, 0.08s
+438.8, 0.1s
+438.8, 0.11s
+438.8, 0.13s
+438.8, 0.14s
+438.8, 0.16s
+438.8, 0.17s
+438.8, 0.19s
+438.8, 0.2s
+438.8, 0.22s
+438.8, 0.23s
+438.8, 0.25s
+438.8, 0.27s
+438.8, 0.28s
+438.8, 0.3s
+438.8, 0.31s
+438.8, 0.33s
+438.8, 0.34s
+438.8, 0.36s
+438.8, 0.37s
+438.8, 0.39s
+438.8, 0.4s
+438.8, 0.42s
+438.8, 0.44s
+438.8, 0.45s
+438.8, 0.47s
+438.8, 0.48s
+438.8, 0.5s
+438.8, 0.51s
+438.8, 0.53s
+438.8, 0.54s
+438.8, 0.56s
+438.8, 0.57s
+438.8, 0.59s
+438.8, 0.61s
+438.8, 0.62s
+438.8, 0.64s
+438.8, 0.65s
+438.8, 0.67s
+438.8, 0.68s
+438.8, 0.7s
+438.8, 0.71s
+438.8, 0.73s
+438.8, 0.75s
+
+Soluçao encontrada: 
+1 3 0 21 45 41 89 
+4 8 8 32 27 92 40 
+0 20 3 74 42 61 21 
+12 21 2 39 76 30 43 
+3 8 12 49 83 69 21 
+18 24 6 34 36 25 25 
+10 28 3 31 84 97 82 
+22 26 8 44 31 52 53 
+1 27 3 95 79 48 69 
+10 24 4 48 48 25 92 
+5 24 0 52 79 32 62 
+12 25 10 65 64 41 25 
+9 18 5 81 66 31 45 
+26 27 4 72 34 58 37 
+21 22 7 75 38 41 61 
+6 17 3 38 31 61 86 
+7 13 2 94 28 61 62 
+2 15 11 94 36 53 23 
+19 24 0 34 61 38 62 
+27 28 4 30 35 40 74 
+16 23 13 42 32 39 57 
+0 19 1 66 30 73 29 
+15 29 3 94 83 82 97 
+10 15 6 56 43 58 34 
+7 8 0 73 61 35 69 
+9 23 6 19 93 65 64 
+11 21 11 22 86 87 71 
+6 28 10 53 46 67 72 
+14 26 5 29 45 92 28 
+( 150 1556 1542 1594 1593 )
+OWA = 438.8
