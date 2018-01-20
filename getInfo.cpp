@@ -28,9 +28,9 @@ int main(int argc, const char * argv[]){
 	int cont =0;
 	string aux, s;
 	 while (cin>>s){
-	 	if (s=="renovada"){ cont++;
+	 	if (s=="mutaçoes"){ cont++;
 	 	}
-	 	if (cont==1) {
+	 	if (cont==3) {
 	 		cin>>aux;
 	 		cin>>val;
 	 		//cout<<val<<endl;
