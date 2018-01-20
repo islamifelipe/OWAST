@@ -28,9 +28,9 @@ int main(int argc, const char * argv[]){
 	int cont =0;
 	string aux, s;
 	 while (cin>>s){
-	 	if (s=="mutaçoes"){ cont++;
+	 	if (s=="saTrans"){ cont++;
 	 	}
-	 	if (cont==3) {
+	 	if (cont==4) {
 	 		cin>>aux;
 	 		cin>>val;
 	 		//cout<<val<<endl;
