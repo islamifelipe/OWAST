@@ -1,0 +1,20 @@
+,,Correlated,,,Anticorrelated,,
+,,GS,FER1,FER2,GS,FER1,FER2
+Percentage  of k_trimmed instances for which…,A feasible solution was found,96.30 %,79.63 %,100.00 %,98.15 %,72.22 %,100.00 %
+,The optimal solution was found,16.67 %,16.67 %,16.67 %,18.52 %,18.52 %,18.52 %
+,"The model outperformed both the other regarding the processing
+times",11.11 %,11.11 %,66.67 %,20.00 %,20.00 %,50.00 %
+,The model outperformed both the other regarding the quality of solution,14.81 %,14.81 %,33.33 %,9.26 %,11.11 %,48.15 %
+,The model computed the least LB ,42.59 %,29.63 %,37.04 %,51.85 %,25.93 %,31.48 %
+Percentage  of k_centrum instances for which…,A feasible solution was found,79.63 %,75.93 %,100.00 %,83.33 %,72.22 %,100.00 %
+,The optimal solution was found,18.52 %,18.52 %,18.52 %,12.96 %,14.81 %,14.81 %
+,"The model outperformed both the other regarding the processing
+times",40.00 %,30.00 %,20.00 %,50.00 %,50.00 %,0.00 %
+,The model outperformed both the other regarding the quality of solution,9.26 %,25.93 %,29.63 %,18.52 %,14.81 %,44.44 %
+,The model computed the least LB ,,,,,,
+Percentage  of Hurwicz instances for which…,A feasible solution was found,83.33 %,79.63 %,100.00 %,79.63 %,72.22 %,100.00 %
+,The optimal solution was found,20.37 %,22.22 %,22.22 %,16.67 %,18.52 %,18.52 %
+,"The model outperformed both the other regarding the processing
+times",8.33 %,58.33 %,16.67 %,0.00 %,50.00 %,50.00 %
+,The model outperformed both the other regarding the quality of solution,7.40 %,31.48 %,20.37 %,22.22 %,18.52 %,33.33 %
+,The model computed the least LB ,,,,,,
