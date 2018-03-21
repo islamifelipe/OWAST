@@ -176,20 +176,20 @@ int main(int argc, const char * argv[]){
 
 
 
-	// struct modelo antigs = {0,0,0};
-	// struct modelo antifer1 = {0,0,0};
-	// struct modelo antifer2 = {0,0,0};
-	// innn.open(argv[4], std::ifstream::in);
-	// leeer(antigs);
-	// innn.close();
-	// innn.open(argv[5], std::ifstream::in);
-	// leeer(antifer1);
-	// innn.close();
-	// innn.open(argv[6], std::ifstream::in);
-	// leeer(antifer2);
-	// innn.close();
+	struct modelo antigs = {0,0,0};
+	struct modelo antifer1 = {0,0,0};
+	struct modelo antifer2 = {0,0,0};
+	innn.open(argv[4], std::ifstream::in);
+	leeer(antigs);
+	innn.close();
+	innn.open(argv[5], std::ifstream::in);
+	leeer(antifer1);
+	innn.close();
+	innn.open(argv[6], std::ifstream::in);
+	leeer(antifer2);
+	innn.close();
 
-	// printLinha(antigs, antifer1, antifer2, false);
+	printLinha(antigs, antifer1, antifer2, false);
 
 	cout<<endl;
 
