@@ -46,12 +46,12 @@ Cutting planes:
   Zero half: 1
   Network: 4
 
-Explored 189 nodes (1047 simplex iterations) in 0.09 seconds
+Explored 189 nodes (1047 simplex iterations) in 0.08 seconds
 Thread count was 1 (of 4 available processors)
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 1.930000000000e+02, best bound 1.930000000000e+02, gap 0.0%
-Tempo: 0.09 segundos
+Tempo: 0.08 segundos
 
 0 3 46 31 32 33 35 48 38 38 
 1 2 51 50 29 35 40 28 57 55 
